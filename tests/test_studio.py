@@ -262,6 +262,18 @@ class TestStudioAccessibility(unittest.TestCase):
         self.assertIn('stroke-dasharray="2,3"', html_doc)
         self.assertIn("Lead candidates", html_doc)
 
+    def test_page_has_main_landmark_and_skip_link(self) -> None:
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+        )
+        self.assertIn('<a class="skip-link" href="#main-content">', html_doc)
+        self.assertIn('<main id="main-content">', html_doc)
+        self.assertLess(html_doc.find("<main"), html_doc.find("<footer>"))
+        self.assertLess(html_doc.find("</main>"), html_doc.find("<footer>"))
+
 
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:

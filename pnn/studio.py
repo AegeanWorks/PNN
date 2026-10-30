@@ -922,9 +922,24 @@ def render_studio_html(
       color: var(--text-muted);
       text-align: center;
     }}
+    .skip-link {{
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 10px 14px;
+      border-radius: 0 0 6px 0;
+      font-weight: 600;
+    }}
+    .skip-link:focus {{
+      left: 0;
+    }}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="container">
     <header>
       <div>
@@ -934,6 +949,7 @@ def render_studio_html(
       <div class="badge badge-candidate">Turnkey Interactive Report</div>
     </header>
 
+    <main id="main-content">
     <div style="margin-bottom: 24px; padding: 12px 16px; background: rgba(56, 189, 248, 0.08); border-left: 4px solid var(--primary); border-radius: 4px;">
       <strong style="color: var(--primary);">Evidence Invariant (Guidelines G-001 & G-002):</strong>
       In silico property screening, docking consensus scores, circuit ODE simulations, and allometric dose estimates represent prioritization hypotheses. Measured in vitro binding, CSPG degradation, animal PK/PD, and GLP toxicology are strictly required before clinical administration.
@@ -1000,6 +1016,7 @@ def render_studio_html(
     {safety_section}
 
     {targets_section}
+    </main>
 
     <footer>
       PNN Project Preclinical Pipeline &bull; Standard Library Implementation &bull; Principles G-001, G-002, G-003 Compliant
