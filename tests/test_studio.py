@@ -244,6 +244,24 @@ class TestStudioAccessibility(unittest.TestCase):
         self.assertIn('stroke="#b45309"', pk)
         self.assertIn('fill="#b91c1c"', circuit)
 
+    def test_chart_series_use_dash_patterns_and_radar_legend(self) -> None:
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+            circuit_svg=generate_circuit_dynamics_svg(
+                [{"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0}]
+            ),
+        )
+        self.assertIn('class="chart-legend"', html_doc)
+        self.assertIn('class="legend-swatch"', html_doc)
+        self.assertIn("Green dashed: PO Plasma", html_doc)
+        self.assertIn("Cyan dashed: pAKT Signaling", html_doc)
+        self.assertIn('stroke-dasharray="6,3"', html_doc)
+        self.assertIn('stroke-dasharray="2,3"', html_doc)
+        self.assertIn("Lead candidates", html_doc)
+
 
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:

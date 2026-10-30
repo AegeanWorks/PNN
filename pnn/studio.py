@@ -58,6 +58,9 @@ class StudioCompound:
     pk_points: Dict[str, List[Tuple[float, float]]]  # route_tissue -> [(time, conc)]
 
 
+RADAR_COLORS = ("#2563eb", "#047857", "#8b5cf6", "#b45309", "#ec4899")
+
+
 def _normalize_cns_axis(val: float, optimal_center: float, half_width: float) -> float:
     diff = abs(val - optimal_center)
     score = max(0.1, 1.0 - (diff / half_width))
@@ -114,7 +117,7 @@ def generate_radar_svg(compounds: Sequence[StudioCompound], width: int = 420, he
         )
 
     # Plot compounds
-    colors = ["#2563eb", "#047857", "#8b5cf6", "#b45309", "#ec4899"]
+    colors = RADAR_COLORS
     for idx, comp in enumerate(compounds[:5]):
         color = colors[idx % len(colors)]
         ratios = [
@@ -260,18 +263,19 @@ def generate_pk_curve_svg(
     # Plot curves for top candidate
     styles = {
         "IV_plasma": ("#2563eb", "none", "2.5"),        # Blue solid
-        "PO_plasma": ("#047857", "none", "2.5"),        # Green solid
-        "PO_brain": ("#b45309", "none", "2.5"),         # Amber solid
+        "PO_plasma": ("#047857", "6,3", "2.5"),         # Green dashed
+        "PO_brain": ("#b45309", "2,3", "2.5"),          # Amber dotted
     }
 
     if compounds:
         lead = compounds[0]
         for route_tissue, pts in sorted(lead.pk_points.items()):
-            color, _, stroke_w = styles.get(route_tissue, ("#475569", "none", "1.5"))
+            color, dash, stroke_w = styles.get(route_tissue, ("#475569", "none", "1.5"))
+            dash_attr = f' stroke-dasharray="{dash}"' if dash != "none" else ""
             sorted_pts = sorted(pts, key=lambda p: p[0])
             poly_coords = [f"{tx(p[0]):.1f},{ty(p[1]):.1f}" for p in sorted_pts]
             pts_str = " ".join(poly_coords)
-            svg_parts.append(f'  <polyline points="{pts_str}" fill="none" stroke="{color}" stroke-width="{stroke_w}"/>')
+            svg_parts.append(f'  <polyline points="{pts_str}" fill="none" stroke="{color}" stroke-width="{stroke_w}"{dash_attr}/>')
             for p in sorted_pts:
                 svg_parts.append(f'  <circle cx="{tx(p[0]):.1f}" cy="{ty(p[1]):.1f}" r="3.2" fill="{color}"/>')
 
@@ -392,7 +396,7 @@ def generate_circuit_dynamics_svg(
 
     akt_coords = [f"{tx(t):.1f},{ty(akt):.1f}" for t, _, akt in parsed_pts]
     svg_parts.append(
-        f'  <polyline points="{" ".join(akt_coords)}" fill="none" stroke="#0e7490" stroke-width="2.5"/>'
+        f'  <polyline points="{" ".join(akt_coords)}" fill="none" stroke="#0e7490" stroke-width="2.5" stroke-dasharray="6,3"/>'
     )
 
     svg_parts.append(
@@ -402,7 +406,7 @@ def generate_circuit_dynamics_svg(
         f'  <text x="{ml + 40}" y="{mt + 14}" font-size="10" font-weight="600" fill="#475569">PNN Density (%)</text>'
     )
     svg_parts.append(
-        f'  <line x1="{ml + 140}" y1="{mt + 10}" x2="{ml + 165}" y2="{mt + 10}" stroke="#0e7490" stroke-width="2.5"/>'
+        f'  <line x1="{ml + 140}" y1="{mt + 10}" x2="{ml + 165}" y2="{mt + 10}" stroke="#0e7490" stroke-width="2.5" stroke-dasharray="6,3"/>'
     )
     svg_parts.append(
         f'  <text x="{ml + 170}" y="{mt + 14}" font-size="10" font-weight="600" fill="#475569">pAKT Signaling (%)</text>'
@@ -639,7 +643,7 @@ def render_studio_html(
     if circuit_svg:
         circuit_section = f"""
     <div class="panel" style="margin-bottom: 24px;">
-      <h2>Hypothalamic Circuit Dosing Dynamics <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Purple: PNN Density (%) | Cyan: pAKT Signaling (%) | Red: 30% Safety Floor</span></h2>
+      <h2>Hypothalamic Circuit Dosing Dynamics <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Purple solid: PNN Density (%) | Cyan dashed: pAKT Signaling (%) | Red dashed: 30% Safety Floor</span></h2>
       <div class="svg-wrapper">
         {circuit_svg}
       </div>
@@ -663,6 +667,15 @@ def render_studio_html(
           <thead><tr><th scope="col">Compound</th><th scope="col">MW (Da)</th><th scope="col">logP</th><th scope="col">TPSA (A^2)</th><th scope="col">HBD</th><th scope="col">HBA</th><th scope="col">RotB</th></tr></thead>
           <tbody>{"".join(radar_rows)}</tbody>
         </table>"""
+
+    radar_legend = ""
+    if compounds:
+        legend_items = "".join(
+            f'<li><span class="legend-swatch" style="background:{RADAR_COLORS[index % len(RADAR_COLORS)]}"></span>'
+            f'{html.escape(compound.compound_id)}</li>'
+            for index, compound in enumerate(compounds[:5])
+        )
+        radar_legend = f'<ul class="chart-legend">{legend_items}</ul>'
 
     docking_targets = sorted({target for c in compounds for target in c.docking_scores})
     heatmap_rows = []
@@ -766,7 +779,7 @@ def render_studio_html(
     .funnel-num {{ font-size: 1.6rem; font-weight: 700; color: #ffffff; }}
     .grid-2col {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
       gap: 20px;
       margin-bottom: 24px;
     }}
@@ -787,6 +800,7 @@ def render_studio_html(
     }}
     .svg-wrapper {{
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background: #ffffff;
@@ -794,9 +808,32 @@ def render_studio_html(
       padding: 12px;
       overflow-x: auto;
     }}
+    .svg-wrapper svg {{
+      max-width: 100%;
+      height: auto;
+    }}
+    .chart-legend {{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.8rem;
+      color: #334155;
+    }}
+    .legend-swatch {{
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }}
     .cards-row {{
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 16px;
       margin-bottom: 24px;
     }}
@@ -925,6 +962,7 @@ def render_studio_html(
       </div>
     </div>
 
+    <h2 class="sr-only">Lead candidates</h2>
     <div class="cards-row">
       {"".join(cards_html)}
     </div>
@@ -934,6 +972,7 @@ def render_studio_html(
         <h2>CNS Physicochemical Radar (Spider Chart)</h2>
         <div class="svg-wrapper">
           {radar_svg}
+          {radar_legend}
         </div>
         {radar_table}
       </div>
@@ -947,7 +986,7 @@ def render_studio_html(
     </div>
 
     <div class="panel" style="margin-bottom: 24px;">
-      <h2>In Vivo Pharmacokinetics (PK Profile: PNN-101) <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Blue: IV Plasma | Green: PO Plasma | Amber: PO Brain</span></h2>
+      <h2>In Vivo Pharmacokinetics (PK Profile: PNN-101) <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Blue solid: IV Plasma | Green dashed: PO Plasma | Amber dotted: PO Brain</span></h2>
       <div class="svg-wrapper">
         {pk_svg}
       </div>

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `51`
 - **Total Classes**: `89`
 - **Total Top-Level Functions**: `209`
-- **Total Class Methods**: `247`
-- **Total Source Lines**: `12943`
+- **Total Class Methods**: `248`
+- **Total Source Lines**: `13000`
 
 ---
 
@@ -495,7 +495,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1239` lines (`51095` bytes)
+**Size**: `1278` lines (`52299` bytes)
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -970,7 +970,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `356` lines (`15197` bytes)
+**Size**: `374` lines (`16122` bytes)
 
 **Classes:**
 - `class TestStudioRendering`
@@ -990,6 +990,7 @@
   - Method `.test_charts_expose_data_tables()`
   - Method `.test_circuit_chart_exposes_data_table()`
   - Method `.test_chart_labels_use_white_background_contrast()` - *The SVGs sit on a white wrapper; every label clears 4.5:1 there.*
+  - Method `.test_chart_series_use_dash_patterns_and_radar_legend()`
 - `class TestStudioDataLoader`
   - Method `.test_missing_compounds_file_raises()`
   - Method `.test_load_studio_data_valid()`

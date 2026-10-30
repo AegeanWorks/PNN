@@ -1,49 +1,17 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "pnn-studio-contrast-white-v1",
+    "task_id": "pnn-studio-series-v1",
     "last_phase": "phase 3",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1793362400.3541234,
-    "owner": "opencode:pnn-contrast-white",
-    "started_by": "opencode:pnn-contrast-white",
+    "updated_at": 1793363181.5835645,
+    "owner": "opencode:pnn-series",
+    "started_by": "opencode:pnn-series",
     "continuations": [],
-    "completed_at": 1793362400.6237535
+    "completed_at": 1793363181.8408213
   },
   "checkpoints": [
-    {
-      "task_id": "pnn-studio-a11y-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/3] Added role/title/desc to all four SVG charts, captions and column scopes to all three tables; ui verify passed; awaiting human review before finish",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793345534.0638564,
-      "timestamp_str": "2026-10-30 10:32:14",
-      "agent": "opencode:pnn-a11y"
-    },
-    {
-      "task_id": "pnn-studio-a11y-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Accessible chart/table semantics implemented, 3 regression tests added, UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793347544.404256,
-      "timestamp_str": "2026-10-30 11:05:44",
-      "agent": "opencode:pnn-a11y"
-    },
-    {
-      "task_id": "pnn-studio-a11y-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-a11y-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793347555.8377233,
-      "timestamp_str": "2026-10-30 11:05:55",
-      "agent": "opencode:pnn-a11y"
-    },
     {
       "task_id": "reforge:run-2",
       "phase": "reforge run",
@@ -255,6 +223,44 @@
       "timestamp": 1793362400.623755,
       "timestamp_str": "2026-10-30 15:13:20",
       "agent": "opencode:pnn-contrast-white"
+    },
+    {
+      "task_id": "pnn-studio-series-v1",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/4] Distinguish chart series without colour alone, add the radar legend, and make the dashboard fit narrow screens",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793363023.5589614,
+      "timestamp_str": "2026-10-30 15:23:43",
+      "agent": "opencode:pnn-series",
+      "impact_assessment": {
+        "why": "The PK and circuit series rely on hue, the radar plots up to five compounds with no legend, the lead cards jump from h1 to h3, and the 480px grid overflows phones.",
+        "benefits": "Charts are readable by colour-blind users, the radar maps colours to compounds, heading order is valid, and panels scale below 480px.",
+        "risks": "contract: presentation-only changes; dependency: standard library only; concurrency: none; state: generated studio.html only.",
+        "mitigation": "Dash-pattern and legend assertions, CSS checks, the full suite and the UI guard verify."
+      }
+    },
+    {
+      "task_id": "pnn-studio-series-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[4/4] Dash patterns, radar legend, heading order and responsive grids landed; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793363181.5835645,
+      "timestamp_str": "2026-10-30 15:26:21",
+      "agent": "opencode:pnn-series"
+    },
+    {
+      "task_id": "pnn-studio-series-v1",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'pnn-studio-series-v1' completed successfully.",
+      "status": "completed",
+      "timestamp": 1793363181.8408225,
+      "timestamp_str": "2026-10-30 15:26:21",
+      "agent": "opencode:pnn-series"
     }
   ]
 }
