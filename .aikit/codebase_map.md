@@ -8,9 +8,9 @@
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `51`
 - **Total Classes**: `89`
-- **Total Top-Level Functions**: `208`
-- **Total Class Methods**: `245`
-- **Total Source Lines**: `12872`
+- **Total Top-Level Functions**: `209`
+- **Total Class Methods**: `246`
+- **Total Source Lines**: `12912`
 
 ---
 
@@ -495,7 +495,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1218` lines (`50128` bytes)
+**Size**: `1239` lines (`51095` bytes)
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -508,8 +508,9 @@
 - `def generate_radar_svg(compounds, width, height)` - *Generate SVG radar chart for CNS drug-likeness physicochemical properties.*
 - `def generate_docking_heatmap_svg(compounds, targets, cell_w, cell_h)` - *Generate multi-target docking affinity heatmap in SVG.*
 - `def generate_pk_curve_svg(compounds, width, height)` - *Generate in vivo pharmacokinetic concentration-time profiles SVG.*
+- `def _parse_circuit_points(simulation_points)` - *(time_h, pnn_pct, akt_pct) for every complete, numeric simulation row, time-sorted.*
 - `def generate_circuit_dynamics_svg(simulation_points, width, height)` - *Generate SVG time-course chart for hypothalamic circuit dynamics (PNN turnover vs pAKT restoration).*
-- `def render_studio_html(compounds, radar_svg, heatmap_svg, pk_svg, circuit_svg, dossier_data, safety_data, targets_data)` - *Render full standalone HTML5 studio dashboard.*
+- `def render_studio_html(compounds, radar_svg, heatmap_svg, pk_svg, circuit_svg, circuit_points, dossier_data, safety_data, targets_data)` - *Render full standalone HTML5 studio dashboard.*
 - `def _parse_opt_float(val)` - *Parse optional numeric float string, returning None for empty or non-numeric cells.*
 - `def load_studio_data(compounds_path, docking_path, assays_path, pk_path, preclinical_candidates_path)` - *Assemble all project datasets into StudioCompound instances.*
 - `def build_parser()`
@@ -969,7 +970,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `318` lines (`13415` bytes)
+**Size**: `337` lines (`14297` bytes)
 
 **Classes:**
 - `class TestStudioRendering`
@@ -987,6 +988,7 @@
   - Method `.test_empty_circuit_charts_keep_accessible_names()`
   - Method `.test_tables_have_captions_and_column_scopes()`
   - Method `.test_charts_expose_data_tables()`
+  - Method `.test_circuit_chart_exposes_data_table()`
 - `class TestStudioDataLoader`
   - Method `.test_missing_compounds_file_raises()`
   - Method `.test_load_studio_data_valid()`

@@ -1,50 +1,17 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "pnn-studio-chart-data-v1",
+    "task_id": "pnn-studio-circuit-data-v1",
     "last_phase": "phase 3",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1793356924.381265,
-    "owner": "opencode:pnn-chart-data",
-    "started_by": "opencode:pnn-chart-data",
+    "updated_at": 1793358026.1963575,
+    "owner": "opencode:pnn-circuit-data",
+    "started_by": "opencode:pnn-circuit-data",
     "continuations": [],
-    "completed_at": 1793356925.8206053
+    "completed_at": 1793358026.4655178
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 11",
-      "phase_num": 3,
-      "description": "Reforge stage 11: run stopped at stage 11; resume it with `reforge resume`",
-      "files_affected": [],
-      "status": "suspended",
-      "timestamp": 1793294128.358246,
-      "timestamp_str": "2026-10-29 20:15:28",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 11",
-      "phase_num": 3,
-      "description": "Reforge stage 11: run resumed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793295124.6165953,
-      "timestamp_str": "2026-10-29 20:32:04",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 12",
-      "phase_num": 3,
-      "description": "Reforge stage 12: window 34, 3 commit(s), 10 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793295147.5782914,
-      "timestamp_str": "2026-10-29 20:32:27",
-      "agent": "opencode"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 12",
@@ -241,6 +208,44 @@
       "timestamp": 1793356925.8206086,
       "timestamp_str": "2026-10-30 13:42:05",
       "agent": "opencode:pnn-chart-data"
+    },
+    {
+      "task_id": "pnn-studio-circuit-data-v1",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/3] Add the circuit-dynamics data table and share one point parser",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793357921.283687,
+      "timestamp_str": "2026-10-30 13:58:41",
+      "agent": "opencode:pnn-circuit-data",
+      "impact_assessment": {
+        "why": "The circuit chart still has only a prose description; its per-timepoint PNN and pAKT values are not recoverable by assistive users.",
+        "benefits": "The last chart gains a text alternative with the plotted values, and one parser keeps the SVG and table from drifting.",
+        "risks": "contract: optional renderer argument, no visible layout change; dependency: standard library only; concurrency: none; state: generated studio.html only.",
+        "mitigation": "Parser refactor covered by existing circuit tests plus a new table test; UI guard verify."
+      }
+    },
+    {
+      "task_id": "pnn-studio-circuit-data-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[3/3] Circuit data table and shared point parser added; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793358026.1963575,
+      "timestamp_str": "2026-10-30 14:00:26",
+      "agent": "opencode:pnn-circuit-data"
+    },
+    {
+      "task_id": "pnn-studio-circuit-data-v1",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'pnn-studio-circuit-data-v1' completed successfully.",
+      "status": "completed",
+      "timestamp": 1793358026.4655192,
+      "timestamp_str": "2026-10-30 14:00:26",
+      "agent": "opencode:pnn-circuit-data"
     }
   ]
 }

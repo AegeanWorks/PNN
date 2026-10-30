@@ -279,6 +279,25 @@ def generate_pk_curve_svg(
     return "\n".join(svg_parts)
 
 
+def _parse_circuit_points(
+    simulation_points: Sequence[Mapping[str, object]],
+) -> List[Tuple[float, float, float]]:
+    """(time_h, pnn_pct, akt_pct) for every complete, numeric simulation row, time-sorted."""
+    parsed: List[Tuple[float, float, float]] = []
+    for pt in simulation_points:
+        try:
+            t_raw = _get_field(pt, ["time_h", "time", "t_h"], None)
+            pnn_raw = _get_field(pt, ["pnn_density_pct", "pnn_density", "pnn"], None)
+            akt_raw = _get_field(pt, ["akt_signaling_pct", "akt_signaling", "akt"], None)
+            if t_raw is None or pnn_raw is None or akt_raw is None:
+                continue
+            parsed.append((float(t_raw), float(pnn_raw), float(akt_raw)))
+        except (ValueError, TypeError):
+            continue
+    parsed.sort(key=lambda point: point[0])
+    return parsed
+
+
 def generate_circuit_dynamics_svg(
     simulation_points: Sequence[Mapping[str, object]],
     width: int = 540,
@@ -299,20 +318,7 @@ def generate_circuit_dynamics_svg(
             f'<text x="{width/2:.1f}" y="{height/2:.1f}" text-anchor="middle" fill="#94a3b8">No simulation data</text></svg>'
         )
 
-    parsed_pts: List[Tuple[float, float, float]] = []
-    for pt in simulation_points:
-        try:
-            t_raw = _get_field(pt, ["time_h", "time", "t_h"], None)
-            pnn_raw = _get_field(pt, ["pnn_density_pct", "pnn_density", "pnn"], None)
-            akt_raw = _get_field(pt, ["akt_signaling_pct", "akt_signaling", "akt"], None)
-            if t_raw is None or pnn_raw is None or akt_raw is None:
-                continue
-            t = float(t_raw)
-            pnn = float(pnn_raw)
-            akt = float(akt_raw)
-            parsed_pts.append((t, pnn, akt))
-        except (ValueError, TypeError):
-            continue
+    parsed_pts = _parse_circuit_points(simulation_points)
 
     if not parsed_pts:
         return (
@@ -324,7 +330,6 @@ def generate_circuit_dynamics_svg(
             f'<text x="{width/2:.1f}" y="{height/2:.1f}" text-anchor="middle" fill="#94a3b8">No valid simulation points</text></svg>'
         )
 
-    parsed_pts.sort(key=lambda x: x[0])
     max_t = max(parsed_pts[-1][0], 24.0)
 
     def tx(t: float) -> float:
@@ -413,6 +418,7 @@ def render_studio_html(
     heatmap_svg: str,
     pk_svg: str,
     circuit_svg: Optional[str] = None,
+    circuit_points: Optional[Sequence[Mapping[str, object]]] = None,
     dossier_data: Optional[Sequence[Mapping[str, object]]] = None,
     safety_data: Optional[Sequence[Mapping[str, object]]] = None,
     targets_data: Optional[Sequence[object]] = None,
@@ -615,6 +621,20 @@ def render_studio_html(
     </div>
         """
 
+    circuit_table = ""
+    if circuit_svg and circuit_points:
+        circuit_rows = "".join(
+            f'<tr><th scope="row">{time_h:g}</th><td>{pnn:g}</td><td>{akt:g}</td></tr>'
+            for time_h, pnn, akt in _parse_circuit_points(circuit_points)
+        )
+        if circuit_rows:
+            circuit_table = f"""
+        <table class="sr-only">
+          <caption>Circuit dynamics data: PNN density and pAKT signaling over time</caption>
+          <thead><tr><th scope="col">Time (h)</th><th scope="col">PNN density (%)</th><th scope="col">pAKT signaling (%)</th></tr></thead>
+          <tbody>{circuit_rows}</tbody>
+        </table>"""
+
     circuit_section = ""
     if circuit_svg:
         circuit_section = f"""
@@ -623,6 +643,7 @@ def render_studio_html(
       <div class="svg-wrapper">
         {circuit_svg}
       </div>
+      {circuit_table}
     </div>
         """
 

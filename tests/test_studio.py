@@ -206,6 +206,25 @@ class TestStudioAccessibility(unittest.TestCase):
         self.assertIn("<td>PO plasma</td>", html_doc)
         self.assertIn('<th scope="row">PNN-101</th>', html_doc)
 
+    def test_circuit_chart_exposes_data_table(self) -> None:
+        points = [
+            {"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0},
+            {"time_h": 168.0, "pnn_density_pct": 45.0, "akt_signaling_pct": 88.0},
+        ]
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+            circuit_svg=generate_circuit_dynamics_svg(points),
+            circuit_points=points,
+        )
+        self.assertIn(
+            "Circuit dynamics data: PNN density and pAKT signaling over time", html_doc
+        )
+        self.assertIn('<th scope="row">0</th>', html_doc)
+        self.assertIn('<th scope="row">168</th>', html_doc)
+
 
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:
