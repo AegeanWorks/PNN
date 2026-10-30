@@ -148,7 +148,10 @@ class TestStudioAccessibility(unittest.TestCase):
             brain_kp=0.65,
             oral_f_pct=42.0,
             docking_scores={"PTPsigma": -8.5},
-            pk_points={"PO_plasma": [(0.0, 0.0), (1.0, 490.0)]},
+            pk_points={
+                "PO_plasma": [(0.0, 0.0), (1.0, 490.0)],
+                "PO_brain": [(0.0, 0.0), (1.0, 120.0)],
+            },
         )
 
     def assert_labelled(self, svg: str, stem: str) -> None:
@@ -224,6 +227,22 @@ class TestStudioAccessibility(unittest.TestCase):
         )
         self.assertIn('<th scope="row">0</th>', html_doc)
         self.assertIn('<th scope="row">168</th>', html_doc)
+
+    def test_chart_labels_use_white_background_contrast(self) -> None:
+        """The SVGs sit on a white wrapper; every label clears 4.5:1 there."""
+        radar = generate_radar_svg([self.compound])
+        heatmap = generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"])
+        pk = generate_pk_curve_svg([self.compound])
+        circuit = generate_circuit_dynamics_svg(
+            [{"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0}]
+        )
+        self.assertIn('fill="#475569"', radar)
+        self.assertIn('fill="#334155"', heatmap)
+        self.assertIn('fill="#1e293b"', heatmap)
+        self.assertIn('fill="#475569"', pk)
+        self.assertIn('stroke="#047857"', pk)
+        self.assertIn('stroke="#b45309"', pk)
+        self.assertIn('fill="#b91c1c"', circuit)
 
 
 class TestStudioDataLoader(unittest.TestCase):
