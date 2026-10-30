@@ -191,6 +191,21 @@ class TestStudioAccessibility(unittest.TestCase):
         self.assertIn("Safety pharmacology and repeat-dose toxicology", html_doc)
         self.assertIn("Registered receptor and aggrecanase target", html_doc)
 
+    def test_charts_expose_data_tables(self) -> None:
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+        )
+        self.assertIn("Radar chart data: CNS physicochemical properties", html_doc)
+        self.assertIn("Docking heatmap data: predicted binding affinity", html_doc)
+        self.assertIn("Pharmacokinetic chart data: concentration over time", html_doc)
+        self.assertIn("<td>349.5</td>", html_doc)
+        self.assertIn("<td>-8.5</td>", html_doc)
+        self.assertIn("<td>PO plasma</td>", html_doc)
+        self.assertIn('<th scope="row">PNN-101</th>', html_doc)
+
 
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:

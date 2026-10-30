@@ -626,6 +626,66 @@ def render_studio_html(
     </div>
         """
 
+    radar_rows = []
+    for compound in compounds[:5]:
+        radar_rows.append(
+            f'<tr><th scope="row">{html.escape(compound.compound_id)}</th>'
+            f'<td>{compound.mw:.1f}</td><td>{compound.logp:.2f}</td>'
+            f'<td>{compound.tpsa:.1f}</td><td>{compound.hbd}</td>'
+            f'<td>{compound.hba}</td><td>{compound.rotb}</td></tr>'
+        )
+    radar_table = ""
+    if radar_rows:
+        radar_table = f"""
+        <table class="sr-only">
+          <caption>Radar chart data: CNS physicochemical properties</caption>
+          <thead><tr><th scope="col">Compound</th><th scope="col">MW (Da)</th><th scope="col">logP</th><th scope="col">TPSA (A^2)</th><th scope="col">HBD</th><th scope="col">HBA</th><th scope="col">RotB</th></tr></thead>
+          <tbody>{"".join(radar_rows)}</tbody>
+        </table>"""
+
+    docking_targets = sorted({target for c in compounds for target in c.docking_scores})
+    heatmap_rows = []
+    for compound in compounds:
+        cells = "".join(
+            f'<td>{compound.docking_scores[target]:.1f}</td>'
+            if compound.docking_scores.get(target) is not None else '<td>N/A</td>'
+            for target in docking_targets
+        )
+        heatmap_rows.append(
+            f'<tr><th scope="row">{html.escape(compound.compound_id)}</th>{cells}</tr>'
+        )
+    heatmap_table = ""
+    if docking_targets:
+        target_headers = "".join(
+            f'<th scope="col">{html.escape(target)}</th>' for target in docking_targets
+        )
+        heatmap_table = f"""
+        <table class="sr-only">
+          <caption>Docking heatmap data: predicted binding affinity (kcal/mol)</caption>
+          <thead><tr><th scope="col">Compound</th>{target_headers}</tr></thead>
+          <tbody>{"".join(heatmap_rows)}</tbody>
+        </table>"""
+
+    pk_rows = []
+    if compounds:
+        lead = compounds[0]
+        for route, points in sorted(lead.pk_points.items()):
+            route_label = route.replace("_", " ")
+            for time_h, concentration in sorted(points):
+                pk_rows.append(
+                    f'<tr><th scope="row">{html.escape(lead.compound_id)}</th>'
+                    f'<td>{html.escape(route_label)}</td>'
+                    f'<td>{time_h:g}</td><td>{concentration:g}</td></tr>'
+                )
+    pk_table = ""
+    if pk_rows:
+        pk_table = f"""
+        <table class="sr-only">
+          <caption>Pharmacokinetic chart data: concentration over time</caption>
+          <thead><tr><th scope="col">Compound</th><th scope="col">Route</th><th scope="col">Time (h)</th><th scope="col">Concentration (ng/mL)</th></tr></thead>
+          <tbody>{"".join(pk_rows)}</tbody>
+        </table>"""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -854,12 +914,14 @@ def render_studio_html(
         <div class="svg-wrapper">
           {radar_svg}
         </div>
+        {radar_table}
       </div>
       <div class="panel">
         <h2>Multi-Target Docking Affinity (kcal/mol)</h2>
         <div class="svg-wrapper">
           {heatmap_svg}
         </div>
+        {heatmap_table}
       </div>
     </div>
 
@@ -868,6 +930,7 @@ def render_studio_html(
       <div class="svg-wrapper">
         {pk_svg}
       </div>
+      {pk_table}
     </div>
 
     {circuit_section}
