@@ -131,6 +131,67 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("Trodusquemine-Analog", html_doc)
 
 
+class TestStudioAccessibility(unittest.TestCase):
+    """The dashboard is read by assistive technology, not only by eye."""
+
+    def setUp(self) -> None:
+        self.compound = StudioCompound(
+            compound_id="PNN-101",
+            name="HypoSprint-1",
+            mw=349.46,
+            logp=2.65,
+            tpsa=48.4,
+            hbd=2,
+            hba=4,
+            rotb=4,
+            ec50_nm=24.0,
+            brain_kp=0.65,
+            oral_f_pct=42.0,
+            docking_scores={"PTPsigma": -8.5},
+            pk_points={"PO_plasma": [(0.0, 0.0), (1.0, 490.0)]},
+        )
+
+    def assert_labelled(self, svg: str, stem: str) -> None:
+        self.assertIn('role="img"', svg)
+        self.assertIn(f'aria-labelledby="{stem}-title {stem}-desc"', svg)
+        self.assertIn(f'<title id="{stem}-title">', svg)
+        self.assertIn(f'<desc id="{stem}-desc">', svg)
+
+    def test_svg_charts_expose_accessible_names(self) -> None:
+        self.assert_labelled(generate_radar_svg([self.compound]), "radar")
+        self.assert_labelled(
+            generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]), "heatmap"
+        )
+        self.assert_labelled(generate_pk_curve_svg([self.compound]), "pk")
+        self.assert_labelled(
+            generate_circuit_dynamics_svg(
+                [{"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0}]
+            ),
+            "circuit",
+        )
+
+    def test_empty_circuit_charts_keep_accessible_names(self) -> None:
+        self.assert_labelled(generate_circuit_dynamics_svg([]), "circuit")
+        self.assert_labelled(generate_circuit_dynamics_svg([{"time_h": "bad"}]), "circuit")
+
+    def test_tables_have_captions_and_column_scopes(self) -> None:
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+            dossier_data=[{"compound_id": "PNN-REP-01", "chemotype": "Analog"}],
+            safety_data=[{"compound_id": "PNN-REP-01", "status": "SAFE_TO_PROGRESS"}],
+            targets_data=list_targets(),
+        )
+        self.assertEqual(html_doc.count('<caption class="sr-only">'), 3)
+        self.assertNotIn("<th>", html_doc)
+        self.assertGreaterEqual(html_doc.count('<th scope="col">'), 20)
+        self.assertIn("IND dose projection", html_doc)
+        self.assertIn("Safety pharmacology and repeat-dose toxicology", html_doc)
+        self.assertIn("Registered receptor and aggrecanase target", html_doc)
+
+
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:
         with self.assertRaises(StudioError):

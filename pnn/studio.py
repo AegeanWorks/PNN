@@ -81,7 +81,11 @@ def generate_radar_svg(compounds: Sequence[StudioCompound], width: int = 420, he
     angles = [(i * 2.0 * math.pi / n_axes) - (math.pi / 2.0) for i in range(n_axes)]
 
     svg_parts: List[str] = [
-        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        f'xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="radar-title radar-desc">',
+        '  <title id="radar-title">CNS physicochemical radar chart</title>',
+        '  <desc id="radar-desc">Radar chart of MW, logP, TPSA, HBD, HBA and rotatable bonds for up to five '
+        'compounds; a larger area is closer to the CNS-optimal window.</desc>',
         '  <defs>',
         '    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">',
         '      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>',
@@ -150,7 +154,11 @@ def generate_docking_heatmap_svg(
     height = margin_top + len(compounds) * cell_h + 30
 
     svg_parts: List[str] = [
-        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        f'xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heatmap-title heatmap-desc">',
+        '  <title id="heatmap-title">Multi-target docking affinity heatmap</title>',
+        '  <desc id="heatmap-desc">Docking scores in kcal/mol for each compound and target; darker cells '
+        'mark stronger predicted binding.</desc>',
     ]
 
     # Target column headers
@@ -224,7 +232,11 @@ def generate_pk_curve_svg(
         return mt + ph - (c_clamped / max_c) * ph
 
     svg_parts: List[str] = [
-        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        f'xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pk-title pk-desc">',
+        '  <title id="pk-title">In vivo pharmacokinetic concentration-time curves</title>',
+        '  <desc id="pk-desc">Plasma and brain concentration over 24 hours for the lead compound after '
+        'intravenous and oral dosing.</desc>',
     ]
 
     # Gridlines
@@ -279,7 +291,11 @@ def generate_circuit_dynamics_svg(
 
     if not simulation_points:
         return (
-            f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">'
+            f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+            f'xmlns="http://www.w3.org/2000/svg" role="img" '
+            f'aria-labelledby="circuit-title circuit-desc">'
+            f'<title id="circuit-title">Hypothalamic circuit dosing dynamics</title>'
+            f'<desc id="circuit-desc">No simulation data was provided.</desc>'
             f'<text x="{width/2:.1f}" y="{height/2:.1f}" text-anchor="middle" fill="#94a3b8">No simulation data</text></svg>'
         )
 
@@ -300,7 +316,11 @@ def generate_circuit_dynamics_svg(
 
     if not parsed_pts:
         return (
-            f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">'
+            f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+            f'xmlns="http://www.w3.org/2000/svg" role="img" '
+            f'aria-labelledby="circuit-title circuit-desc">'
+            f'<title id="circuit-title">Hypothalamic circuit dosing dynamics</title>'
+            f'<desc id="circuit-desc">No valid simulation points were provided.</desc>'
             f'<text x="{width/2:.1f}" y="{height/2:.1f}" text-anchor="middle" fill="#94a3b8">No valid simulation points</text></svg>'
         )
 
@@ -315,7 +335,11 @@ def generate_circuit_dynamics_svg(
         return mt + ph - (clamped / 120.0) * ph
 
     svg_parts: List[str] = [
-        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg">',
+        f'<svg width="{width}" height="{height}" viewBox="0 0 {width} {height}" '
+        f'xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="circuit-title circuit-desc">',
+        '  <title id="circuit-title">Hypothalamic circuit dosing dynamics</title>',
+        '  <desc id="circuit-desc">PNN density and pAKT signaling over the simulation window; the red '
+        'line marks the 30% safety floor.</desc>',
     ]
 
     for y_val in (0, 25, 50, 75, 100):
@@ -462,16 +486,17 @@ def render_studio_html(
       <h2>Investigational New Drug (IND) & Translational Dossier <span class="badge badge-candidate">ICH M3(R2) / S7A / S7B</span></h2>
       <div class="table-wrapper">
         <table class="data-table">
+          <caption class="sr-only">IND dose projection, half-life and safety margins for each candidate compound</caption>
           <thead>
             <tr>
-              <th>Compound ID</th>
-              <th>Chemotype</th>
-              <th>Evidence</th>
-              <th>Animal Dose</th>
-              <th>Projected Human Dose</th>
-              <th>Human t1/2</th>
-              <th>Phase 1 MRSD</th>
-              <th>Safety Margin</th>
+              <th scope="col">Compound ID</th>
+              <th scope="col">Chemotype</th>
+              <th scope="col">Evidence</th>
+              <th scope="col">Animal Dose</th>
+              <th scope="col">Projected Human Dose</th>
+              <th scope="col">Human t1/2</th>
+              <th scope="col">Phase 1 MRSD</th>
+              <th scope="col">Safety Margin</th>
             </tr>
           </thead>
           <tbody>
@@ -523,15 +548,16 @@ def render_studio_html(
       <h2>IND-Enabling Safety Pharmacology & Repeat-Dose Toxicology <span class="badge badge-lead">ICH S7A/S7B Panel</span></h2>
       <div class="table-wrapper">
         <table class="data-table">
+          <caption class="sr-only">Safety pharmacology and repeat-dose toxicology outcomes for each compound</caption>
           <thead>
             <tr>
-              <th>Compound ID</th>
-              <th>Status</th>
-              <th>Sensitive Species</th>
-              <th>NOAEL</th>
-              <th>hERG Margin</th>
-              <th>CYP3A4 Inh.</th>
-              <th>Genotoxicity</th>
+              <th scope="col">Compound ID</th>
+              <th scope="col">Status</th>
+              <th scope="col">Sensitive Species</th>
+              <th scope="col">NOAEL</th>
+              <th scope="col">hERG Margin</th>
+              <th scope="col">CYP3A4 Inh.</th>
+              <th scope="col">Genotoxicity</th>
             </tr>
           </thead>
           <tbody>
@@ -569,15 +595,16 @@ def render_studio_html(
       <h2>Receptor & Aggrecanase Target Invariants <span class="badge badge-candidate">{len(targets_data)} Registered Targets</span></h2>
       <div class="table-wrapper">
         <table class="data-table">
+          <caption class="sr-only">Registered receptor and aggrecanase target structural invariants</caption>
           <thead>
             <tr>
-              <th>Target ID</th>
-              <th>Gene Symbol</th>
-              <th>Primary PDB</th>
-              <th>Resolution</th>
-              <th>Pocket Type</th>
-              <th>Druggability</th>
-              <th>Biological Role</th>
+              <th scope="col">Target ID</th>
+              <th scope="col">Gene Symbol</th>
+              <th scope="col">Primary PDB</th>
+              <th scope="col">Resolution</th>
+              <th scope="col">Pocket Type</th>
+              <th scope="col">Druggability</th>
+              <th scope="col">Biological Role</th>
             </tr>
           </thead>
           <tbody>
@@ -757,6 +784,17 @@ def render_studio_html(
     }}
     .data-table tr:hover {{
       background: rgba(255, 255, 255, 0.03);
+    }}
+    .sr-only {{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }}
     footer {{
       margin-top: 24px;

@@ -3,52 +3,15 @@
   "active_task": {
     "task_id": "pnn-studio-a11y-v1",
     "last_phase": "phase 3",
-    "active_phase": 3,
-    "status": "in_progress",
-    "updated_at": 1793345261.058963,
+    "active_phase": 5,
+    "status": "completed",
+    "updated_at": 1793347544.404256,
     "owner": "opencode:pnn-a11y",
     "started_by": "opencode:pnn-a11y",
-    "continuations": []
+    "continuations": [],
+    "completed_at": 1793347555.8377213
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 4",
-      "phase_num": 3,
-      "description": "Reforge stage 4: window 12, 3 commit(s), 3 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, 1 binary not analysed",
-      "files_affected": [
-        "assets/social-preview.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1793292753.381828,
-      "timestamp_str": "2026-10-29 19:52:33",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 5",
-      "phase_num": 3,
-      "description": "Reforge stage 5: window 15, 3 commit(s), 11 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, 2 binary not analysed",
-      "files_affected": [
-        "assets/screenshots/2026-10-28-studio.png",
-        "assets/social-preview.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1793292797.931544,
-      "timestamp_str": "2026-10-29 19:53:17",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 6",
-      "phase_num": 3,
-      "description": "Reforge stage 6: window 18, 3 commit(s), 6 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793293040.5325875,
-      "timestamp_str": "2026-10-29 19:57:20",
-      "agent": "opencode"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 7",
@@ -240,6 +203,38 @@
       "status": "in_progress",
       "timestamp": 1793345261.058963,
       "timestamp_str": "2026-10-30 10:27:41",
+      "agent": "opencode:pnn-a11y"
+    },
+    {
+      "task_id": "pnn-studio-a11y-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[2/3] Added role/title/desc to all four SVG charts, captions and column scopes to all three tables; ui verify passed; awaiting human review before finish",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793345534.0638564,
+      "timestamp_str": "2026-10-30 10:32:14",
+      "agent": "opencode:pnn-a11y"
+    },
+    {
+      "task_id": "pnn-studio-a11y-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[3/3] Accessible chart/table semantics implemented, 3 regression tests added, UI evidence recorded; project gates 4/4 passed; checklists: passed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793347544.404256,
+      "timestamp_str": "2026-10-30 11:05:44",
+      "agent": "opencode:pnn-a11y"
+    },
+    {
+      "task_id": "pnn-studio-a11y-v1",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'pnn-studio-a11y-v1' completed successfully.",
+      "status": "completed",
+      "timestamp": 1793347555.8377233,
+      "timestamp_str": "2026-10-30 11:05:55",
       "agent": "opencode:pnn-a11y"
     }
   ]

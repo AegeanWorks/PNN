@@ -7,10 +7,10 @@
 
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `51`
-- **Total Classes**: `88`
+- **Total Classes**: `89`
 - **Total Top-Level Functions**: `208`
-- **Total Class Methods**: `239`
-- **Total Source Lines**: `12695`
+- **Total Class Methods**: `244`
+- **Total Source Lines**: `12794`
 
 ---
 
@@ -495,7 +495,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1117` lines (`44761` bytes)
+**Size**: `1155` lines (`47365` bytes)
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -969,7 +969,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `242` lines (`9955` bytes)
+**Size**: `303` lines (`12599` bytes)
 
 **Classes:**
 - `class TestStudioRendering`
@@ -980,6 +980,12 @@
   - Method `.test_render_studio_html()`
   - Method `.test_generate_circuit_dynamics_svg()`
   - Method `.test_render_studio_html_with_translational_panels()`
+- `class TestStudioAccessibility` - *The dashboard is read by assistive technology, not only by eye.*
+  - Method `.setUp()`
+  - Method `.assert_labelled(svg, stem)`
+  - Method `.test_svg_charts_expose_accessible_names()`
+  - Method `.test_empty_circuit_charts_keep_accessible_names()`
+  - Method `.test_tables_have_captions_and_column_scopes()`
 - `class TestStudioDataLoader`
   - Method `.test_missing_compounds_file_raises()`
   - Method `.test_load_studio_data_valid()`
