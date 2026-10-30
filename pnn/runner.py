@@ -308,9 +308,16 @@ def execute_turnkey_pipeline(
     heatmap_svg = generate_docking_heatmap_svg(studio_compounds[:7], targets)
     pk_svg = generate_pk_curve_svg(studio_compounds)
 
+    circuit_points = [p.as_row() for p in p_points] if p_points else None
     circuit_svg = (
-        generate_circuit_dynamics_svg([p.as_row() for p in p_points])
-        if p_points
+        generate_circuit_dynamics_svg(circuit_points)
+        if circuit_points
+        else None
+    )
+    # The chart plots every hourly point; the text table stays readable at daily resolution.
+    circuit_table_points = (
+        [row for row in circuit_points if float(row["time_h"]) % 24.0 == 0.0]
+        if circuit_points
         else None
     )
     dossier_rows = [p.as_row() for p in projections] if projections else None
@@ -322,6 +329,7 @@ def execute_turnkey_pipeline(
         heatmap_svg=heatmap_svg,
         pk_svg=pk_svg,
         circuit_svg=circuit_svg,
+        circuit_points=circuit_table_points,
         dossier_data=dossier_rows,
         safety_data=safety_rows,
         targets_data=list_targets(),

@@ -10,7 +10,7 @@
 - **Total Classes**: `89`
 - **Total Top-Level Functions**: `209`
 - **Total Class Methods**: `246`
-- **Total Source Lines**: `12912`
+- **Total Source Lines**: `12924`
 
 ---
 
@@ -376,7 +376,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `488` lines (`19183` bytes)
+**Size**: `496` lines (`19542` bytes)
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -864,7 +864,7 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `116` lines (`5398` bytes)
+**Size**: `120` lines (`5614` bytes)
 
 **Classes:**
 - `class TestTurnkeyRunner`

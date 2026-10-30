@@ -67,6 +67,10 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue((out_dir / "preclinical_candidates.csv").is_file())
             self.assertTrue((out_dir / "sar_clusters.csv").is_file())
             self.assertTrue((out_dir / "studio.html").is_file())
+            studio_html = (out_dir / "studio.html").read_text(encoding="utf-8")
+            self.assertIn(
+                "Circuit dynamics data: PNN density and pAKT signaling over time", studio_html
+            )
             self.assertTrue((out_dir / "safety_assessments.csv").is_file())
             self.assertTrue((out_dir / "safety_package.md").is_file())
 
