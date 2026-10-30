@@ -9,8 +9,8 @@
 - **Total Python Modules**: `51`
 - **Total Classes**: `89`
 - **Total Top-Level Functions**: `209`
-- **Total Class Methods**: `246`
-- **Total Source Lines**: `12924`
+- **Total Class Methods**: `247`
+- **Total Source Lines**: `12940`
 
 ---
 
@@ -970,7 +970,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `337` lines (`14297` bytes)
+**Size**: `353` lines (`15116` bytes)
 
 **Classes:**
 - `class TestStudioRendering`
@@ -989,6 +989,7 @@
   - Method `.test_tables_have_captions_and_column_scopes()`
   - Method `.test_charts_expose_data_tables()`
   - Method `.test_circuit_chart_exposes_data_table()`
+  - Method `.test_chart_labels_use_high_contrast_colours()` - *Panel text clears 4.5:1 on #1e293b; the old light-theme fills did not.*
 - `class TestStudioDataLoader`
   - Method `.test_missing_compounds_file_raises()`
   - Method `.test_load_studio_data_valid()`

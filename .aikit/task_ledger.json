@@ -1,50 +1,17 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "pnn-studio-circuit-wiring-v1",
+    "task_id": "pnn-studio-contrast-v1",
     "last_phase": "phase 3",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1793358200.2006888,
-    "owner": "opencode:pnn-circuit-wiring",
-    "started_by": "opencode:pnn-circuit-wiring",
+    "updated_at": 1793359444.7782488,
+    "owner": "opencode:pnn-contrast",
+    "started_by": "opencode:pnn-contrast",
     "continuations": [],
-    "completed_at": 1793358201.2755778
+    "completed_at": 1793359445.6468737
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 13",
-      "phase_num": 3,
-      "description": "Reforge stage 13: run stopped at stage 13; resume it with `reforge resume`",
-      "files_affected": [],
-      "status": "suspended",
-      "timestamp": 1793295349.9590075,
-      "timestamp_str": "2026-10-29 20:35:49",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 13",
-      "phase_num": 3,
-      "description": "Reforge stage 13: run resumed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793317451.5493374,
-      "timestamp_str": "2026-10-30 02:44:11",
-      "agent": "opencode"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 14",
-      "phase_num": 3,
-      "description": "Reforge stage 14: window 36, 1 commit(s), 0 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793320201.527661,
-      "timestamp_str": "2026-10-30 03:30:01",
-      "agent": "opencode"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 14",
@@ -251,6 +218,44 @@
       "timestamp": 1793358201.275581,
       "timestamp_str": "2026-10-30 14:03:21",
       "agent": "opencode:pnn-circuit-wiring"
+    },
+    {
+      "task_id": "pnn-studio-contrast-v1",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/3] Raise chart text and line contrast against the dark dashboard panel",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793359280.3322225,
+      "timestamp_str": "2026-10-30 14:21:20",
+      "agent": "opencode:pnn-contrast",
+      "impact_assessment": {
+        "why": "SVG labels were designed for a light background: heatmap row labels use the panel colour itself (#1e293b on #1e293b), headers sit at 1.41:1 and radar labels at 1.93:1, so key chart text is invisible or unreadable.",
+        "benefits": "Every chart label and the safety-floor caption meet WCAG AA text contrast on the real panel colour, and the data shapes meet the 3:1 graphics floor.",
+        "risks": "contract: colour-only change to existing SVG output; dependency: standard library only; concurrency: none; state: generated studio.html only.",
+        "mitigation": "Contrast values computed from the panel colour; targeted regression assertions; UI guard verify."
+      }
+    },
+    {
+      "task_id": "pnn-studio-contrast-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[3/3] Chart text and line contrast raised for the dark panel; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793359444.7782488,
+      "timestamp_str": "2026-10-30 14:24:04",
+      "agent": "opencode:pnn-contrast"
+    },
+    {
+      "task_id": "pnn-studio-contrast-v1",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'pnn-studio-contrast-v1' completed successfully.",
+      "status": "completed",
+      "timestamp": 1793359445.646879,
+      "timestamp_str": "2026-10-30 14:24:05",
+      "agent": "opencode:pnn-contrast"
     }
   ]
 }
