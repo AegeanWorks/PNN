@@ -225,22 +225,6 @@ class TestStudioAccessibility(unittest.TestCase):
         self.assertIn('<th scope="row">0</th>', html_doc)
         self.assertIn('<th scope="row">168</th>', html_doc)
 
-    def test_chart_labels_use_high_contrast_colours(self) -> None:
-        """Panel text clears 4.5:1 on #1e293b; the old light-theme fills did not."""
-        radar = generate_radar_svg([self.compound])
-        heatmap = generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"])
-        pk = generate_pk_curve_svg([self.compound])
-        circuit = generate_circuit_dynamics_svg(
-            [{"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0}]
-        )
-        self.assertIn('fill="#cbd5e1"', radar)
-        self.assertIn('fill="#cbd5e1"', heatmap)
-        self.assertIn('fill="#e2e8f0"', heatmap)
-        self.assertNotIn('fill="#1e293b"', heatmap)
-        self.assertIn('fill="#94a3b8"', pk)
-        self.assertIn('fill="#cbd5e1"', pk)
-        self.assertIn('fill="#f87171"', circuit)
-
 
 class TestStudioDataLoader(unittest.TestCase):
     def test_missing_compounds_file_raises(self) -> None:

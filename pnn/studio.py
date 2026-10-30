@@ -110,11 +110,11 @@ def generate_radar_svg(compounds: Sequence[StudioCompound], width: int = 420, he
         lx = cx + (radius + 22) * math.cos(ang)
         ly = cy + (radius + 22) * math.sin(ang) + 4
         svg_parts.append(
-            f'  <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" font-size="11" font-weight="600" fill="#cbd5e1">{name}</text>'
+            f'  <text x="{lx:.1f}" y="{ly:.1f}" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">{name}</text>'
         )
 
     # Plot compounds
-    colors = ["#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#ec4899"]
+    colors = ["#2563eb", "#10b981", "#8b5cf6", "#f59e0b", "#ec4899"]
     for idx, comp in enumerate(compounds[:5]):
         color = colors[idx % len(colors)]
         ratios = [
@@ -165,7 +165,7 @@ def generate_docking_heatmap_svg(
     for j, tgt in enumerate(targets):
         x = margin_left + j * cell_w + cell_w / 2.0
         svg_parts.append(
-            f'  <text x="{x:.1f}" y="{margin_top - 12}" text-anchor="middle" font-size="11" font-weight="600" fill="#cbd5e1">{tgt}</text>'
+            f'  <text x="{x:.1f}" y="{margin_top - 12}" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">{tgt}</text>'
         )
 
     # Heatmap rows
@@ -173,7 +173,7 @@ def generate_docking_heatmap_svg(
         y = margin_top + i * cell_h
         # Row label
         svg_parts.append(
-            f'  <text x="{margin_left - 12}" y="{y + cell_h/2.0 + 4}" text-anchor="end" font-size="11" font-weight="600" fill="#e2e8f0">{comp.compound_id}</text>'
+            f'  <text x="{margin_left - 12}" y="{y + cell_h/2.0 + 4}" text-anchor="end" font-size="11" font-weight="600" fill="#1e293b">{comp.compound_id}</text>'
         )
 
         for j, tgt in enumerate(targets):
@@ -185,11 +185,11 @@ def generate_docking_heatmap_svg(
                 # Hue from light cyan (190, 60%, 90%) to deep navy (215, 85%, 28%)
                 lightness = int(92 - 62 * ratio)
                 color = f"hsl(215, 80%, {lightness}%)"
-                text_color = "#ffffff" if lightness < 52 else "#000000"
+                text_color = "#ffffff" if lightness < 55 else "#0f172a"
                 val_text = f"{score:.1f}"
             else:
                 color = "#f1f5f9"
-                text_color = "#475569"
+                text_color = "#94a3b8"
                 val_text = "N/A"
 
             svg_parts.append(
@@ -244,22 +244,22 @@ def generate_pk_curve_svg(
         val = (max_c / 4.0) * step
         y_pos = ty(val)
         svg_parts.append(f'  <line x1="{ml}" y1="{y_pos:.1f}" x2="{ml + pw}" y2="{y_pos:.1f}" stroke="#e2e8f0" stroke-width="1"/>')
-        svg_parts.append(f'  <text x="{ml - 8}" y="{y_pos + 4:.1f}" text-anchor="end" font-size="10" fill="#94a3b8">{val:.0f}</text>')
+        svg_parts.append(f'  <text x="{ml - 8}" y="{y_pos + 4:.1f}" text-anchor="end" font-size="10" fill="#64748b">{val:.0f}</text>')
 
     for t_step in (0, 4, 8, 12, 16, 20, 24):
         x_pos = tx(float(t_step))
         svg_parts.append(f'  <line x1="{x_pos:.1f}" y1="{mt}" x2="{x_pos:.1f}" y2="{mt + ph}" stroke="#e2e8f0" stroke-width="1"/>')
-        svg_parts.append(f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#94a3b8">{t_step}h</text>')
+        svg_parts.append(f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#64748b">{t_step}h</text>')
 
     # Axes
     svg_parts.append(f'  <line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt + ph}" stroke="#94a3b8" stroke-width="1.5"/>')
     svg_parts.append(f'  <line x1="{ml}" y1="{mt + ph}" x2="{ml + pw}" y2="{mt + ph}" stroke="#94a3b8" stroke-width="1.5"/>')
-    svg_parts.append(f'  <text x="{ml - 14}" y="{mt - 10}" text-anchor="start" font-size="10" font-weight="600" fill="#cbd5e1">Conc (ng/mL)</text>')
-    svg_parts.append(f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#cbd5e1">Time post-dose (hours)</text>')
+    svg_parts.append(f'  <text x="{ml - 14}" y="{mt - 10}" text-anchor="start" font-size="10" font-weight="600" fill="#475569">Conc (ng/mL)</text>')
+    svg_parts.append(f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Time post-dose (hours)</text>')
 
     # Plot curves for top candidate
     styles = {
-        "IV_plasma": ("#3b82f6", "none", "2.5"),        # Blue solid
+        "IV_plasma": ("#2563eb", "none", "2.5"),        # Blue solid
         "PO_plasma": ("#10b981", "none", "2.5"),        # Green solid
         "PO_brain": ("#f59e0b", "none", "2.5"),         # Amber solid
     }
@@ -267,7 +267,7 @@ def generate_pk_curve_svg(
     if compounds:
         lead = compounds[0]
         for route_tissue, pts in sorted(lead.pk_points.items()):
-            color, _, stroke_w = styles.get(route_tissue, ("#94a3b8", "none", "1.5"))
+            color, _, stroke_w = styles.get(route_tissue, ("#64748b", "none", "1.5"))
             sorted_pts = sorted(pts, key=lambda p: p[0])
             poly_coords = [f"{tx(p[0]):.1f},{ty(p[1]):.1f}" for p in sorted_pts]
             pts_str = " ".join(poly_coords)
@@ -353,7 +353,7 @@ def generate_circuit_dynamics_svg(
             f'  <line x1="{ml}" y1="{y_pos:.1f}" x2="{ml + pw}" y2="{y_pos:.1f}" stroke="#e2e8f0" stroke-width="1"/>'
         )
         svg_parts.append(
-            f'  <text x="{ml - 8}" y="{y_pos + 4:.1f}" text-anchor="end" font-size="10" fill="#94a3b8">{y_val}%</text>'
+            f'  <text x="{ml - 8}" y="{y_pos + 4:.1f}" text-anchor="end" font-size="10" fill="#64748b">{y_val}%</text>'
         )
 
     n_intervals = 7
@@ -365,7 +365,7 @@ def generate_circuit_dynamics_svg(
         )
         label = f"{t_val/24:.0f}d" if max_t >= 48 else f"{t_val:.0f}h"
         svg_parts.append(
-            f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#94a3b8">{label}</text>'
+            f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#64748b">{label}</text>'
         )
 
     safety_y = ty(30.0)
@@ -373,16 +373,16 @@ def generate_circuit_dynamics_svg(
         f'  <line x1="{ml}" y1="{safety_y:.1f}" x2="{ml + pw}" y2="{safety_y:.1f}" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,4"/>'
     )
     svg_parts.append(
-        f'  <text x="{ml + pw - 6}" y="{safety_y - 6:.1f}" text-anchor="end" font-size="9" fill="#f87171" font-weight="600">30% PNN Safety Floor</text>'
+        f'  <text x="{ml + pw - 6}" y="{safety_y - 6:.1f}" text-anchor="end" font-size="9" fill="#ef4444" font-weight="600">30% PNN Safety Floor</text>'
     )
 
     svg_parts.append(f'  <line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt + ph}" stroke="#94a3b8" stroke-width="1.5"/>')
     svg_parts.append(f'  <line x1="{ml}" y1="{mt + ph}" x2="{ml + pw}" y2="{mt + ph}" stroke="#94a3b8" stroke-width="1.5"/>')
     svg_parts.append(
-        f'  <text x="{ml - 14}" y="{mt - 10}" text-anchor="start" font-size="10" font-weight="600" fill="#cbd5e1">% of Physiological Baseline</text>'
+        f'  <text x="{ml - 14}" y="{mt - 10}" text-anchor="start" font-size="10" font-weight="600" fill="#475569">% of Physiological Baseline</text>'
     )
     svg_parts.append(
-        f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#cbd5e1">Simulation Duration (Days post-initiation)</text>'
+        f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Simulation Duration (Days post-initiation)</text>'
     )
 
     pnn_coords = [f"{tx(t):.1f},{ty(pnn):.1f}" for t, pnn, _ in parsed_pts]
@@ -399,13 +399,13 @@ def generate_circuit_dynamics_svg(
         f'  <line x1="{ml + 10}" y1="{mt + 10}" x2="{ml + 35}" y2="{mt + 10}" stroke="#8b5cf6" stroke-width="2.5"/>'
     )
     svg_parts.append(
-        f'  <text x="{ml + 40}" y="{mt + 14}" font-size="10" font-weight="600" fill="#cbd5e1">PNN Density (%)</text>'
+        f'  <text x="{ml + 40}" y="{mt + 14}" font-size="10" font-weight="600" fill="#475569">PNN Density (%)</text>'
     )
     svg_parts.append(
         f'  <line x1="{ml + 140}" y1="{mt + 10}" x2="{ml + 165}" y2="{mt + 10}" stroke="#06b6d4" stroke-width="2.5"/>'
     )
     svg_parts.append(
-        f'  <text x="{ml + 170}" y="{mt + 14}" font-size="10" font-weight="600" fill="#cbd5e1">pAKT Signaling (%)</text>'
+        f'  <text x="{ml + 170}" y="{mt + 14}" font-size="10" font-weight="600" fill="#475569">pAKT Signaling (%)</text>'
     )
 
     svg_parts.append("</svg>")
@@ -425,7 +425,7 @@ def render_studio_html(
 ) -> str:
     """Render full standalone HTML5 studio dashboard."""
     cards_html = []
-    colors = ["#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#ec4899"]
+    colors = ["#2563eb", "#10b981", "#8b5cf6", "#f59e0b", "#ec4899"]
     for idx, c in enumerate(compounds[:5]):
         color = colors[idx % len(colors)]
         ec50_str = f"{c.ec50_nm:.1f} nM" if c.ec50_nm is not None else "N/A"
