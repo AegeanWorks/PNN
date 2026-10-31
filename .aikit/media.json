@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "name": "PNN",
+  "repo": "PNN",
+  "has_ui": true,
+  "ui_kind": "web",
+  "palette": [
+    "#0a1210",
+    "#122a24",
+    "#34d399",
+    "#a7f3d0"
+  ],
+  "motif": "network",
+  "layout": "split",
+  "assets": {
+    "logo": {
+      "path": "assets/logo.jpg",
+      "status": "approved",
+      "commit": "",
+      "generated_at": "2026-10-28T16:03:38",
+      "review": {
+        "status": "approved",
+        "reviewer": "subagent:vision-review",
+        "method": "vision",
+        "notes": "PNN NEUROSCIENCE",
+        "score": 90,
+        "reviewed_at": "2026-10-28T17:52:09"
+      }
+    },
+    "social_preview": {
+      "path": "assets/social-preview.png",
+      "status": "approved",
+      "commit": "",
+      "generated_at": "2026-10-28T17:40:44",
+      "review": {
+        "status": "approved",
+        "reviewer": "subagent:vision-review",
+        "method": "vision",
+        "notes": "PNN\nNEUROSCIENCE",
+        "score": 90,
+        "reviewed_at": "2026-10-28T17:52:09"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "path": "assets/screenshots/2026-10-28-studio.png",
+      "alt": "PNN interface at 2026-10-28",
+      "caption": "PNN interface captured from studio.html",
+      "commit": "70d7c48184f1de1c15226fe0bcd34bd2ed7ef9ae",
+      "taken_at": "2026-10-28",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "subagent:vision-review",
+        "method": "vision",
+        "notes": "Real non-blank UI: Discovery Studio dashboard with cards and charts; legible, unclipped.",
+        "score": 91,
+        "reviewed_at": "2026-10-28T11:49:29"
+      }
+    }
+  ],
+  "model": "community/scriptsnsenses-sys/flux-2-dev-free"
+}

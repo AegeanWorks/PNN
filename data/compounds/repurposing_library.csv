@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+PNN-REP-01,Trodusquemine-Analog,CC(C)CCCC(C)C1CCC2C1(CCC3C2CC=C4C3(CCC(C4)N)C)C,387.69,3.45,26.0,2,1,5,8.9,basic,0.35,0.72,0.30,14.0,5.0,18.0
+PNN-REP-02,Bromocriptine-Frag,CC(C)CC1C(=O)N2CCCC2C(=O)N1C3=CC=CC=C3,313.40,2.15,58.6,0,4,2,7.5,neutral,0.05,0.50,0.48,25.0,11.0,85.0
+PNN-REP-03,Metformin-Scaffold,CNC(=N)NC(=N)NC1=CC=CC=C1,177.21,1.55,69.2,3,3,2,8.4,basic,-0.50,0.20,0.60,8.0,3.0,320.0
+PNN-REP-04,Riluzole-Derivative,FC(F)(F)OC1=CC=C2N=C(SC2=C1)NCC3CCNCC3,331.36,3.10,41.4,2,4,3,8.7,basic,0.25,0.62,0.55,19.0,8.0,95.0
+PNN-REP-05,Donepezil-Fragment,COC1=C(C=C2C(=C1)CC(C2=O)CC3CCNCC3)OC,289.37,2.20,47.9,1,3,3,8.8,basic,0.10,0.55,0.65,15.0,9.0,110.0

@@ -1,0 +1,9 @@
+compound_id,ec50_nm,max_degradation_pct,hill_slope,test_concentration_um,substrate
+PNN-101,24.0,92.5,1.2,10.0,DQ-CS
+PNN-102,45.0,84.0,1.1,10.0,DQ-CS
+PNN-REP-01,18.0,98.0,1.4,10.0,DQ-CS
+PNN-REP-02,85.0,76.5,1.0,10.0,DQ-CS
+PNN-104,250.0,62.0,0.9,10.0,DQ-CS
+PNN-106,850.0,38.0,0.8,10.0,DQ-CS
+PNN-107,12000.0,18.0,0.7,10.0,DQ-CS
+PNN-REJ-1,85000.0,8.0,0.5,10.0,DQ-CS

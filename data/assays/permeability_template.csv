@@ -1,0 +1,9 @@
+compound_id,assay_type,pe_1e6_cm_s,logbb,papp_ab_1e6_cm_s,efflux_ratio,pgp_substrate
+PNN-101,PAMPA,6.5,0.15,,,false
+PNN-102,PAMPA,4.8,-0.05,,,false
+PNN-REP-01,MDCK,,0.35,8.2,1.2,false
+PNN-REP-02,PAMPA,3.8,0.05,,,false
+PNN-104,PAMPA,2.1,-0.45,,,false
+PNN-106,MDCK,,,-0.30,4.5,true
+PNN-107,PAMPA,1.5,-0.20,,,false
+PNN-REJ-1,PAMPA,0.2,-2.50,,,true

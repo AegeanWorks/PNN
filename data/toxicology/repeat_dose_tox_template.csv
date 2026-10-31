@@ -1,0 +1,8 @@
+compound_id,species,study_type,duration_days,noael_mg_kg,loael_mg_kg,target_organ,findings
+PNN-101,rat,REPEAT_DOSE_28D,28,50.0,100.0,liver,Reversible ALT elevation at LOAEL only
+PNN-101,dog,REPEAT_DOSE_28D,28,30.0,60.0,none,No adverse findings at NOAEL
+PNN-102,rat,REPEAT_DOSE_28D,28,40.0,80.0,kidney,Tubular basophilia at LOAEL only
+PNN-102,dog,REPEAT_DOSE_28D,28,20.0,40.0,none,No adverse findings at NOAEL
+PNN-REP-01,rat,REPEAT_DOSE_28D,28,60.0,120.0,none,No adverse findings at NOAEL
+PNN-REP-01,dog,REPEAT_DOSE_28D,28,35.0,70.0,none,No adverse findings at NOAEL
+PNN-104,rat,REPEAT_DOSE_28D,28,15.0,30.0,liver,Hepatocellular hypertrophy at LOAEL only

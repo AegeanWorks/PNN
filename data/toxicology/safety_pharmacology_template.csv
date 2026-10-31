@@ -1,0 +1,6 @@
+compound_id,herg_ic50_um,free_cmax_um,cyp3a4_inhibition_pct,cyp2d6_inhibition_pct,ames_positive,micronucleus_positive,respiratory_noael_mg_kg,cns_noael_mg_kg
+PNN-101,18.0,0.35,12.5,8.0,false,false,75.0,60.0
+PNN-102,12.0,0.30,18.0,11.0,false,false,50.0,45.0
+PNN-REP-01,25.0,0.20,8.0,5.0,false,false,90.0,80.0
+PNN-104,9.5,0.40,34.0,15.0,false,false,30.0,25.0
+PNN-REJ-1,1.2,1.50,85.0,40.0,true,false,10.0,10.0
