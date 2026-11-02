@@ -91,6 +91,18 @@ contract, a dependency, a data format or the architecture; IDs are consecutive a
 - **Decision**: (1) Add ADAMTS4 (PDB 2RJP, zinc catalytic domain with S1\' pocket) and MMP9 (PDB 1GKC, gelatinase catalytic domain) invariants, key catalytic residues, and Vina grid exports to pnn.target. (2) Add generate_circuit_dynamics_svg and extend render_studio_html in pnn.studio to surface IND scaling comparisons, safety pharmacology evaluations, target invariants, and 14-day pulsatile circuit dynamics in studio.html while strictly preserving G-001/G-002 triage disclaimers. (3) Anchor default data paths to PROJECT_ROOT across runner.py, run.py, start.bat, and start.sh so execution is location-independent.
 - **Consequences**: Discovery workflows evaluate endogenous aggrecanase mechanisms directly, and all preclinical-to-IND translational evidence is unified into an offline-ready HTML5 dashboard. Default paths resolve cleanly from any working directory or desktop launcher.
 
+### ADR-012: Full-height studio keeper regenerated from the pipeline
+
+- **Date**: 2026-11-03
+
+- **Status**: Accepted
+
+- **Context**: The 2026-10-28 keeper predates the studio chart-colour, narrow-screen and landmark changes, and `pnn/studio.py` grew 303 lines since; only the dashboard top was ever captured.
+
+- **Decision**: Regenerate with `python run.py` (deterministic: root `studio.html` byte-identical to `output/studio.html`) and capture the full 1440x2400 report with headless Edge over plain `http.server`: stages, candidates, radar, docking heatmap, PK, circuit dynamics and IND dossier. Register in `.aikit/media.json` and the README `aegean:screenshots` block; the regenerated `studio.html`/`output/` files are not committed.
+
+- **Consequences**: README proves the current turnkey report end to end. Reproduce with the run plus headless `--screenshot` above.
+
 ## Licensing migration (first license)
 
 - New versions use the Aegean Science License 1.1 (ASL-1.1).

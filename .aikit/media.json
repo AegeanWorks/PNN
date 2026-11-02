@@ -61,6 +61,25 @@
         "score": 91,
         "reviewed_at": "2026-10-28T11:49:29"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-03-studio.png",
+      "alt": "PNN discovery studio at 2026-11-03",
+      "caption": "Full turnkey report from python run.py served over plain http: stages, five candidates, radar, docking heatmap, PK, circuit dynamics and IND dossier.",
+      "commit": "0fcad2aec2f8b0c91e52a78c04133280c2fa0d9e",
+      "taken_at": "2026-11-03",
+      "viewport": "1440x2400",
+      "width": 1440,
+      "height": 2400,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:kilo",
+        "method": "vision",
+        "notes": "Real headless-Edge capture of the regenerated studio (run.py output deterministic, root copy identical): all sections legible, charts rendered, evidence-invariant banner intact.",
+        "score": 94,
+        "reviewed_at": "2026-11-03"
+      }
     }
   ],
   "model": "community/scriptsnsenses-sys/flux-2-dev-free"

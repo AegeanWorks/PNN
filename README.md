@@ -426,7 +426,7 @@ Free for non-commercial research and teaching under the Aegean Science License 1
 <!-- aegean:screenshots:start -->
 ## Screenshots
 
-<a href="https://github.com/AegeanWorks/PNN/commit/70d7c48"><img src="assets/screenshots/2026-10-28-studio.png" alt="PNN interface at 2026-10-28"></a>
+<a href="https://github.com/AegeanWorks/PNN/commit/0fcad2a"><img src="assets/screenshots/2026-11-03-studio.png" alt="PNN discovery studio at 2026-11-03"></a>
 
-*commit `70d7c48` · 2026-10-28*
+*commit `0fcad2a` · 2026-11-03 · viewport 1440x2400 · full report after `python run.py` regeneration*
 <!-- aegean:screenshots:end -->
