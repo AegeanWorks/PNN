@@ -1,38 +1,16 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "pnn-studio-landmarks-v1",
+    "task_id": "pnn-audit-waves-0-30-v1",
     "last_phase": "phase 3",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1793363404.544608,
-    "owner": "opencode:pnn-landmarks",
-    "started_by": "opencode:pnn-landmarks",
-    "continuations": [],
-    "completed_at": 1793363404.8589985
+    "active_phase": 3,
+    "status": "in_progress",
+    "updated_at": 1793723171.5143402,
+    "owner": "kilo:PNN-audit",
+    "started_by": "kilo:PNN-audit",
+    "continuations": []
   },
   "checkpoints": [
-    {
-      "task_id": "pnn-studio-chart-data-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Hidden data tables added for radar, heatmap and PK charts; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793356924.381265,
-      "timestamp_str": "2026-10-30 13:42:04",
-      "agent": "opencode:pnn-chart-data"
-    },
-    {
-      "task_id": "pnn-studio-chart-data-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-chart-data-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793356925.8206086,
-      "timestamp_str": "2026-10-30 13:42:05",
-      "agent": "opencode:pnn-chart-data"
-    },
     {
       "task_id": "pnn-studio-circuit-data-v1",
       "phase": "phase 2",
@@ -260,6 +238,35 @@
       "timestamp": 1793363404.859,
       "timestamp_str": "2026-10-30 15:30:04",
       "agent": "opencode:pnn-landmarks"
+    },
+    {
+      "task_id": "pnn-audit-waves-0-30-v1",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Audit waves 0,10,20,30 (first 30 of 49 commits); verify G-001/G-002/G-003, ADR-001..ADR-011, README gate, 210 tests",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793723069.2924666,
+      "timestamp_str": "2026-11-03 19:24:29",
+      "agent": "kilo:PNN-audit",
+      "impact_assessment": {
+        "why": "Stale helper tools/update_readme_tree.py NEW_TREE predates licensing/brand/safety work and would regress README if run",
+        "benefits": "Evidence-backed wave audit plus one minimal tool sync; gates stay green",
+        "risks": "contract: helper string constant only; dependency: stdlib only; concurrency: none; state: README untouched, tool file only",
+        "mitigation": "Failing-first assert on NEW_TREE contents; full suite plus aikit check PNN before commit"
+      },
+      "plan_digest": "d15e0708105e2721ed9b54a275a7da8ad1f3a9b891622a9bd973ec0346e86518"
+    },
+    {
+      "task_id": "pnn-audit-waves-0-30-v1",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[2/2] Sync tools/update_readme_tree.py NEW_TREE to wave-30 README tree (13 lines, 630 chars); failing-first assert now passes; 210 tests OK; aikit check 4/4; checklists: passed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1793723171.5143402,
+      "timestamp_str": "2026-11-03 19:26:11",
+      "agent": "kilo:PNN-audit"
     }
   ]
 }

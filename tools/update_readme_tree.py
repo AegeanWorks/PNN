@@ -1,4 +1,4 @@
-"""Update README directory tree with translational modules and tests."""
+"""Update README directory tree to match the current repository layout."""
 
 from pathlib import Path
 
@@ -8,6 +8,12 @@ NEW_TREE = """```text
 PNN/
 ├── README.md                      <- This file - project overview
 ├── .gitignore                     <- AIKit transient-state baseline
+├── ASSETS.md
+├── LICENSE
+├── LICENSES/
+├── REUSE.toml
+├── assets/
+├── COMMERCIAL.md
 ├── literature_review.md           <- Comprehensive literature findings
 ├── research_framework.md          <- Methodology & experimental design
 ├── run.py                         <- One-click turnkey pipeline entrypoint
@@ -34,7 +40,8 @@ PNN/
 │   ├── experimental_protocols.md  <- In vitro/in vivo assay protocols
 │   └── preclinical_pipeline.md    <- Phase 4 in vivo PK/PD and candidate qualification
 ├── translational/                 <- Clinical translation and regulatory filing
-│   └── ind_filing.md              <- Human allometric scaling and IND dossier design
+│   ├── ind_filing.md              <- Human allometric scaling and IND dossier design
+│   └── safety_package.md          <- IND-enabling toxicology and safety pharmacology contract
 ├── data/                          <- Data storage
 │   ├── compounds/                 <- Compound libraries
 │   │   ├── repurposing_library.csv  <- Annotated CNS repurposing library
@@ -52,6 +59,9 @@ PNN/
 │   ├── preclinical/               <- In vivo PK/PD templates and datasets
 │   │   ├── pd_metabolic_template.csv  <- In vivo PD WFA/ITT metabolic outcome template
 │   │   └── pk_timecourse_template.csv  <- In vivo PK concentration-time series template
+│   ├── toxicology/                <- IND-enabling toxicology and safety pharmacology data
+│   │   ├── repeat_dose_tox_template.csv  <- Repeat-dose NOAEL/LOAEL study template
+│   │   └── safety_pharmacology_template.csv  <- hERG/CYP/genotoxicity panel template
 │   └── literature/                <- Extracted literature data (empty until populated)
 ├── docs/                          <- Documentation
 │   ├── cold_start_guide.md        <- AI cold-start instructions
@@ -76,6 +86,7 @@ PNN/
 │   ├── reports.py                 <- Atomic CSV/JSON writers
 │   ├── rules.py                   <- CNS/BBB property rules
 │   ├── runner.py                  <- One-click discovery pipeline runner
+│   ├── safety.py                  <- IND-enabling toxicology and safety pharmacology assessment
 │   ├── sar.py                     <- Bemis-Murcko scaffold extraction and SAR activity clustering
 │   ├── screen.py                  <- Tiering, scoring and ranking
 │   ├── selection.py               <- End-to-end pipeline execution and lead report
@@ -103,6 +114,7 @@ PNN/
     ├── test_rank.py               <- Consensus shortlist and CLI contract
     ├── test_rules.py              <- Rule boundaries
     ├── test_run.py                <- Turnkey runner and launcher tests
+    ├── test_safety.py             <- IND-enabling toxicology and safety pharmacology tests
     ├── test_sar.py                <- Bemis-Murcko scaffold extraction and SAR tests
     ├── test_screen.py             <- Tiering, ranking and CSV ingestion
     ├── test_studio.py             <- Interactive HTML/SVG studio tests
