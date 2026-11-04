@@ -412,6 +412,15 @@ def _parse_opt_float(val: Optional[str]) -> Optional[float]:
         return None
 
 
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None."""
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
+
+
 def run_bioisostere_pipeline(
     compounds_path: Path,
     target_parent_id: Optional[str] = None,
@@ -432,8 +441,8 @@ def run_bioisostere_pipeline(
             raise BioisostereError(f"Compounds CSV missing compound_id or smiles: {compounds_path}")
 
         for row in reader:
-            cid = row[cid_col].strip()
-            smi = row[smi_col].strip()
+            cid = _safe_cell(row.get(cid_col))
+            smi = _safe_cell(row.get(smi_col))
             if not cid or not smi:
                 continue
             if target_parent_id and cid != target_parent_id:

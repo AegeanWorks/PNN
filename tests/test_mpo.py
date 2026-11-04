@@ -66,6 +66,18 @@ class TestMpoAnalysisAndCLI(unittest.TestCase):
         with self.assertRaises(MpoError):
             run_mpo_analysis(Path("non_existent_compounds.csv"))
 
+    def test_short_row_raises_mpo_error(self) -> None:
+        """Short CSV rows raise MpoError, not AttributeError."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp_path = Path(tmp_dir) / "short.csv"
+            comp_path.write_text(
+                "compound_id,name,mw,logp,tpsa,hbd\n"
+                "PNN-9,Short,350\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(MpoError):
+                run_mpo_analysis(compounds_path=comp_path)
+
     def test_run_mpo_analysis_valid(self) -> None:
         comp_path = Path("data/compounds/vendor_library.csv")
         cand_path = Path("data/preclinical/pk_timecourse_template.csv")

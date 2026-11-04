@@ -8,9 +8,9 @@
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `51`
 - **Total Classes**: `89`
-- **Total Top-Level Functions**: `213`
-- **Total Class Methods**: `253`
-- **Total Source Lines**: `13123`
+- **Total Top-Level Functions**: `215`
+- **Total Class Methods**: `255`
+- **Total Source Lines**: `13167`
 
 ---
 
@@ -62,7 +62,7 @@
 ### [`pnn/bioisostere.py`](pnn/bioisostere.py)
 > *Bioisosteric replacement and metabolic soft-spot optimization engine for PNN.*
 
-**Size**: `533` lines (`19895` bytes)
+**Size**: `542` lines (`20149` bytes)
 
 **Classes:**
 - `class BioisostereError` - *Raised when compound SMILES or bioisosteric transformation rules are invalid.*
@@ -80,6 +80,7 @@
 - `def generate_bioisosteres(parent_id, smiles, mw, logp, tpsa, hbd, hba, rotb, pka)` - *Apply rule-based bioisosteric transformations to generate virtual lead analogs.*
 - `def render_bioisostere_report(analogs, parent_id)` - *Render a bioisostere generation and optimization Markdown report.*
 - `def _parse_opt_float(val)` - *Parse optional numeric float string, returning None for empty or non-numeric cells.*
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None.*
 - `def run_bioisostere_pipeline(compounds_path, target_parent_id)` - *Load parent compound and generate bioisosteric analogs across all rules.*
 - `def build_parser()`
 - `def main(argv)`
@@ -236,7 +237,7 @@
 ### [`pnn/mpo.py`](pnn/mpo.py)
 > *Phase 5 Multiparametric Optimization (MPO) and candidate profiling engine for PNN.*
 
-**Size**: `463` lines (`19141` bytes)
+**Size**: `472` lines (`19413` bytes)
 
 **Classes:**
 - `class MpoError` - *Raised when MPO input data is invalid or missing required metrics.*
@@ -249,6 +250,7 @@
 - `def profile_candidate(compound_id, name, mw, logp, tpsa, hbd, pka, ec50_nm, brain_kp, oral_f_pct, selectivity_index)` - *Calculate CNS MPO, multi-domain desirability functions, and identify optimization liabilities.*
 - `def render_mpo_report(profiles)` - *Render comprehensive Phase 5 Lead Optimization & MPO Profiling markdown report.*
 - `def _parse_opt_float(val)` - *Parse optional numeric float string, returning None for empty or non-numeric cells.*
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None.*
 - `def run_mpo_analysis(compounds_path, candidates_path, assays_path)` - *Ingest datasets, compute MPO and composite desirability, and generate profiles.*
 - `def build_parser()`
 - `def main(argv)`
@@ -586,7 +588,7 @@
 ### [`tests/test_bioisostere.py`](tests/test_bioisostere.py)
 > *Unit tests for bioisosteric replacement and metabolic soft-spot optimizer.*
 
-**Size**: `150` lines (`5365` bytes)
+**Size**: `164` lines (`6040` bytes)
 
 **Classes:**
 - `class TestBioisostere`
@@ -597,6 +599,7 @@
   - Method `.test_cyclopropyl_delta_is_not_a_rotatable_increase()`
   - Method `.test_run_bioisostere_pipeline_missing_file_raises()`
   - Method `.test_run_bioisostere_pipeline_vendor_lib()`
+  - Method `.test_short_trailing_row_is_skipped()` - *Short CSV rows without SMILES are skipped, not crashed on.*
   - Method `.test_render_bioisostere_report()`
   - Method `.test_bioisostere_cli()`
 
@@ -738,7 +741,7 @@
 ---
 
 ### [`tests/test_mpo.py`](tests/test_mpo.py)
-**Size**: `120` lines (`4281` bytes)
+**Size**: `132` lines (`4787` bytes)
 
 **Classes:**
 - `class TestMpoCalculations`
@@ -748,6 +751,7 @@
   - Method `.test_profile_deprioritized_liability_detection()`
 - `class TestMpoAnalysisAndCLI`
   - Method `.test_missing_compounds_raises()`
+  - Method `.test_short_row_raises_mpo_error()` - *Short CSV rows raise MpoError, not AttributeError.*
   - Method `.test_run_mpo_analysis_valid()`
   - Method `.test_render_mpo_report()`
   - Method `.test_cli_execution_success()`

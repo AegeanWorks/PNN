@@ -282,6 +282,15 @@ def _parse_opt_float(val: Optional[str]) -> Optional[float]:
         return None
 
 
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None."""
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
+
+
 def run_mpo_analysis(
     compounds_path: Path,
     candidates_path: Optional[Path] = None,
@@ -302,9 +311,9 @@ def run_mpo_analysis(
         if not cid_col:
             raise MpoError(f"Compounds CSV missing compound_id: {compounds_path}")
         for row in reader:
-            cid = row[cid_col].strip()
+            cid = _safe_cell(row.get(cid_col))
             if cid:
-                raw_compounds[cid] = {k: row[v].strip() for k, v in norm.items()}
+                raw_compounds[cid] = {k: _safe_cell(row.get(v)) for k, v in norm.items()}
 
     # Load candidates if available
     cand_data: Dict[str, Dict[str, float]] = {}
@@ -316,7 +325,7 @@ def run_mpo_analysis(
                 cid_col = norm.get("compound_id")
                 if cid_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
+                        cid = _safe_cell(row.get(cid_col))
                         c_dict: Dict[str, float] = {}
                         if "brain_plasma_ratio" in norm:
                             val = _parse_opt_float(row[norm["brain_plasma_ratio"]])
@@ -339,7 +348,7 @@ def run_mpo_analysis(
                 cid_col = norm.get("compound_id")
                 if cid_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
+                        cid = _safe_cell(row.get(cid_col))
                         a_dict: Dict[str, float] = {}
                         if "ec50_nm" in norm or "pnn_ec50_nm" in norm:
                             col = norm.get("ec50_nm") or norm.get("pnn_ec50_nm")
@@ -355,7 +364,7 @@ def run_mpo_analysis(
 
     profiles: List[MpoProfile] = []
     for cid, row in raw_compounds.items():
-        name = row.get("name", cid)
+        name = row.get("name") or cid
         mw = _parse_opt_float(row.get("mw"))
         logp = _parse_opt_float(row.get("logp"))
         tpsa = _parse_opt_float(row.get("tpsa"))

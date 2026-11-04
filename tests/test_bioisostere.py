@@ -106,6 +106,20 @@ class TestBioisostere(unittest.TestCase):
             self.assertGreater(a.mw, 0.0)
             self.assertTrue(_ring_labels_balanced(a.analog_smiles), a.analog_smiles)
 
+    def test_short_trailing_row_is_skipped(self) -> None:
+        """Short CSV rows without SMILES are skipped, not crashed on."""
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp_path = Path(tmp_dir) / "short.csv"
+            comp_path.write_text(
+                "compound_id,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds\n"
+                "PNN-9,c1ccccc1C(=O)NC1CCOCC1,320.0,2.4,50.0,1,3,4\n"
+                "PNN-10\n",
+                encoding="utf-8",
+            )
+            analogs = run_bioisostere_pipeline(comp_path)
+            self.assertGreater(len(analogs), 0)
+            self.assertTrue(all(a.parent_id == "PNN-9" for a in analogs))
+
     def test_render_bioisostere_report(self) -> None:
         analogs = generate_bioisosteres(
             parent_id="PNN-101",

@@ -115,6 +115,18 @@ contract, a dependency, a data format or the architecture; IDs are consecutive a
 
 - **Consequences**: Dashboards can no longer overstate binding evidence, and malformed libraries fail with an actionable message and `rc=1`. Turnkey runs with real docking data are byte-equivalent in populated cells; only the previously-fabricated missing-data cells change to `N/A`.
 
+### ADR-014: Same None-cell hardening for MPO and bioisostere loaders
+
+- **Date**: 2026-11-04
+
+- **Status**: Accepted
+
+- **Context**: Wave-2 audit of the `a2fcb77` repair slice found the same short-row defect wave 1 fixed in `pnn.studio`: `pnn/mpo.py` and `pnn/bioisostere.py` called `.strip()` on `csv.DictReader` cells that are `None` for short rows, escaping as `AttributeError` tracebacks instead of the `What/Why/Fix` contract.
+
+- **Decision**: Add a local `_safe_cell` helper to both modules and route every `compound_id`/`smiles`/library cell through it; keep the strict missing-property errors (`MpoError`, `BioisostereError`) and skip only rows with no compound or no SMILES. Empty `name` falls back to `compound_id` in MPO.
+
+- **Consequences**: Malformed libraries fail with an actionable message and `rc=1`, and ragged trailing rows no longer crash analog generation. No change to valid-input outputs.
+
 ## Licensing migration (first license)
 
 - New versions use the Aegean Science License 1.1 (ASL-1.1).
