@@ -75,6 +75,12 @@ class RunnerError(ValueError):
     """Raised when one-click pipeline runner cannot execute or find input data."""
 
 
+def is_daily_timepoint(time_h: float, period_h: float = 24.0, tolerance_h: float = 1e-6) -> bool:
+    """Return True when a simulation time falls on a whole-day boundary."""
+    remainder = time_h % period_h
+    return min(remainder, period_h - remainder) <= tolerance_h
+
+
 @dataclass(frozen=True)
 class RunSummary:
     curated_count: int
@@ -315,8 +321,14 @@ def execute_turnkey_pipeline(
         else None
     )
     # The chart plots every hourly point; the text table stays readable at daily resolution.
+    def _keep_daily(row: dict) -> bool:
+        try:
+            return is_daily_timepoint(float(row["time_h"]))
+        except (KeyError, TypeError, ValueError):
+            return False
+
     circuit_table_points = (
-        [row for row in circuit_points if float(row["time_h"]) % 24.0 == 0.0]
+        [row for row in circuit_points if _keep_daily(row)]
         if circuit_points
         else None
     )

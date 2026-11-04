@@ -7,6 +7,7 @@ from unittest.mock import patch
 from pnn.runner import (
     RunnerError,
     execute_turnkey_pipeline,
+    is_daily_timepoint,
     main,
     print_run_banner,
 )
@@ -104,6 +105,14 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue((out_dir / "studio.html").is_file())
             self.assertTrue((out_dir / "safety_assessments.csv").is_file())
             self.assertTrue((out_dir / "safety_package.md").is_file())
+
+    def test_daily_timepoint_tolerance(self) -> None:
+        self.assertTrue(is_daily_timepoint(0.0))
+        self.assertTrue(is_daily_timepoint(24.0))
+        self.assertTrue(is_daily_timepoint(24.0000000005))
+        self.assertTrue(is_daily_timepoint(47.9999999995))
+        self.assertFalse(is_daily_timepoint(12.0))
+        self.assertFalse(is_daily_timepoint(36.5))
 
     @patch("webbrowser.open_new_tab")
     def test_runner_cli_execution_auto_opens_browser(self, mock_open) -> None:

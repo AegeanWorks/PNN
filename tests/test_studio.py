@@ -280,6 +280,49 @@ class TestStudioDataLoader(unittest.TestCase):
         with self.assertRaises(StudioError):
             load_studio_data(Path("non_existent.csv"))
 
+    def test_missing_docking_stays_missing(self) -> None:
+        """Absent docking evidence must not be synthesized (ADR-010/ADR-013)."""
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp_path = Path(tmp_dir) / "compounds.csv"
+            comp_path.write_text(
+                "compound_id,name,mw,logp,tpsa,hbd,hba,rotatable_bonds\n"
+                "PNN-999,SynthCheck,350,2.5,55,1,4,3\n",
+                encoding="utf-8",
+            )
+            compounds, _ = load_studio_data(compounds_path=comp_path)
+            self.assertEqual(len(compounds), 1)
+            self.assertEqual(compounds[0].docking_scores, {})
+
+    def test_malformed_numeric_raises_studio_error(self) -> None:
+        """Empty required physicochemical cells raise StudioError, not ValueError."""
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp_path = Path(tmp_dir) / "bad.csv"
+            comp_path.write_text(
+                "compound_id,name,mw,logp,tpsa,hbd,hba,rotatable_bonds\n"
+                "PNN-1,Bad,,2.0,50,1,3,2\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(StudioError):
+                load_studio_data(compounds_path=comp_path)
+
+    def test_short_row_none_cells_raise_studio_error(self) -> None:
+        """Short CSV rows (None cells) raise StudioError instead of AttributeError."""
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp_path = Path(tmp_dir) / "short.csv"
+            comp_path.write_text(
+                "compound_id,name,mw,logp,tpsa,hbd,hba,rotatable_bonds\n"
+                "PNN-2,Short,350\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(StudioError):
+                load_studio_data(compounds_path=comp_path)
+
     def test_load_studio_data_valid(self) -> None:
         project_root = Path(__file__).resolve().parent.parent
         comp_path = project_root / "data/compounds/vendor_library.csv"

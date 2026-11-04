@@ -283,6 +283,31 @@ def generate_pk_curve_svg(
     return "\n".join(svg_parts)
 
 
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None."""
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value.strip()
+    return str(value).strip()
+
+
+def _parse_required_float(raw: str, field: str, compound_id: str) -> float:
+    """Parse a required numeric studio field, raising StudioError on missing data."""
+    parsed = _parse_opt_float(raw)
+    if parsed is None:
+        raise StudioError(f"compound {compound_id} has missing or non-numeric {field}: {raw!r}")
+    return parsed
+
+
+def _parse_required_int(raw: str, field: str, compound_id: str) -> int:
+    """Parse a required integer studio field, raising StudioError on missing data."""
+    parsed = _parse_opt_float(raw)
+    if parsed is None:
+        raise StudioError(f"compound {compound_id} has missing or non-numeric {field}: {raw!r}")
+    return int(parsed)
+
+
 def _parse_circuit_points(
     simulation_points: Sequence[Mapping[str, object]],
 ) -> List[Tuple[float, float, float]]:
@@ -1063,9 +1088,9 @@ def load_studio_data(
         if not cid_col:
             raise StudioError(f"Compounds CSV missing compound_id: {compounds_path}")
         for row in reader:
-            cid = row[cid_col].strip()
+            cid = _safe_cell(row.get(cid_col))
             if cid:
-                raw_compounds[cid] = {k: row[v].strip() for k, v in norm.items()}
+                raw_compounds[cid] = {k: _safe_cell(row.get(v)) for k, v in norm.items()}
 
     # Load docking scores
     dock_map: Dict[str, Dict[str, float]] = {}
@@ -1080,9 +1105,9 @@ def load_studio_data(
                 score_col = norm.get("vina_affinity_kcal_mol") or norm.get("score")
                 if cid_col and tgt_col and score_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
-                        tgt = row[tgt_col].strip()
-                        val = _parse_opt_float(row[score_col])
+                        cid = _safe_cell(row.get(cid_col))
+                        tgt = _safe_cell(row.get(tgt_col))
+                        val = _parse_opt_float(row.get(score_col))
                         if val is not None:
                             dock_map.setdefault(cid, {})[tgt] = val
 
@@ -1097,8 +1122,8 @@ def load_studio_data(
                 ec_col = norm.get("ec50_nm") or norm.get("pnn_ec50_nm")
                 if cid_col and ec_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
-                        ec_val = _parse_opt_float(row[ec_col])
+                        cid = _safe_cell(row.get(cid_col))
+                        ec_val = _parse_opt_float(row.get(ec_col))
                         if ec_val is not None:
                             ec50_map[cid] = ec_val
 
@@ -1116,11 +1141,11 @@ def load_studio_data(
                 conc_col = norm.get("concentration_ng_ml")
                 if cid_col and route_col and tissue_col and time_col and conc_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
-                        route = row[route_col].strip().upper()
-                        tissue = row[tissue_col].strip().lower()
-                        t = _parse_opt_float(row[time_col])
-                        c = _parse_opt_float(row[conc_col])
+                        cid = _safe_cell(row.get(cid_col))
+                        route = _safe_cell(row.get(route_col)).upper()
+                        tissue = _safe_cell(row.get(tissue_col)).lower()
+                        t = _parse_opt_float(row.get(time_col))
+                        c = _parse_opt_float(row.get(conc_col))
                         if t is not None and c is not None:
                             pk_map.setdefault(cid, {}).setdefault(f"{route}_{tissue}", []).append((t, c))
 
@@ -1137,25 +1162,25 @@ def load_studio_data(
                 f_col = norm.get("oral_bioavailability_pct")
                 if cid_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
+                        cid = _safe_cell(row.get(cid_col))
                         if kp_col:
-                            kp_val = _parse_opt_float(row[kp_col])
+                            kp_val = _parse_opt_float(row.get(kp_col))
                             if kp_val is not None:
                                 kp_map[cid] = kp_val
                         if f_col:
-                            f_val = _parse_opt_float(row[f_col])
+                            f_val = _parse_opt_float(row.get(f_col))
                             if f_val is not None:
                                 f_map[cid] = f_val
 
     compounds: List[StudioCompound] = []
     for cid, row in raw_compounds.items():
-        name = row.get("name", cid)
-        mw = float(row.get("mw", 300.0))
-        logp = float(row.get("logp", 2.0))
-        tpsa = float(row.get("tpsa", 50.0))
-        hbd = int(float(row.get("hbd", 1)))
-        hba = int(float(row.get("hba", 3)))
-        rotb = int(float(row.get("rotatable_bonds", 3)))
+        name = row.get("name") or cid
+        mw = _parse_required_float(row.get("mw", ""), "mw", cid)
+        logp = _parse_required_float(row.get("logp", ""), "logp", cid)
+        tpsa = _parse_required_float(row.get("tpsa", ""), "tpsa", cid)
+        hbd = _parse_required_int(row.get("hbd", ""), "hbd", cid)
+        hba = _parse_required_int(row.get("hba", ""), "hba", cid)
+        rotb = _parse_required_int(row.get("rotatable_bonds", ""), "rotatable_bonds", cid)
 
         ec50 = ec50_map.get(cid)
         if ec50 is None and "pnn_ec50_nm" in row:
@@ -1171,16 +1196,9 @@ def load_studio_data(
             if frac is not None:
                 oral_f = frac * 100.0
 
-        scores = dock_map.get(cid, {})
-        # If no specific docking targets exist, synthesize reasonable estimates for heatmap display
-        if not scores:
-            scores = {
-                "PTPsigma": -8.5 if "101" in cid or "REP-01" in cid else (-7.8 if "102" in cid else -6.2),
-                "LAR": -7.2 if "101" in cid else -6.5,
-                "NgR1": -7.5 if "101" in cid or "102" in cid else -5.8,
-                "MMP2": -6.0,
-                "ChABC": -5.5,
-            }
+        # Missing docking evidence stays missing: the heatmap renders N/A.
+        # See ADR-010/ADR-013: never synthesize binding affinities for display.
+        scores = dict(dock_map.get(cid, {}))
 
         c_pk = pk_map.get(cid, {})
 

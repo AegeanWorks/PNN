@@ -103,6 +103,18 @@ contract, a dependency, a data format or the architecture; IDs are consecutive a
 
 - **Consequences**: README proves the current turnkey report end to end. Reproduce with the run plus headless `--screenshot` above.
 
+### ADR-013: Studio shows missing docking as N/A and fails cleanly on bad physicochemistry
+
+- **Date**: 2026-11-04
+
+- **Status**: Accepted
+
+- **Context**: Wave-1 audit reproduced two studio defects: (1) `load_studio_data` synthesized PTPsigma/LAR/NgR1/MMP2/ChABC affinities from compound-ID substrings when no docking CSV was supplied, so the heatmap and its screen-reader table displayed invented binding energies; (2) required `mw/logp/tpsa/hbd/hba/rotatable_bonds` used raw `float()`/`int()` plus bare `.strip()` on possibly-None CSV cells, so one empty cell escaped as a `ValueError` traceback instead of the `What/Why/Fix` contract. `runner.py` also filtered daily circuit rows with exact `float % 24.0 == 0.0`.
+
+- **Decision**: (1) Drop the synthetic fallback; missing docking stays `{}` and renders as `N/A` per ADR-010. (2) Parse required numerics via `_parse_required_float/_int` raising `StudioError`, read every CSV cell via `_safe_cell`, and default an empty `name` to `compound_id`. (3) Add `runner.is_daily_timepoint` with 1us tolerance and a `KeyError/TypeError/ValueError`-safe daily filter.
+
+- **Consequences**: Dashboards can no longer overstate binding evidence, and malformed libraries fail with an actionable message and `rc=1`. Turnkey runs with real docking data are byte-equivalent in populated cells; only the previously-fabricated missing-data cells change to `N/A`.
+
 ## Licensing migration (first license)
 
 - New versions use the Aegean Science License 1.1 (ASL-1.1).

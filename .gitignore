@@ -11,3 +11,5 @@ node_modules/
 # Generated pipeline artifacts
 output/
 studio.html
+# AIKit transient state
+.aikit/*.log

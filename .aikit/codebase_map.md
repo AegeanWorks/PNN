@@ -8,9 +8,9 @@
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `51`
 - **Total Classes**: `89`
-- **Total Top-Level Functions**: `209`
-- **Total Class Methods**: `249`
-- **Total Source Lines**: `13041`
+- **Total Top-Level Functions**: `213`
+- **Total Class Methods**: `253`
+- **Total Source Lines**: `13123`
 
 ---
 
@@ -376,13 +376,14 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `496` lines (`19542` bytes)
+**Size**: `508` lines (`19986` bytes)
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
 - `class RunSummary`
 
 **Functions:**
+- `def is_daily_timepoint(time_h, period_h, tolerance_h)` - *Return True when a simulation time falls on a whole-day boundary.*
 - `def execute_turnkey_pipeline(vendor_csv, repurposing_csv, docking_csv, degradation_csv, permeability_csv, cytotoxicity_csv, pk_csv, pd_csv, out_dir, min_tier, emit_root, tox_csv, safety_pharm_csv)` - *Execute complete end-to-end PNN discovery workflow from libraries to interactive studio.*
 - `def print_run_banner(summary)` - *Print terminal summary banner for turnkey runner.*
 - `def build_parser()`
@@ -495,7 +496,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1295` lines (`52692` bytes)
+**Size**: `1313` lines (`53566` bytes)
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -508,6 +509,9 @@
 - `def generate_radar_svg(compounds, width, height)` - *Generate SVG radar chart for CNS drug-likeness physicochemical properties.*
 - `def generate_docking_heatmap_svg(compounds, targets, cell_w, cell_h)` - *Generate multi-target docking affinity heatmap in SVG.*
 - `def generate_pk_curve_svg(compounds, width, height)` - *Generate in vivo pharmacokinetic concentration-time profiles SVG.*
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None.*
+- `def _parse_required_float(raw, field, compound_id)` - *Parse a required numeric studio field, raising StudioError on missing data.*
+- `def _parse_required_int(raw, field, compound_id)` - *Parse a required integer studio field, raising StudioError on missing data.*
 - `def _parse_circuit_points(simulation_points)` - *(time_h, pnn_pct, akt_pct) for every complete, numeric simulation row, time-sorted.*
 - `def generate_circuit_dynamics_svg(simulation_points, width, height)` - *Generate SVG time-course chart for hypothalamic circuit dynamics (PNN turnover vs pAKT restoration).*
 - `def render_studio_html(compounds, radar_svg, heatmap_svg, pk_svg, circuit_svg, circuit_points, dossier_data, safety_data, targets_data)` - *Render full standalone HTML5 studio dashboard.*
@@ -864,13 +868,14 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `120` lines (`5614` bytes)
+**Size**: `129` lines (`6012` bytes)
 
 **Classes:**
 - `class TestTurnkeyRunner`
   - Method `.test_missing_vendor_library_raises()`
   - Method `.test_execute_turnkey_pipeline_success()`
   - Method `.test_runner_cli_execution_no_browser()`
+  - Method `.test_daily_timepoint_tolerance()`
   - Method `.test_runner_cli_execution_auto_opens_browser(mock_open)`
 
 ---
@@ -970,7 +975,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `386` lines (`16767` bytes)
+**Size**: `429` lines (`18617` bytes)
 
 **Classes:**
 - `class TestStudioRendering`
@@ -994,6 +999,9 @@
   - Method `.test_page_has_main_landmark_and_skip_link()`
 - `class TestStudioDataLoader`
   - Method `.test_missing_compounds_file_raises()`
+  - Method `.test_missing_docking_stays_missing()` - *Absent docking evidence must not be synthesized (ADR-010/ADR-013).*
+  - Method `.test_malformed_numeric_raises_studio_error()` - *Empty required physicochemical cells raise StudioError, not ValueError.*
+  - Method `.test_short_row_none_cells_raise_studio_error()` - *Short CSV rows (None cells) raise StudioError instead of AttributeError.*
   - Method `.test_load_studio_data_valid()`
 - `class TestStudioCLI`
   - Method `.test_cli_execution_success()`
