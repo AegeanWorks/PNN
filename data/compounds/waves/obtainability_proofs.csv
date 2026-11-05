@@ -66,3 +66,13 @@ W3-TCM-04,Sigma,E3531,,Sigma E3531 Evodiamine + Selleck S2382 + MCE HY-N0114,202
 W3-TCM-05,Sigma,R3277,,Sigma R3277 Rutaecarpine + Selleck S2349 + MCE HY-N0147,2026-11-05
 W3-TCM-07,Sigma,SML2345,,Sigma SML2345 Rhynchophylline + Selleck S9400 borderline-verify,2026-11-05
 W3-TCM-08,Sigma,G1660,,Sigma G1660 Galantamine-HBr + Selleck S3866/S1339 + MCE HY-76299 approved-AD-drug,2026-11-05
+W4-CNS-01,Sigma,R1529,,FDA1997 Requip + Sigma R1529 + Tocris 0983 + Selleck S1324 + MCE HY-14603,2026-11-05
+W4-CNS-02,Sigma,V7264,,FDA1993 Effexor + Sigma V7264 + Tocris 0953 + Selleck S3183 venlafaxine-pKa-9.14-note,2026-11-05
+W4-CNS-03,Sigma,A8523,,FDA1980 Asendin + Sigma A8523 + Selleck S1284 + MCE HY-B1253,2026-11-05
+W4-CNS-04,Sigma,B7148,,FDA1986 BuSpar + Sigma B7148 + Tocris 0962 + Selleck S1949,2026-11-05
+W4-CNS-05,Sigma,M3840,,FDA1974 Moban + Sigma M3840 + Cayman 23897 + MCE HY-B0502,2026-11-05
+W4-CNS-06,Sigma,D0899,,FDA1963 Valium + Sigma D0899 + Tocris 0800 Hensch-PNN-trigger,2026-11-05
+W4-CNS-07,Sigma,Z103,,FDA1992 Ambien + Sigma Z103 + Tocris 0655 moderate-spindle-hook,2026-11-05
+W4-CNS-08,Sigma,D9180,,FDA1959 Tenuate + Sigma D9180 + Cayman 11719 cathinone-moderate-hook,2026-11-05
+W4-SC-01,Selleck,S1739,,Selleck S1739 Thiabendazole In-Stock riluzole-hop,2026-11-05
+W4-SC-02,Selleck,S4651,,Selleck S4651 Etoricoxib In-Stock sulfone-hop,2026-11-05
