@@ -1,0 +1,33 @@
+compound_id,supplier,catalog_no,approval_ref,evidence,verified_date
+W1-SL-01,Selleck,S7430,,Selleck SB-3CT In Stock + MCE HY-12354 In-stock BBB-permeable,2026-11-05
+W1-SL-01,MCE,HY-12354,,MCE HY-12354 BBB permeability statement In-stock,2026-11-05
+W1-SL-01,Tocris,6088,,Tocris 6088 SB-3CT BBB-permeable,2026-11-05
+W1-SL-01,Sigma,444274,,Sigma 444274 MMP-2/MMP-9 Inhibitor IV,2026-11-05
+W1-SL-02,MCE,HY-103482,,MCE HY-103482 In-stock JNJ0966 brain/plasma 6.2 Scannevin JBC 2017,2026-11-05
+W1-SL-02,Tocris,6439,,Tocris 6439 JNJ0966 Brain penetrant,2026-11-05
+W1-SL-03,Selleck,S0769,,Selleck S0769 MMP-9-IN-1 In Stock,2026-11-05
+W1-SL-03,MCE,HY-135232,,MCE HY-135232 MMP-9 PEX,2026-11-05
+W1-SL-04,Selleck,S1573,,Selleck S1573 Fasudil HCl,2026-11-05
+W1-SL-04,MCE,HY-10341,,MCE HY-10341 Fasudil HCl In-stock,2026-11-05
+W1-SL-04,Tocris,0541,,Tocris 0541 Fasudil HCl,2026-11-05
+W1-SL-04,Sigma,CDS021620,,Sigma CDS021620 Fasudil,2026-11-05
+W1-SL-05,Selleck,S6388,,Selleck S6388 SHP099 In Stock,2026-11-05
+W1-SL-05,MCE,HY-100388,,MCE HY-100388 SHP099,2026-11-05
+W1-SL-06,Selleck,S9909,,Selleck S9909 ARP 100 In Stock,2026-11-05
+W1-SL-06,MCE,HY-103444,,MCE HY-103444 ARP 100,2026-11-05
+W1-TC-03,Tocris,3807,,Tocris 3807 Disulfiram,2026-11-05
+W1-TC-03,Sigma,86720,,Sigma 86720 Disulfiram + Antabuse approval,2026-11-05
+W1-TC-05,Sigma,SML1299,,Sigma SML1299 TC-2153,2026-11-05
+W1-RX-01,Selleck,S5073,DrugBank DB00843,Selleck S5073 + DailyMed Aricept FDA1996,2026-11-05
+W1-RX-01,Sigma,D6821,DrugBank DB00843,Sigma D6821 Donepezil HCl,2026-11-05
+W1-RX-02,Selleck,S1614,DrugBank DB00740,Selleck S1614 Riluzole + DailyMed Rilutek,2026-11-05
+W1-RX-02,Sigma,557324,DrugBank DB00740,Sigma Riluzole + Tocris 0768,2026-11-05
+W1-RX-03,Selleck,S1693,DrugBank DB00564,Selleck S1693 + DailyMed Tegretol,2026-11-05
+W1-RX-03,Sigma,C4024,DrugBank DB00564,Sigma C4024 Carbamazepine + Tocris 4098,2026-11-05
+W1-RX-04,Selleck,Oxcarbazepine,DrugBank DB00776,Selleck Oxcarbazepine CAS 28721-07-5 + DailyMed Trileptal,2026-11-05
+W1-RX-05,Selleck,S4113,DrugBank DB06700,Selleck S4113 Desvenlafaxine + DailyMed Pristiq,2026-11-05
+W1-RX-06,Sigma,Q102,DrugBank DB01206-fragment,Sigma Q102 Quinpirole + bromocriptine Cycloset rationale,2026-11-05
+W1-RX-06,Tocris,1061,DrugBank DB01206-fragment,Tocris 1061 Quinpirole,2026-11-05
+W1-RX-07,Selleck,S1643,DrugBank DB01586,Selleck S1643 Ursodiol + DailyMed Ursodiol 1987,2026-11-05
+W1-RX-07,Sigma,PHR1579,DrugBank DB01586,Sigma PHR1579 Ursodiol + MCE HY-13771,2026-11-05
+W1-RX-08,,,DrugBank DB01186,Permax DailyMed 2002 withdrawn 2007 tool-use-only no-vendor-catalog-claimed,2026-11-05
