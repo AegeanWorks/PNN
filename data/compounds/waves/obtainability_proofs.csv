@@ -31,3 +31,19 @@ W1-RX-06,Tocris,1061,DrugBank DB01206-fragment,Tocris 1061 Quinpirole,2026-11-05
 W1-RX-07,Selleck,S1643,DrugBank DB01586,Selleck S1643 Ursodiol + DailyMed Ursodiol 1987,2026-11-05
 W1-RX-07,Sigma,PHR1579,DrugBank DB01586,Sigma PHR1579 Ursodiol + MCE HY-13771,2026-11-05
 W1-RX-08,,,DrugBank DB01186,Permax DailyMed 2002 withdrawn 2007 tool-use-only no-vendor-catalog-claimed,2026-11-05
+W2-CNS-01,,,DrugBank DB01156,DailyMed Wellbutrin/Contrave + routine Selleck/Sigma/Tocris/MCE research-grade confirm-SKU,2026-11-05
+W2-CNS-02,,,DrugBank SSRI escitalopram,DailyMed Lexapro + routine vendor research-grade confirm-oxalate-SKU,2026-11-05
+W2-CNS-03,,,DrugBank DB00656,DailyMed Desyrel/Oleptro + routine vendor research-grade confirm-HCl-SKU,2026-11-05
+W2-CNS-04,,,DrugBank phenytoin,DailyMed Dilantin + routine vendor research-grade confirm-salt-SKU,2026-11-05
+W2-CNS-05,,,DrugBank risperidone,DailyMed Risperdal + routine vendor research-grade,2026-11-05
+W2-CNS-06,,,DrugBank mirtazapine,DailyMed Remeron + routine vendor research-grade,2026-11-05
+W2-MET-01,,,DrugBank DB00731,DailyMed Nateglinide 60/120mg ANDAs + Sigma/MCE/Selleck API,2026-11-05
+W2-MET-03,,,DrugBank DB00704,DailyMed ReVia/Vivitrol/Contrave + Sigma/MCE,2026-11-05
+W2-MET-04,Ambeed,,DrugBank DB01252,PMDA Glufast Japan-only + Ambeed CAS145375-43-5/APExBIO B2193,2026-11-05
+W2-MET-05,MCE,HY-B0664,DrugBank DB09064,UK MHRA Lipanor not-FDA + MCE HY-B0664/Sigma,2026-11-05
+W2-PH-01,Sigma,SML3000,PMDA Glanatec 2014,Sigma SML3000 ripasudil-HCl + Probechem PC-27872,2026-11-05
+W2-PH-02,MCE,HY-15720,,MCE HY-15720 H-1152 + Tocris 2414 + Probechem PC-44656 provisional-logP/TPSA-VERIFY,2026-11-05
+W2-PH-04,Selleck,E0073,,Selleck E0073 CL-82198 99.93% + Enzo BML-EI302,2026-11-05
+W2-PL-01,,,DrugBank DB01221,DailyMed Ketamine IV 1970 tool-comparator,2026-11-05
+W2-PL-02,,,DrugBank DB11823,DailyMed Spravato nasal 2019/2020,2026-11-05
+W2-PL-03,Selleck,S3064,DrugBank DB06742,Selleck S3064 Ambroxol + Tocris 2404 + human-CSF-GCase,2026-11-05

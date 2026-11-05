@@ -10,7 +10,7 @@
 - **Total Classes**: `89`
 - **Total Top-Level Functions**: `215`
 - **Total Class Methods**: `255`
-- **Total Source Lines**: `13167`
+- **Total Source Lines**: `13168`
 
 ---
 
@@ -1055,7 +1055,7 @@
 ### [`tools/update_readme_tree.py`](tools/update_readme_tree.py)
 > *Update README directory tree to match the current repository layout.*
 
-**Size**: `144` lines (`10074` bytes)
+**Size**: `145` lines (`10173` bytes)
 
 **Functions:**
 - `def update_tree()`

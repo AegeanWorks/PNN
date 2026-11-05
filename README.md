@@ -75,7 +75,8 @@ PNN/
 │   ├── compounds/                 <- Compound libraries
 │   │   ├── repurposing_library.csv  <- Annotated CNS repurposing library
 │   │   ├── screening_template.csv  <- Input header for the screening pipeline
-│   │   └── vendor_library.csv      <- Diverse drug-like screening library
+│   │   ├── vendor_library.csv      <- Diverse drug-like screening library
+│   │   └── waves/                   <- Overnight wave candidates + obtainability proofs
 │   ├── docking/                   <- Docking results
 │   │   ├── multi_target_scores.csv  <- Multi-target docking scoring dataset
 │   │   └── scores_template.csv    <- Input header for the consensus ranker
