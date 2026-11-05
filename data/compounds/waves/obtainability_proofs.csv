@@ -47,3 +47,22 @@ W2-PH-04,Selleck,E0073,,Selleck E0073 CL-82198 99.93% + Enzo BML-EI302,2026-11-0
 W2-PL-01,,,DrugBank DB01221,DailyMed Ketamine IV 1970 tool-comparator,2026-11-05
 W2-PL-02,,,DrugBank DB11823,DailyMed Spravato nasal 2019/2020,2026-11-05
 W2-PL-03,Selleck,S3064,DrugBank DB06742,Selleck S3064 Ambroxol + Tocris 2404 + human-CSF-GCase,2026-11-05
+W3-FL-01,Sigma,P5239,,Sigma P5239 Pinocembrin + Selleck S3941 + MCE HY-N0280,2026-11-05
+W3-FL-02,Sigma,C8221,,Sigma C8221 CAPE + Selleck S7414 + Tocris 2743,2026-11-05
+W3-FL-03,Selleck,S2299,,Selleck S2299 Formononetin + Sigma phytoestrogen-panel + MCE HY-N0183,2026-11-05
+W3-FL-04,Selleck,S5312,,Selleck S5312 Urolithin-A + Sigma SML1791 + MCE HY-100599,2026-11-05
+W3-FL-05,Sigma,SML2147,,Sigma SML2147 S-Equol + Selleck SML-series + MCE HY-101193,2026-11-05
+W3-FL-06,Sigma,D2016,,Sigma D2016 Biochanin-A + Selleck S2399 + MCE HY-N2110,2026-11-05
+W3-FL-07,Sigma,38790,,Sigma 38790 Pinostrobin + Selleck E-series + MCE HY-N8587,2026-11-05
+W3-FL-08,Sigma,R5010,,Sigma R5010 Resveratrol + Selleck S1396 + MCE HY-16561 + Tocris 1418,2026-11-05
+W3-MC-01,Sigma,T1952,,Sigma T1952 TSA + Selleck S1045 + MCE HY-15144 cytotoxic-tool-only,2026-11-05
+W3-MC-02,Sigma,B7651,,Sigma B7651 Brefeldin-A + Selleck S7046 + MCE HY-16592 secretory-toxin-tool-only,2026-11-05
+W3-MC-04,Sigma,SML1649,,Sigma SML1649 Urolithin-B + Selleck S1321,2026-11-05
+W3-MC-06,Sigma,45199,,Sigma 45199 Enterolactone + MCE HY-108692 logP-verify,2026-11-05
+W3-TCM-01,Sigma,H5777,,Sigma H5777 Huperzine-A + Selleck S2251 + MCE HY-17387 logP-FAIL-control-only,2026-11-05
+W3-TCM-02,Sigma,361593,,Sigma 361593 Artemisinin + Selleck S1282 + MCE HY-B0094,2026-11-05
+W3-TCM-03,Selleck,S2290,,Selleck S2290 DHA + MCE HY-N0176,2026-11-05
+W3-TCM-04,Sigma,E3531,,Sigma E3531 Evodiamine + Selleck S2382 + MCE HY-N0114,2026-11-05
+W3-TCM-05,Sigma,R3277,,Sigma R3277 Rutaecarpine + Selleck S2349 + MCE HY-N0147,2026-11-05
+W3-TCM-07,Sigma,SML2345,,Sigma SML2345 Rhynchophylline + Selleck S9400 borderline-verify,2026-11-05
+W3-TCM-08,Sigma,G1660,,Sigma G1660 Galantamine-HBr + Selleck S3866/S1339 + MCE HY-76299 approved-AD-drug,2026-11-05
