@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W234-K01,Carbimazole-antithyroid-remainder,,186.23,0.7,64.9,0,3,2,,,,,,,
+W234-K02,Potassium-iodide-ion,,166.0,-2.0,0.0,0,1,0,,,,,,,
+W234-K03,Potassium-perchlorate-ion,,138.55,-2.0,74.0,0,4,0,,,,,,,
