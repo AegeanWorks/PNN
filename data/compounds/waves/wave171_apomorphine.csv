@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W171-APO-01,Apomorphine,CN1CCC2=C3C1CC4=C(C3=CC=C2)C(=C(C=C4)O)O,267.32,2.30,43.7,2,3,0,,,,,,
