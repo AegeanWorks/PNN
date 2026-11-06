@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W40-KILL-NNRTI,,,3-kills-mapped,Efavirenz logP-only + doravirine TPSA/HBA + rilpivirine logP/TPSA — CNS-entry tracks with violations; NEVIRAPINE passes 6/6 flagged for next wave,2026-11-06
+W40-KILL-INSTI,,,3-kills-mapped,Dolutegravir TPSA/HBA + raltegravir triple + elvitegravir logP/TPSA/discontinued — INSTI class TPSA-blocked,2026-11-06
 W39-KILL-AMINO,,,3-kills-mapped,Gentamicin/tobramycin 5-fail + amikacin 6-fail — polycationic aminoglycosides out,2026-11-06
 W39-KILL-POLY,,,3-kills-mapped,Colistin 6-fail + amphotericin/nystatin 5-fail — lipopeptide/macrolide out of scope,2026-11-06
 W38-KILL-BVIT,,,4-kills-mapped,Niacin/pyridoxine/nicotinamide MW+logP + riboflavin logP/TPSA/HBD — B-vitamin floor,2026-11-06
