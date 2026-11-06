@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W192-KILL-SULFA,,,4-kills-mapped,Sulfamethoxazole/trimethoprim/sulfadiazine logP+TPSA + sulfasalazine logP/TPSA/HBA — sulfonamide file closed,2026-11-06
 W191-KILL-THAL,,,1-killed,Thalidomide logP/TPSA dual-fail (CID 5426; history context only) — IMiD family fully closed with W190,2026-11-06
 W190-KILL-IMID,,,4-kills-mapped,Pomalidomide/iberdomide logP/TPSA + mezigdomide 4-fail + avadomide logP/TPSA — IMiD/CELMoD file closed; counter reset,2026-11-06
 W189-MPO171,,,171-profiled,Wave189: MPO over 53 files/171 unique (0 dupes) → 0 DEVELOPMENT / 171 OPTIMIZATION_LEAD. Count corrected 157->171 (tally drift, files ground truth). Buy-list refreshed unchanged (same F-filled top + same flags). 0 new/0 kills = ZERO-WAVE 1,2026-11-06
