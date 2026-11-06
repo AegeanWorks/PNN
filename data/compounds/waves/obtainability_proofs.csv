@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W130-KILL-KNT127,,,1-killed,KNT-127 logP-only fail (ChEMBL alogp cross-check) — DOR-agonist chemistry dead,2026-11-06
+W130-PARKED-DOR,,,2-parked,Naltrindole 6/6 tool (APExBIO-title SKU, max-phase-null — research-grade only) + TRV250 undisclosed-structure (Phase1/2 oral, no CID/SMILES — re-score at disclosure),2026-11-06
 W129-KILL-KOR,,,2-kills-mapped,Aticaprant logP-only (JNJ discontinued Mar-2025 not Dec-2024 — corrected) + navacaprant 4-fail — KOR file closed,2026-11-06
 W128-KILL-NOP,,,2-kills-mapped,Sunobinop logP/TPSA + cebranopadol logP-only — NOP system closed,2026-11-06
 W127-KILL-OXAG2,,,2-kills-mapped,TAK-861 4-fail (MW/logP/TPSA/HBA) + ledasorexton TPSA-only (E2086 = INN ledasorexton) — OX2-agonist family closed,2026-11-06
