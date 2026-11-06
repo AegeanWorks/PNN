@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W100-KILL-ENK,,,2-kills-mapped,Racecadotril TPSA/RB (brief CID 107723 wrong organophosphate; true 107751) + loperamide MW/logP P-gp-control — peripheral restriction story confirmed,2026-11-06
 W99-SE-01,,,DB06345 AR-9281,PUG-synonym HY-111151/CS-0034433/EN300-x3/D87139/T14315 + Phase 2 trials — confirm live at order,2026-11-06
 W99-KILL-SEH,,,2-kills-mapped,TPPU TPSA-near-miss 70.7 (no fabrication) + AUDA triple — first-gen adamantyl-urea out; APAU piperidin-acetyl swap fixes all three,2026-11-06
 W98-KILL-SGC,,,2-kills-mapped,Vericiguat TPSA/HBA + ataciguat 4-fail (investigational) — sGC file closed with riociguat,2026-11-06
