@@ -152,3 +152,9 @@ W12-D1-01,HelloBio,HB1858,,HelloBio HB1858 SKF-81297-HBr VERIFIED live (Tocris 3
 W12-PARKED,,,6-parked,Eutropoflavin (no SKU) + 6,7-DHF (no hook/SKU) + dihydrexidine/dinapsoline/CY208-243/emapunil (pass filters, no live fetch — reconfirm at order),2026-11-06
 W12-DEAD-TRKB,,,dead-end,LM22A-4/LM22B-10/deoxygedunin/HIOC/chrysin — TrkB small-molecule space filter-dead except 7,8-DHF; eutropoflavin only SKU-less hope,2026-11-06
 W12-DEAD-STEROID,,,dead-end,Dutasteride/allopregnanolone/ganaxolone/epristeride/FCE28260/zuranolone/etifoxine/izonsteride — steroidal 5AR/neurosteroid logP 4.5-6.2 systematic fail; TSPO non-steroidal only route,2026-11-06
+W13-D1-02,GlpBio,GC15792,,GlpBio GC15792 CY-208-243 10mg $281 In-Stock — CAS CORRECTED to 100999-26-6 (task 101152-94-7 = milnacipran); ergoline-check clean, logP-at-bound flag,2026-11-06
+W13-TSPO-01,Selleck,S2592,,Selleck S2592 emapunil In-Stock + Biorbyt orb1223178 ladder — non-steroidal TSPO route realized,2026-11-06
+W13-EUTRO-HOOK,,,hook-proven-parked,Eutropoflavin TrkB hook PROVEN (Liu 2010 stronger/longer than 7,8-DHF) but research-grade SKU absent (ND capsules retail-only) — stays parked,2026-11-06
+W13-67DHF-HOOK,,,hook-proven-parked,6,7-DHF TrkB partial activity PROVEN (Liu 2010 + ChEMBL Active) but no allowed-vendor SKU — stays parked,2026-11-06
+W13-KILL-DIHYDREX,,,killed,Dihydrexidine KILL — task CAS pair PUG-404 (true 123039-93-0, no vendor codes); ApexBio lead-time only, no stock,2026-11-06
+W13-KILL-DINAP,,,killed,Dinapsoline KILL — CAS validates, vendor namespace empty, all alternates absent/blocked,2026-11-06

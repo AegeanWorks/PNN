@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W13-D1-02,CY-208-243,,274.40,3.50,19.0,1,1,0,,,,,,
+W13-TSPO-01,Emapunil,,401.50,2.60,69.6,0,4,6,,,,,,
