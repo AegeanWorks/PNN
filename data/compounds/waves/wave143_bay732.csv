@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W143-BAY-01,BAY-73-6691,CC(CC1=NC2=C(C=NN2C3=CC=CC=C3Cl)C(=O)N1)C(F)(F)F,356.73,3.50,59.3,1,6,3,,,,,,

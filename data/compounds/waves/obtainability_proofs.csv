@@ -213,6 +213,10 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W143-BAY-01,GlpBio,GC30923,DrugBank BAY736691,GlpBio GC30923 (R)-form In-Stock 5mg$138 + AdooQ A17024 In-Stock — CONVERTED from W136 park (6/6 + logP-boundary flag survives),2026-11-06
+W143-FX-CONFIRM,Cayman,45283,,Cayman 45283 Abeprazan(=fexuprazan) GH + TargetMol T10221 In-Stock + MCE HY-109179 — W104 Tier B proof upgraded to live,2026-11-06
+W143-RILO-CONFIRM,MCE,HY-113863,,MCE HY-113863 In-stock ship-TODAY + Tebubio EU T26087 In-stock — W76 Tier B proof upgraded to live,2026-11-06
+W143-APAU-STILLPARKED,,,NOT-FOUND,APAU HY-11114 live-SKU hunt failed on all routes (403/timeout/quota) — stays parked, MCE-synonym only,2026-11-06
 W142-KILL-PDE8,,,2-kills-mapped,PF-04957325 triple (live Selleck/MCE SKUs moot) + PF-04671536 triple — PDE8 closed, PDE file complete,2026-11-06
 W141-KILL-PDECOG,,,2-kills-mapped,Zatolmilast logP-only (allosteric-mechanism moot) + HT-0712 logP-only (discontinued Phase 2) — PDE-cognition closed, rolipram sole passer,2026-11-06
 W140-KILL-ADEN,,,4-kills-mapped,CVT-6883/GS-6201 same-CID + piclidenoson + namodenoson + MRS1523 (antagonist mismatch) — A2B/A3 shelf closed,2026-11-06
