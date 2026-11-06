@@ -213,6 +213,9 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W51-AZ-01,MCE,HY-D0004,,MCE HY-D0004 + ChemScene CS-0009900 + Sigma A4043/Tocris 0329 lineage — MB active metabolite, MAOI/redox flags,2026-11-06
+W51-AZ-02,MCE,HY-D0944,,MCE HY-D0944/HY-D0947 + EP Impurity-B — narrow-margin Tier B control-only (ChEMBL-proxy logP disclosed),2026-11-06
+W51-KILL-MB-FAM,,,3-kills-mapped,LMTM logP/salt + azure-C TPSA-only + thionine TPSA — demethylation TPSA ladder 43.9→89.3 documented,2026-11-06
 W50-RD-01,Sigma,M9140,DrugBank methylthioninium,FDA ProvayBlue NDA204630 2016 + EMA Proveblue 2011 + USP RS1428008 + Sigma M9140/Selleck S4535/MCE HY-14536 — BOXED serotonin-syndrome + redox-assay-interference flags,2026-11-06
 W50-KILL-MAL,,,3-kills-mapped,Tafenoquine 5-fail + pyronaridine 3-fail + ferroquine XLogP-null investigational — antimalarial file closed,2026-11-06
 W49-MPO129,,,129-profiled,Wave49: pnn.mpo over 129 combined → 0 DEVELOPMENT / 129 OPTIMIZATION_LEAD; D 0.563 = F-filled 7; new top-band: levamisole/praziquantel/ondansetron/aniracetam 5.9-6.0 — outputs in output/wave49_mpo.* (ignored),2026-11-06

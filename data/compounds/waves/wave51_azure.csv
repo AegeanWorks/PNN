@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W51-AZ-01,Azure-B,CNC1=CC2=C(C=C1)N=C3C=CC(=[N+](C)C)C=C3S2,305.80,2.10,52.7,1,4,1,,cationic,,,,,
+W51-AZ-02,Azure-A,,291.80,3.38,66.7,1,4,0,,,,,,,
