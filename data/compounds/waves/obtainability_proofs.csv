@@ -214,6 +214,11 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W185-CONV-RAS,,,Biomol TGM-T200035 In-Stock raseglurant (CAS 757950-09-7, ADX-10059 synonym) 25mg 1440EUR — W12 verified,2026-11-06
+W185-CONV-DIPR,,,Biomol TGM-T15134 + Cayman 42535 In-Stock dipraglurant (CAS 872363-17-2, ADX48621) — W12 verified; Cayman catalog live title,2026-11-06
+W185-CONV-FEX,,,Biomol/Cayman Abeprazan=Fexuprazan CAS 1902954-60-2 In-Stock (Cay45283) + TGM-T10221 — W104 verified as abeprazan synonym,2026-11-06
+W185-CONV-APAU,,,Biomol Cayman-38346 AR-9281/APAU In-Stock (CAS 913548-29-5, UC1153) — W99 converted,2026-11-06
+W185-STAYS-MAV,,,mavoglurant stays-synonym: exact-enantiomer 543906-09-8 only BOCSci inquiry; Biomol racemate-only — distinct-CAS rule,2026-11-06
 W184-KILL-PYRIM,,,4-kills-mapped,Cytarabine/gemcitabine/azacitidine/decitabine logP/TPSA (+HBD) — nucleoside-pattern kills confirmed; approvals moot,2026-11-06
 W183-KILL-PURINE,,,5-kills-mapped,Fludarabine 2/6 + clofarabine 3/6 + pentostatin 3/6 + nelarabine/ara-G 4-6/6 (Selleck live moot) + Arranon neurotoxicity flag — nucleoside shelf closed,2026-11-06
 W182-KILL-CLAD,,,1-killed,Cladribine logP/TPSA dual-fail (nucleoside polarity pattern) — purine-analog MS angle closed,2026-11-06
