@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W67-PARK-DEXFEN,,,parked-provisional,Dexfenfluramine 6/6 props (d-enantiomer) but withdrawn-1997 + no live SKU confirmed — parked (TRC/LGC/Cerilliant analytical + compliance check at order),2026-11-06
+W67-KILL-AMINOREX,,,1-killed,Aminorex MW/logP dual-floor fail + withdrawn-1968 PAH/scheduled — no path,2026-11-06
 W66-PARK-NORFEN,,,parked-provisional,Norfenfluramine 6/6 props + 2B-agonist hook CONFIRMED but zero catalog SKU — parked (custom-synthesis likely; Cerilliant/TRC analytical standard at order),2026-11-06
 W66-KILL-ANALOG,,,2-kills-mapped,Benfluorex logP/RB (Mediator VHD withdrawn) + chlorphentermine MW-floor (1969/1974 withdrawn),2026-11-06
 W65-FF-01,,,DrugBank fenfluramine,FDA Fintepla 2020 (NDA, UCB, Dravet+LGS) + DEA descheduled 2022 — BOXED VHD/PAH + REMS + echo-q6mo; vendor SKU confirm at order,2026-11-06
