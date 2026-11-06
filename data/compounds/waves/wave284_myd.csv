@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W284-K01,Tropicamide-mydriatic-remainder,,284.35,1.5,53.4,1,3,6,,,,,,,
+W284-K02,Cyclopentolate-mydriatic-remainder,,291.39,2.18,49.77,1,4,6,,,,,,,
