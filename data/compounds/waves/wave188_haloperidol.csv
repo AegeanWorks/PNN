@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W188-HAL-01,Haloperidol,,375.90,3.20,40.5,1,4,6,,,,,,
