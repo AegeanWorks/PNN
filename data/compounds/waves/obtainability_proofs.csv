@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W168-FENFEN-STAYS,,,confirmed-approval-only,Fenfluramine racemate: no live SKU (Selleck/MCE/Cayman/Tocris/GlpBio/AdooQ all dead or dex-only) — CAS corrected to 404-82-0 HCl (not 404-82-4); Cayman-39831 IS dexfenfluramine (do not misattribute); Wako JP standard out-of-scope; DEA-SCH-IV explains gating. 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W167-PHEN-CONFIRM,Cayman,24037,,Cayman 24037 live (50g $32) + GlpBio GC16086 In-Stock — W2-CNS-04 upgraded synonym to live. Tocris/AdooQ no base SKU,2026-11-06
 W166-ESC-CONFIRM,Selleck,S4064,,Selleck S4064 In-Stock 50mg$147 1g$670 + Cayman 39841 + Tocris 4796 + MCE HY-14258A + GlpBio GC16797 + AdooQ A16533 — 6-vendor live,2026-11-06
 W166-BUP-CONFIRM,GlpBio,GC14714,,GlpBio GC14714 In-Stock HCl 50mg$49 (CAS 31677-93-7) — W2-CNS-01 upgraded synonym to live,2026-11-06
