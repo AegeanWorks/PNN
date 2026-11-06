@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W247-K01,Valproic-acid-AED-remainder,,144.21,2.8,37.3,1,2,5,,,,,,,
+W247-K02,Lamotrigine-AED-remainder,,256.09,1.4,90.7,2,5,1,,,,,,,
+W247-K03,Levetiracetam-AED-remainder,,170.21,-0.3,63.4,1,2,3,,,,,,,
+W247-K04,Cenobamate-AED-remainder,,267.67,1.5,95.9,1,5,5,,,,,,,
