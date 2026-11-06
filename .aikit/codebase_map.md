@@ -10,7 +10,7 @@
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
 - **Total Class Methods**: `265`
-- **Total Source Lines**: `13598`
+- **Total Source Lines**: `13595`
 
 ---
 
@@ -556,7 +556,7 @@
 ### [`pnn/waves.py`](pnn/waves.py)
 > *Wave-ledger aggregation: search-wave CSVs plus obtainability proofs into report artifacts.*
 
-**Size**: `301` lines (`11910` bytes)
+**Size**: `298` lines (`11835` bytes)
 
 **Classes:**
 - `class WaveLedgerError` - *Raised when wave-ledger inputs cannot be read or parsed.*

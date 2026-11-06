@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W266-K01,Gemigliptin-DPP4-remainder,,489.4,0.7,92.4,1,13,4,,,,,,,
+W266-K02,Evogliptin-DPP4-remainder,,401.4,1.0,84.7,2,7,7,,,,,,,
+W266-K03,Teneligliptin-DPP4-remainder,,426.6,2.4,81.9,1,6,4,,,,,,,
+W266-K04,Omarigliptin-DPP4-remainder,,398.43,0.3,98.8,1,8,3,,,,,,,
+W266-K05,Trelagliptin-DPP4-remainder,,357.39,0.7,93.7,1,6,3,,,,,,,
+W266-K06,Semaglutide-oral-peptide-remainder,,4113.6,-3.0,1500.0,40,60,100,,,,,,,

@@ -81,19 +81,16 @@ def _count_wave_compounds(path: Path) -> int:
     """Count data rows in a wave screening CSV (header excluded)."""
     try:
         # errors="replace": one stray byte must never break turnkey reporting.
+        # Raw line counting (not DictReader) keeps the full-ledger scan cheap.
         with path.open("r", encoding="utf-8-sig", errors="replace", newline="") as handle:
-            reader = csv.DictReader(handle)
-            if not reader.fieldnames:
-                return 0
-            count = 0
-            for row in reader:
-                if not row:
-                    continue
-                values = [str(v or "").strip() for v in row.values()]
-                if any(values):
-                    count += 1
-            return count
-    except (OSError, csv.Error) as exc:
+            lines = 0
+            non_empty = 0
+            for line in handle:
+                lines += 1
+                if line.strip():
+                    non_empty += 1
+            return max(0, non_empty - (1 if lines else 0))
+    except OSError as exc:
         raise WaveLedgerError(
             f"What: cannot read wave file {path.name}. "
             f"Why: {exc}. Fix: restore the file or remove it before re-running."
