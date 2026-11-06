@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W161-NALMEFENE,,,DrugBank nalmefene + EMA Selincro,GlpBio GC26177 In-Stock from $54 + AdooQ A13892 In-Stock from $25 — UPGRADED from approval-only to dual live SKU,2026-11-06
 W160-SB408124-2ND,AdooQ,A11567,,AdooQ A11567 In-Stock $35/5mg (CAS 288150-92-5, C19H18F2N4O) — second vendor beside S1545; logP-ceiling flag stands,2026-11-06
 W159-SAR167,,,167-profiled,Wave159: pnn.sar Bemis-Murcko over 49 files → 95 scaffolds across 101 SMILES-bearing (65 no-SMILES excluded) → 0 priority series (no measured EC50/docking in wave files, expected). COUNT CORRECTED to 167 unique (0 dupes). Outputs in output/wave159_sar.* (ignored). 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W158-NAL-01,GlpBio,GC13688,,GlpBio GC13688 In-Stock 1mg$49 — CONVERTED from W130 research-grade-only park (6/6 + PUG CID 5497186),2026-11-06
