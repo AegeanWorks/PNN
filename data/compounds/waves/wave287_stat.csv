@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W287-K01,Cerivastatin-withdrawn-remainder,,459.5,3.6,99.9,3,7,11,,,,,,,
+W287-K02,Mevastatin-prototype-remainder,,390.5,3.9,72.8,1,5,7,,,,,,,
