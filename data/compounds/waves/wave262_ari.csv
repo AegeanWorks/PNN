@@ -1,0 +1,11 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W262-K01,Sorbinil-ARI-remainder,,236.20,0.7,67.4,2,4,0,,,,,,,
+W262-K02,Tolrestat-ARI-remainder,,357.35,3.7,81.9,1,7,4,,,,,,,
+W262-K03,Zopolrestat-ARI-remainder,,419.4,3.5,111.0,1,9,4,,,,,,,
+W262-K04,Epalrestat-ARI-remainder,,319.4,3.8,115.0,1,5,4,,,,,,,
+W262-K05,Fidarestat-ARI-remainder,,279.22,-0.3,111.0,3,5,1,,,,,,,
+W262-K06,Ranirestat-ARI-remainder,,420.2,1.3,88.5,1,5,2,,,,,,,
+W262-K07,Ponalrestat-ARI-remainder,,391.20,2.97,72.19,1,4,4,,,,,,,
+W262-K08,Lidorestat-ARI-remainder,,376.4,4.4,83.4,1,7,4,,,,,,,
+W262-K09,Zenarestat-ARI-remainder,,441.6,3.3,77.9,1,5,4,,,,,,,
+W262-K10,Minalrestat-ARI-remainder,,449.2,2.1,83.6,1,6,2,,,,,,,
