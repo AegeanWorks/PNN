@@ -214,6 +214,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W156-KILL-CART,,,1-killed,Carteolol logP/TPSA (timolol/betaxolol already dead W112 — no re-swarm),2026-11-06
+W156-PARK-LEVO,,,parked-provisional,Levobunolol 6/6 but search provider exhausted, no live SKU verified — convert on SKU proof,2026-11-06
 W155-KILL-MIOTIC,,,3-kills-mapped,Pilocarpine logP-floor 1.1 (5/6; E7001 live + FDA moot — PARK reserved for unevaluable/no-SKU cases) + carbachol MW/logP-null/quaternary + echothiophate logP/RB/quaternary — miotic file closed,2026-11-06
 W154-KILL-OCUHYP,,,4-kills-mapped,Brimonidine/apraclonidine logP-only near-miss pair + dorzolamide TPSA/logP + brinzolamide triple — ocular hypotensives out,2026-11-06
 W153-KILL-TOPAA,,,2-kills-mapped,Alfatradiol logP (PUG governs over CDK/ChEMBL) + clascoterone logP/TPSA — topical AA file closed,2026-11-06
