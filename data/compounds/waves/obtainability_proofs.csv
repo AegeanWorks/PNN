@@ -173,3 +173,9 @@ W16-CH-02,Selleck,S4281,DrugBank tasimelteon,Selleck S4281 tasimelteon In-Stock 
 W16-CH-03,Selleck,S1243,,Selleck S1243 agomelatine In-Stock 99.89% + MCE HY-14278 + EMA Valdoxan 2009 MT+5HT2C BDNF/Arc/neurogenesis + LFT-monitor flag,2026-11-06
 W16-KILL-MELATONIN,,,Selleck S1204-ref-only,Melatonin KILL logP 0.8<1.5 floor (endogenous reference tool only; Circadin/Slenyto same API — not separate),2026-11-06
 W16-KILL-KYN,,,10-kills-mapped,Kynurenine/metabolite systematic dead-end: kynurenic MW+logP, xanthurenic logP+TPSA, quinolinic MW+logP+TPSA, cinnabarinic logP+TPSA+HBA, 3HK logP+TPSA+HBD, tryptamine MW, serotonin MW+logP, 5HTP logP+TPSA+HBD, Trp logP+TPSA, nicotinamide MW+logP — PUG numbers,2026-11-06
+W17-EPI-01,,,DrugBank perampanel,FDA Fycompa NDA 202834 (2012) non-competitive AMPA antagonist — only ARC/LTD-direct antiepileptic; research catalogs stocked,2026-11-06
+W17-SIG-01,Tocris,0589,,Tocris 0589 + Selleck S6950 In-Stock + Cayman 9001329 PRE-084 gold-standard sigma-1 probe (Ki 2.2nM),2026-11-06
+W17-OX-01,Tocris,3371,,Tocris 3371 + MCE HY-100452 + HelloBio HB3225 TCS-OX2-29 OX2-selective (approved DORAs all fail TPSA/MW/logP),2026-11-06
+W17-SIG-02,MCE,HY-105296,,MCE HY-105296/101864 In-Stock blarcamesine (ANAVEX2-73 AD Ph2/3, sigma-1+muscarinic),2026-11-06
+W17-KILL-EPI,,,7-kills-mapped,Lacosamide/eslicarbazepine/brivaracetam/zonisamide/rufinamide/stiripentol/cannabidiol killed on logP/TPSA with PUG numbers (eslicarb-acetate TPSA-rescue fails too),2026-11-06
+W17-KILL-DORA-S1,,,5-kills-mapped,Suvorexant 3-fail + lemborexant TPSA-only + daridorexant 3-fail + SA4503 logP/RB + igmesine logP/RB — approved DORAs out of PNN box,2026-11-06

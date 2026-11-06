@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W17-EPI-01,Perampanel,,349.40,3.40,57.0,0,3,3,,,,,,
+W17-SIG-01,PRE-084,,317.40,3.30,38.8,0,4,6,,,,,,
+W17-OX-01,TCS-OX2-29,,397.50,3.00,63.7,1,5,7,,,,,,
+W17-SIG-02,Blarcamesine,,281.40,3.50,12.5,0,2,4,,,,,,
