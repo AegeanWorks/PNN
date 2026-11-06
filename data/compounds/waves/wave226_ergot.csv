@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W226-K01,Cabergoline-ergot-remainder,,451.6,3.4,71.7,2,4,8,,,,,,,
+W226-K02,Methysergide-withdrawn-remainder,,353.5,2.3,57.5,2,3,4,,,,,,,
+W226-K03,Ergoloid-obsolete-remainder,,609.7,3.0,118.0,3,6,5,,,,,,,
+W226-K04,Dihydroergotamine-nooral-remainder,,583.7,2.4,118.0,3,6,4,,,,,,,
+W226-K05,Ergotamine-ergot-remainder,,581.7,2.0,118.0,3,6,4,,,,,,,
+W226-P01,Lisuride-ChEMBL-live,,338.46,2.84,51.37,2,2,3,,,,,,,
+W226-P02,Piribedil-ChEMBL-live,,298.35,1.53,50.72,0,6,3,,,,,,,
+W226-P03,Methylergonovine-ChEMBL-live,,339.44,1.92,68.36,3,3,4,,,,,,,
