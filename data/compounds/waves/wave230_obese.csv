@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W230-K01,Benzphetamine-anorectic-remainder,,239.36,3.75,3.24,0,1,5,,,,,,,
+W230-K02,Phendimetrazine-anorectic-remainder,,191.27,2.08,12.47,0,2,1,,,,,,,
+W230-K03,Anamorelin-ghrelin-remainder,,546.72,2.72,114.77,3,5,9,,,,,,,
+W230-K04,Bisacodyl-laxative-remainder,,361.4,3.8,65.5,0,5,7,,,,,,,
+W230-K05,Senna-laxative-remainder,,862.7,-1.1,348.0,12,19,9,,,,,,,
+W230-K06,Docusate-laxative-remainder,,422.6,5.1,115.0,1,7,18,,,,,,,
+W230-K07,Lactulose-laxative-remainder,,342.3,-4.3,190.0,8,11,5,,,,,,,
+W230-P01,Diethylpropion-ChEMBL-live,,205.30,2.60,20.31,0,2,5,,,,,,,
