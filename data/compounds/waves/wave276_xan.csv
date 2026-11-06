@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W276-K01,Fenspiride-withdrawn-remainder,,260.33,1.8,41.57,1,3,3,,,,,,,
+W276-K02,Enprofylline-discontinued-remainder,,194.19,0.3,78.1,2,3,2,,,,,,,
+W276-K03,Bamiphylline-EU-remainder,,385.47,0.34,85.29,1,8,8,,,,,,,
+W276-K04,Acebrophylline-salt-remainder,,616.31,0.0,154.0,4,9,7,,,,,,,
+W276-K05,Doxofylline-EU-remainder,,266.26,-0.9,76.9,0,5,2,,,,,,,
+W276-K06,Proxophylline-EU-remainder,,238.25,-0.8,78.7,1,4,2,,,,,,,
