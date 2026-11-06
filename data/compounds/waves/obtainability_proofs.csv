@@ -76,3 +76,13 @@ W4-CNS-07,Sigma,Z103,,FDA1992 Ambien + Sigma Z103 + Tocris 0655 moderate-spindle
 W4-CNS-08,Sigma,D9180,,FDA1959 Tenuate + Sigma D9180 + Cayman 11719 cathinone-moderate-hook,2026-11-05
 W4-SC-01,Selleck,S1739,,Selleck S1739 Thiabendazole In-Stock riluzole-hop,2026-11-05
 W4-SC-02,Selleck,S4651,,Selleck S4651 Etoricoxib In-Stock sulfone-hop,2026-11-05
+W5-MMP-01,Vitas-M,STK169690,,Vitas-M STK169690 live 323mg ADD-TO-BASKET + PubChem CID647176,2026-11-06
+W5-MMP-02,Vitas-M,STK519331,,Vitas-M STK519331 live 211mg ADD-TO-BASKET + Enamine_000799 synonym,2026-11-06
+W5-MMP-03,Vitas-M,STK169693,,Vitas-M STK169693 live 255mg + MFCD04589400,2026-11-06
+W5-FLAV-01,Enamine,EN300-17915,,Enamine EN300-17915 In-stock UA/US $19 + EBC-04233 Bioactive,2026-11-06
+W5-INDO-01,MCE,HY-B1104,,MCE HY-B1104 + TargetMol T0321 In-Stock 5g + Bepharm In-Stock,2026-11-06
+W5-TE-02,Selleck,S3891,,Selleck S3891 live + MCE HY-B1021 + Sigma 194719 + EP Y0002124,2026-11-06
+W5-TE-06,Sigma,P0667,,Sigma P0667 + Selleck S2341 + MCE HY-N0141 + Tocris 0610,2026-11-06
+W5-TE-08,Selleck,S2437,,Selleck S2437 live + MCE HY-N0096 + Thermo AAJ6332803,2026-11-06
+W2-PH-02-CORRECTION,MCE,HY-15720,,Wave5D: PubChem TPSA 70.7 FAIL (>70) logP 1.7 — demoted B-to-C control-only,2026-11-06
+W4-PTP-05-KILL,MCE,HY-19383,,Ertiprotafib In-stock TODAY but MW559.5/logP9.2/TPSA74.8 3-fails REJECTED,2026-11-06

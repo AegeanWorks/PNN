@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W5-MMP-01,Benzofuran-ethyl-morpholine,C1COCCN1CCNC(=O)C2=CC3=CC=CC=C3O2,274.31,1.80,54.7,1,4,4,,,,,,
+W5-MMP-02,Benzofuran-propyl-morpholine,C1COCCN1CCCNC(=O)C2=CC3=CC=CC=C3O2,288.34,2.20,54.7,1,4,5,,,,,,
+W5-MMP-03,Benzofuran-ethyl-pyrrolidine,C1CCN(C1)CCNC(=O)C2=CC3=CC=CC=C3O2,258.32,2.70,45.5,1,3,4,,,,,,
+W5-FLAV-01,Flavanone-core,C1C(OC2=CC=CC=C2C1=O)C3=CC=CC=C3,224.25,3.20,26.3,0,2,1,,,,,,
+W5-INDO-01,Indoprofen,CC(C1=CC=C(C=C1)N2CC3=CC=CC=C3C2=O)C(=O)O,281.30,2.80,57.6,1,3,3,,,,,,
+W5-TE-02,Vincamine,CCC12CCCN3C1C4=C(CC3)C5=CC=CC=C5N4C(C2)(C(=O)OC)O,354.44,2.90,54.7,1,4,2,,,,,,
+W5-TE-06,Parthenolide,O=C(C1=C)O[C@@]2([H])[C@@H]1([H])CC/C(C)=C\CC[C@]3(C)[C@@H]2O3,248.32,2.50,38.8,0,3,0,,,,,,
+W5-TE-08,L-Tetrahydropalmatine,COC1=CC=C2C(CN3CCC4=CC(OC)=C(OC)C=C4[C@]3([H])C2)=C1OC,355.43,3.20,40.2,0,5,4,,,,,,
