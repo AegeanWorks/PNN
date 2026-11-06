@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W135-KILL-PDE710,,,4-kills-mapped,Papaverine logP + BRL-50481 logP/TPSA + edelinontrine logP/TPSA + balipodect logP/TPSA (SMILES on record) — PDE7/10 closed, PDE3/4 passers stand,2026-11-06
 W134-KILL-PDE4C,,,3-kills-mapped,GSK-256066 triple + oglemilast 4-fail + tofimilast TPSA-near-miss (no rounding) — PDE file fully closed, rolipram sole passer,2026-11-06
 W133-KILL-PDE4B,,,2-kills-mapped,Cilomilast TPSA-near-miss (research SKUs moot) + AWD-12-281 triple (GSK-842470 identity) — PDE4 leftovers closed,2026-11-06
 W132-KILL-CENER,,,1-killed,Cenerimod 5/6-fail (MW/logP/TPSA/HBA/RB) — S1P fully closed (ponesimod already dead W27, no re-swarm),2026-11-06
