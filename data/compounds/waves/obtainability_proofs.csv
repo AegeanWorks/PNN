@@ -310,7 +310,7 @@ W90-KILL-PERI,,,2-kills-mapped,Naloxegol 1/6 (PEG lesson) + methylnaltrexone nom
 W89-OA-01,Cayman,15594,DrugBank naloxone NDA208411,Cayman 15594 live + Sigma N7758/Selleck S3061/MCE HY-17427/Tocris 0597 + FDA Narcan OTC — functional BBB proof, IV/IN/nasal-only (oral F 2%),2026-11-06
 W89-OA-02,,,EMA Selincro EPAR EMEA-H-C-002583,EMA-authorised 18mg oral as-needed + functional BBB — Tier 1 approval proof,2026-11-06
 W88-KILL-NLRP3,,,3-kills-mapped,MCC950 TPSA117 (brief CID wrong; true 9910393; halted hepatotoxic) + dapansutrile MW/logP + DFV890 TPSA — NLRP3 sulfonylurea/sulfone class TPSA-dead,2026-11-06
-W87-TLR-01,Selleck,S1211,DrugBank imiquimod NDA020723,Selleck S1211 In-Stock + FDA Aldara 1997/Zyclara — TLR7-microglia hook (PMIDs 18490763/34488805/25239168), topical/systemic caveat,2026-11-06
+W87-TLR-01,Selleck,S1211,DrugBank imiquimod NDA020723,WAVE163 live re-fetch CONFIRMED: title In-Stock + JSON-LD InStock $147-227 + .cn 100mg 647.01 CNY in-stock + CAS 99011-02-6 match; TLR7-microglia hook PMIDs 18490763/34488805/25239168; topical/systemic caveat,2026-11-06
 W87-KILL-TLR78,,,2-kills-mapped,Resiquimod logP/TPSA (S8133/HY-13740 live moot) + gardiquimod logP/TPSA worse — live SKUs do not rescue chemistry,2026-11-06
 W86-KILL-CAN,,,3-kills-mapped,Dronabinol/nabilone/cannabidiol logP-only fails (6.4-7.0) — cannabinoid file closed with rimonabant,2026-11-06
 W85-KILL-AF2,,,2-kills-mapped,Amorolfine logP-bottom (morpholine only; approval moot) + tioxolone MW/TPSA — antifungal file fully closed (efinaconazole/ciclopirox/piroctone/rilopirox sole passers),2026-11-06
