@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W300-K01,Sodium-phenylbutyrate-ALS-remainder,,164.20,2.09,37.30,1,1,4,,,,,,,
+W300-K02,Taurursodiol-ALS-remainder,,499.71,3.40,123.93,4,5,7,,,,,,,

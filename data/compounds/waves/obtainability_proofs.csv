@@ -712,3 +712,5 @@ W298-KILL-GNRH,,,5-kills-mapped,Relugolix MW/logP/TPSA/HBA/RB oral FDA-2020 (CHE
 W299-KILL-VMAT2,,,1-kill-mapped,Valbenazine logP/TPSA oral VMAT2 (CHEMBL2364639; FDA 2017; sprinkle form 2024 filed) - box fail; pipeline B=2 C=1,2026-11-06
 W299-P01,,,US-oral,Tetrabenazine tier-B ChEMBL-live MW317.4/ALOGP3.24/PSA38.8 (CHEMBL117785; FDA 2008 oral) PARKED - hook GAP + depression/suicidality + parkinsonism flags; live SKU confirm at order,2026-11-06
 W299-P02,,,US-oral,Deutetrabenazine tier-B ChEMBL-live MW323.5/ALOGP3.24/PSA38.8 (CHEMBL3137326; FDA 2017 oral; deuterated tetrabenazine) PARKED - hook GAP + depression/suicidality + parkinsonism flags; live SKU confirm at order,2026-11-06
+W300-KILL-ALS,,,2-kills-mapped,Sodium-phenylbutyrate MW-floor free-acid remainder (CHEMBL1746 salt/active phenylbutyrate; Buphenyl FDA 1996; Relyvrio combo withdrawn 2025) + taurursodiol MW/TPSA/HBD bile-acid remainder (CHEMBL272427; Relyvrio combo FDA 2022) - ALS combo file closed; pipeline C=1 Reject=1,2026-11-06
+W300-KILL-ASO,,,1-route-kill,Tofersen intrathecal ASO SOD1 (CHEMBL3833346; FDA 2023 accelerated) - CSF-delivery route wall; no small-molecule CSV,2026-11-06
