@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W235-K01,Lipoic-acid-nutrient-remainder,,206.3,1.7,87.9,1,4,5,,,,,,,
+W235-K02,Ferrous-sulfate-nutrient-remainder,,151.91,-2.0,88.6,0,4,0,,,,,,,
+W235-K03,Cyanocobalamin-nutrient-remainder,,1355.4,-2.0,497.0,12,22,26,,,,,,,
+W235-K04,Methylcobalamin-nutrient-remainder,,1344.4,-2.0,452.0,9,20,26,,,,,,,
+W235-K05,Folic-acid-nutrient-remainder,,441.4,-1.1,209.0,6,10,9,,,,,,,
+W235-K06,Ascorbic-acid-nutrient-remainder,,176.12,-1.5,104.0,3,6,2,,,,,,,
+W235-K07,Tocopherol-nutrient-remainder,,430.7,10.7,29.5,1,2,12,,,,,,,
+W235-K08,Retinol-nutrient-remainder,,286.5,5.7,20.2,1,1,5,,,,,,,
