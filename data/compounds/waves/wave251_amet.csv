@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W251-K01,Thioguanine-antimetab-remainder,,167.19,-0.1,111.0,3,2,0,,,,,,,
+W251-K02,Tegafur-antimetab-remainder,,200.17,-0.3,58.6,1,4,1,,,,,,,
+W251-K03,Floxuridine-IV-remainder,,246.19,-1.2,99.1,3,6,2,,,,,,,
+W251-K04,Sulfinpyrazone-uricosuric-remainder,,404.5,2.3,76.9,0,4,6,,,,,,,
+W251-K05,Oxypurinol-metabolite-remainder,,152.11,-0.9,86.9,3,3,0,,,,,,,
+W251-K06,Tisopurine-experimental-remainder,,152.18,0.0,85.2,2,2,0,,,,,,,
