@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W219-K01,Tacrolimus-macrolide-remainder,,804.02,4.0,178.4,3,12,10,,,,,,,
+W219-K02,Sirolimus-macrolide-remainder,,914.17,4.3,195.4,3,13,15,,,,,,,
+W219-K03,Mesalamine-5ASA-remainder,,153.14,0.6,83.6,3,4,1,,,,,,,
+W219-K04,Balsalazide-5ASA-remainder,,357.28,2.0,140.0,4,9,6,,,,,,,
+W219-K05,Olsalazine-5ASA-remainder,,302.24,2.0,133.0,4,8,3,,,,,,,
