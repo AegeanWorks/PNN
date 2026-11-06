@@ -213,6 +213,10 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W57-AN-01,,,DrugBank etomidate,FDA Amidate IV induction (15-30s LOC = certain BBB); oral not viable — acute IV/probe paradigm,2026-11-06
+W57-AN-02,,,DrugBank dexmedetomidine,FDA Precedex IV + Igalmi sublingual; alpha-2 LC sedative, delirium-sparing differentiator — formulation work needed for chronic oral,2026-11-06
+W57-AN-03,MCE,HY-B0676,DrugBank DB00683,MCE HY-B0676 + Versed/Nayzilam/Buccolam — 6/6 surprise pass,2026-11-06
+W57-KILL-PROP,,,1-killed,Propofol MW+logP dual-fail (small-fragment floor) — MCE live SKU moot,2026-11-06
 W56-AH-01,Selleck,S1816,,Selleck S1816 In-Stock + FDA OTC (base-scored; maleate-salt caveat) — certain BBB, PNN-datum gap noted,2026-11-06
 W56-AH-02,Selleck,S4240,,Selleck S4240 In-Stock + FDA OTC hypnotic (base-scored; succinate-salt caveat) — Unisom functional BBB proof,2026-11-06
 W56-KILL-PIP,,,3-kills-mapped,Hydroxyzine logP/RB + meclizine logP + cyclizine logP-narrow — piperazine lipophilicity ladder closed,2026-11-06

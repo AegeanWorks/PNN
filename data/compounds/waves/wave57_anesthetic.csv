@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W57-AN-01,Etomidate,,244.29,3.00,44.1,0,3,5,,,,,,
+W57-AN-02,Dexmedetomidine,,200.28,3.10,28.7,1,1,2,,,,,,
+W57-AN-03,Midazolam,,325.80,2.50,30.2,0,3,1,,,,,,
