@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W91-MPO155,,,155-profiled,Wave91: pnn.mpo over 155 combined rows (37 files, 0 cross-file dupes) → 0 DEVELOPMENT / 155 OPTIMIZATION — COUNT CORRECTION: running tally said 140, audit proves 155 (tally drift, data clean); outputs in output/wave91_mpo.* (ignored),2026-11-06
+W91-BUYLIST,,,refresh,REFRESHED T1 (F-filled 7) + T2 MPO-band (methylene-blue/pyrantel/morantel/CX-614/MTEP/ondansetron/parthenolide/praziquantel/levamisole/aniracetam 6.00 + fasudil/galantamine/riluzole 5.83) — 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W90-KILL-PERI,,,2-kills-mapped,Naloxegol 1/6 (PEG lesson) + methylnaltrexone nominal-6/6 overturned by permanent N+ charge + label-proven BBB restriction — charge-precedent recorded,2026-11-06
 W89-OA-01,Cayman,15594,DrugBank naloxone NDA208411,Cayman 15594 live + Sigma N7758/Selleck S3061/MCE HY-17427/Tocris 0597 + FDA Narcan OTC — functional BBB proof, IV/IN/nasal-only (oral F 2%),2026-11-06
 W89-OA-02,,,EMA Selincro EPAR EMEA-H-C-002583,EMA-authorised 18mg oral as-needed + functional BBB — Tier 1 approval proof,2026-11-06
