@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W290-K01,Lodenafil-regional-remainder,,504.61,0.97,133.65,2,9,9,,,,,,,
+W290-K02,Udenafil-regional-remainder,,516.67,2.83,122.21,2,8,11,,,,,,,
+W290-K03,Mirodenafil-regional-remainder,,531.68,2.45,120.76,2,8,11,,,,,,,
