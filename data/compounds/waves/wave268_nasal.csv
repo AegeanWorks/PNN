@@ -1,0 +1,10 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W268-K01,Fluticasone-nasal-remainder,,500.6,4.0,106.0,1,9,6,,,,,,,
+W268-K02,Mometasone-nasal-remainder,,521.4,3.9,93.8,1,6,5,,,,,,,
+W268-K03,Ciclesonide-nasal-remainder,,540.7,5.3,99.1,1,7,6,,,,,,,
+W268-K04,Beclomethasone-nasal-remainder,,521.0,3.0,107.0,1,7,8,,,,,,,
+W268-K05,Tretinoin-topical-remainder,,300.4,6.3,37.3,1,2,5,,,,,,,
+W268-K06,Adapalene-topical-remainder,,412.5,7.7,46.5,1,3,4,,,,,,,
+W268-K07,Isotretinoin-oral-remainder,,300.4,6.3,37.3,1,2,5,,,,,,,
+W268-K08,Acitretin-oral-remainder,,326.4,6.1,46.5,1,3,6,,,,,,,
+W268-K09,Pimecrolimus-topical-remainder,,810.4,3.8,158.0,2,11,6,,,,,,,
