@@ -213,6 +213,9 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W34-MC-01,Sigma,24880,,Sigma 24880 (100g ships TODAY) + MCE HY-14603/Selleck S4601 + PBT1 Phase2 AD — SMON caveat: low-dose short-course only,2026-11-06
+W34-MC-02,MCE,HY-105321,,MCE HY-105321 + ChemScene CS-0025730/TargetMol T9159 — AD/HD Phase2 ionophore successor,2026-11-06
+W34-KILL-CHEL,,,2-kills-mapped,Deferiprone MW/logP + deferasirox logP/TPSA — chelator shelf out,2026-11-06
 W33-KILL-TETRA,,,4-kills-mapped,Minocycline 5-fail + doxycycline 4-fail + tetracycline 4-fail + tigecycline 5-fail — DIRECTION caveat: MMP inhibition hardens PNNs (SB-3CT inversion flag applies to class),2026-11-06
 W32-KILL-XAN,,,4-kills-mapped,Caffeine/theophylline/theobromine MW+logP + pentoxifylline logP/TPSA (live SKU moot) — methylxanthine core out,2026-11-06
 W32-KILL-A2A,,,3-kills-mapped,Istradefylline TPSA-only + preladenant 4-fail + dipyridamole 6-fail — A2A angle dies on TPSA,2026-11-06
