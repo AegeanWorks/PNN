@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W273-K01,Canrenone-MR-remainder,,340.46,4.37,43.37,0,3,0,,,,,,,
+W273-K02,Mexrenone-experimental-remainder,,400.5,2.2,69.7,0,5,2,,,,,,,
+W273-K03,Prorenone-experimental-remainder,,354.5,2.8,43.4,0,3,0,,,,,,,
