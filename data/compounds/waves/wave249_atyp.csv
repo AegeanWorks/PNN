@@ -1,0 +1,11 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W249-K01,Tianeptine-atypical-remainder,,437.0,1.2,95.1,2,6,8,,,,,,,
+W249-K02,Amineptine-withdrawn-remainder,,337.5,2.1,49.3,2,3,8,,,,,,,
+W249-K03,Nomifensine-withdrawn-remainder,,238.33,2.6,29.3,1,2,1,,,,,,,
+W249-K04,Diclofensine-nevermarketed-remainder,,322.2,4.5,12.5,0,2,2,,,,,,,
+W249-K05,Phenibut-RU-remainder,,179.22,-1.6,63.3,2,3,4,,,,,,,
+W249-K06,Picamilon-RU-remainder,,208.21,-0.4,79.3,2,4,5,,,,,,,
+W249-K07,Fabomotizole-RU-remainder,,307.4,2.3,75.7,1,5,6,,,,,,,
+W249-K08,Mebicar-RU-remainder,,198.22,-0.9,47.1,0,2,0,,,,,,,
+W249-K09,Kavain-kava-remainder,,230.26,2.5,35.5,0,3,3,,,,,,,
+W249-K10,Mitragynine-kratom-remainder,,398.5,3.4,63.8,1,5,6,,,,,,,
