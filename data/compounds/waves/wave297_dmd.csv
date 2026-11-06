@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W297-K01,Vamorolone-DMD-remainder,,356.46,2.75,74.60,2,4,2,,,,,,,
+W297-K02,Givinostat-DMD-remainder,,421.50,4.55,90.90,3,5,8,,,,,,,
+W297-K03,Ataluren-expired-remainder,,284.25,3.24,76.22,1,4,3,,,,,,,
