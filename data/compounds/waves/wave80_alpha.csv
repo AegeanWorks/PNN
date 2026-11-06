@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W80-AB-01,Moxisylyte,,279.37,3.20,38.8,0,4,7,,,,,,
+W80-AB-02,Phentolamine,,281.35,2.60,47.9,2,3,4,,,,,,
