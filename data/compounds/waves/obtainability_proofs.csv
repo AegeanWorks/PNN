@@ -96,4 +96,18 @@ W6-FLAG-Trazodone-QT,,,DrugBank DB00656,Wave6: QT-PROLONGATION label §5.3 + TdP
 W6-FLAG-Naltrexone-F,,,DrugBank DB00704,Wave6: label F 5-40% range straddles 10% fail-floor — marginal, kept UNKNOWN,2026-11-06
 W6-FLAG-Ketamine-oral,,,DrugBank DB01221,Wave6: oral F 16-29% marginal-pass + human CSF:plasma AUC 0.917 excellent-brain note (IV/nasal only),2026-11-06
 W6-FLAG-Vincamine-Pgp,,,Sigma 194719,Wave6: unbound-brain microdialysis equilibration + cyclosporine P-gp signal noted,2026-11-06
+W7-LM-01,Selleck,S5177,DrugBank DB00788,Selleck S5177 Naproxen In-Stock + Sigma N8280 + Aleve FDA1976,2026-11-06
+W7-LM-02,Sigma,I4883,DrugBank DB01050,Sigma I4883 Ibuprofen + Advil FDA1974 logP-3.5-at-limit,2026-11-06
+W7-LM-03,Sigma,K1751,DrugBank DB01009,Sigma K1751 Ketoprofen + Orudis approved,2026-11-06
+W7-LM-04,Sigma,Fenoprofen,DrugBank DB00712,Commodity Nalfon FDA-approved + MCE/Selleck lines confirm-salt,2026-11-06
+W7-GR-01,Selleck,S2590,,Selleck S2590 Pioglitazone In-Stock — Wave2 kill CORRECTED (bad TPSA/logP numbers) + weight-gain-inverse flag,2026-11-06
+W7-GR-02,Selleck,S3227,,Selleck S3227 5,7-DMF In-Stock + BCRP/CYP3A-modulator DDI flag,2026-11-06
+W7-GR-03,Selleck,S3868,,Selleck S3868 Harmine In-Stock + MAO-A-Ki-0.048uM cheese-crisis flag,2026-11-06
+W7-OR-01,Tocris,1706,,Tocris 1706 CX-614 ampakine-ARC + MCE/Sigma lines,2026-11-06
+W7-OR-02,Tocris,0905,,Tocris 0905 Rolipram + MCE HY-16900 + Sigma R6520 investigational-not-approved,2026-11-06
+W7-OR-03,Tocris,4317,,Tocris 4317 ML324 + MCE HY-12725 KDM4-probe,2026-11-06
+W7-OR-04,Tocris,0922,,Tocris 0922 SKF-38393 + MCE HY-12524 + Sigma D047 D1-pair-to-D2,2026-11-06
+W7-OR-05,Tocris,1760,,Tocris 1760 Blebbistatin + MCE HY-13441 + Sigma B0560 myosin-II-racemate,2026-11-06
+W7-OR-07,Sigma,D6126,,Sigma D6126 Dichlone + covalent/ROS-counterscreen-only flag,2026-11-06
+W7-OR-06-KILL,,,W1-RX-06-duplicate,Quinpirole = W1-RX-06 duplicate (Tocris 1061/Sigma Q102) killed,2026-11-06
 W4-PTP-05-KILL,MCE,HY-19383,,Ertiprotafib In-stock TODAY but MW559.5/logP9.2/TPSA74.8 3-fails REJECTED,2026-11-06
