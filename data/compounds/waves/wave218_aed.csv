@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W218-K01,Topiramate-AED-remainder,,339.36,-0.8,124.0,1,9,3,,,,,,,
+W218-K02,Pregabalin-gabapentinoid-remainder,,159.23,-1.6,63.3,2,3,5,,,,,,,
+W218-K03,Gabapentin-gabapentinoid-remainder,,171.24,-1.1,63.3,2,3,3,,,,,,,
+W218-K04,Felbamate-AED-remainder,,238.24,0.6,105.0,2,4,7,,,,,,,
+W218-K05,Acetazolamide-CAI-remainder,,222.3,-0.3,152.0,2,7,2,,,,,,,
+W218-K06,Methazolamide-CAI-remainder,,236.3,0.1,139.0,1,6,1,,,,,,,
+W218-K07,Everolimus-mTOR-remainder,,958.2,5.9,205.0,3,14,9,,,,,,,
