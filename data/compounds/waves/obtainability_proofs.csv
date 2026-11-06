@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W126-KILL-OXAG,,,2-kills-mapped,Danavorexton TPSA-only (SMILES on record) + firazorexton MW/TPSA/HBA (hydrate checked, logP-null no fabrication) — OX2-agonist flipside closed,2026-11-06
 W125-OX-01,Selleck,S1545,,Selleck S1545 In-Stock batch S154501 (logP at 3.5 ceiling — verify-boundary tier) + OX1 Ki 27-57nM ~50x selective,2026-11-06
 W125-KILL-OX,,,2-kills-mapped,SB-334867 TPSA-only (first-gen) + almorexant triple (Phase-3 discontinued) — orexin file closed with TCS-OX2-29,2026-11-06
 W124-KILL-NKN,,,5-kills-mapped,Saredutant triple + nepadutant peptide 6/6-out + osanetant triple + talnetant logP-only + ezlopitant triple (brief eslopitant = name variant) — neurokinin family closed,2026-11-06
