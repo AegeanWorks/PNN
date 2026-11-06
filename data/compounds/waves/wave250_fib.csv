@@ -1,0 +1,12 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W250-K01,Ciprofibrate-fibrate-remainder,,289.16,3.59,46.53,1,2,4,,,,,,,
+W250-K02,Clofibrate-withdrawn-remainder,,242.70,3.3,35.5,0,3,5,,,,,,,
+W250-K03,Acipimox-fibrate-remainder,,154.12,-1.0,75.7,1,4,1,,,,,,,
+W250-K04,Probucol-withdrawn-remainder,,516.8,11.3,91.1,2,4,8,,,,,,,
+W250-K05,Resmetirom-MASH-remainder,,435.2,2.7,136.0,2,7,4,,,,,,,
+W250-K06,Dextrothyroxine-withdrawn-remainder,,776.87,4.56,92.78,3,4,5,,,,,,,
+W250-K07,Tiratricol-thyroid-remainder,,621.93,4.63,66.76,2,3,4,,,,,,,
+W250-K08,Elafibranor-PPAR-remainder,,384.50,5.16,63.60,1,4,7,,,,,,,
+W250-K09,Seladelpar-PPAR-remainder,,444.47,5.05,64.99,1,5,11,,,,,,,
+W250-K10,Saroglitazar-PPAR-remainder,,439.58,5.30,60.69,1,5,11,,,,,,,
+W250-K11,Pemafibrate-PPAR-remainder,,490.56,5.55,94.26,1,7,13,,,,,,,
