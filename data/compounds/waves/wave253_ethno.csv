@@ -1,0 +1,11 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W253-K01,Ibogaine-SchedI-remainder,,310.4,3.9,28.3,1,2,2,,,,,,,
+W253-K02,Noribogaine-investigational-remainder,,296.41,3.63,39.26,2,2,1,,,,,,,
+W253-K03,SalvinorinA-kappa-remainder,,432.5,2.5,109.0,0,8,5,,,,,,,
+W253-K04,Arecoline-betel-remainder,,155.19,0.3,29.5,0,3,2,,,,,,,
+W253-K05,Lobeline-legacy-remainder,,337.5,3.8,40.5,1,3,6,,,,,,,
+W253-K06,Anagyrine-teratogen-remainder,,244.34,1.82,25.24,0,3,0,,,,,,,
+W253-K07,Sparteine-cardiac-remainder,,234.39,2.35,6.48,0,2,0,,,,,,,
+W253-K08,Lupanine-narrowTI-remainder,,248.37,1.87,23.55,0,2,0,,,,,,,
+W253-P01,Harmaline-ChEMBL-live,,214.27,2.54,37.38,1,2,1,,,,,,,
+W253-P02,Tetrahydroharmine-ChEMBL-live,,216.28,2.38,37.05,2,2,1,,,,,,,
