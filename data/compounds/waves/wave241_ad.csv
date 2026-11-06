@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W241-K01,Vilazodone-lateAD-remainder,,441.5,4.0,102.0,2,5,7,,,,,,,
+W241-K02,Moclobemide-RIMA-remainder,,268.74,1.40,41.57,1,3,4,,,,,,,
+W241-K03,Brofaromine-RIMA-remainder,,310.19,3.67,34.40,1,3,2,,,,,,,
+W241-K04,Toloxatone-RIMA-remainder,,207.23,1.2,49.8,1,3,2,,,,,,,
+W241-P01,Gepirone-ChEMBL-live,,359.47,1.55,69.64,0,6,6,,,,,,,
+W241-P02,Befloxatone-ChEMBL-live,,349.31,2.35,68.23,1,5,7,,,,,,,

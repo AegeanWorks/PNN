@@ -607,3 +607,7 @@ W240-P01,,,FDA-approved,Physostigmine tier-B ChEMBL-live MW275.4/ALOGP1.77/PSA44
 W240-P02,,,supplement/research,Rauwolscine tier-B ChEMBL-live MW354.5/ALOGP2.65 (alpha-yohimbine fat-burners; no FDA) PARKED - hook GAP + HTN/anxiety flags; research-chemical obtainability, SKU confirm at order,2026-11-06
 W240-P03,,,research-only,Corynanthine tier-B ChEMBL-live MW354.5/ALOGP2.65 (experimental alpha1 standard; no FDA) PARKED - hook GAP; research-only obtainability, SKU confirm at order,2026-11-06
 W240-P04,,,EU-Rx/supplement,Ajmalicine tier-B ChEMBL-live MW352.4/ALOGP3.18 (EU cerebral vasodilator; no US FDA) PARKED - hook GAP + hypotension flags; SKU confirm at order,2026-11-06
+W241-KILL-AD,,,4-kills-mapped,Vilazodone logP/TPSA (DB06684) + moclobemide ALOGP1.40-flip EU-only + brofaromine ALOGP3.67-flip never-approved + toloxatone logP withdrawn-hepatitis - late-AD lipophilicity + RIMA flips; PNN-count 0 all,2026-11-06
+W241-KILL-ALV,,,1-route-kill,Alvimopan peripheral mu-antagonist gut-restricted - zero CNS; no research needed,2026-11-06
+W241-P01,,,FDA-2023,Gepirone tier-B ChEMBL-live MW359.5/ALOGP1.55/PSA69.64 (DB12184; Exxua) PARKED - hook GAP (PNN-count 0) + QT/suicidality flags; newest park (2023 approval); live SKU confirm at order,2026-11-06
+W241-P02,,,research-only,Befloxatone tier-B ChEMBL-live MW349.3/ALOGP2.35/PSA68.2 HBA5 (HBA-split resolved N/O; MAO-A PET-ligand PMID12606609) PARKED - hook GAP + never-approved/discontinued; research-only obtainability, SKU confirm at order,2026-11-06
