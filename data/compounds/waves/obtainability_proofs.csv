@@ -199,6 +199,9 @@ W22-AE-02,Selleck,S5740,DrugBank palonosetron,FDA Aloxi NDA021372 + Selleck S574
 W22-AE-03,Selleck,S5326,DrugBank dolasetron,FDA Anzemet oral ACTIVE + Selleck S5326/Cayman 22234 — IV withdrawn QT, oral remains (flag),2026-11-06
 W22-AE-04,Selleck,S3723,,JP/KR Nasea approval + Selleck S3723 HCl In-Stock — HCl MW 315.80 still passes,2026-11-06
 W22-KILL-GI,,,5-kills-mapped,Domperidone logP + mosapride/prucalopride TPSA + itopride RB + tropisetron logP3.8 — PUG numbers,2026-11-06
+W29-ES-01,Selleck,S1196,DrugBank exemestane,Selleck S1196 In-Stock 99.96% + FDA Aromasin — steroidal irreversible AI (triazoles TPSA-dead),2026-11-06
+W29-KILL-SERM,,,3-kills-mapped,Tamoxifen logP/RB + raloxifene triple + clomifene logP/RB — ER-microglia hook real, chemistry out,2026-11-06
+W29-KILL-AI,,,2-kills-mapped,Letrozole/anastrozole identical TPSA 78.3 — triazole nonsteroidals share the fail,2026-11-06
 W26-KILL-JAK,,,4-kills-mapped,Tofacitinib/baricitinib/ruxolitinib/upadacitinib — JAK class systematically TPSA>70 (pyrrolo-pyrimidine pattern + backups),2026-11-06
 W26-KILL-BTK,,,4-kills-mapped,Ibrutinib/evobrutinib/zanubrutinib/tolebrutinib — BTK class logP+TPSA/MW (even CNS-designed tolebrutinib TPSA92),2026-11-06
 W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol triple + ethionamide triple — approvals noted, filters kill,2026-11-06
