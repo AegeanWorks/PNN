@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W285-K01,Metipranolol-ophthalmic-remainder,,309.4,2.7,67.8,2,5,8,,,,,,,
+W285-K02,Dipivefrin-ophthalmic-remainder,,351.4,2.9,84.9,2,6,9,,,,,,,
+W285-K03,Unoprostone-ophthalmic-remainder,,424.6,4.9,83.8,2,5,17,,,,,,,
