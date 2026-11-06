@@ -668,3 +668,4 @@ W270-KILL-COX,,,9-kills-mapped,Celecoxib ALOGP3.51/PSA78-flip (ADAPT PMIDs filed
 W270-P01,,,FDA-OTC,Ibuprofen tier-B ChEMBL-live MW206.3/ALOGP3.07/PSA37.3 (DB01050) PARKED - hook GAP but best AD-epi in class (Rotterdam PMID11739367, meta PMID18448874; ADAPT-RCT negative filed) + GI/CV/renal flags,2026-11-06
 W270-P02,,,FDA-short-course,Ketorolac tier-B ChEMBL-live MW255.3/ALOGP2.29/PSA59.3 (DB00465) PARKED - hook GAP + short-course-only + hemorrhage/renal flags,2026-11-06
 W270-P03,,,FDA-approved,Nabumetone tier-B ChEMBL-live MW228.3/ALOGP3.37/PSA26.3 (DB00461; prodrug to 6-MNA) PARKED - hook GAP (PNN-count 0),2026-11-06
+W271-KILL-AR2,,,2-kills-mapped,Apalutamide MW/logP/TPSA seizure/fall flags (DB11901) + darolutamide TPSA-only low-BBB (DB12941; P-gp/BCRP substrate) - AR-antagonist polarity/size wall; PNN-count 0 both,2026-11-06
