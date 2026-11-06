@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W205-VND-01,Zolmitriptan-dual-proof-root-verified,CN(C)CCC1=CNC2=C1C=C(C=C2)CC3COC(=O)N3,287.36,2.2,57.4,2,3,5,,,,,,,
+W205-VND-02,Ketanserin-base-GC14563-plus-tartrate,,395.4,2.6,69.7,1,5,5,,,,,,,
+W205-VND-03,DCU-dicyclohexylurea-GC10828,,224.34,3.0,41.1,2,1,2,,,,,,,
+W205-VND-04,GTS-21-diHCl-GC10913,,308.38,3.21,43.7,0,4,4,,,,,,,
