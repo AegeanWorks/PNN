@@ -1,0 +1,11 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W224-K01,Oxycodone-opioid-remainder,,315.4,1.2,59.0,1,5,1,,,,,,,
+W224-K02,Oxymorphone-opioid-remainder,,301.34,0.8,70.0,2,5,0,,,,,,,
+W224-K03,Methadone-opioid-remainder,,309.4,3.9,20.3,0,2,7,,,,,,,
+W224-K04,Fentanyl-opioid-remainder,,336.5,4.0,23.6,0,2,6,,,,,,,
+W224-K05,Alfentanil-opioid-remainder,,416.5,2.2,81.1,0,6,9,,,,,,,
+W224-K06,Sufentanil-opioid-remainder,,386.6,4.0,61.0,0,4,8,,,,,,,
+W224-K07,Remifentanil-opioid-remainder,,376.4,1.9,76.2,0,6,9,,,,,,,
+W224-P01,Hydrocodone-ChEMBL-live,,299.4,1.93,38.77,0,4,1,,,,,,,
+W224-P02,Hydromorphone-ChEMBL-live,,285.34,1.63,49.77,1,4,0,,,,,,,
+W224-P03,Levorphanol-ChEMBL-live,,257.38,3.08,23.47,1,2,0,,,,,,,
