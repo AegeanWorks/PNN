@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W190-KILL-IMID,,,4-kills-mapped,Pomalidomide/iberdomide logP/TPSA + mezigdomide 4-fail + avadomide logP/TPSA — IMiD/CELMoD file closed; counter reset,2026-11-06
 W189-MPO171,,,171-profiled,Wave189: MPO over 53 files/171 unique (0 dupes) → 0 DEVELOPMENT / 171 OPTIMIZATION_LEAD. Count corrected 157->171 (tally drift, files ground truth). Buy-list refreshed unchanged (same F-filled top + same flags). 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W188-HAL-01,GlpBio,GC17599,,GlpBio GC17599 In-Stock (10mM $15 / 25mg $14; CAS 52-86-8) — CONVERTED from W187 park; SMILES intentionally blank (no fabrication),2026-11-06
 W187-KILL-TYP2,,,4-kills-mapped,Chlorpromazine logP + flupenthixol logP-near-miss + zuclopenthixol/trifluoperazine logP — typical-antipsychotic file fully closed,2026-11-06
