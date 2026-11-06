@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W231-K01,Calcitriol-vitD-remainder,,416.64,5.1,60.7,3,3,6,,,,,,,
+W231-K02,Cholecalciferol-vitD-remainder,,384.64,8.0,20.23,1,1,6,,,,,,,
+W231-K03,Ergocalciferol-vitD-remainder,,396.65,8.89,20.23,1,1,5,,,,,,,
+W231-K04,Calcifediol-vitD-remainder,,400.64,6.2,40.46,2,2,6,,,,,,,
