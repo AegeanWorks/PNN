@@ -138,3 +138,6 @@ W10-TPI-01,MCE,HY-100463,,MCE HY-100463 live + 2g in-stock supplier — CONVERTE
 W10-REAGENT-WFA,Vector,B-1355-2,,Vector B-1355-2 biotinylated WFA $223 Add-to-cart VERIFIED live — WFA assay unblocked,2026-11-06
 W10-KILL-ChABC,,,access-kill,ChABC C3667/C2905/C6737 + MMP-9 911-MP-010 + ilomastat 2707 — all routes exhausted (timeouts/403/404/JS) ACCESS-KILL not chemistry-kill; revival = manual browser stock-button check,2026-11-06
 W10-BENZOFURAN-STAND,,,Vitas-M-originator,STK169690/519331/169693 Wave-5 Vitas-live proof STANDS (211-323mg captured same-day); Wave-10 re-confirm JS-gated = inconclusive not disproof; order-time verification required,2026-11-06
+W11-REAGENT-MARIMASTAT,Selleck,S7156,,Selleck S7156 Marimastat VERIFIED live (title In-Stock + schema.org/InStock + 4 offers $147-4970 + .cn all-SKU in-stock) — MMP-inhibitor CONTROL (hydroxamate, assay-only),2026-11-06
+W11-TPI1-SLUG-FIX,Selleck,S6570,,TPI-1 canonical slug /products/tpi-1.html (S6570 pattern 404 was wrong-URL artifact) — In-Stock both domains + Batch S657001 99.72%,2026-11-06
+W11-FARAMPATOR-2ND,Cayman,21510,,Cayman 21510 second source (Biomol distributor 1/5/10mg + 5-10d delivery) — MCE HY-10937 primary + Cayman secondary; Selleck/Tocris/Sigma no-listing,2026-11-06
