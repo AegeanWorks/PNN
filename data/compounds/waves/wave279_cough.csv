@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W279-K01,Levodropropizine-antitussive-remainder,,236.31,0.6,46.9,2,4,4,,,,,,,
+W279-K02,Butamirate-antitussive-remainder,,307.43,3.3,38.8,0,4,12,,,,,,,
+W279-K03,Pentoxyverine-antitussive-remainder,,333.47,3.8,38.8,0,4,11,,,,,,,
+W279-K04,Pipazethate-withdrawn-remainder,,399.51,3.4,80.2,0,6,7,,,,,,,
+W279-K05,Clobutinol-withdrawn-remainder,,255.79,2.83,23.47,1,2,5,,,,,,,
+W279-P01,Oxolamine-ChEMBL-live,,245.33,2.62,42.16,0,4,6,,,,,,,
+W279-P02,Moguisteine-ChEMBL-live,,339.41,1.93,65.07,0,6,7,,,,,,,
