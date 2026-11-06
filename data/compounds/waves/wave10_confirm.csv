@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W10-EF-01,Ethyl-ferulate,CCOC(=O)C=CC1=CC(=C(C=C1)O)OC,222.24,2.20,55.8,1,4,5,,,,,,
+W10-FAR-01,Farampator,,231.25,1.50,59.2,0,4,1,,,,,,
+W10-TPI-01,TPI-1,,253.08,2.90,34.1,0,2,1,,,,,,

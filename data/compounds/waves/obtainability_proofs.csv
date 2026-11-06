@@ -132,3 +132,9 @@ W9-NT-04,Tocris,2207,,Tocris 2207 PNU-282987 + MCE HY-12560 + Sigma P6499 alpha7
 W9-TP-04-RE-PARK,,,W2-CNS-08-duplicate,Ketotifen re-proposed but NO new PNN datum since Wave-2 UNPROVABLE park — stays parked,2026-11-06
 W9-REAGENT-D12054,Thermo,D12054,,Thermo D12054 DQ-Gelatin 5x1mg VERIFIED live (Target Enzyme: Metalloproteinase) — degradation-assay fluorogenic stand-in,2026-11-06
 W9-REAGENT-PARKED,,,4-parked,ChABC C3667 + WFA B-1355-2 + MMP-9 911-MP-010 + ilomastat 2707 — no live proof (JS/403/timeout) stays parked,2026-11-06
+W10-EF-01,MCE,HY-N0061,,MCE HY-N0061 + Enamine EN300-226629 + live in-stock qtys — W7-parked CONVERTED (esterase-metabolite flag stands),2026-11-06
+W10-FAR-01,MCE,HY-10937,,MCE HY-10937 live + 2g in-stock supplier — W7-parked-pending CONVERTED (Tocris route unconfirmed),2026-11-06
+W10-TPI-01,MCE,HY-100463,,MCE HY-100463 live + 2g in-stock supplier — CONVERTED (Selleck S6570 dead, MCE route carries),2026-11-06
+W10-REAGENT-WFA,Vector,B-1355-2,,Vector B-1355-2 biotinylated WFA $223 Add-to-cart VERIFIED live — WFA assay unblocked,2026-11-06
+W10-KILL-ChABC,,,access-kill,ChABC C3667/C2905/C6737 + MMP-9 911-MP-010 + ilomastat 2707 — all routes exhausted (timeouts/403/404/JS) ACCESS-KILL not chemistry-kill; revival = manual browser stock-button check,2026-11-06
+W10-BENZOFURAN-STAND,,,Vitas-M-originator,STK169690/519331/169693 Wave-5 Vitas-live proof STANDS (211-323mg captured same-day); Wave-10 re-confirm JS-gated = inconclusive not disproof; order-time verification required,2026-11-06
