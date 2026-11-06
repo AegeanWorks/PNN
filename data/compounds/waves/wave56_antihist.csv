@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W56-AH-01,Chlorpheniramine,,274.79,3.40,16.1,0,2,5,,,,,,
+W56-AH-02,Doxylamine,,270.37,2.50,25.4,0,3,6,,,,,,
