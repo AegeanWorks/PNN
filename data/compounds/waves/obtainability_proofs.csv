@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W37-KILL-THY,,,4-kills-mapped,Levothyroxine/liothyronine MW+TPSA + methimazole MW/logP + propylthiouracil triple — endocrine floor,2026-11-06
+W37-KILL-LI,,,1-killed,Lithium elemental (6.94 Da) — outside small-molecule filters by construction,2026-11-06
 W36-KILL-BA,,,4-kills-mapped,OCA logP/TPSA (+withdrawn) + chenodiol logP/TPSA + cholic 3-fail + deoxycholic 2-fail — bile-acid chemotype systematically out; ursodiol sole exception,2026-11-06
 W35-KILL-OXAZ,,,3-kills-mapped,Linezolid logP/TPSA-narrow + tedizolid triple + sutezolid TPSA-only — MAO/CNS hook dies on chemistry,2026-11-06
 W35-KILL-MYCO2,,,3-kills-mapped,Ethambutol triple + clofazimine MW/logP + bedaquiline triple — remaining mycobacterials out,2026-11-06
