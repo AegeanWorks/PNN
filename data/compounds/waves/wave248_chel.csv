@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W248-K01,Tiopronin-chelator-remainder,,163.20,-0.1,67.4,3,4,3,,,,,,,
+W248-K02,Succimer-chelator-remainder,,182.2,0.1,76.6,4,6,3,,,,,,,
+W248-K03,Deferitrin-discontinued-remainder,,253.28,1.3,115.0,3,6,2,,,,,,,
+W248-K04,Dimercaprol-IM-remainder,,124.23,0.2,22.2,3,3,2,,,,,,,
+W248-K05,Edetate-IV-remainder,,292.24,-5.9,156.0,4,10,11,,,,,,,
