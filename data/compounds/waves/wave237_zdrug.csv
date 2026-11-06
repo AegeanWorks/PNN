@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W237-K01,Eszopiclone-Zdrug-remainder,,388.8,0.5,91.8,0,7,3,,,,,,,
+W237-K02,Zaleplon-Zdrug-remainder,,305.33,1.0,74.3,0,4,3,,,,,,,
+W237-K03,Sodium-oxybate-remainder,,104.10,-0.6,57.5,2,3,3,,,,,,,
+W237-P01,Zolpidem-ChEMBL-live,,307.40,3.25,37.61,0,3,3,,,,,,,
