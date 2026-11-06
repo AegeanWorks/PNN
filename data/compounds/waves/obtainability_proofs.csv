@@ -646,3 +646,5 @@ W258-KILL-CAN2,,,2-kills-mapped,Cannabidivarin logP-only (GW epilepsy PMID229708
 W258-DEAD-SRC,,,1-source-note,CBN/CBG/CBC/THCV excluded as W148 re-search (W148-KILL-CANMIN closed 7 agents) - dead wave for those four, no ceremony,2026-11-06
 W259-KILL-CFTR,,,1-kill-mapped,Ivacaftor logP/TPSA (DB08820; combos closed) + hepatic/neuropsych flags - CFTR lipophilicity wall; pipeline C=1,2026-11-06
 W259-KILL-BIO,,,12-route-kills,Palivizumab/nirsevimab mAbs + somatropin/mecasermin/pegvisomant/tesamorelin GH-axis + hCG/follitropin/menotropin/urofollitropin gonadotropins + cetrorelix/ganirelix GnRH-antagonists - all injectable peptides/proteins/mAbs, zero oral; no research needed,2026-11-06
+W260-KILL-LEVODOPA,,,1-kill-mapped,Levodopa 4-fail MW/logP/TPSA/HBD (DB01235; Sinemet 1975; LAT1-transported but box is passive-design, transporter does not rescue) - catechol amino-acid floor; PNN-count 0,2026-11-06
+W260-NOTE,,,1-coverage-note,Istradefylline reconfirmed closed W32-KILL-A2A; carbidopa/benserazide untouched per cycle rule,2026-11-06
