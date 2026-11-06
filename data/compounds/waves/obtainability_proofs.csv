@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W195-ZERO-TEGO,,,stays-synonym,Tegoprazan live-SKU hunt blocked on all routes (403/quota) — 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W194-KILL-SNRI,,,3-kills-mapped,Duloxetine lipophilic + milnacipran/levomilnacipran polar-floor fails — SNRI leftover shelf closed,2026-11-06
 W193-KILL-URICOS,,,3-kills-mapped,Probenecid TPSA-only + lesinurad logP/TPSA + cinacalcet logP-only — uricosuric/calcimimetic shelf closed; counter reset,2026-11-06
 W192-KILL-SULFA,,,4-kills-mapped,Sulfamethoxazole/trimethoprim/sulfadiazine logP+TPSA + sulfasalazine logP/TPSA/HBA — sulfonamide file closed,2026-11-06
