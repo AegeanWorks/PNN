@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W44-KILL-DAA,,,4-kills-mapped,Sofosbuvir 5-fail + daclatasvir 6-fail + ledipasvir 6-fail + dasabuvir 3-fail — DAA large-polar floor,2026-11-06
 W43-KILL-THIAZ,,,2-kills-mapped,Nitazoxanide TPSA-only + niclosamide logP/TPSA — host-directed angle closed,2026-11-06
 W43-KILL-NITRO,,,3-kills-mapped,Metronidazole triple + tinidazole double + ribavirin triple — nitro/nucleoside host chemotypes out,2026-11-06
 W42-KILL-HERPES,,,5-kills-mapped,Acyclovir/valacyclovir/famciclovir/ganciclovir/valganciclovir — MW-pass but logP/TPSA systematically out; nucleoside class dead,2026-11-06
