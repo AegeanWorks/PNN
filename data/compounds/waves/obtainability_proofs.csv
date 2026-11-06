@@ -214,6 +214,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W187-KILL-TYP2,,,4-kills-mapped,Chlorpromazine logP + flupenthixol logP-near-miss + zuclopenthixol/trifluoperazine logP — typical-antipsychotic file fully closed,2026-11-06
+W187-PARK-HALO,,,parked-provisional,Haloperidol 6/6 (PUG CID 3559; MW 375.9/logP 3.2/TPSA 40.5) but NO live SKU checked — convert on live-SKU hunt,2026-11-06
 W186-KILL-ATYP,,,3-kills-mapped,Pimavanserin logP/RB + lumateperone logP (lumateperin = misspelling, no CID) + brexpiprazole logP/TPSA — atypical file closed,2026-11-06
 W185-CONV-RAS,,,Biomol TGM-T200035 In-Stock raseglurant (CAS 757950-09-7, ADX-10059 synonym) 25mg 1440EUR — W12 verified,2026-11-06
 W185-CONV-DIPR,,,Biomol TGM-T15134 + Cayman 42535 In-Stock dipraglurant (CAS 872363-17-2, ADX48621) — W12 verified; Cayman catalog live title,2026-11-06
