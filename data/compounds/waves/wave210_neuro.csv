@@ -1,0 +1,12 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W210-K01,Selegiline-MAOB-remainder,,187.28,2.8,3.2,0,1,4,,,,,,,
+W210-K02,Rasagiline-MAOB-remainder,,171.24,1.8,12.0,1,1,2,,,,,,,
+W210-K03,Chlorpheniramine-antihist-remainder,,274.79,3.82,16.1,0,2,5,,,,,,,
+W210-K04,Sumatriptan-triptan-remainder,,295.40,0.9,73.6,2,4,6,,,,,,,
+W210-K05,Eletriptan-triptan-remainder,,382.53,3.82,53.2,1,3,6,,,,,,,
+W210-K06,Buprenorphine-opioid-remainder,,467.6,5.0,62.2,2,5,5,,,,,,,
+W210-P01,Safinamide-ChEMBL-live,,302.35,2.37,64.35,2,3,7,,,,,,,
+W210-P02,Diphenhydramine-ChEMBL-live,,255.36,3.35,12.5,0,2,6,,,,,,,
+W210-P03,Doxylamine-ChEMBL-live,,270.38,2.92,25.4,0,3,6,,,,,,,
+W210-P04,Tramadol-opioid-remainder,,263.37,2.6,32.7,1,3,4,,,,,,,
+W210-P05,Tapentadol-ChEMBL-live,,221.34,3.08,23.5,1,2,5,,,,,,,
