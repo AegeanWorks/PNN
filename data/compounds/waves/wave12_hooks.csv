@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W12-MGL-01,Raseglurant,CC1=CC(=NC(=C1N)C#CC2=CC(=CC=C2)F)C,240.27,3.10,38.9,1,3,2,,,,,,
+W12-MGL-02,Mavoglurant,CC1=CC(=CC=C1)C#C[C@@]2(CCC[C@@H]3[C@H]2CCN3C(=O)OC)O,313.40,2.90,49.8,1,3,3,,,,,,
+W12-MGL-03,Dipraglurant,C1=CC=NC(=C1)C#CCCC2=CN3C=C(C=CC3=N2)F,265.28,3.50,30.2,0,3,3,,,,,,
+W12-MGL-04,SIB-1757,CC1=NC(=C(C=C1)O)N=NC2=CC=CC=C2,213.23,3.00,57.8,1,4,2,,,,,,
+W12-A7-01,ABT-126,,313.40,3.20,66.5,0,5,3,,,,,,
+W12-A7-02,AQW051,,294.40,3.50,25.4,0,3,3,,,,,,
+W12-AM-01,IDRA-21,,232.69,1.50,66.6,2,4,0,,,,,,
+W12-D1-01,SKF-81297,,289.75,2.70,52.5,3,3,1,,,,,,

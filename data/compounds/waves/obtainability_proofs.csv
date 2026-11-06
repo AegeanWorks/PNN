@@ -141,3 +141,14 @@ W10-BENZOFURAN-STAND,,,Vitas-M-originator,STK169690/519331/169693 Wave-5 Vitas-l
 W11-REAGENT-MARIMASTAT,Selleck,S7156,,Selleck S7156 Marimastat VERIFIED live (title In-Stock + schema.org/InStock + 4 offers $147-4970 + .cn all-SKU in-stock) — MMP-inhibitor CONTROL (hydroxamate, assay-only),2026-11-06
 W11-TPI1-SLUG-FIX,Selleck,S6570,,TPI-1 canonical slug /products/tpi-1.html (S6570 pattern 404 was wrong-URL artifact) — In-Stock both domains + Batch S657001 99.72%,2026-11-06
 W11-FARAMPATOR-2ND,Cayman,21510,,Cayman 21510 second source (Biomol distributor 1/5/10mg + 5-10d delivery) — MCE HY-10937 primary + Cayman secondary; Selleck/Tocris/Sigma no-listing,2026-11-06
+W12-MGL-01,MCE,HY-14866,,MCE HY-14866 raseglurant (clinical oral mGluR5) — hepatic-signal flag, comparator only,2026-11-06
+W12-MGL-02,MCE,HY-15257,,MCE HY-15257 mavoglurant (clinical Fragile-X-failed, scaffold-diverse) — mechanism anchor,2026-11-06
+W12-MGL-03,MCE,HY-14859,,MCE HY-14859 dipraglurant — logP-ceiling flag, motor-circuit precedent,2026-11-06
+W12-MGL-04,Tocris,1215,,Tocris 1215 + Selleck S2645 + MCE HY-102095 SIB-1757 (first-gen NAM, weaker — tool only),2026-11-06
+W12-A7-01,MCE,HY-16748,,MCE HY-16748 ABT-126 (AbbVie alpha7, schizophrenia/AD program),2026-11-06
+W12-A7-02,MCE,HY-19490,,MCE HY-19490 AQW051 (Novartis selective alpha7, logP-ceiling flag),2026-11-06
+W12-AM-01,MCE,HY-101528,,MCE HY-101528 + Selleck s2434 + HelloBio HB0334 IDRA-21 (logP-floor flag, 48h monkey effect),2026-11-06
+W12-D1-01,HelloBio,HB1858,,HelloBio HB1858 SKF-81297-HBr VERIFIED live (Tocris 3346/Sigma S4371 backup) — SKF-38393 upgrade,2026-11-06
+W12-PARKED,,,6-parked,Eutropoflavin (no SKU) + 6,7-DHF (no hook/SKU) + dihydrexidine/dinapsoline/CY208-243/emapunil (pass filters, no live fetch — reconfirm at order),2026-11-06
+W12-DEAD-TRKB,,,dead-end,LM22A-4/LM22B-10/deoxygedunin/HIOC/chrysin — TrkB small-molecule space filter-dead except 7,8-DHF; eutropoflavin only SKU-less hope,2026-11-06
+W12-DEAD-STEROID,,,dead-end,Dutasteride/allopregnanolone/ganaxolone/epristeride/FCE28260/zuranolone/etifoxine/izonsteride — steroidal 5AR/neurosteroid logP 4.5-6.2 systematic fail; TSPO non-steroidal only route,2026-11-06
