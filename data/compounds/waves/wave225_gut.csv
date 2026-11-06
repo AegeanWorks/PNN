@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W225-K01,Rabeprazole-PPI-remainder,,359.4,1.9,96.3,1,6,8,,,,,,,
+W225-K02,Dexlansoprazole-PPI-remainder,,369.4,2.8,87.1,1,8,5,,,,,,,
+W225-K03,Linaprazan-PCAB-remainder,,366.5,3.4,78.7,3,4,6,,,,,,,
+W225-K04,Rebamipide-mucosal-remainder,,370.8,2.75,77.0,2,4,5,,,,,,,
+W225-K05,Ecabet-mucosal-remainder,,380.5,4.5,82.0,1,5,6,,,,,,,
+W225-K06,Teprenone-mucosal-remainder,,330.6,7.0,17.0,0,1,10,,,,,,,
+W225-K07,Troxipide-mucosal-remainder,,294.35,1.19,68.82,2,5,5,,,,,,,
