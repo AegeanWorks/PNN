@@ -480,3 +480,20 @@ W203-CAT-04,Selleck,E7890,,Selleck E7890 Ketotifen In-Stock + CAS 34580-13-7 bat
 W203-CAT-08,Selleck,S8319,,Selleck S8319 7-8-DHF In-Stock 3 batches 99.97% + TrkB Kd 320nM BBB/oral vendor note root-verified — duplicate of W9-NT-01 deepens to 4-source,2026-11-06
 W203-CAT-02-NOTE,Cayman,45283,,Abeprazan=fexuprazan CAS 1902954-60-2 live-title root-fetched 2026-11-06 but JS-walled no In-Stock capture — prior W143 live claim stands single-vendor flag,2026-11-06
 W203-CAT-03-NOTE,Cayman,38346,,AR-9281=APAU CAS 913548-29-5 live-title root-fetched 2026-11-06 but JS-walled no In-Stock capture — prior W143/W185 claim stands single-vendor flag,2026-11-06
+W204-NAT-01,MCE,HY-N0144,,MCE HY-N0144 Piperine 98.99% In-stock + Sigma P49007 Available TODAY — CAS CORRECTED 94-62-2 (scout 94-62-3 404); P-gp/CYP3A4 DDI flag,2026-11-06
+W204-NAT-02,MCE,HY-N0096,,MCE HY-N0096 Rotundine 99.96% In-stock + Cayman 20535 + GlpBio GC14657 (Selleck S2437 scout, root slug 404 not disproof) — China-approved analgesic; 4-source,2026-11-06
+W204-NAT-03-HOLD,MCE,HY-N0700,,MCE HY-N0700 alpha-Asarone 99.89% In-stock + Selleck S4772 + Cayman 11681 + Sigma 11107 LIVE but ALKENYLBENZENE HOLD (Wiseman/Cartus/Uebel hepatocarcinogen) — not shortlist without waiver,2026-11-06
+W204-NAT-04,MCE,HY-N0121,,MCE HY-N0121 Sesamin 99.85% In-stock + TargetMol T2919 + GlpBio GN10092 + Sigma SMB00705 — food lignan multi-live,2026-11-06
+W204-NAT-05,MCE,HY-N0377,,MCE HY-N0377 Liquiritigenin 99.85% In-stock + Sigma 78825 Available TODAY — ERbeta EC50 36.5nM screen flag,2026-11-06
+W204-NAT-06,Selleck,E2194,,MCE HY-N2081 Skimmianine 99.93% In-stock + Selleck E2194 Highly Cited In Stock (scout) — costly $370/mg + genotox flag Tier-2,2026-11-06
+W204-NAT-07,MCE,HY-N0049,,MCE HY-N0049 Nuciferine 99.90% In-stock + Sigma SML2230 + Cayman 33839 + AdooQ A14505 + TargetMol T3369 — 5-source scarce-signal,2026-11-06
+W204-NAT-08-PARK,,,legacy-Rx,Yohimbine live shelf (MCE HY-12715/HY-N0127 + Sigma Y3125 + Tocris 1127) but PARKED — legacy Rx never-FDA-for-ED + recall/severe-HTN + MAOI/narrow-TI,2026-11-06
+W204-SRC-02,GlpBio,GC35378,,GlpBio GC35378 AR-9281=APAU CAS 913548-29-5 ROOT-VERIFIED In Stock 1mg $33/5mg $67 + SMILES — APAU now dual-live (Cayman 38346 + GlpBio),2026-11-06
+W204-SRC-03,GlpBio,GC15792,,GlpBio GC15792 CY-208-243 ROOT-VERIFIED In Stock 10mg $281 — CAS CORRECTED to 100999-26-6 (113112-98-4 invalid penicillin hit) + MCE HY-106094 + Tocris 1249 + Aladdin C286833,2026-11-06
+W204-SRC-01-CORR,MCE,HY-109079,,Fexuprazan=Abeprazan 2nd source CORRECTED to MCE HY-109079 (HY-109179 invalid no-SKU) + TargetMol T10221/T10221L 3rd; GlpBio/Selleck no page — dual-live stands,2026-11-06
+W204-SRC-05,Selleck,S8143,,Selleck S8143 Mavoglurant ROOT live-title CAS 543906-09-8 batch S814301 99.44% single-enantiomer (UNII/IUPHAR) — GlpBio GC30778 + MCE HY-15257 cross-2nd; racemate HY-15257A distinct,2026-11-06
+W204-SRC-04-STAYS,,,base-CAS-invalid,Levobunolol base STAYS — A18262+GC30167 both HCl 27912-14-7; 24243-97-8 no-supplier-hit (true base 47141-42-4 synthesis-on-demand only),2026-11-06
+W204-SRC-06-STAYS,,,hook-missing,Ketotifen STAYS PARKED — no ARC/PNN/WFA citation found (EAE mast-cell only; ketamine microglia-PNN papers are not ketotifen),2026-11-06
+W204-REP-04,,,DrugBank DB00315,Zolmitriptan NEW approval-verified (DB00315 + NDA 020768 Zomig 1997 + EMA; non-sulfonamide triptan) — vendor SKU confirm at order; coronary-vasospasm contraindication noted,2026-11-06
+W204-KILL-DUP,,,6-duplicates-mapped,Buspirone→W4-CNS-04 + viloxazine→W18-AD-01 + naproxen→W7-LM-01 + leflunomide→W58 + PRE-084→W17-SIG-01 + trazodone re-proposal→W8-KILL-01 stays-killed (QT),2026-11-06
+W204-PARK-SCF,,,3-parked-provisional,Ketanserin (Cayman/Sigma/MCE patterns no live fetch) + DCU sEH dialkylurea (Cayman 10004971/GlpBio GC10828 patterns) + GTS-21 (Sigma SML0326/Cayman 21570/MCE HY-14564A patterns) — all box-pass, convert on live-SKU hunt,2026-11-06

@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W204-SRC-01,Fexuprazan-2nd-MCE-HY-109079-corrected,,410.4,3.2,68.7,1,7,6,,,,,,,
+W204-SRC-02,APAU-2nd-GlpBio-GC35378-root-verified,O=C(NC1(C2)CC3CC2CC(C3)C1)NC4CCN(C(C)=O)CC4,319.44,2.1,61.4,2,2,2,,,,,,,
+W204-SRC-03,CY-208-243-CAS-corrected-100999-26-6-GC15792-root-verified,CN1[C@@H](C2)[C@H](C3=CC=CC=C3C1)C4=C5C2=CNC5=CC=C4,274.36,3.5,19.0,1,1,0,,,,,,,

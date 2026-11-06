@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W204-SCF-01,Buspirone-duplicate-REP01,,385.5,2.6,69.6,0,6,6,,,,,,,
+W204-SCF-02,Ketanserin-provisional-no-live-fetch,,395.4,2.6,69.7,1,5,5,,,,,,,
+W204-SCF-03,PRE-084-duplicate-W17-SIG-01,,317.4,3.3,38.8,0,4,6,,,,,,,
+W204-SCF-04,DCU-dicyclohexylurea-provisional,,224.34,3.0,41.1,2,1,2,,,,,,,
+W204-SCF-05,GTS-21-provisional-no-live-fetch,,308.38,3.21,43.7,0,4,4,,,,,,,
