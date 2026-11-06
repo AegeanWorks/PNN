@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W222-K01,Scopolamine-tropane-remainder,,303.35,0.92,62.3,1,5,5,,,,,,,
+W222-K02,Dicyclomine-antispasmodic-remainder,,309.5,5.5,29.5,0,3,8,,,,,,,
+W222-K03,Propantheline-quaternary-remainder,,368.5,4.2,35.5,0,3,7,,,,,,,
+W222-K04,Diphenoxylate-opioid-remainder,,452.6,5.7,53.3,0,4,9,,,,,,,
+W222-K05,Difenoxin-opioid-remainder,,424.54,5.0,64.33,1,3,7,,,,,,,
+W222-K06,Glycopyrrolate-quaternary-remainder,,318.3,-2.0,46.5,1,4,5,,,,,,,
+W222-K07,Methscopolamine-quaternary-remainder,,318.4,1.3,59.1,1,4,5,,,,,,,
+W222-P01,Hyoscyamine-ChEMBL-live,,289.37,1.93,49.77,1,4,4,,,,,,,
