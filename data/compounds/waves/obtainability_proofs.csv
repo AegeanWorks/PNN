@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W32-KILL-XAN,,,4-kills-mapped,Caffeine/theophylline/theobromine MW+logP + pentoxifylline logP/TPSA (live SKU moot) — methylxanthine core out,2026-11-06
+W32-KILL-A2A,,,3-kills-mapped,Istradefylline TPSA-only + preladenant 4-fail + dipyridamole 6-fail — A2A angle dies on TPSA,2026-11-06
 W31-KILL-TB,,,3-kills-mapped,Isoniazid/pyrazinamide/cycloserine MW+logP dual-floor fails (102-137 Da, -1.5 to -0.6) — TB-small chemotype excluded,2026-11-06
 W31-KILL-BIS,,,2-kills-mapped,Alendronate 4-fail + etidronate 3-fail — charged P-C-P class boundary proof,2026-11-06
 W28-KILL-GLP1,,,6-kills-mapped,Danuglipron 5-fail + orforglipron/OWL833 4-fail + lotiglipron 3-fail + TTP273/ZYOG1 no-record — oral GLP-1RAs too big/polar for PNN box,2026-11-06
