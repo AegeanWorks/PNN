@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W21-AP-01,Praziquantel,,312.40,2.70,40.6,0,2,1,,,,,,
+W21-AP-02,Levamisole,,204.29,1.80,40.9,0,2,1,,,,,,
+W21-AM-01,Primaquine,,259.35,2.20,60.2,2,4,6,,,,,,

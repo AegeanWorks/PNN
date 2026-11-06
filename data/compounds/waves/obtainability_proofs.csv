@@ -188,3 +188,8 @@ W19-KILL-AH,,,5-kills-mapped,Loratadine logP5.2 + desloratadine logP4.5 + cetiri
 W19-KILL-CV,,,5-kills-mapped,Losartan 3-fail + valsartan 3-fail + pitavastatin TPSA/RB + ezetimibe logP-only + fenofibrate logP — ARB/statin/cholesterol out of PNN box,2026-11-06
 W20-KILL-SPASM,,,6-kills-mapped,Dantrolene TPSA + tizanidine 2-fail + baclofen logP + tolterodine/oxybutynin/solifenacin logP(+RB) — relaxant/bladder shelf dead,2026-11-06
 W20-KILL-GOUT,,,5-kills-mapped,Febuxostat logP/TPSA + colchicine logP/TPSA + allopurinol 3-fail + pirfenidone MW-only + nintedanib 4-fail — gout/fibrosis shelf dead,2026-11-06
+W21-AP-01,,,DrugBank praziquantel,FDA Biltricide NDA 018714 + Sigma P4668 — neuroinflammation-bridge anthelmintic,2026-11-06
+W21-AP-02,,,DrugBank levamisole,FDA Ergamisol + Sigma L9756/31742 — CNS nicotinic immunomodulator,2026-11-06
+W21-AM-01,,,DrugBank primaquine,FDA 8-aminoquinoline 6/6 pass — expect-fail refuted,2026-11-06
+W21-KILL-PARA,,,4-kills-mapped,Albendazole/mebendazole TPSA + ivermectin 5-fail + DEC MW/logP — PUG numbers,2026-11-06
+W21-KILL-AFAM,,,4-kills-mapped,Fluconazole logP/TPSA + ketoconazole MW/logP + chloroquine logP/RB + HCQ logP/RB — BBB label not enough,2026-11-06
