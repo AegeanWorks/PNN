@@ -110,4 +110,15 @@ W7-OR-04,Tocris,0922,,Tocris 0922 SKF-38393 + MCE HY-12524 + Sigma D047 D1-pair-
 W7-OR-05,Tocris,1760,,Tocris 1760 Blebbistatin + MCE HY-13441 + Sigma B0560 myosin-II-racemate,2026-11-06
 W7-OR-07,Sigma,D6126,,Sigma D6126 Dichlone + covalent/ROS-counterscreen-only flag,2026-11-06
 W7-OR-06-KILL,,,W1-RX-06-duplicate,Quinpirole = W1-RX-06 duplicate (Tocris 1061/Sigma Q102) killed,2026-11-06
+W8-KILL-01-Trazodone,,,DrugBank DB00656,Wave8 MPO/safety triage: CHRONIC-USE KILL — QT prolongation + TdP ≤100mg (Teva §5.3); acute-slice tool only,2026-11-06
+W8-KILL-02-Harmine,,,Selleck S3868,Wave8: CHRONIC-USE KILL — MAO-A Ki 0.048uM cheese-crisis liability; DYRK1A tool only,2026-11-06
+W8-KILL-03-Pioglitazone,,,Selleck S2590,Wave8: PROGRAM-DIRECTION KILL — PPARγ weight-gain/fluid retention vs anti-obesity goal; microglia comparator only,2026-11-06
+W8-KILL-04-TSA,,,Sigma T1952,Wave8: IN-VIVO KILL — HDAC antiproliferative nM range + differentiation/apoptosis; tool dosing only,2026-11-06
+W8-KILL-05-BFA,,,Sigma B7651,Wave8: IN-VIVO KILL — secretory toxin Acute Tox 3 H301 rat LD50 275mg/kg; tool only,2026-11-06
+W8-KILL-06-Dichlone,,,Sigma D6126,Wave8: IN-VIVO KILL — promiscuous covalent/ROS quinone; counterscreen only with NAC control,2026-11-06
+W8-KILL-07-Pergolide,,,DrugBank DB01186,Wave8: CHRONIC-USE KILL CONFIRMED — valvulopathy withdrawal 2007; acute-slice only,2026-11-06
+W8-KILL-08-Risperidone,,,DrugBank risperidone,Wave8: PROGRAM-DIRECTION KILL — weight-gain/IR class signal; network control only,2026-11-06
+W8-KILL-09-Mirtazapine,,,DrugBank mirtazapine,Wave8: PROGRAM-DIRECTION KILL — +1.74/+2.59kg orexigenic; inverse comparator only,2026-11-06
+W8-KILL-10-SHP099,,,Selleck S6388,Wave8: PNN-PROGRAM KILL — SHP2 (PTPN11) not PTPsigma/LAR; chemistry control only,2026-11-06
+W8-MPO-NOTE,,,82-profiled,Wave8: pnn.mpo over 82 combined wave rows → 0 DEVELOPMENT / 82 OPTIMIZATION_LEAD; F-filled 7 score D 0.563 vs 0.473 rest; top CNS-MPO CX-614 6.00 / galantamine 5.83 / riluzole 5.83 — outputs in output/wave8_mpo.* (ignored),2026-11-06
 W4-PTP-05-KILL,MCE,HY-19383,,Ertiprotafib In-stock TODAY but MW559.5/logP9.2/TPSA74.8 3-fails REJECTED,2026-11-06
