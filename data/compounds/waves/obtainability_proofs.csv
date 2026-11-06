@@ -168,3 +168,8 @@ W14-BUYLIST-01,,,buy-list,ORDER-NOW T1 donepezil S5077-class/S5073 + riluzole S1
 W14-BUYLIST-02,,,buy-list,ORDER-NOW T2 CX-614 Tocris-1706 + farampator HY-10937/Cayman-21510 + MTEP (W9-NT-02) + parthenolide P0667 + rolipram Tocris-0905 + SKF-81297 HB1858 + emapunil S2592 — MPO 5.7-6.0 band,2026-11-06
 W14-BUYLIST-03,,,buy-list,REAGENTS marimastat S7156 (control) + DQ-gelatin D12054 + WFA B-1355-2 — all live; ChABC/MMP-9/ilomastat still access-blocked = human-browser batch,2026-11-06
 W14-FLAG-LOW,,,deprioritized,CY-208-243 lowest MPO 4.08 + logP-at-bound + single-vendor (GlpBio) — control-only, not killed (passes filters),2026-11-06
+W16-CH-01,Selleck,S1259,DrugBank ramelteon,Selleck S1259 ramelteon In-Stock 99.92% + MCE HY-B0461 + FDA Rozerem 2005 MT1-potent ERK probe,2026-11-06
+W16-CH-02,Selleck,S4281,DrugBank tasimelteon,Selleck S4281 tasimelteon In-Stock 99.74% + MCE HY-14898 + FDA Hetlioz 2014 + EMA EPAR MT2-biased entrainment,2026-11-06
+W16-CH-03,Selleck,S1243,,Selleck S1243 agomelatine In-Stock 99.89% + MCE HY-14278 + EMA Valdoxan 2009 MT+5HT2C BDNF/Arc/neurogenesis + LFT-monitor flag,2026-11-06
+W16-KILL-MELATONIN,,,Selleck S1204-ref-only,Melatonin KILL logP 0.8<1.5 floor (endogenous reference tool only; Circadin/Slenyto same API — not separate),2026-11-06
+W16-KILL-KYN,,,10-kills-mapped,Kynurenine/metabolite systematic dead-end: kynurenic MW+logP, xanthurenic logP+TPSA, quinolinic MW+logP+TPSA, cinnabarinic logP+TPSA+HBA, 3HK logP+TPSA+HBD, tryptamine MW, serotonin MW+logP, 5HTP logP+TPSA+HBD, Trp logP+TPSA, nicotinamide MW+logP — PUG numbers,2026-11-06

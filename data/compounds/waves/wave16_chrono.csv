@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W16-CH-01,Ramelteon,,259.34,2.70,38.3,1,2,4,,,,,,
+W16-CH-02,Tasimelteon,,245.32,2.20,38.3,1,2,4,,,,,,
+W16-CH-03,Agomelatine,,243.30,2.70,38.3,1,2,4,,,,,,
