@@ -1,0 +1,11 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W217-K01,Prednisone-steroid-remainder,,358.4,1.5,91.7,2,5,2,,,,,,,
+W217-K02,Prednisolone-steroid-remainder,,360.4,1.6,94.8,3,5,2,,,,,,,
+W217-K03,Dexamethasone-steroid-remainder,,392.5,1.9,94.8,3,6,2,,,,,,,
+W217-K04,Hydrocortisone-steroid-remainder,,362.5,1.6,94.8,3,5,2,,,,,,,
+W217-K05,Methylprednisolone-steroid-remainder,,374.5,1.9,94.8,3,5,2,,,,,,,
+W217-K06,Fludrocortisone-steroid-remainder,,380.4,1.7,94.8,3,6,2,,,,,,,
+W217-K07,Budesonide-steroid-remainder,,430.5,2.5,93.1,2,6,4,,,,,,,
+W217-K08,Triamcinolone-steroid-remainder,,394.4,1.2,115.0,4,7,2,,,,,,,
+W217-K09,Betamethasone-steroid-remainder,,392.5,1.9,94.8,3,6,2,,,,,,,
+W217-K10,Deflazacort-steroid-remainder,,441.5,2.0,102.0,1,7,4,,,,,,,
