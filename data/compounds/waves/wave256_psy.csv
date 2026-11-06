@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W256-K01,Psilocybin-SchedI-remainder,,284.25,-1.6,91.84,3,5,5,,,,,,,
+W256-K02,Psilocin-SchedI-remainder,,204.27,2.1,39.26,2,2,3,,,,,,,
+W256-K03,LSD-SchedI-remainder,,323.4,3.0,39.3,1,2,3,,,,,,,
+W256-K04,DMT-SchedI-remainder,,188.27,2.5,19.03,1,1,3,,,,,,,
+W256-K05,Mescaline-SchedI-remainder,,211.26,0.7,53.7,1,4,5,,,,,,,
+W256-K06,5MeODMT-SchedI-remainder,,218.29,1.5,28.3,1,2,4,,,,,,,
+W256-K07,DOI-SchedI-remainder,,321.15,2.5,44.5,1,3,4,,,,,,,

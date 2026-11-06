@@ -75,6 +75,14 @@ class TestWaveLedger(unittest.TestCase):
         with self.assertRaises(WaveLedgerError):
             _count_wave_compounds(Path(self.tmp.name))
 
+    def test_stray_byte_does_not_break_ledger(self) -> None:
+        proofs = self.waves_dir / "obtainability_proofs.csv"
+        raw = proofs.read_bytes().replace(b"FDA-approved", b"FDA\x97approved")
+        proofs.write_bytes(raw)
+        rows, highlights = collect_wave_ledger(self.waves_dir, proofs)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].kills, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

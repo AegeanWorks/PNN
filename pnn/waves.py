@@ -80,7 +80,8 @@ def _wave_number_from_filename(filename: str) -> Optional[str]:
 def _count_wave_compounds(path: Path) -> int:
     """Count data rows in a wave screening CSV (header excluded)."""
     try:
-        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        # errors="replace": one stray byte must never break turnkey reporting.
+        with path.open("r", encoding="utf-8-sig", errors="replace", newline="") as handle:
             reader = csv.DictReader(handle)
             if not reader.fieldnames:
                 return 0
@@ -159,7 +160,8 @@ def collect_wave_ledger(
     highlights: List[WaveHighlight] = []
     if proofs_path.is_file():
         try:
-            with proofs_path.open("r", encoding="utf-8-sig", newline="") as handle:
+            # errors="replace": one stray byte must never break turnkey reporting.
+            with proofs_path.open("r", encoding="utf-8-sig", errors="replace", newline="") as handle:
                 proof_rows = list(csv.reader(handle))
         except (OSError, csv.Error) as exc:
             raise WaveLedgerError(

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `264`
-- **Total Source Lines**: `13588`
+- **Total Class Methods**: `265`
+- **Total Source Lines**: `13598`
 
 ---
 
@@ -556,7 +556,7 @@
 ### [`pnn/waves.py`](pnn/waves.py)
 > *Wave-ledger aggregation: search-wave CSVs plus obtainability proofs into report artifacts.*
 
-**Size**: `299` lines (`11712` bytes)
+**Size**: `301` lines (`11910` bytes)
 
 **Classes:**
 - `class WaveLedgerError` - *Raised when wave-ledger inputs cannot be read or parsed.*
@@ -1063,7 +1063,7 @@
 ---
 
 ### [`tests/test_waves.py`](tests/test_waves.py)
-**Size**: `80` lines (`2953` bytes)
+**Size**: `88` lines (`3340` bytes)
 
 **Classes:**
 - `class TestWaveLedger`
@@ -1074,6 +1074,7 @@
   - Method `.test_html_section()`
   - Method `.test_missing_inputs_yield_empty_ledger()`
   - Method `.test_unreadable_wave_file_raises_actionable_error()`
+  - Method `.test_stray_byte_does_not_break_ledger()`
 
 ---
 
