@@ -669,3 +669,5 @@ W270-P01,,,FDA-OTC,Ibuprofen tier-B ChEMBL-live MW206.3/ALOGP3.07/PSA37.3 (DB010
 W270-P02,,,FDA-short-course,Ketorolac tier-B ChEMBL-live MW255.3/ALOGP2.29/PSA59.3 (DB00465) PARKED - hook GAP + short-course-only + hemorrhage/renal flags,2026-11-06
 W270-P03,,,FDA-approved,Nabumetone tier-B ChEMBL-live MW228.3/ALOGP3.37/PSA26.3 (DB00461; prodrug to 6-MNA) PARKED - hook GAP (PNN-count 0),2026-11-06
 W271-KILL-AR2,,,2-kills-mapped,Apalutamide MW/logP/TPSA seizure/fall flags (DB11901) + darolutamide TPSA-only low-BBB (DB12941; P-gp/BCRP substrate) - AR-antagonist polarity/size wall; PNN-count 0 both,2026-11-06
+W272-KILL-MUSC,,,2-kills-mapped,Bethanechol MW/logP permanent-cation (DB01019; ICV-AD PMIDs filed, no oral benefit) + cevimeline MW-floor free-base (DB00185; AF102B M1-AD PMIDs filed, AlzForum discontinued) - muscarinic fragment/charge floor,2026-11-06
+W272-DEAD-SRC,,,1-source-note,Organophosphate pesticides + ophthalmic AChEIs + endogenous acetylcholine DEAD SOURCES (non-drugs/route-kills),2026-11-06
