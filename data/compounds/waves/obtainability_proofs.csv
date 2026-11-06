@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W78-KILL-CU,,,4-kills-mapped,Trientine/penicillamine MW/logP floors + TTM/zinc-acetate metallo-drug boundary — copper shelf out (metallo track separate),2026-11-06
 W77-KILL-ZN,,,2-kills-mapped,Zinc pyrithione null-logP + surrogates<1 (CID 3005835 was wrong compound — true 26041/3005837) + hinokitiol MW-floor — zinc shelf out, ebselen precedent reinforced,2026-11-06
 W76-HP-01,Selleck,S5213,,Selleck S5213 In-Stock 99.88% (base-scored; salt moot) + MCE HY-B1345/USP RS — ciclopirox alkyl-tail congener,2026-11-06
 W76-HP-02,MCE,HY-113863,,MCE HY-113863 catalog-listed (TargetMol/Biorbyt support; Selleck not carried; stock reconfirm at order) — logP-ceiling flag, diaryl-ether tail,2026-11-06
