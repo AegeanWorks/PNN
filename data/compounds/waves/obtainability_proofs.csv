@@ -85,13 +85,14 @@ W5-TE-02,Selleck,S3891,,Selleck S3891 live + MCE HY-B1021 + Sigma 194719 + EP Y0
 W5-TE-06,Sigma,P0667,,Sigma P0667 + Selleck S2341 + MCE HY-N0141 + Tocris 0610,2026-11-06
 W5-TE-08,Selleck,S2437,,Selleck S2437 live + MCE HY-N0096 + Thermo AAJ6332803,2026-11-06
 W2-PH-02-CORRECTION,MCE,HY-15720,,Wave5D: PubChem TPSA 70.7 FAIL (>70) logP 1.7 — demoted B-to-C control-only,2026-11-06
-W6-ENRICH-F-Donepezil,,,DrugBank DB00843,Wave6: label F 100% filled (Aricept §Clinical PK) — CYP Ki 50-130uM clean-note stays UNKNOWN,2026-11-06
-W6-ENRICH-F-Riluzole,,,DrugBank DB00740,Wave6: label F 60% filled + mouse Kp 2.4/4.6 noted (P-gp signal, matrix/species-caveat not CSV-filled),2026-11-06
-W6-ENRICH-F-Escitalopram,,,DrugBank SSRI,Wave6: citalopram F 80% filled + QT flag (QTcF +4.5-10.7ms, TdP postmarketing, hERG IC50 2.6uM note stays UNKNOWN),2026-11-06
-W6-ENRICH-F-Ambroxol,,,DrugBank DB06742,Wave6: F 79% filled + Caco-2 45e-6 + human CSF 15.6-21.2% noted,2026-11-06
-W6-ENRICH-F-Galantamine,,,DrugBank galantamine,Wave6: F 90% filled + mouse Kp 2.10 noted + CYP3A4-no-inhibit note + hERG IC50 760uM clean-note,2026-11-06
-W6-ENRICH-F-Ropinirole,,,DrugBank ropinirole,Wave6: F 55% filled (Requip §12.3),2026-11-06
-W6-ENRICH-F-Venlafaxine,,,DrugBank DB00285,Wave6: F 45% filled + CYP3A4-no-inhibit note + pKa-9.14 concern stands,2026-11-06
+W6-ENRICH-F-Donepezil,,,DrugBank DB00843,Wave146 CORRECTION: 100% is RELATIVE (Aricept solution/Namzaric label §Clinical PK); NDA22-568 review states absolute F UNKNOWN — CSV corrected to empty, tier holds B 0.957,2026-11-06
+W6-ENRICH-F-Riluzole,,,DrugBank DB00740,Wave146 CONFIRMED: NDA020599 §12.3 + DailyMed generics — absolute oral F ~60%,2026-11-06
+W6-ENRICH-F-Escitalopram,,,DrugBank SSRI,Wave146 CONFIRMED-with-flag: NDA021323 §12.3 absolute F = citalopram racemate ~80% (escitalopram-specific IV unavailable); EMA-expected same,2026-11-06
+W6-ENRICH-F-Ambroxol,,,DrugBank DB06742,Wave146 CONFIRMED IR-30mg: HPRA SmPC §5.2 F 79% (sevforms 60-67% — formulation-caveat),2026-11-06
+W6-ENRICH-F-Galantamine,,,DrugBank galantamine,Wave146 CONFIRMED: DailyMed/Razadyne PI §12.3 absolute F ~90%,2026-11-06
+W6-ENRICH-F-Ropinirole,,,DrugBank ropinirole,Wave146 CONFIRMED range: DailyMed/Requip PI §12.3 F 45-55% (receipts >88% in urine); CSV keeps 55 top-bound,2026-11-06
+W6-ENRICH-F-Venlafaxine,,,DrugBank DB00285,Wave146 CONFIRMED: NDA020699 §12.3 absolute F ~45% (92% absorbed) + pKa-9.14 concern stands,2026-11-06
+W6-ENRICH-NOTES,,,preserved-notes,Riluzole mouse Kp 2.4/4.6 = P-gp signal caveat; escitalopram QTcF +4.5-10.5ms TdP postmarketing (hERG IC50 2.6uM note kept UNKNOWN); ambroxol Caco-2 45e-6 + human CSF 15.6-21.2%; galantamine mouse Kp 2.10 + CYP3A4-no-inhibit + hERG IC50 760uM clean-note; donepezil CYP Ki 50-130uM clean-note (kept UNKNOWN),2026-11-06
 W6-FLAG-Trazodone-QT,,,DrugBank DB00656,Wave6: QT-PROLONGATION label §5.3 + TdP ≤100mg + hERG IC50 0.69-2.9uM — chronic-use flag, assay-priority down,2026-11-06
 W6-FLAG-Naltrexone-F,,,DrugBank DB00704,Wave6: label F 5-40% range straddles 10% fail-floor — marginal, kept UNKNOWN,2026-11-06
 W6-FLAG-Ketamine-oral,,,DrugBank DB01221,Wave6: oral F 16-29% marginal-pass + human CSF:plasma AUC 0.917 excellent-brain note (IV/nasal only),2026-11-06
