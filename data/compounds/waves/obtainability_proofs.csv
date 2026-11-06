@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W69-KILL-5HT4,,,2-kills-mapped,Cisapride MW/TPSA/RB + QT-withdrawal + tegaserod TPSA84/RB8 under PROJECT bars (Ro5-6/6 noted irrelevant; ChEMBL HBD-tautomer 4 would also fail) — 5-HT4 file closed with clebopride sole passer,2026-11-06
 W68-GI-01,Selleck,S6455,DrugBank DB13511,Selleck S6455 In-Stock (AdooQ A58534 base-form backup) — D2/5-HT4 prokinetic, EPS-class flag, base-scored malate caveat,2026-11-06
 W68-KILL-CIN,,,1-killed,Cinitapride logP/TPSA — 5-HT4 shelf closed 1-for-7 (clebopride sole passer),2026-11-06
 W67-PARK-DEXFEN,,,parked-provisional,Dexfenfluramine 6/6 props (d-enantiomer) but withdrawn-1997 + no live SKU confirmed — parked (TRC/LGC/Cerilliant analytical + compliance check at order),2026-11-06
