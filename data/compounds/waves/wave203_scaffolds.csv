@@ -1,0 +1,9 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W203-SCF-01,Ramelteon-duplicate-W16-CH-01,,259.34,2.7,38.3,1,2,4,,,,,,,
+W203-SCF-02,Agomelatine-duplicate-W16-CH-03,,243.30,2.7,38.3,1,2,4,,,,,,,
+W203-SCF-03,Clobazam-retry-ZERO-W201,,300.74,2.1,40.6,0,2,1,,,,,,,
+W203-SCF-04,Pyrantel-duplicate-W145,,206.31,1.6,43.8,0,2,2,,,,,,,
+W203-SCF-05,Blebbistatin-duplicate-W7-OR-05,,292.3,2.4,52.9,1,3,1,,,,,,,
+W203-SCF-06,TCPU-sEH-boundary-TPSA70.7,,371.35,2.6,70.7,2,6,4,,,,,,,
+W203-SCF-07,Dolasetron-duplicate-W22-AE-03,,324.4,3.4,62.4,1,4,3,,,,,,,
+W203-SCF-08,Dextromethorphan-duplicate-REP05,,271.4,3.4,12.5,0,2,1,,,,,,,

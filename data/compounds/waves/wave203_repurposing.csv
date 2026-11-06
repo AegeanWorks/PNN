@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W203-REP-01,Ondansetron-duplicate-W18-AE-01,,293.4,2.3,39.8,0,2,2,,,,,,,
+W203-REP-02,Ramosetron-probable-duplicate-W22-AE-04,,279.34,2.2,50.7,1,2,2,,,,,,,
+W203-REP-03,Alosetron-duplicate-W70,,294.35,1.6,53.9,1,2,2,,,,,,,
+W203-REP-04,Galantamine-duplicate-W3-TCM-08,,287.35,1.8,41.9,1,4,1,,,,,,,
+W203-REP-05,Dextromethorphan-duplicate-W92,,271.4,3.4,12.5,0,2,1,,,,,,,
+W203-REP-06,Iodoquinol-park-SMON,,396.95,3.1,33.1,1,2,0,,,,,,,
+W203-REP-07,Oxantel-duplicate-W145,,216.28,1.5,35.8,1,2,2,,,,,,,
