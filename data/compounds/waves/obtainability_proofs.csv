@@ -214,6 +214,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W200-BZ-01,,,FDA Onfi Lennox-Gastaut,1,5-benzodiazepine 6/6 full pass + MIDAZOLAM-neighbor note (W57 midazolam converted) — vendor SKU confirm at order,2026-11-06
+W200-KILL-BZ,,,2-kills-mapped,Vigabatrin MW/logP + clonazepam TPSA-only — GABAergic file fully closed (retigabine/tiagabine/clobazam split),2026-11-06
 W199-KILL-ANTIEPI,,,2-kills-mapped,Retigabine TPSA + tiagabine TPSA-only — GABAergic antiepileptics closed,2026-11-06
 W198-KILL-IMSUP,,,2-kills-mapped,Benzbromarone logP-only (+withdrawn FR/ES) + mycophenolate TPSA/HBA/RB triple (CID 5281078),2026-11-06
 W197-CONV-BUP,,,GlpBio GC14714 In-Stock 10mM $39/50mg $49 (HCl CAS 31677-93-7) — W2-CNS-01 Tier B upgraded from synonym,2026-11-06
