@@ -199,6 +199,11 @@ W22-AE-02,Selleck,S5740,DrugBank palonosetron,FDA Aloxi NDA021372 + Selleck S574
 W22-AE-03,Selleck,S5326,DrugBank dolasetron,FDA Anzemet oral ACTIVE + Selleck S5326/Cayman 22234 — IV withdrawn QT, oral remains (flag),2026-11-06
 W22-AE-04,Selleck,S3723,,JP/KR Nasea approval + Selleck S3723 HCl In-Stock — HCl MW 315.80 still passes,2026-11-06
 W22-KILL-GI,,,5-kills-mapped,Domperidone logP + mosapride/prucalopride TPSA + itopride RB + tropisetron logP3.8 — PUG numbers,2026-11-06
+W30-PR-01,,,DrugBank norethindrone,FDA + MCE HY-B0554/Cayman 15597 — PR/MMP-suppression PNN angle,2026-11-06
+W30-PR-02,Sigma,L1799,DrugBank levonorgestrel,Sigma L1799 + MCE HY-B0202/Selleck S1382 (verify live) — potent gonane PR,2026-11-06
+W30-PR-03,Sigma,M1629,DrugBank medroxyprogesterone,Sigma M1629 base (logP-bound) — acetate form killed logP4.1, use base only,2026-11-06
+W30-PR-04,Sigma,SML1684,DrugBank drospirenone,Sigma SML1684 + MCE HY-B0154 (logP-bound) — antimineralocorticoid/antiandrogenic contrast,2026-11-06
+W30-KILL-AA,,,3-kills-mapped,Flutamide TPSA + bicalutamide TPSA/HBA + enzalutamide 4-fail — AR antagonists out,2026-11-06
 W29-ES-01,Selleck,S1196,DrugBank exemestane,Selleck S1196 In-Stock 99.96% + FDA Aromasin — steroidal irreversible AI (triazoles TPSA-dead),2026-11-06
 W29-KILL-SERM,,,3-kills-mapped,Tamoxifen logP/RB + raloxifene triple + clomifene logP/RB — ER-microglia hook real, chemistry out,2026-11-06
 W29-KILL-AI,,,2-kills-mapped,Letrozole/anastrozole identical TPSA 78.3 — triazole nonsteroidals share the fail,2026-11-06

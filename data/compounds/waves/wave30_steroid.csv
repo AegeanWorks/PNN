@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W30-PR-01,Norethindrone,,298.40,3.00,37.3,1,2,1,,,,,,
+W30-PR-02,Levonorgestrel,,312.40,3.30,37.3,1,2,2,,,,,,
+W30-PR-03,Medroxyprogesterone,,344.50,3.50,54.4,1,3,1,,,,,,
+W30-PR-04,Drospirenone,,366.50,3.50,43.4,0,3,0,,,,,,
