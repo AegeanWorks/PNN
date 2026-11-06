@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W244-K01,Terazosin-azosin-remainder,,387.44,1.4,103.04,1,8,4,,,,,,,
+W244-K02,Prazosin-azosin-remainder,,383.41,2.0,107.0,1,8,4,,,,,,,
