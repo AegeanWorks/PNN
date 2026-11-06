@@ -1,0 +1,8 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W9-TP-01,Clonidine,C1CN=C(N1)NC2=C(C=CC=C2Cl)Cl,230.09,1.60,36.4,2,1,2,,,,,,
+W9-TP-02,Atropine,CN1[C@@H]2CC[C@H]1CC(C2)OC(=O)C(CO)C3=CC=CC=C3,289.40,1.80,49.8,1,4,5,,,,,,
+W9-TP-03,Finasteride,C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2C(=O)NC(C)(C)C)CC[C@@H]4[C@@]3(C=CC(=O)N4)C,372.50,3.00,58.2,2,2,2,,,,,,
+W9-NT-01,Dihydroxyflavone,C1=CC=C(C=C1)C2=CC(=O)C3=C(O2)C(=C(C=C3)O)O,254.24,3.30,66.8,2,4,1,,,,,,
+W9-NT-02,MTEP,CC1=NC(=CS1)C#CC2=CN=CC=C2,200.26,2.30,54.0,0,3,2,,,,,,
+W9-NT-03,Xanomeline,CCCCCCOC1=NSN=C1C2=CCCN(C2)C,281.42,3.30,66.5,0,5,7,,,,,,
+W9-NT-04,PNU-282987,C1CN2CCC1C(C2)NC(=O)C3=CC=C(C=C3)Cl,264.75,2.40,32.3,1,2,2,,,,,,

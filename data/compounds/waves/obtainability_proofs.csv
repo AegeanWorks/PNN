@@ -122,3 +122,13 @@ W8-KILL-09-Mirtazapine,,,DrugBank mirtazapine,Wave8: PROGRAM-DIRECTION KILL — 
 W8-KILL-10-SHP099,,,Selleck S6388,Wave8: PNN-PROGRAM KILL — SHP2 (PTPN11) not PTPsigma/LAR; chemistry control only,2026-11-06
 W8-MPO-NOTE,,,82-profiled,Wave8: pnn.mpo over 82 combined wave rows → 0 DEVELOPMENT / 82 OPTIMIZATION_LEAD; F-filled 7 score D 0.563 vs 0.473 rest; top CNS-MPO CX-614 6.00 / galantamine 5.83 / riluzole 5.83 — outputs in output/wave8_mpo.* (ignored),2026-11-06
 W4-PTP-05-KILL,MCE,HY-19383,,Ertiprotafib In-stock TODAY but MW559.5/logP9.2/TPSA74.8 3-fails REJECTED,2026-11-06
+W9-TP-01,Sigma,C7897,,Sigma C7897 clonidine-HCl + Tocris 0690 + Catapres-TTS systemic/CNS label,2026-11-06
+W9-TP-02,Sigma,A0132,,Sigma A0132 atropine-sulfate + Tocris 0456 + MCE HY-B1205 + central-anticholinergic BBB proof,2026-11-06
+W9-TP-03,Sigma,F1293,DrugBank finasteride,Sigma F1293 + MCE HY-13612 + Propecia/Proscar FDA oral (topical compounded),2026-11-06
+W9-NT-01,Sigma,D5441,,Sigma D5441 7,8-DHF + MCE HY-N0441 + Tocris 3826 TrkB-agonist,2026-11-06
+W9-NT-02,Tocris,2921,,Tocris 2921 MTEP-HCl + MCE HY-13128 mGluR5-NAM,2026-11-06
+W9-NT-03,MCE,HY-13514,,MCE HY-13514 xanomeline-oxalate + Cobenfy FDA2024 CNS proof,2026-11-06
+W9-NT-04,Tocris,2207,,Tocris 2207 PNU-282987 + MCE HY-12560 + Sigma P6499 alpha7-agonist,2026-11-06
+W9-TP-04-RE-PARK,,,W2-CNS-08-duplicate,Ketotifen re-proposed but NO new PNN datum since Wave-2 UNPROVABLE park — stays parked,2026-11-06
+W9-REAGENT-D12054,Thermo,D12054,,Thermo D12054 DQ-Gelatin 5x1mg VERIFIED live (Target Enzyme: Metalloproteinase) — degradation-assay fluorogenic stand-in,2026-11-06
+W9-REAGENT-PARKED,,,4-parked,ChABC C3667 + WFA B-1355-2 + MMP-9 911-MP-010 + ilomastat 2707 — no live proof (JS/403/timeout) stays parked,2026-11-06
