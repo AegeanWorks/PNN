@@ -141,6 +141,11 @@ W10-BENZOFURAN-STAND,,,Vitas-M-originator,STK169690/519331/169693 Wave-5 Vitas-l
 W11-REAGENT-MARIMASTAT,Selleck,S7156,,Selleck S7156 Marimastat VERIFIED live (title In-Stock + schema.org/InStock + 4 offers $147-4970 + .cn all-SKU in-stock) — MMP-inhibitor CONTROL (hydroxamate, assay-only),2026-11-06
 W11-TPI1-SLUG-FIX,Selleck,S6570,,TPI-1 canonical slug /products/tpi-1.html (S6570 pattern 404 was wrong-URL artifact) — In-Stock both domains + Batch S657001 99.72%,2026-11-06
 W11-FARAMPATOR-2ND,Cayman,21510,,Cayman 21510 second source (Biomol distributor 1/5/10mg + 5-10d delivery) — MCE HY-10937 primary + Cayman secondary; Selleck/Tocris/Sigma no-listing,2026-11-06
+W15-REAGENT-MMP9,BPS,80215,,BPS 80215 active human MMP-9 20ug $425 VERIFIED live (activity ≥2500pmole/min/ug) + kit 79915 $490 — degradation path unblocked; R&D 911-MP-010 itself remains blocked,2026-11-06
+W15-KILL-ChABC,,,dispositive-kill,ChABC ALL routes exhausted (VWR/Avantor blank, Fisher 500, Sigma/MX timeout, Seikagaku timeout, SCBT/AMSBIO 403, Sino shell, MyBioSource 403) — revival = Seikagaku direct/human email only,2026-11-06
+W15-KILL-EUTRO-RES,,,dispositive-kill,Eutropoflavin research powder: BOC name+CAS double-negative dispositive + 8 routes dead — retail capsules only; revival = custom synthesis,2026-11-06
+W15-KILL-67DHF,,,killed,6,7-DHF: only BOC inquiry-only hit (no price/pack/stock) — no live SKU; revival = custom synthesis (Liu 2010 Fig 2),2026-11-06
+W15-KILL-VITAS,,,stock-unproven,Vitas STK trio structures+props confirmed (PUG) but zero stock on Vitas-mirror/MolPort/Mcule/Ambinter — Wave-5 live capture stands as single observation; order-time check required,2026-11-06
 W12-MGL-01,MCE,HY-14866,,MCE HY-14866 raseglurant (clinical oral mGluR5) — hepatic-signal flag, comparator only,2026-11-06
 W12-MGL-02,MCE,HY-15257,,MCE HY-15257 mavoglurant (clinical Fragile-X-failed, scaffold-diverse) — mechanism anchor,2026-11-06
 W12-MGL-03,MCE,HY-14859,,MCE HY-14859 dipraglurant — logP-ceiling flag, motor-circuit precedent,2026-11-06
