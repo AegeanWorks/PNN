@@ -474,3 +474,4 @@ W27-KILL-S1P,,,3-kills-mapped,Ozanimod TPSA-only + siponimod 4-fail + ponesimod 
 W27-KILL-CFTR,,,3-kills-mapped,Ivacaftor logP/TPSA + lumacaftor 4-fail + tezacaftor 5-fail (+elexacaftor worse) — CFTR class out,2026-11-06
 W25-KILL-PDE5,,,4-kills-mapped,Sildenafil MW/TPSA/HBA + tadalafil TPSA-only + avanafil 4-fail + vardenafil 4-fail — PDE5 blockbusters too large/polar for PNN box,2026-11-06
 W25-KILL-AB,,,4-kills-mapped,Tamsulosin/alfuzosin/silodosin/doxazosin — universal TPSA 97-112 class killer + RB/HBA,2026-11-06
+W203-KILL-ROCK2,,,3-kills-mapped,Nintedanib MW/TPSA/RB + netarsudil MW/logP/TPSA/RB + belumosudil MW/logP/TPSA (belumosartan = no-such-compound, corrected) — ROCK remainder closed,2026-11-06
