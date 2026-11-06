@@ -186,3 +186,5 @@ W18-KILL-ADHD,,,4-kills-mapped,Atomoxetine logP + guanfacine TPSA + pitolisant l
 W18-KILL-MIG,,,5-kills-mapped,Varenicline logP + cytisine MW/logP + aprepitant 4-fail + rimegepant/ubrogepant MW/TPSA/HBA — gepant class MW-dead,2026-11-06
 W19-KILL-AH,,,5-kills-mapped,Loratadine logP5.2 + desloratadine logP4.5 + cetirizine RB8 + fexofenadine MW/TPSA/RB + ebastine MW/logP/RB — 2nd-gen antihistamines systematically out (S1358 live proves sourcing not blocker),2026-11-06
 W19-KILL-CV,,,5-kills-mapped,Losartan 3-fail + valsartan 3-fail + pitavastatin TPSA/RB + ezetimibe logP-only + fenofibrate logP — ARB/statin/cholesterol out of PNN box,2026-11-06
+W20-KILL-SPASM,,,6-kills-mapped,Dantrolene TPSA + tizanidine 2-fail + baclofen logP + tolterodine/oxybutynin/solifenacin logP(+RB) — relaxant/bladder shelf dead,2026-11-06
+W20-KILL-GOUT,,,5-kills-mapped,Febuxostat logP/TPSA + colchicine logP/TPSA + allopurinol 3-fail + pirfenidone MW-only + nintedanib 4-fail — gout/fibrosis shelf dead,2026-11-06
