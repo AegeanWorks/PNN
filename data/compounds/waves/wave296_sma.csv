@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W296-K01,Risdiplam-SMA-remainder,,401.47,1.96,79.83,1,8,2,,,,,,,
