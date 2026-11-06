@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W264-K01,Prochlorperazine-FGA-remainder,,373.9,4.9,35.0,0,4,4,,,,,,,
+W264-K02,Mesoridazine-withdrawn-remainder,,386.6,4.5,68.1,0,5,4,,,,,,,
+W264-K03,Acetophenazine-discontinued-remainder,,411.6,2.6,72.3,1,6,7,,,,,,,
+W264-K04,Carphenazine-discontinued-remainder,,425.6,3.1,72.3,1,6,8,,,,,,,
+W264-P01,Molindone-ChEMBL-live,,276.38,1.96,45.33,1,3,3,,,,,,,
