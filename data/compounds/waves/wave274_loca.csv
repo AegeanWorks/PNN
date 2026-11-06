@@ -1,0 +1,12 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W274-K01,Lidocaine-injectable-remainder,,234.34,2.3,32.3,1,2,5,,,,,,,
+W274-K02,Bupivacaine-injectable-remainder,,288.4,3.4,32.3,1,2,5,,,,,,,
+W274-K03,Ropivacaine-injectable-remainder,,274.4,2.9,32.3,1,2,4,,,,,,,
+W274-K04,Mepivacaine-injectable-remainder,,246.35,1.9,32.3,1,2,2,,,,,,,
+W274-K05,Prilocaine-injectable-remainder,,220.31,2.1,41.1,2,2,5,,,,,,,
+W274-K06,Articaine-injectable-remainder,,284.38,2.17,67.43,2,5,6,,,,,,,
+W274-K07,Chloroprocaine-injectable-remainder,,270.75,2.9,55.56,1,4,6,,,,,,,
+W274-K08,Procaine-obsolete-remainder,,236.31,1.84,55.56,1,4,6,,,,,,,
+W274-K09,Tetracine-topical-remainder,,264.36,3.7,41.57,1,4,9,,,,,,,
+W274-K10,Benzocaine-topical-remainder,,165.19,1.9,52.32,1,3,3,,,,,,,
+W274-K11,Dibucaine-topical-remainder,,343.46,4.4,54.46,1,4,10,,,,,,,
