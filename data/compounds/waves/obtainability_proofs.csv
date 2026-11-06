@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W82-KILL-PDE4,,,3-kills-mapped,Roflumilast logP + apremilast triple + crisaborole null-logP-boron-gap (tasked CID 10376776 wrong; true CID 44591583) — PDE4 shelf out except rolipram,2026-11-06
 W81-KILL-AZOLES2,,,3-kills-mapped,Voriconazole TPSA/HBA-near-miss (real CSF 0.46 data noted) + itraconazole/posaconazole 5-fails — azole file closed for good,2026-11-06
 W80-AB-01,,,DrugBank DB09205,Moxisylyte 6/6 (CID 4260 corrected; brief 4267 was C52 macrolide) + ChEMBL max_phase4 + ATC + Sigma LOPAC M-5154 lineage — RB-boundary + ester flags,2026-11-06
 W80-AB-02,,,DrugBank DB00692,Phentolamine 6/6 + Regitine/Ryzumvi + MCE HY-12717/TargetMol — alpha file closed (quinazolines all dead),2026-11-06
