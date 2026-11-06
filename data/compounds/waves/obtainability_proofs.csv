@@ -179,3 +179,8 @@ W17-OX-01,Tocris,3371,,Tocris 3371 + MCE HY-100452 + HelloBio HB3225 TCS-OX2-29 
 W17-SIG-02,MCE,HY-105296,,MCE HY-105296/101864 In-Stock blarcamesine (ANAVEX2-73 AD Ph2/3, sigma-1+muscarinic),2026-11-06
 W17-KILL-EPI,,,7-kills-mapped,Lacosamide/eslicarbazepine/brivaracetam/zonisamide/rufinamide/stiripentol/cannabidiol killed on logP/TPSA with PUG numbers (eslicarb-acetate TPSA-rescue fails too),2026-11-06
 W17-KILL-DORA-S1,,,5-kills-mapped,Suvorexant 3-fail + lemborexant TPSA-only + daridorexant 3-fail + SA4503 logP/RB + igmesine logP/RB — approved DORAs out of PNN box,2026-11-06
+W18-AD-01,MCE,HY-W380450,DrugBank viloxazine,MCE HY-W380450/HY-125784 + FDA Qelbree 2021/2022 SNMA PFC-hook (logP at floor flag),2026-11-06
+W18-MIG-01,,,DrugBank lasmiditan,FDA Reyvow 2019 ditan 5-HT1F 6/6 pass — vendor SKU confirm at order,2026-11-06
+W18-AE-01,,,DrugBank ondansetron,FDA Zofran 1991 5-HT3 clean 6/6 pass — vendor SKU confirm at order,2026-11-06
+W18-KILL-ADHD,,,4-kills-mapped,Atomoxetine logP + guanfacine TPSA + pitolisant logP/RB + solriamfetol triple-fail — PUG numbers,2026-11-06
+W18-KILL-MIG,,,5-kills-mapped,Varenicline logP + cytisine MW/logP + aprepitant 4-fail + rimegepant/ubrogepant MW/TPSA/HBA — gepant class MW-dead,2026-11-06
