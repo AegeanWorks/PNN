@@ -214,6 +214,10 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W164-LOX-01,,,DB00408 Loxitane/Adasuve,Loxapine 6/6 (logP 3.1 at ceiling, TPSA 28.1) + live LKT/Midas/Molport SKU — CONVERTED with D2/5-HT2 craving-behavior hook,2026-11-06
+W164-KILL-CLASSICAP,,,3-kills-mapped,Perphenazine logP + fluphenazine logP/HBA + thiothixene logP/TPSA — classic-antipsychotic file fully closed (amoxapine/loxapine sole passers),2026-11-06
+W164-DONE-CONFIRM,Selleck,S5073,,Selleck S5073 live re-fetch CONFIRMED: title In-Stock + JSON-LD InStock $147 + .cn 25mg 794.65 + CAS 120014-06-4 match,2026-11-06
+W164-RILZ-REPATH,,,DrugBank riluzole,SELLICK S1614 UNCONFIRMED direct (404/chooser = bot-block, not delisting) — RE-PATHED via live MCE HY-B0211 (NOT HY-0149, correct the record) + Cayman 35833/14577 + Tocris 0761,2026-11-06
 W162-NAL-SINGLE,,,single-source-confirmed,Naltrindole second-SKU hunt exhausted all routes (Cayman/Tocris/MCE/Selleck/AdooQ/TargetMol/ChemScene) — GC13688 stands alone. 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W161-NALMEFENE,,,DrugBank nalmefene + EMA Selincro,GlpBio GC26177 In-Stock from $54 + AdooQ A13892 In-Stock from $25 — UPGRADED from approval-only to dual live SKU,2026-11-06
 W160-SB408124-2ND,AdooQ,A11567,,AdooQ A11567 In-Stock $35/5mg (CAS 288150-92-5, C19H18F2N4O) — second vendor beside S1545; logP-ceiling flag stands,2026-11-06

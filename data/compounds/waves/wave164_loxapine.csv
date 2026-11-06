@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W164-LOX-01,Loxapine,,327.80,3.10,28.1,0,3,1,,,,,,
