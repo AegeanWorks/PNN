@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W211-K01,Noopept-nootropic-remainder,,318.4,1.5,75.7,1,4,7,,,,,,,
+W211-K02,Vinpocetine-nootropic-remainder,,350.46,4.15,34.5,0,4,4,,,,,,,
+W211-K03,Lisdexamfetamine-stimulant-remainder,,263.38,1.19,81.1,3,3,8,,,,,,,
+W211-P01,Modafinil-ChEMBL-live,,273.36,2.01,66.15,1,2,5,,,,,,,
+W211-P02,Armodafinil-ChEMBL-live,,273.36,2.01,66.15,1,2,5,,,,,,,
+W211-P03,Methylphenidate-ChEMBL-live,,233.31,2.09,38.33,1,3,3,,,,,,,
