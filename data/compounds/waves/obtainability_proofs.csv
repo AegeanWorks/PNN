@@ -193,3 +193,9 @@ W21-AP-02,,,DrugBank levamisole,FDA Ergamisol + Sigma L9756/31742 — CNS nicoti
 W21-AM-01,,,DrugBank primaquine,FDA 8-aminoquinoline 6/6 pass — expect-fail refuted,2026-11-06
 W21-KILL-PARA,,,4-kills-mapped,Albendazole/mebendazole TPSA + ivermectin 5-fail + DEC MW/logP — PUG numbers,2026-11-06
 W21-KILL-AFAM,,,4-kills-mapped,Fluconazole logP/TPSA + ketoconazole MW/logP + chloroquine logP/RB + HCQ logP/RB — BBB label not enough,2026-11-06
+W22-GI-01,Selleck,S5862,DrugBank metoclopramide,FDA Reglan + Selleck S5862 In-Stock 99.95% — brain-penetrant D2/5-HT4 (EPS proves BBB),2026-11-06
+W22-AE-01,Selleck,S5052,DrugBank granisetron,FDA Kytril NDA020239 + Selleck S5052 In-Stock,2026-11-06
+W22-AE-02,Selleck,S5740,DrugBank palonosetron,FDA Aloxi NDA021372 + Selleck S5740 In-Stock,2026-11-06
+W22-AE-03,Selleck,S5326,DrugBank dolasetron,FDA Anzemet oral ACTIVE + Selleck S5326/Cayman 22234 — IV withdrawn QT, oral remains (flag),2026-11-06
+W22-AE-04,Selleck,S3723,,JP/KR Nasea approval + Selleck S3723 HCl In-Stock — HCl MW 315.80 still passes,2026-11-06
+W22-KILL-GI,,,5-kills-mapped,Domperidone logP + mosapride/prucalopride TPSA + itopride RB + tropisetron logP3.8 — PUG numbers,2026-11-06

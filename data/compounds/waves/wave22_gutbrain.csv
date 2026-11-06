@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W22-GI-01,Metoclopramide,,299.79,2.60,67.6,2,4,7,,,,,,
+W22-AE-01,Granisetron,,312.40,2.80,50.2,1,3,2,,,,,,
+W22-AE-02,Palonosetron,,296.40,2.80,23.6,0,2,1,,,,,,
+W22-AE-03,Dolasetron,,324.40,3.40,62.4,1,4,3,,,,,,
+W22-AE-04,Ramosetron,,279.34,2.20,50.7,1,2,2,,,,,,
