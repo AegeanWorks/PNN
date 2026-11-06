@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W55-KILL-MALARONE,,,2-kills-mapped,Atovaquone logP-only + proguanil TPSA-only — orthogonal single-fails, no legal single-agent convert,2026-11-06
+W55-KILL-DIAM,,,2-kills-mapped,Pentamidine triple + miltefosine logP/RB — diamidine/surfactant out; antiprotozoals closed,2026-11-06
 W54-AH-01,,,DrugBank pyrantel,Combantrin/Pin-X + MCE HY-12641A (base-scored; pamoate salt would kill MW/TPSA — moiety convention disclosed),2026-11-06
 W54-AH-02,,,DB13670,MCE HY-124498 oxantel (logP floor pass; N-subtype-selective nAChR probe),2026-11-06
 W54-AH-03,,,Vet Banminth-II,MCE HY-126032 morantel (methyl-vector SAR bridge pyrantel 1.6 to 1.9),2026-11-06
