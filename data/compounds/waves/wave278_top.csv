@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W278-K01,Clobetasol-topical-remainder,,467.0,3.8,80.7,1,6,5,,,,,,,
+W278-K02,Fluocinonide-topical-remainder,,494.5,3.2,99.1,1,9,4,,,,,,,
+W278-K03,Betamethasone-dipropionate-topical-remainder,,504.6,3.6,107.0,1,8,8,,,,,,,
+W278-K04,Edoxaban-DOAC-remainder,,548.07,1.4,165.0,3,8,5,,,,,,,
+W278-K05,Betrixaban-DOAC-remainder,,451.91,3.72,107.41,3,5,6,,,,,,,
+W278-K06,Fondaparinux-SC-remainder,,1728.1,-3.0,400.0,9,52,20,,,,,,,
