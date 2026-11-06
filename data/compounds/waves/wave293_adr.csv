@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W293-K01,Testolactone-AI-remainder,,300.40,3.59,43.37,0,3,0,,,,,,,
+W293-K02,Formestane-IM-remainder,,302.4,2.6,54.4,1,3,0,,,,,,,
+W293-K03,Aminoglutethimide-adrenal-remainder,,232.28,1.2,72.2,2,3,2,,,,,,,
+W293-K04,Trilostane-vet-remainder,,329.4,2.9,76.8,2,4,0,,,,,,,
+W293-K05,Mitotane-chemo-remainder,,320.0,6.2,0.0,0,0,3,,,,,,,
