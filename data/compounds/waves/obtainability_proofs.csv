@@ -205,6 +205,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W28-KILL-GLP1,,,6-kills-mapped,Danuglipron 5-fail + orforglipron/OWL833 4-fail + lotiglipron 3-fail + TTP273/ZYOG1 no-record — oral GLP-1RAs too big/polar for PNN box,2026-11-06
 W27-KILL-S1P,,,3-kills-mapped,Ozanimod TPSA-only + siponimod 4-fail + ponesimod 4-fail — S1P class lymphocyte rationale intact, chemistry out,2026-11-06
 W27-KILL-CFTR,,,3-kills-mapped,Ivacaftor logP/TPSA + lumacaftor 4-fail + tezacaftor 5-fail (+elexacaftor worse) — CFTR class out,2026-11-06
 W25-KILL-PDE5,,,4-kills-mapped,Sildenafil MW/TPSA/HBA + tadalafil TPSA-only + avanafil 4-fail + vardenafil 4-fail — PDE5 blockbusters too large/polar for PNN box,2026-11-06
