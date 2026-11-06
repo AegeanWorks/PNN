@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W263-K01,Phenelzine-MAOI-remainder,,136.20,1.2,38.1,2,2,3,,,,,,,
+W263-K02,Tranylcypromine-MAOI-remainder,,133.19,1.50,26.02,1,1,1,,,,,,,
+W263-K03,Isocarboxazid-MAOI-remainder,,231.25,1.42,67.16,2,4,4,,,,,,,
