@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W140-KILL-ADEN,,,4-kills-mapped,CVT-6883/GS-6201 same-CID + piclidenoson + namodenoson + MRS1523 (antagonist mismatch) — A2B/A3 shelf closed,2026-11-06
 W139-KILL-A2AAG,,,3-kills-mapped,Regadenoson/binodenoson nucleoside-pattern + apadenoson 1/6 labile-ester — A2A flipside closed,2026-11-06
 W138-KILL-A1AG,,,3-kills-mapped,Neladenoson 5/6-fail + capadenoson 5-fail + tecadenoson nucleoside-pattern 4-fail — A1-agonist shelf closed,2026-11-06
 W137-KILL-PDE2,,,2-kills-mapped,BAY 60-7550 4-fail + EHNA TPSA-only — PDE2 closed (PDE1 killed W3, PDE6 n/a),2026-11-06
