@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W115-KILL-FIBRATE,,,4-kills-mapped,Gemfibrozil/bezafibrate logP (+TPSA) + fenofibric acid logP + fenofibrate-reference logP — fibrate file closed (metabolite arc documented),2026-11-06
 W114-KILL-KCH,,,2-kills-mapped,Minoxidil logP/TPSA + nicorandil logP/TPSA — K-channel corner closed,2026-11-06
 W113-KILL-CCB,,,6-kills-mapped,Verapamil MW/logP/RB + diltiazem TPSA + amlodipine/nifedipine TPSA (+RB) + nimodipine TPSA/HBA/RB despite real brain exposure + felodipine logP — CCB file closed,2026-11-06
 W112-KILL-BBLOCK,,,3-kills-mapped,Timolol TPSA/HBA + betaxolol RB-only-near-miss + nadolol triple — beta-blocker file closed, propranolol sole passer,2026-11-06
