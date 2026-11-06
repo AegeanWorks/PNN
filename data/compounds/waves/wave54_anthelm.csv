@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W54-AH-01,Pyrantel,CN1CCCN=C1C=CC2=CC=CS2,206.31,1.60,43.8,0,2,2,,,,,,
+W54-AH-02,Oxantel,CN1CCCN=C1C=CC2=CC(=CC=C2)O,216.28,1.50,35.8,1,2,2,,,,,,
+W54-AH-03,Morantel,CC1=C(SC=C1)C=CC2=NCCCN2C,220.34,1.90,43.8,0,2,2,,,,,,
