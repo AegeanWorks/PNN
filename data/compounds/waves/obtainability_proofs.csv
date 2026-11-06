@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W103-KC-01,,,Korea MFDS K-CAB,PUG-synonym HY-17623/CS-0014702/CHEMBL4297583 + SMILES CID-verified + K-CAB Korea approval — confirm live at order,2026-11-06
+W103-KILL-VONO,,,1-killed,Vonoprazan TPSA-only 72.4 (brief CID wrong, true 15981397; ChEMBL PSA 63.99 noted but PUG governs) — acid-blocker file closed except tegoprazan,2026-11-06
 W102-KILL-PPI,,,4-kills-mapped,Omeprazole/esomeprazole TPSA + lansoprazole/pantoprazole TPSA/HBA — sulfinyl-benzimidazole class pattern,2026-11-06
 W101-KILL-H2,,,4-kills-mapped,Cimetidine/ranitidine logP+TPSA (+RB) + famotidine/nizatidine TPSA/HBA (+logP/RB) — H1 already dead, H2 dead too; histamine file closed,2026-11-06
 W100-KILL-ENK,,,2-kills-mapped,Racecadotril TPSA/RB (brief CID 107723 wrong organophosphate; true 107751) + loperamide MW/logP P-gp-control — peripheral restriction story confirmed,2026-11-06
