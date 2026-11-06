@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W49-MPO129,,,129-profiled,Wave49: pnn.mpo over 129 combined → 0 DEVELOPMENT / 129 OPTIMIZATION_LEAD; D 0.563 = F-filled 7; new top-band: levamisole/praziquantel/ondansetron/aniracetam 5.9-6.0 — outputs in output/wave49_mpo.* (ignored),2026-11-06
+W49-BUYLIST,,,refresh,REFRESHED T1 (approved+live-SKU): donepezil/riluzole/carbamazepine/galantamine/ambroxol/ropinirole/venlafaxine/escitalopram-QTflag + praziquantel/ondansetron/aniracetam; T2 (MPO-band + tools): CX-614/farampator/MTEP/levamisole/parthenolide/fasudil/PBT2/nevirapine-boxed/PRE-084/IDRA-21/SKF-81297/emapunil; 0 new/0 kills this wave,2026-11-06
 W48-KILL-GRIS,,,1-killed-nearmiss,Griseofulvin TPSA-only 71.1 (+1.1, tier-B near-miss, G4753/PHR1534/USP1299007 live) — no rounding applied,2026-11-06
 W48-KILL-ALLYL,,,3-kills-mapped,Flucytosine MW/logP + terbinafine/butenafine logP (lipophilic allylamines) — TPSA-minimal but logP-blind class,2026-11-06
 W47-KILL-MACRO,,,3-kills-mapped,Azithromycin/clarithromycin/erythromycin 733-749 Da + TPSA 180-194 + HBA 14 — macrolide floor,2026-11-06
