@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W299-P01,Tetrabenazine-VMAT2-remainder,,317.43,3.24,38.77,0,4,4,,,,,,,
+W299-P02,Deutetrabenazine-VMAT2-remainder,,323.47,3.24,38.77,0,4,4,,,,,,,
+W299-K01,Valbenazine-VMAT2-remainder,,418.58,3.56,74.02,1,6,7,,,,,,,
