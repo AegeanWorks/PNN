@@ -184,3 +184,5 @@ W18-MIG-01,,,DrugBank lasmiditan,FDA Reyvow 2019 ditan 5-HT1F 6/6 pass — vendo
 W18-AE-01,,,DrugBank ondansetron,FDA Zofran 1991 5-HT3 clean 6/6 pass — vendor SKU confirm at order,2026-11-06
 W18-KILL-ADHD,,,4-kills-mapped,Atomoxetine logP + guanfacine TPSA + pitolisant logP/RB + solriamfetol triple-fail — PUG numbers,2026-11-06
 W18-KILL-MIG,,,5-kills-mapped,Varenicline logP + cytisine MW/logP + aprepitant 4-fail + rimegepant/ubrogepant MW/TPSA/HBA — gepant class MW-dead,2026-11-06
+W19-KILL-AH,,,5-kills-mapped,Loratadine logP5.2 + desloratadine logP4.5 + cetirizine RB8 + fexofenadine MW/TPSA/RB + ebastine MW/logP/RB — 2nd-gen antihistamines systematically out (S1358 live proves sourcing not blocker),2026-11-06
+W19-KILL-CV,,,5-kills-mapped,Losartan 3-fail + valsartan 3-fail + pitavastatin TPSA/RB + ezetimibe logP-only + fenofibrate logP — ARB/statin/cholesterol out of PNN box,2026-11-06
