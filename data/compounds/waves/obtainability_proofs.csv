@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W179-KILL-COMT,,,3-kills-mapped,Tolcapone/entacapone TPSA-only + opicapone TPSA/HBA (peripheral by design) — COMT file closed,2026-11-06
 W178-KILL-AADC,,,2-kills-mapped,Carbidopa triple-fail (logP/TPSA/HBD; peripheral-by-design, live S1891 moot) + benserazide triple-fail (target-miss + BBB hard-fail by design) — counter reset,2026-11-06
 W177-APO-STAYS,,,stays-synonym,Apomorphine live-SKU hunt exhausted BOTH attempts (Selleck 404/MCE 403/Cayman JS/Tocris timeout/GlpBio 404/AdooQ 403/TargetMol 412/ChemScene 403; Cayman-16094 exists but JS-walled) — 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W176-KILL-DPP4,,,4-kills-mapped,Sitagliptin 3/6 + saxagliptin/linagliptin/alogliptin 4/6 — DPP-4 peripheral-polarity class dead,2026-11-06
