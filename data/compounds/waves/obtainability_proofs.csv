@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W95-KILL-RIFAM,,,3-kills-mapped,Rifampin/rifabutin 5/6 + rifapentine 1/6 (822-877 Da, TPSA 209-220, logP 4.9-6.7) — anti-TB file closed,2026-11-06
 W94-DXOR-01,Cerilliant,D-034,,Cerilliant D-034 $50.70 CRM + Sigma PHR1974 $448/30mg neat CRM + Cayman 18908 via Ibis $44 — tartrate-salt caveat, NMDA Ki 486-906nM,2026-11-06
 W94-PARK-NORFEN,,,confirmed-park,Norfenfluramine 6/6 but best live is Cayman 22604 analytical-standard (not CRM); 6 dead CRM routes; Sigma N3288 powder excluded by grade,2026-11-06
 W93-PARK-DXOR,,,parked-provisional,Dextrorphan 6/6 + NMDA Ki 486-906nM (norfenfluramine-pattern NEGATIVE — desired-activity metabolite) — no live SKU, metabolite rule; analytical-standard at order,2026-11-06
