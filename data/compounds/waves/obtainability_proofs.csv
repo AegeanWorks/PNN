@@ -214,6 +214,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W172-ZERO-MGLU,,,zero-wave,Wave172 mGluR NAM live-SKU hunt: all routes bot-walled (MCE 403, Cayman JS, TargetMol 412, AdooQ 403, Selleck/GlpBio 404, Tocris timeout, Exa quota out) — 0 new/0 kills = ZERO-WAVE 1, all 3 stay synonym-level,2026-11-06
 W171-APO-01,,,DB00714 Apokyn/Kynmobi,Apomorphine 6/6 (PUG CID 6005 + CS-0012299/EN300-synonym) — INJECTABLE/SUBLINGUAL caveat (not oral); Tier B on chemistry,2026-11-06
 W171-KILL-DA,,,2-kills-mapped,Pramipexole TPSA-only + rotigotine logP-only — dopamine-agonist file closed (ropinirole + apomorphine pass),2026-11-06
 W170-KILL-ACH,,,3-kills-mapped,Trihexyphenidyl/Biperiden/procyclidine logP (+BBB-label moot per W21 precedent) — anticholinergic file closed, homatropine sole passer,2026-11-06
