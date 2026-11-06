@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W214-K01,Mefloquine-antimalarial-remainder,,378.31,3.6,45.2,2,9,2,,,,,,,
+W214-K02,Hydroxychloroquine-antimalarial-remainder,,335.9,3.6,48.4,2,4,9,,,,,,,
+W214-K03,Artesunate-antimalarial-remainder,,384.4,2.5,101.0,1,8,5,,,,,,,
+W214-K04,Clotrimazole-antifungal-remainder,,344.8,5.0,17.8,0,1,4,,,,,,,
+W214-P01,Quinine-ChEMBL-live,,324.4,2.9,45.6,1,4,4,,,,,,,
+W214-P02,Artemether-ChEMBL-live,,298.38,2.84,46.15,0,5,1,,,,,,,
