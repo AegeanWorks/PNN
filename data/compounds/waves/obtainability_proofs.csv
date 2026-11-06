@@ -699,3 +699,5 @@ W293-KILL-ADR,,,5-kills-mapped,Testolactone ALOGP3.59-flip withdrawn + formestan
 W293-KILL-B2,,,13-kills-mapped,Salbutamol/terbutaline/fenoterol/procaterol/formoterol/salmeterol/vilanterol/olodaterol/indacaterol/bambuterol/salmefamol/arformoterol/levalbuterol polarity/TPSA/RB floors + inhaled-route limits - beta2-agonist wall; PNN-count 0 all,2026-11-06
 W293-P01,,,EU-oral,Clenbuterol tier-B ChEMBL-live MW277.2/ALOGP3.00/PSA58.3 (DB01407; EU oral/vet) PARKED - hook GAP + tremor/CV/doping flags; live SKU confirm at order,2026-11-06
 W293-P02,,,JP/CN-approved,Tulobuterol tier-B ChEMBL-live MW227.7/ALOGP2.76/PSA32.3 (DB12248; patch+oral JP) PARKED - hook GAP + tremor/CV flags; live SKU confirm at order,2026-11-06
+W294-KILL-VITK,,,5-kills-mapped,Phytonadione MW/logP/RB + menadione MW-floor redox-cycling/withdrawn + menatetrenone logP/RB + ethamsylate TPSA/HBD/logP + carbazochrome logP/TPSA - quinone lipophilicity + polar floor,2026-11-06
+W294-KILL-HEMO,,,4-route-kills,Aprotinin withdrawn-anaphylaxis + hemocoagulase venom + thrombin/fibrinogen topical-only proteins - injectable/topical route walls,2026-11-06

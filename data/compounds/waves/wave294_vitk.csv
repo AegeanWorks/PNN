@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W294-K01,Phytonadione-K-remainder,,450.7,10.9,34.1,0,2,14,,,,,,,
+W294-K02,Menadione-K3-remainder,,172.18,2.2,34.1,0,2,0,,,,,,,
+W294-K03,Menatetrenone-MK4-remainder,,444.6,8.9,34.1,0,2,11,,,,,,,
+W294-K04,Ethamsylate-hemostat-remainder,,263.31,0.0,115.0,4,6,3,,,,,,,
+W294-K05,Carbazochrome-hemostat-remainder,,236.23,0.0,112.0,3,5,1,,,,,,,
