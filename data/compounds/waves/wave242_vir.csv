@@ -1,0 +1,13 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W242-K01,Oseltamivir-flu-remainder,,312.4,1.1,90.7,2,5,8,,,,,,,
+W242-K02,Zanamivir-inhaled-remainder,,332.3,-3.2,201.0,7,8,6,,,,,,,
+W242-K03,Peramivir-IV-remainder,,328.4,0.0,151.0,5,5,7,,,,,,,
+W242-K04,Laninamivir-inhaled-remainder,,346.3,-3.2,190.0,6,8,7,,,,,,,
+W242-K05,Rimantadine-flu-remainder,,179.3,2.6,26.0,1,1,1,,,,,,,
+W242-K06,Arbidol-flu-remainder,,477.4,4.4,80.0,1,5,8,,,,,,,
+W242-K07,Baloxavir-flu-remainder,,571.6,3.8,123.0,0,12,6,,,,,,,
+W242-K08,Favipiravir-COVID-remainder,,157.1,-0.6,84.6,2,4,1,,,,,,,
+W242-K09,Molnupiravir-COVID-remainder,,329.3,-0.8,141.0,4,7,6,,,,,,,
+W242-K10,Remdesivir-IV-remainder,,602.6,1.9,204.0,4,13,14,,,,,,,
+W242-K11,Nirmatrelvir-COVID-remainder,,499.5,2.2,131.0,3,8,7,,,,,,,
+W242-K12,Ensitrelvir-COVID-remainder,,531.9,2.5,114.0,1,8,6,,,,,,,
