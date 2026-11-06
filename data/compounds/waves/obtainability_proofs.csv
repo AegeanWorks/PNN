@@ -682,3 +682,4 @@ W278-KILL-DOAC,,,3-kills-mapped,Edoxaban MW/logP/TPSA/HBA triple-boxed + betrixa
 W279-KILL-COUGH,,,5-kills-mapped,Levodropropizine logP-only peripheral + butamirate RB-only + pentoxyverine logP/RB + pipazethate TPSA withdrawn-inefficacy + clobutinol box-pass WITHDRAWN-2007-QT (DB09004) - cough closures,2026-11-06
 W279-P01,,,EU/Taiwan-approved,Oxolamine tier-B ChEMBL-live MW245.3/ALOGP2.62/PSA42.2 (DB13216) PARKED - hook GAP (PNN-count 0) + sensitization flag; live SKU confirm at order,2026-11-06
 W279-P02,,,research-limited,Moguisteine tier-B ChEMBL-live MW339.4/ALOGP1.93/PSA65.1/RB7-boundary (no DB; ChEMBL146980) PARKED - hook GAP + thin-safety-dataset flag; ChEMBL-resolved split; live SKU confirm at order,2026-11-06
+W280-P01,,,JP-approved,Imidafenacin tier-B ChEMBL-live MW319.4/ALOGP3.05/PSA60.9 (DB09262; Uritos/Staybla Japan oral, not US/EU) PARKED - hook GAP (PNN-count 0) + anticholinergic/retention/glaucoma flags; live SKU confirm at order,2026-11-06
