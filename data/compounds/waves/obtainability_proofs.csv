@@ -213,6 +213,8 @@ W26-KILL-BTK,,,4-kills-mapped,Ibrutinib/evobrutinib/zanubrutinib/tolebrutinib �
 W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol triple + ethionamide triple — approvals noted, filters kill,2026-11-06
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
+W202-CM-01,,,FDA Camzyos 2022 + EMA 2023,Myosin inhibitor 6/6 full pass (PUG CID 117761397) — vendor SKU confirm at order,2026-11-06
+W202-KILL-ANGINO,,,6-kills-mapped,Ranolazine TPSA/RB + ivabradine extracorporeal-MW/logP + trimetazidine logP + levosimendan TPSA + omecamtiv logP/TPSA + aficamten TPSA-only (PUG CID 139331495 verified 2026-11-06)
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
 W201-ZERO-CLOBAZAM,,,stays-synonym,Clobazam live-SKU hunt exhausted ALL routes (Selleck 404, MCE/ChemScene 403, Cayman JS-wall, Tocris timeout, GlpBio/AdooQ/TargetMol 404/412, websearch quota out) — 0 new/0 kills = ZERO-WAVE 1,2026-11-06
 W200-BZ-01,,,FDA Onfi Lennox-Gastaut,1,5-benzodiazepine 6/6 full pass + MIDAZOLAM-neighbor note (W57 midazolam converted) — vendor SKU confirm at order,2026-11-06
