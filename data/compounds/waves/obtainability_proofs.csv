@@ -213,6 +213,9 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W76-HP-01,Selleck,S5213,,Selleck S5213 In-Stock 99.88% (base-scored; salt moot) + MCE HY-B1345/USP RS — ciclopirox alkyl-tail congener,2026-11-06
+W76-HP-02,MCE,HY-113863,,MCE HY-113863 catalog-listed (TargetMol/Biorbyt support; Selleck not carried; stock reconfirm at order) — logP-ceiling flag, diaryl-ether tail,2026-11-06
+W76-KILL-DFO,,,2-kills-mapped,Deferoxamine free-base 0/6 + mesylate worse — chelator control dead as expected,2026-11-06
 W75-FE-01,MCE,HY-B0450,DrugBank ciclopirox,MCE HY-B0450 + Sigma C0415/Tocris 6330 + FDA Loprox/Penlac/Olamine/OraMagic — iron-chelation hook, topical-forms caveat,2026-11-06
 W75-KILL-AZAL,,,2-kills-mapped,Sertaconazole logP + naftifine logP-bottom-boundary — lipophilic antifungal class closed,2026-11-06
 W74-AZ-01,Selleck,S5025,DrugBank Jublia NDA203567,Selleck S5025 In-Stock + FDA Jublia 2014 — 6/6 full pass, antifungal file closed except it,2026-11-06
