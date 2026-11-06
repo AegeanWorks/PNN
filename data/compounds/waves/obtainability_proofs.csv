@@ -648,3 +648,7 @@ W259-KILL-CFTR,,,1-kill-mapped,Ivacaftor logP/TPSA (DB08820; combos closed) + he
 W259-KILL-BIO,,,12-route-kills,Palivizumab/nirsevimab mAbs + somatropin/mecasermin/pegvisomant/tesamorelin GH-axis + hCG/follitropin/menotropin/urofollitropin gonadotropins + cetrorelix/ganirelix GnRH-antagonists - all injectable peptides/proteins/mAbs, zero oral; no research needed,2026-11-06
 W260-KILL-LEVODOPA,,,1-kill-mapped,Levodopa 4-fail MW/logP/TPSA/HBD (DB01235; Sinemet 1975; LAT1-transported but box is passive-design, transporter does not rescue) - catechol amino-acid floor; PNN-count 0,2026-11-06
 W260-NOTE,,,1-coverage-note,Istradefylline reconfirmed closed W32-KILL-A2A; carbidopa/benserazide untouched per cycle rule,2026-11-06
+W261-KILL-ADRENAL,,,2-kills-mapped,Levoketoconazole MW/logP boxed-hepatotoxic (DB15044 uncertain-ID flagged) + metyrosine MW/logP/TPSA (depression/suicidality flag) - Cushing size + pheo polarity floors,2026-11-06
+W261-KILL-SST,,,3-route-kills,Octreotide/lanreotide/pasireotide injectable somatostatin analogs - depot/SC route kill; no research needed,2026-11-06
+W261-P01,,,FDA-1961,Metyrapone tier-B ChEMBL-live MW226.3/ALOGP2.64/PSA42.9 (DB01011; Metopirone) PARKED - hook GAP (PNN-count 0) + hypocortisolism/QT flags; live SKU confirm at order,2026-11-06
+W261-P02,,,FDA-2020,Osilodrostat tier-B ChEMBL-live MW227.2/ALOGP2.43/PSA41.6 (DB11837; Isturisa) PARKED - hook GAP + hypocortisolism-dose-limiting/QTc flags; live SKU confirm at order,2026-11-06

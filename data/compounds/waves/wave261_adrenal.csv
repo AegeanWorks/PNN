@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W261-K01,Levoketoconazole-Cushing-remainder,,531.43,4.3,69.1,0,6,7,,,,,,,
+W261-K02,Metyrosine-pheo-remainder,,195.22,-1.7,83.6,3,4,2,,,,,,,
+W261-P01,Metyrapone-ChEMBL-live,,226.28,2.64,42.85,0,3,3,,,,,,,
+W261-P02,Osilodrostat-ChEMBL-live,,227.24,2.43,41.61,1,3,1,,,,,,,
