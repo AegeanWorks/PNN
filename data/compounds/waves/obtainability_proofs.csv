@@ -213,6 +213,8 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W111-BB-01,,,DrugBank propranolol Inderal,FDA approval + CNS-active lipophilic beta-blocker — adrenergic ARC comparator,2026-11-06
+W111-KILL-BB,,,3-kills-mapped,Metoprolol RB + atenolol triple + carvedilol triple — beta-blocker file closed with propranolol sole passer,2026-11-06
 W110-PARK-INDEC,,,parked-provisional,Indecainide 6/6 (CID 52195, RB6-ceiling) but discontinued/never-marketed + no live SKU found — metabolite-rule analogue; convert on SKU proof only,2026-11-06
 W110-KILL-IC,,,3-kills-mapped,Encainide/lorcainide logP + moricizine TPSA (CAST/withdrawn noted) — Ic file closed except indecainide-parked,2026-11-06
 W109-KILL-AA,,,4-kills-mapped,Flecainide logP/HBA + propafenone RB + amiodarone triple + dronedarone 4-fail — antiarrhythmic file closed despite real CNS signals,2026-11-06
