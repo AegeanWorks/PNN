@@ -158,3 +158,8 @@ W13-EUTRO-HOOK,,,hook-proven-parked,Eutropoflavin TrkB hook PROVEN (Liu 2010 str
 W13-67DHF-HOOK,,,hook-proven-parked,6,7-DHF TrkB partial activity PROVEN (Liu 2010 + ChEMBL Active) but no allowed-vendor SKU — stays parked,2026-11-06
 W13-KILL-DIHYDREX,,,killed,Dihydrexidine KILL — task CAS pair PUG-404 (true 123039-93-0, no vendor codes); ApexBio lead-time only, no stock,2026-11-06
 W13-KILL-DINAP,,,killed,Dinapsoline KILL — CAS validates, vendor namespace empty, all alternates absent/blocked,2026-11-06
+W14-MPO102,,,102-profiled,Wave14: pnn.mpo over 102 combined rows → 0 DEVELOPMENT / 102 OPTIMIZATION_LEAD; D 0.563 = 7 F-filled only; top CNS-MPO CX-614/farampator/MTEP 6.00; bottom CY-208-243 4.08 + mirtazapine-lipophilicity — outputs in output/wave14_mpo.* (ignored),2026-11-06
+W14-BUYLIST-01,,,buy-list,ORDER-NOW T1 donepezil S5077-class/S5073 + riluzole S1614 + galantamine G1660/S3866 + ambroxol S3064 + carbamazepine S1693 (PAMPA 6.6) + ropinirole R1529 — all live-SKU + labels,2026-11-06
+W14-BUYLIST-02,,,buy-list,ORDER-NOW T2 CX-614 Tocris-1706 + farampator HY-10937/Cayman-21510 + MTEP (W9-NT-02) + parthenolide P0667 + rolipram Tocris-0905 + SKF-81297 HB1858 + emapunil S2592 — MPO 5.7-6.0 band,2026-11-06
+W14-BUYLIST-03,,,buy-list,REAGENTS marimastat S7156 (control) + DQ-gelatin D12054 + WFA B-1355-2 — all live; ChABC/MMP-9/ilomastat still access-blocked = human-browser batch,2026-11-06
+W14-FLAG-LOW,,,deprioritized,CY-208-243 lowest MPO 4.08 + logP-at-bound + single-vendor (GlpBio) — control-only, not killed (passes filters),2026-11-06
