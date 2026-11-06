@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W232-K01,Labetalol-BB-remainder,,328.4,3.1,95.6,4,4,8,,,,,,,
+W232-K02,Esmolol-IV-remainder,,295.38,1.53,67.79,2,5,10,,,,,,,
+W232-K03,Penbutolol-BB-remainder,,291.44,4.04,41.49,2,3,7,,,,,,,
+W232-K04,Practolol-withdrawn-remainder,,266.34,0.8,70.6,3,4,7,,,,,,,
+W232-K05,Celiprolol-BB-remainder,,379.5,1.9,90.9,3,5,10,,,,,,,
+W232-K06,Acamprosate-alcohol-remainder,,181.21,-1.2,91.9,2,4,4,,,,,,,
