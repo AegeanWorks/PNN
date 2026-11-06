@@ -213,6 +213,7 @@ W23-KILL-MYCO,,,4-kills-mapped,Dapsone/benznidazole logP+TPSA + ethambutol tripl
 W23-KILL-PG,,,4-kills-mapped,Latanoprost 3-fail + bimatoprost 3-fail + travoprost 5-fail + tafluprost 4-fail — prostanoid backbone systematically RB12-14/TPSA76-96,2026-11-06
 W24-RAC-01,Sigma,A9950,,Sigma A9950/504913 + Cayman 17752 + Selleck S1281 + Tocris 0867 aniracetam 6/6 — AMPA-PAM + cholinergic ARC hook,2026-11-06
 W24-KILL-RAC,,,7-kills-mapped,Phenylpiracetam logP + pramiracetam logP + oxiracetam triple + fasoracetam MW/logP + coluracetam TPSA + nefiracetam logP-marginal + seletracetam logP — PUG numbers,2026-11-06
+W145-AH-CONFIRM,GlpBio,GC10208/GC32176/GC32285,,GlpBio live In-Stock: pyrantel-pamoate GC10208 / oxantel-pamoate GC32176 / morantel-TARTRATE GC32285 — salt-corrected: pamoate-base MW adjust; morantel tartrate not citrate,2026-11-06
 W144-MOXI-UPGRADE,GlpBio,GC32485,,GlpBio GC32485 In-Stock 5mg$18 + AdooQ A17725 In-Stock + Selleck S5666 In-Stock + MCE HY-B1435 — W80 Tier B proof upgraded to live (4 vendors),2026-11-06
 W143-BAY-01,GlpBio,GC30923,DrugBank BAY736691,GlpBio GC30923 (R)-form In-Stock 5mg$138 + AdooQ A17024 In-Stock — CONVERTED from W136 park (6/6 + logP-boundary flag survives),2026-11-06
 W143-FX-CONFIRM,Cayman,45283,,Cayman 45283 Abeprazan(=fexuprazan) GH + TargetMol T10221 In-Stock + MCE HY-109179 — W104 Tier B proof upgraded to live,2026-11-06
