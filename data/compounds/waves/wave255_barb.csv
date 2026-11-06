@@ -1,0 +1,13 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W255-K01,Phenobarbital-barb-remainder,,232.23,1.5,75.3,2,3,2,,,,,,,
+W255-K02,Pentobarbital-barb-remainder,,226.27,2.1,75.3,2,3,4,,,,,,,
+W255-K03,Secobarbital-barb-remainder,,238.28,2.0,75.3,2,3,5,,,,,,,
+W255-K04,Butalbital-combo-remainder,,224.26,1.7,75.3,2,3,4,,,,,,,
+W255-K05,Primidone-barb-remainder,,218.25,0.9,58.2,2,2,2,,,,,,,
+W255-K06,Methohexital-IV-remainder,,262.30,2.3,66.5,1,3,3,,,,,,,
+W255-K07,Thiopental-IV-remainder,,242.34,2.9,90.3,2,3,4,,,,,,,
+W255-K08,Amobarbital-barb-remainder,,226.27,2.1,75.3,2,3,4,,,,,,,
+W255-K09,Aprobarbital-legacy-remainder,,210.23,1.1,75.3,2,3,3,,,,,,,
+W255-K10,Butabarbital-legacy-remainder,,212.25,1.6,75.3,2,3,3,,,,,,,
+W255-K11,Mephobarbital-withdrawn-remainder,,246.26,1.8,66.5,1,3,2,,,,,,,
+W255-K12,Talbutal-legacy-remainder,,224.26,1.4,75.3,2,3,4,,,,,,,

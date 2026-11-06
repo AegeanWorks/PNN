@@ -57,6 +57,12 @@ from .sar import (
     load_compounds as load_sar_compounds,
     render_sar_report,
 )
+from .waves import (
+    WAVE_LEDGER_FIELDS,
+    WaveLedgerError,
+    collect_wave_ledger,
+    render_wave_ledger_markdown,
+)
 from .selection import render_lead_report, select_leads
 from .studio import (
     generate_circuit_dynamics_svg,
@@ -301,6 +307,30 @@ def execute_turnkey_pipeline(
         safety_safe_count = 0
         safety_failed_count = 0
 
+    # 6b. Wave Ledger: search-wave findings auto-update the report + studio UI.
+    waves_dir = PROJECT_ROOT / "data" / "compounds" / "waves"
+    proofs_path = waves_dir / "obtainability_proofs.csv"
+    try:
+        wave_rows, wave_highlights = collect_wave_ledger(waves_dir, proofs_path)
+    except WaveLedgerError as exc:
+        # Non-critical reporting step: record the failure loudly in the
+        # ledger files and continue the turnkey run with an empty ledger.
+        wave_rows, wave_highlights = [], []
+        write_text(out_dir / "wave_ledger.md", f"# Wave Ledger\n\nLedger failed: {exc}\n")
+        write_csv(out_dir / "wave_ledger.csv", WAVE_LEDGER_FIELDS, [])
+    else:
+        write_csv(
+            out_dir / "wave_ledger.csv",
+            WAVE_LEDGER_FIELDS,
+            [row.as_row() for row in wave_rows],
+        )
+        write_text(
+            out_dir / "wave_ledger.md",
+            render_wave_ledger_markdown(wave_rows, wave_highlights),
+        )
+    wave_ledger_rows = [row.as_row() for row in wave_rows]
+    wave_highlight_rows = [highlight.as_row() for highlight in wave_highlights]
+
     # 7. Interactive Visualization Studio HTML Dashboard (Comprehensive Preclinical & Translational UI)
     studio_compounds, targets = load_studio_data(
         compounds_path=vendor_csv,
@@ -345,6 +375,8 @@ def execute_turnkey_pipeline(
         dossier_data=dossier_rows,
         safety_data=safety_rows,
         targets_data=list_targets(),
+        wave_ledger=wave_ledger_rows,
+        wave_highlights=wave_highlight_rows,
     )
     studio_html = out_dir / "studio.html"
     write_text(studio_html, html_out)

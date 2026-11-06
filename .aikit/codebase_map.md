@@ -6,11 +6,11 @@
 ---
 
 ## 📊 Codebase Metrics
-- **Total Python Modules**: `51`
-- **Total Classes**: `89`
-- **Total Top-Level Functions**: `215`
-- **Total Class Methods**: `255`
-- **Total Source Lines**: `13168`
+- **Total Python Modules**: `53`
+- **Total Classes**: `93`
+- **Total Top-Level Functions**: `221`
+- **Total Class Methods**: `264`
+- **Total Source Lines**: `13588`
 
 ---
 
@@ -378,7 +378,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `508` lines (`19986` bytes)
+**Size**: `540` lines (`21311` bytes)
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -498,7 +498,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1313` lines (`53566` bytes)
+**Size**: `1322` lines (`53893` bytes)
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -516,7 +516,7 @@
 - `def _parse_required_int(raw, field, compound_id)` - *Parse a required integer studio field, raising StudioError on missing data.*
 - `def _parse_circuit_points(simulation_points)` - *(time_h, pnn_pct, akt_pct) for every complete, numeric simulation row, time-sorted.*
 - `def generate_circuit_dynamics_svg(simulation_points, width, height)` - *Generate SVG time-course chart for hypothalamic circuit dynamics (PNN turnover vs pAKT restoration).*
-- `def render_studio_html(compounds, radar_svg, heatmap_svg, pk_svg, circuit_svg, circuit_points, dossier_data, safety_data, targets_data)` - *Render full standalone HTML5 studio dashboard.*
+- `def render_studio_html(compounds, radar_svg, heatmap_svg, pk_svg, circuit_svg, circuit_points, dossier_data, safety_data, targets_data, wave_ledger, wave_highlights)` - *Render full standalone HTML5 studio dashboard.*
 - `def _parse_opt_float(val)` - *Parse optional numeric float string, returning None for empty or non-numeric cells.*
 - `def load_studio_data(compounds_path, docking_path, assays_path, pk_path, preclinical_candidates_path)` - *Assemble all project datasets into StudioCompound instances.*
 - `def build_parser()`
@@ -550,6 +550,28 @@
 - `def generate_vina_config(profile, receptor_pdbqt, out_pdbqt, exhaustiveness, num_modes, energy_range)` - *Format AutoDock Vina grid parameter configuration text.*
 - `def build_parser()`
 - `def main(argv)`
+
+---
+
+### [`pnn/waves.py`](pnn/waves.py)
+> *Wave-ledger aggregation: search-wave CSVs plus obtainability proofs into report artifacts.*
+
+**Size**: `299` lines (`11712` bytes)
+
+**Classes:**
+- `class WaveLedgerError` - *Raised when wave-ledger inputs cannot be read or parsed.*
+- `class WaveRow`
+  - Method `.as_row()`
+- `class WaveHighlight`
+  - Method `.as_row()`
+
+**Functions:**
+- `def _wave_number_from_filename(filename)`
+- `def _count_wave_compounds(path)` - *Count data rows in a wave screening CSV (header excluded).*
+- `def _classify_proof_row(entry_id, note)` - *Return (wave, kind, serial, kill_count) for one obtainability_proofs row id.*
+- `def collect_wave_ledger(waves_dir, proofs_path)` - *Aggregate per-wave compound counts plus shortlist/park/kill tags.*
+- `def render_wave_ledger_markdown(rows, highlights)` - *Render the wave ledger as a Markdown report section.*
+- `def render_wave_section(rows, highlights)` - *Render the wave ledger as a standalone studio HTML panel section.*
 
 ---
 
@@ -1037,6 +1059,21 @@
   - Method `.test_aggrecanase_targets_present()`
   - Method `.test_adamts4_target_profile()`
   - Method `.test_mmp9_target_profile()`
+
+---
+
+### [`tests/test_waves.py`](tests/test_waves.py)
+**Size**: `80` lines (`2953` bytes)
+
+**Classes:**
+- `class TestWaveLedger`
+  - Method `.setUp()`
+  - Method `.tearDown()`
+  - Method `.test_collect_counts()`
+  - Method `.test_markdown_report()`
+  - Method `.test_html_section()`
+  - Method `.test_missing_inputs_yield_empty_ledger()`
+  - Method `.test_unreadable_wave_file_raises_actionable_error()`
 
 ---
 

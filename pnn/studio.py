@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
 
 from .reports import write_text
 from .target import list_targets
+from .waves import render_wave_section
 
 
 def _get_val(obj: Any, key: str, default: Any = "-") -> Any:
@@ -449,9 +450,11 @@ def render_studio_html(
     circuit_svg: Optional[str] = None,
     circuit_points: Optional[Sequence[Mapping[str, object]]] = None,
     dossier_data: Optional[Sequence[Mapping[str, object]]] = None,
-    safety_data: Optional[Sequence[Mapping[str, object]]] = None,
-    targets_data: Optional[Sequence[object]] = None,
-) -> str:
+      safety_data: Optional[Sequence[Mapping[str, object]]] = None,
+      targets_data: Optional[Sequence[object]] = None,
+      wave_ledger: Optional[Sequence[Mapping[str, object]]] = None,
+      wave_highlights: Optional[Sequence[Mapping[str, object]]] = None,
+  ) -> str:
     """Render full standalone HTML5 studio dashboard."""
     cards_html = []
     colors = ["#3b82f6", "#10b981", "#8b5cf6", "#f59e0b", "#ec4899"]
@@ -602,6 +605,10 @@ def render_studio_html(
       </div>
     </div>
         """
+
+    wave_section = ""
+    if wave_ledger:
+        wave_section = render_wave_section(wave_ledger, wave_highlights or [])
 
     targets_section = ""
     if targets_data:
@@ -1039,6 +1046,8 @@ def render_studio_html(
     {dossier_section}
 
     {safety_section}
+
+    {wave_section}
 
     {targets_section}
     </main>

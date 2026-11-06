@@ -132,3 +132,14 @@ contract, a dependency, a data format or the architecture; IDs are consecutive a
 - New versions use the Aegean Science License 1.1 (ASL-1.1).
 - Rights holder: AegeanWorks; commercial use under ACL-1.0.
 - Counsel review of the 1.1 texts remains pending.
+### ADR-015: Wave findings auto-update the report and studio UI
+
+- **Date**: 2026-11-06
+
+- **Status**: Accepted
+
+- **Context**: Search waves (206+) wrote screening sets to `data/compounds/waves/wave*.csv` and proof lines to `obtainability_proofs.csv`, but the turnkey pipeline only rendered the core vendor/repurposing libraries, so wave shortlist entries, parks, and kills never appeared in `output/` or `studio.html`.
+
+- **Decision**: Add `pnn/waves.py` (`collect_wave_ledger`, `render_wave_ledger_markdown`, `render_wave_section`); the runner writes `output/wave_ledger.csv` plus `output/wave_ledger.md` on every run and injects the ledger into `render_studio_html` via optional `wave_ledger`/`wave_highlights` kwargs (backward compatible). Kill lines carrying counts (`N-kills-mapped`, `N-route-kills`) expand to N kills; shortlist/park lines become UI highlights with their evidence note.
+
+- **Consequences**: Every `python run.py` refreshes wave results in the report and both studio copies (output + root via `emit_root`) with no new runtime dependencies; aggregation is milliseconds over ~50 small CSVs. Covered by `tests/test_waves.py`.
