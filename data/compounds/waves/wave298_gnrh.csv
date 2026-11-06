@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W298-K01,Relugolix-GnRH-remainder,,623.64,3.75,132.61,2,11,9,,,,,,,
+W298-K02,Elagolix-GnRH-remainder,,631.60,5.54,102.56,2,7,12,,,,,,,
+W298-K03,Linzagolix-EU-remainder,,508.43,3.45,119.85,2,8,7,,,,,,,
+W298-K04,Quinagolide-UK-remainder,,395.57,2.14,72.88,2,4,7,,,,,,,
+W298-K05,Gestrinone-regional-remainder,,308.42,3.72,37.30,1,2,1,,,,,,,
