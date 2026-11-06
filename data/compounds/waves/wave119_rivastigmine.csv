@@ -1,0 +1,2 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W119-AD-01,Rivastigmine,,250.34,2.30,32.8,0,3,5,,,,,,
