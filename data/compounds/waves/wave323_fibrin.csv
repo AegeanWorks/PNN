@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W323-K01,Tranexamic-acid-antifibrinolytic-remainder,C1CC(CCC1CN)C(=O)O,157.21,-2.0,63.3,2,3,2,,,,,,,
+W323-K02,Aminocaproic-acid-antifibrinolytic-remainder,C(CCC(=O)O)CCN,131.17,-3.0,63.3,2,3,5,,,,,,,
