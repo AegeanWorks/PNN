@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W321-K01,Vorapaxar-PAR1-remainder,CCOC(=O)N[C@@H]1CC[C@@H]2[C@@H](C1)C[C@@H]3[C@H]([C@H]2/C=C/C4=NC=C(C=C4)C5=CC(=CC=C5)F)[C@H](OC3=O)C,492.6,5.3,77.5,1,6,6,,,,,,,
+W321-K02,Eptifibatide-peptide-IV-remainder,C1C[C@H]2C(=O)N[C@@H](CSSCCC(=O)N[C@H](C(=O)NCC(=O)N[C@H](C(=O)N[C@H](C(=O)N2C1)CC3=CNC4=CC=CC=C43)CC(=O)O)CCCCN=C(N)N)C(=O)N,832.0,-2.4,377,10,12,10,,,,,,,
+W321-K03,Tirofiban-IV-remainder,CCCCS(=O)(=O)N[C@@H](CC1=CC=C(C=C1)OCCCCC2CCNCC2)C(=O)O,440.6,1.4,113,3,7,14,,,,,,,
