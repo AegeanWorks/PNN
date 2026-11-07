@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W314-K01,Levothyroxine-thyroid-remainder,C1=C(C=C(C(=C1I)OC2=CC(=C(C(=C2)I)O)I)I)C[C@@H](C(=O)O)N,776.87,2.4,92.8,3,5,5,,,,,,,
+W314-K02,Liothyronine-thyroid-remainder,C1=CC(=C(C=C1OC2=C(C=C(C=C2I)C[C@@H](C(=O)O)N)I)I)O,650.97,1.7,92.8,3,5,5,,,,,,,
+W314-K03,Methimazole-antithyroid-remainder,CN1C=CNC1=S,114.17,-0.3,47.4,1,1,0,,,,,,,
+W314-K04,Propylthiouracil-antithyroid-remainder,CCCC1=CC(=O)NC(=S)N1,170.23,0.8,73.2,2,2,2,,,,,,,
+W314-K05,Carbimazole-antithyroid-remainder,CCOC(=O)N1C=CN(C1=S)C,186.23,0.7,64.9,0,3,2,,,,,,,
