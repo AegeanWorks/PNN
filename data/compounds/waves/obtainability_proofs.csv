@@ -764,3 +764,5 @@ W325-KILL-FAC1,,,2-route-kills,Eptacog-alfa rFVIIa IV (NovoSeven BLA 1999) + 4F-
 W325-KILL-FAC2,,,2-route-kills,Fibrinogen-concentrate 340kDa IV (RiaSTAP BLA125317 2009) + protein-C-concentrate IV (Ceprotin BLA 2007) - coagulation-protein file closed; no oral BBB-penetrant survivors; no small-molecule CSV,2026-11-07
 W326-KILL-ESA1,,,2-route-kills,Epoetin-alfa 30.4kDa IV/SC (Epogen 1989) + darbepoetin-alfa 37kDa IV/SC (Aranesp 2001) - ESA route walls; no small-molecule CSV,2026-11-07
 W326-KILL-ESA2,,,2-route-kills,Mircera PEG-EPO IV/SC (BLA 2007) + peginesatide PEG-peptide withdrawn (Omontys NDA202799 2012; 0 labels) - anemia-biologic file closed with W317; no small-molecule CSV,2026-11-07
+W327-KILL-CSF1,,,3-kills-mapped,Filgrastim protein SC/IV (Neupogen 1991) + pegfilgrastim PEG-protein SC (Neulasta 2002) + sargramostim GM-CSF SC/IV (Leukine 1991) - G-CSF/GM-CSF route walls; no small-molecule CSV,2026-11-07
+W327-KILL-CSF2,,,1-killed,Plerixafor MW502.8/logP0.0/TPSA78.7/HBD6/HBA8 SC-only (CID 65015; Mozobil 2008; no live SKU verified) - mobilizer file closed; pipeline Reject=1,2026-11-07
