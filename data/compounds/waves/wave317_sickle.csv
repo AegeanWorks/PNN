@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W317-K01,Hydroxyurea-sickle-remainder,C(=O)(N)NO,76.055,-1.8,75.4,3,2,0,,,,,,,
+W317-K02,Voxelotor-withdrawn-remainder,CC(C)N1C(=CC=N1)C2=C(C=CC=N2)COC3=CC=CC(=C3C=O)O,337.4,2.7,77.2,1,5,6,,,,,,,
+W317-K03,L-glutamine-Endari-remainder,C(CC(=O)N)[C@@H](C(=O)O)N,146.14,-3.1,106,3,4,4,,,,,,,
