@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W308-K01,Montelukast-leukotriene-remainder,CC(C)(C1=CC=CC=C1CC[C@H](C2=CC=CC(=C2)/C=C/C3=NC4=C(C=CC(=C4)Cl)C=C3)SCC5(CC5)CC(=O)O)O,586.2,7.7,95.7,2,5,12,,,,,,,
+W308-K02,Zafirlukast-leukotriene-remainder,CC1=CC=CC=C1S(=O)(=O)NC(=O)C2=CC(=C(C=C2)CC3=CN(C4=C3C=C(C=C4)NC(=O)OC5CCCC5)C)OC,575.7,5.5,124,2,6,9,,,,,,,
+W308-K03,Zileuton-LOX-remainder,CC(C1=CC2=CC=CC=C2S1)N(C(=O)N)O,236.29,1.6,94.8,2,3,2,,,,,,,
+W308-K04,Pranlukast-CysLT1-remainder,C1=CC=C(C=C1)CCCCOC2=CC=C(C=C2)C(=O)NC3=CC=CC4=C3OC(=CC4=O)C5=NNN=N5,481.5,4.2,119,2,7,9,,,,,,,
+W308-K05,Fevipiprant-CRTH2-remainder,CC1=C(C2=C(N1CC3=C(C=C(C=C3)S(=O)(=O)C)C(F)(F)F)N=CC=C2)CC(=O)O,426.4,2.8,97.6,1,8,5,,,,,,,
+W308-K06,Setipiprant-CRTH2-remainder,C1CN(CC2=C1N(C3=C2C=C(C=C3)F)CC(=O)O)C(=O)C4=CC=CC5=CC=CC=C54,402.4,4.1,62.5,1,4,3,,,,,,,
