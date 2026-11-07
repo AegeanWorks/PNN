@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W309-K01,Avacopan-complement-remainder,CC1=C(C(=CC=C1)F)C(=O)N2CCC[C@@H]([C@@H]2C3=CC=C(C=C3)NC4CCCC4)C(=O)NC5=CC(=C(C=C5)C)C(F)(F)F,581.6,7.2,61.4,2,7,6,,,,,,,
+W309-K02,Danicopan-complement-remainder,CC1=NC=C(C=N1)C2=CC3=C(C=C2)N(N=C3C(=O)C)CC(=O)N4C[C@@H](C[C@H]4C(=O)NC5=NC(=CC=C5)Br)F,580.4,3.3,123,1,8,6,,,,,,,
+W309-K03,Iptacopan-complement-remainder,CCO[C@H]1CCN([C@@H](C1)C2=CC=C(C=C2)C(=O)O)CC3=C(C=C(C4=C3C=CN4)C)OC,422.5,1.8,74.8,2,5,7,,,,,,,
