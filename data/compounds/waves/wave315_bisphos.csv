@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W315-K01,Alendronate-bisphosphonate-remainder,C(CC(O)(P(=O)(O)O)P(=O)(O)O)CN,249.1,-6.5,161,6,8,5,,,,,,,
+W315-K02,Risedronate-bisphosphonate-remainder,C1=CC(=CN=C1)CC(O)(P(=O)(O)O)P(=O)(O)O,283.11,-3.1,148,5,8,4,,,,,,,
+W315-K03,Ibandronate-bisphosphonate-remainder,CCCCCN(C)CCC(O)(P(=O)(O)O)P(=O)(O)O,319.23,-4.1,139,5,8,9,,,,,,,
+W315-K04,Zoledronic-acid-IV-remainder,C1=CN(C=N1)CC(O)(P(=O)(O)O)P(=O)(O)O,272.09,-4.3,153,5,8,4,,,,,,,
+W315-K05,Pamidronate-IV-remainder,C(CN)C(O)(P(=O)(O)O)P(=O)(O)O,235.07,-6.9,161,6,8,4,,,,,,,
+W315-K06,Etidronate-discontinued-remainder,CC(O)(P(=O)(O)O)P(=O)(O)O,206.03,-3.7,135,5,7,2,,,,,,,
