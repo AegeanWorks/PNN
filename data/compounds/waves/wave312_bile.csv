@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W312-K01,Obeticholic-acid-bile-remainder,CC[C@@H]1[C@@H]2C[C@@H](CC[C@@]2([C@H]3CC[C@]4([C@H]([C@@H]3[C@@H]1O)CC[C@@H]4[C@H](C)CCC(=O)O)C)C)O,420.6,5.7,77.8,3,4,5,,,,,,,
+W312-K02,Chenodiol-bile-remainder,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1(CC[C@H]3[C@H]2[C@@H](C[C@H]4[C@@H]3(CC[C@H](C4)O)C)O)C,392.6,4.9,77.8,3,4,4,,,,,,,
+W312-K03,Cholic-acid-bile-remainder,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2[C@@H](C[C@H]4[C@@H]3(CC[C@H](C4)O)C)O)O)C,408.6,3.6,98,4,5,4,,,,,,,
+W312-K04,Deoxycholic-acid-injectable-remainder,C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@@]1([C@H](C[C@H]3[C@H]2CC[C@H]4[C@@H]3(CC[C@H](C4)O)C)O)C,392.6,4.9,77.8,3,4,4,,,,,,,
