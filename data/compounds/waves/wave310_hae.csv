@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W310-K01,Berotralstat-HAE-remainder,C1CC1CN[C@@H](C2=CC(=C(C=C2)F)NC(=O)C3=CC(=NN3C4=CC=CC(=C4)CN)C(F)(F)F)C5=CC=CC(=C5)C#N,562.6,4.5,109,3,9,9,,,,,,,
+W310-K02,Sebetralstat-HAE-remainder,COCC1=NN(C=C1C(=O)NCC2=NC=CC(=C2F)OC)CC3=CC=C(C=C3)CN4C=CC=CC4=O,491.5,1.3,98.6,1,7,10,,,,,,,
