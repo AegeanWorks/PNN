@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W344-K01,Brexpiprazole-atypical-remainder,C1CN(CCN1CCCCOC2=CC3=C(C=C2)C=CC(=O)N3)C4=C5C=CSC5=CC=C4,433.6,4.7,73.1,1,5,7,,,,,,,
+W344-K02,Levosulpiride-benzamide-remainder,CCN1CCC[C@H]1CNC(=O)C2=C(C=CC(=C2)S(=O)(=O)N)OC,341.4,0.6,110,2,6,6,,,,,,,
+W344-K03,Veralipride-withdrawn-remainder,COC1=CC(=CC(=C1OC)C(=O)NCC2CCCN2CC=C)S(=O)(=O)N,383.5,0.8,119,2,7,8,,,,,,,
