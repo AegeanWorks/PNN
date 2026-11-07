@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W336-K01,Mitoxantrone-anthracenedione-IV-remainder,C1=CC(=C2C(=C1NCCNCCO)C(=O)C3=C(C=CC(=C3C2=O)O)O)NCCNCCO,444.5,1.0,163,8,10,12,,,,,,,
+W336-K02,Pixantrone-anthracenedione-IV-remainder,C1=CC(=C2C(=C1NCCN)C(=O)C3=C(C2=O)C=NC=C3)NCCN,325.4,1.0,123,4,7,6,,,,,,,
