@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W342-K01,Lanifibranor-PPAR-remainder,C1=CC2=C(C=C1S(=O)(=O)N3C4=C(C=C(C=C4)Cl)C=C3CCCC(=O)O)SC=N2,434.9,4.5,126,1,6,6,,,,,,,
+W342-K02,Clinofibrate-fibrate-remainder,CCC(C)(C(=O)O)OC1=CC=C(C=C1)C2(CCCCC2)C3=CC=C(C=C3)OC(C)(CC)C(=O)O,468.6,7.5,93.1,2,6,10,,,,,,,
