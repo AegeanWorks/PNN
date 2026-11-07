@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W346-K01,Midodrine-autonomic-remainder,COC1=CC(=C(C=C1)OC)C(CNC(=O)CN)O,254.28,-0.6,93.8,3,5,6,,,,,,,
+W346-K02,Prazosin-alpha1-remainder,COC1=C(C=C2C(=C1)C(=NC(=N2)N3CCN(CC3)C(=O)C4=CC=CO4)N)OC,383.4,2.0,107,1,8,4,,,,,,,
+W346-K03,Distigmine-dication-remainder,C[N+]1=CC=CC(=C1)OC(=O)N(C)CCCCCCN(C)C(=O)OC2=C[N+](=CC=C2)C,416.5,2.7,66.8,0,4,11,,+2,,,,,
