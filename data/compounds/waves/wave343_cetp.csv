@@ -1,0 +1,6 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W343-K01,Torcetrapib-CETP-terminated-remainder,CC[C@@H]1C[C@@H](C2=C(N1C(=O)OCC)C=CC(=C2)C(F)(F)F)N(CC3=CC(=CC(=C3)C(F)(F)F)C(F)(F)F)C(=O)OC,600.5,7.0,59.1,0,13,7,,,,,,,
+W343-K02,Dalcetrapib-CETP-terminated-remainder,CCC(CC)CC1(CCCCC1)C(=O)NC2=CC=CC=C2SC(=O)C(C)C,389.6,7.1,71.5,1,3,9,,,,,,,
+W343-K03,Anacetrapib-CETP-unfiled-remainder,C[C@H]1[C@H](OC(=O)N1CC2=C(C=CC(=C2)C(F)(F)F)C3=CC(=C(C=C3OC)F)C(C)C)C4=CC(=CC(=C4)C(F)(F)F)C(F)(F)F,637.5,8.8,38.8,0,13,6,,,,,,,
+W343-K04,Evacetrapib-CETP-terminated-remainder,CC1=CC(=C2C(=C1)[C@H](CCCN2CC3CCC(CC3)C(=O)O)N(CC4=CC(=CC(=C4)C(F)(F)F)C(F)(F)F)C5=NN(N=N5)C)C,638.6,7.7,87.4,1,13,7,,,,,,,
+W343-K05,Obicetrapib-CETP-EU-remainder,CC[C@@H]1C[C@@H](C2=C(N1C(=O)OCC)C=CC(=C2)C(F)(F)F)N(CC3=CC(=CC(=C3)C(F)(F)F)C(F)(F)F)C4=NC=C(C=N4)OCCCC(=O)O,722.6,7.4,105,1,17,12,,,,,,,
