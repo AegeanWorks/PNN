@@ -770,3 +770,5 @@ W328-KILL-IFN1,,,2-route-kills,Interferon-alfa-2b protein no-live-label (Intron 
 W328-KILL-IFN2,,,2-route-kills,Interferon-beta-1a 22.5kDa IM/SC (Avonex 1996/Rebif) + interferon-beta-1b 18.5kDa SC (Betaseron 1993) - interferon file closed; no oral BBB-penetrant survivors; no small-molecule CSV,2026-11-07
 W329-KILL-IL1,,,3-route-kills,Anakinra 17.3kDa SC (Kineret BLA103950 2001) + canakinumab 145kDa SC (Ilaris BLA125319 2009) + rilonacept 251kDa SC (Arcalyst 2008) - IL-1 axis route walls; no small-molecule CSV,2026-11-07
 W330-KILL-IL6,,,3-route-kills,Tocilizumab IV/SC (Actemra BLA125276 2010) + sarilumab SC (Kevzara BLA761037 2017) + siltuximab IV (Sylvant BLA125496 2014) - IL-6 axis file closed; no small-molecule CSV,2026-11-07
+W331-KILL-IL17,,,3-route-kills,Secukinumab 151kDa SC/IV (Cosentyx 2015) + ixekizumab 146kDa SC (Taltz 2016) + brodalumab 144kDa SC REMS (Siliq 2017) - IL-17 axis route walls; no small-molecule CSV,2026-11-07
+W331-KILL-IL23,,,3-route-kills,Guselkumab SC/IV (Tremfya 2017) + risankizumab SC/IV (Skyrizi 2019) + tildrakizumab SC (Ilumya 2018) - IL-23 axis file closed; no small-molecule CSV,2026-11-07
