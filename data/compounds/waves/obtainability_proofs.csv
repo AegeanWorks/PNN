@@ -774,3 +774,5 @@ W331-KILL-IL17,,,3-route-kills,Secukinumab 151kDa SC/IV (Cosentyx 2015) + ixekiz
 W331-KILL-IL23,,,3-route-kills,Guselkumab SC/IV (Tremfya 2017) + risankizumab SC/IV (Skyrizi 2019) + tildrakizumab SC (Ilumya 2018) - IL-23 axis file closed; no small-molecule CSV,2026-11-07
 W332-KILL-TNF1,,,3-route-kills,Adalimumab 148kDa SC (Humira 2002) + infliximab 149kDa IV (Remicade 1998) + etanercept 150kDa TNFR-Fc SC (Enbrel 1998) - TNF route walls; no small-molecule CSV,2026-11-07
 W332-KILL-TNF2,,,2-route-kills,Certolizumab Fab-PEG 91kDa SC (Cimzia BLA125160 2008) + golimumab 150kDa SC/IV (Simponi 2009) - TNF file closed; no small-molecule CSV,2026-11-07
+W333-KILL-CGRP1,,,2-route-kills,Eptinezumab 143kDa IV (Vyepti BLA761119 2020) + fremanezumab 148kDa SC (Ajovy BLA761089 2018) - CGRP-mAb route walls; no small-molecule CSV,2026-11-07
+W333-KILL-CGRP2,,,2-route-kills,Galcanezumab 147kDa SC (Emgality 2018) + erenumab 150kDa SC (Aimovig 2018) - CGRP file closed with W18 (gepants dead); no small-molecule CSV,2026-11-07
