@@ -1,0 +1,7 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W345-K01,Droxidopa-BBB-prodrug-remainder,C1=CC(=C(C=C1[C@H]([C@@H](C(=O)O)N)O)O)O,213.19,-3.2,124,5,6,3,,,,,,,
+W345-K02,Melevodopa-investigational-remainder,COC(=O)[C@H](CC1=CC(=C(C=C1)O)O)N,211.21,-0.2,92.8,3,5,4,,,,,,,
+W345-K03,Etilevodopa-investigational-remainder,CCOC(=O)[C@H](CC1=CC(=C(C=C1)O)O)N,225.24,0.3,92.8,3,5,5,,,,,,,
+W345-K04,Foslevodopa-SC-infusion-remainder,C1=CC(=C(C=C1C[C@@H](C(=O)O)N)O)OP(=O)(O)O,277.17,-4.0,150,5,8,5,,,,,,,
+W345-K05,Foscarbidopa-SC-infusion-remainder,C[C@@](CC1=CC(=C(C=C1)O)OP(=O)(O)O)(C(=O)O)NN,306.21,-5.8,162,6,9,6,,,,,,,
+W345-K06,Levodopa-inhaled-Inbrija-remainder,C1=CC(=C(C=C1C[C@@H](C(=O)O)N)O)O,197.19,-2.7,104,4,5,3,,,,,,,
