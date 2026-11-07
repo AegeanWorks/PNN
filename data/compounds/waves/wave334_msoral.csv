@@ -1,0 +1,4 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W334-K01,Dimethyl-fumarate-MS-remainder,COC(=O)/C=C/C(=O)OC,144.12,0.7,52.6,0,4,4,,,,,,,
+W334-K02,Diroximel-fumarate-MS-remainder,COC(=O)/C=C/C(=O)OCCN1C(=O)CCC1=O,255.22,-0.9,90,0,6,7,,,,,,,
+W334-K03,Teriflunomide-MS-remainder,C/C(=C(\C#N)/C(=O)NC1=CC=C(C=C1)C(F)(F)F)/O,270.21,3.3,73.1,2,6,2,,,,,,,
