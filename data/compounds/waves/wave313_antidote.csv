@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W313-K01,Naloxone-antidote-remainder,C=CCN1CC[C@]23[C@@H]4C(=O)CC[C@]2([C@H]1CC5=C3C(=C(C=C5)O)O4)O,327.4,2.1,70,2,5,2,,,,,,,
+W313-K02,Flumazenil-antidote-remainder,CCOC(=O)C1=C2CN(C(=O)C3=C(N2C=N1)C=CC(=C3)F)C,303.29,1.0,64.4,0,5,3,,,,,,,
+W313-K03,Acetylcysteine-antidote-remainder,CC(=O)N[C@@H](CS)C(=O)O,163.2,0.4,67.4,3,4,3,,,,,,,
+W313-K04,Fomepizole-antidote-remainder,CC1=CNN=C1,82.1,1.4,28.7,1,1,0,,,,,,,
