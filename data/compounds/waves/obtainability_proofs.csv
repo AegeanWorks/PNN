@@ -762,3 +762,5 @@ W324-KILL-LYT1,,,2-route-kills,Reteplase tPA-mutein IV no-current-NDCs (Retavase
 W324-KILL-LYT2,,,2-route-kills,Urokinase 49kDa IV discontinued (Kinlytic BLA021846 1978) + streptokinase bacterial-protein IV discontinued (Streptase/Kabikinase) - thrombolytic file fully closed with W323; no small-molecule CSV,2026-11-07
 W325-KILL-FAC1,,,2-route-kills,Eptacog-alfa rFVIIa IV (NovoSeven BLA 1999) + 4F-PCC plasma-derived IV (Kcentra BLA 2013) - factor-replacement route walls; no small-molecule CSV,2026-11-07
 W325-KILL-FAC2,,,2-route-kills,Fibrinogen-concentrate 340kDa IV (RiaSTAP BLA125317 2009) + protein-C-concentrate IV (Ceprotin BLA 2007) - coagulation-protein file closed; no oral BBB-penetrant survivors; no small-molecule CSV,2026-11-07
+W326-KILL-ESA1,,,2-route-kills,Epoetin-alfa 30.4kDa IV/SC (Epogen 1989) + darbepoetin-alfa 37kDa IV/SC (Aranesp 2001) - ESA route walls; no small-molecule CSV,2026-11-07
+W326-KILL-ESA2,,,2-route-kills,Mircera PEG-EPO IV/SC (BLA 2007) + peginesatide PEG-peptide withdrawn (Omontys NDA202799 2012; 0 labels) - anemia-biologic file closed with W317; no small-molecule CSV,2026-11-07
