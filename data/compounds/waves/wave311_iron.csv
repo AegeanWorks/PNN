@@ -1,0 +1,3 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W311-K01,Deferiprone-chelator-remainder,CC1=C(C(=O)C=CN1C)O,139.15,0.5,40.5,1,3,0,,,,,,,
+W311-K02,Deferasirox-chelator-remainder,C1=CC=C(C(=C1)C2=NN(C(=N2)C3=CC=CC=C3O)C4=CC=C(C=C4)C(=O)O)O,373.4,3.8,108,3,6,4,,,,,,,
