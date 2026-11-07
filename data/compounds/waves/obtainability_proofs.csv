@@ -772,3 +772,5 @@ W329-KILL-IL1,,,3-route-kills,Anakinra 17.3kDa SC (Kineret BLA103950 2001) + can
 W330-KILL-IL6,,,3-route-kills,Tocilizumab IV/SC (Actemra BLA125276 2010) + sarilumab SC (Kevzara BLA761037 2017) + siltuximab IV (Sylvant BLA125496 2014) - IL-6 axis file closed; no small-molecule CSV,2026-11-07
 W331-KILL-IL17,,,3-route-kills,Secukinumab 151kDa SC/IV (Cosentyx 2015) + ixekizumab 146kDa SC (Taltz 2016) + brodalumab 144kDa SC REMS (Siliq 2017) - IL-17 axis route walls; no small-molecule CSV,2026-11-07
 W331-KILL-IL23,,,3-route-kills,Guselkumab SC/IV (Tremfya 2017) + risankizumab SC/IV (Skyrizi 2019) + tildrakizumab SC (Ilumya 2018) - IL-23 axis file closed; no small-molecule CSV,2026-11-07
+W332-KILL-TNF1,,,3-route-kills,Adalimumab 148kDa SC (Humira 2002) + infliximab 149kDa IV (Remicade 1998) + etanercept 150kDa TNFR-Fc SC (Enbrel 1998) - TNF route walls; no small-molecule CSV,2026-11-07
+W332-KILL-TNF2,,,2-route-kills,Certolizumab Fab-PEG 91kDa SC (Cimzia BLA125160 2008) + golimumab 150kDa SC/IV (Simponi 2009) - TNF file closed; no small-molecule CSV,2026-11-07
