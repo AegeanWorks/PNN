@@ -1,0 +1,5 @@
+compound_id,name,smiles,mw,logp,tpsa,hbd,hba,rotatable_bonds,pka,charge,logbb,brain_plasma_ratio,oral_bioavailability,cyp3a4_inhibition,herg_liability,pnn_ec50_nm
+W338-K01,Tazarotene-topical-remainder,CCOC(=O)C1=CN=C(C=C1)C#CC2=CC3=C(C=C2)SCCC3(C)C,351.5,4.9,64.5,0,4,5,,,,,,,
+W338-K02,Adapalene-topical-remainder,COC1=C(C=C(C=C1)C2=CC3=C(C=C2)C=C(C=C3)C(=O)O)C45CC6CC(C4)CC(C6)C5,412.5,7.7,46.5,1,3,4,,,,,,,
+W338-K03,Trifarotene-topical-remainder,CC(C)(C)C1=C(C=CC(=C1)C2=C(C=CC(=C2)C3=CC=C(C=C3)C(=O)O)OCCO)N4CCCC4,459.6,6.3,70,2,5,8,,,,,,,
+W338-K04,Alitretinoin-retinoid-remainder,CC1=C(C(CCC1)(C)C)/C=C/C(=C\C=C\C(=C\C(=O)O)\C)/C,300.4,6.3,37.3,1,2,5,,,,,,,
