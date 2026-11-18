@@ -12,234 +12,6 @@
   },
   "checkpoints": [
     {
-      "task_id": "pnn-studio-circuit-data-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Add the circuit-dynamics data table and share one point parser",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793357921.283687,
-      "timestamp_str": "2026-10-30 13:58:41",
-      "agent": "opencode:pnn-circuit-data",
-      "impact_assessment": {
-        "why": "The circuit chart still has only a prose description; its per-timepoint PNN and pAKT values are not recoverable by assistive users.",
-        "benefits": "The last chart gains a text alternative with the plotted values, and one parser keeps the SVG and table from drifting.",
-        "risks": "contract: optional renderer argument, no visible layout change; dependency: standard library only; concurrency: none; state: generated studio.html only.",
-        "mitigation": "Parser refactor covered by existing circuit tests plus a new table test; UI guard verify."
-      }
-    },
-    {
-      "task_id": "pnn-studio-circuit-data-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Circuit data table and shared point parser added; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793358026.1963575,
-      "timestamp_str": "2026-10-30 14:00:26",
-      "agent": "opencode:pnn-circuit-data"
-    },
-    {
-      "task_id": "pnn-studio-circuit-data-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-circuit-data-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793358026.4655192,
-      "timestamp_str": "2026-10-30 14:00:26",
-      "agent": "opencode:pnn-circuit-data"
-    },
-    {
-      "task_id": "pnn-studio-circuit-wiring-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/2] Pass the simulated circuit points into the dashboard renderer",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793358049.9861312,
-      "timestamp_str": "2026-10-30 14:00:49",
-      "agent": "opencode:pnn-circuit-wiring",
-      "impact_assessment": {
-        "why": "The new circuit data table only renders when the caller supplies the points, and the turnkey pipeline currently passes only the pre-rendered SVG.",
-        "benefits": "The generated dashboard exposes the circuit table without duplicating the point extraction.",
-        "risks": "contract: optional renderer argument only; dependency: standard library only; concurrency: none; state: generated HTML only.",
-        "mitigation": "The pipeline test asserts the table in the emitted studio.html; full suite and project gates."
-      }
-    },
-    {
-      "task_id": "pnn-studio-circuit-wiring-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/2] Runner passes daily circuit points to the dashboard; pipeline test asserts the table; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793358200.2006888,
-      "timestamp_str": "2026-10-30 14:03:20",
-      "agent": "opencode:pnn-circuit-wiring"
-    },
-    {
-      "task_id": "pnn-studio-circuit-wiring-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-circuit-wiring-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793358201.275581,
-      "timestamp_str": "2026-10-30 14:03:21",
-      "agent": "opencode:pnn-circuit-wiring"
-    },
-    {
-      "task_id": "pnn-studio-contrast-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Raise chart text and line contrast against the dark dashboard panel",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793359280.3322225,
-      "timestamp_str": "2026-10-30 14:21:20",
-      "agent": "opencode:pnn-contrast",
-      "impact_assessment": {
-        "why": "SVG labels were designed for a light background: heatmap row labels use the panel colour itself (#1e293b on #1e293b), headers sit at 1.41:1 and radar labels at 1.93:1, so key chart text is invisible or unreadable.",
-        "benefits": "Every chart label and the safety-floor caption meet WCAG AA text contrast on the real panel colour, and the data shapes meet the 3:1 graphics floor.",
-        "risks": "contract: colour-only change to existing SVG output; dependency: standard library only; concurrency: none; state: generated studio.html only.",
-        "mitigation": "Contrast values computed from the panel colour; targeted regression assertions; UI guard verify."
-      }
-    },
-    {
-      "task_id": "pnn-studio-contrast-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Chart text and line contrast raised for the dark panel; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793359444.7782488,
-      "timestamp_str": "2026-10-30 14:24:04",
-      "agent": "opencode:pnn-contrast"
-    },
-    {
-      "task_id": "pnn-studio-contrast-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-contrast-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793359445.646879,
-      "timestamp_str": "2026-10-30 14:24:05",
-      "agent": "opencode:pnn-contrast"
-    },
-    {
-      "task_id": "pnn-studio-contrast-white-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Set chart colours for the real white SVG wrapper and keep heatmap cell text legible",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793362290.082468,
-      "timestamp_str": "2026-10-30 15:11:30",
-      "agent": "opencode:pnn-contrast-white",
-      "impact_assessment": {
-        "why": "The previous contrast pass measured against the dark panel, but every chart renders inside a white .svg-wrapper; the revert restored the old palette, so green and amber data lines still sit below the 3:1 graphics floor and the N/A cell text below 4.5:1.",
-        "benefits": "Labels and cell text meet WCAG AA on the actual background, and every data line is distinguishable without relying on hue alone.",
-        "risks": "contract: colour-only change; dependency: standard library only; concurrency: none; state: generated studio.html only.",
-        "mitigation": "Contrast computed against #ffffff and the heatmap cell colours; regression test; UI guard verify."
-      }
-    },
-    {
-      "task_id": "pnn-studio-contrast-white-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Chart palette set for the white wrapper; N/A and cell text fixed; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793362400.3541234,
-      "timestamp_str": "2026-10-30 15:13:20",
-      "agent": "opencode:pnn-contrast-white"
-    },
-    {
-      "task_id": "pnn-studio-contrast-white-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-contrast-white-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793362400.623755,
-      "timestamp_str": "2026-10-30 15:13:20",
-      "agent": "opencode:pnn-contrast-white"
-    },
-    {
-      "task_id": "pnn-studio-series-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/4] Distinguish chart series without colour alone, add the radar legend, and make the dashboard fit narrow screens",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793363023.5589614,
-      "timestamp_str": "2026-10-30 15:23:43",
-      "agent": "opencode:pnn-series",
-      "impact_assessment": {
-        "why": "The PK and circuit series rely on hue, the radar plots up to five compounds with no legend, the lead cards jump from h1 to h3, and the 480px grid overflows phones.",
-        "benefits": "Charts are readable by colour-blind users, the radar maps colours to compounds, heading order is valid, and panels scale below 480px.",
-        "risks": "contract: presentation-only changes; dependency: standard library only; concurrency: none; state: generated studio.html only.",
-        "mitigation": "Dash-pattern and legend assertions, CSS checks, the full suite and the UI guard verify."
-      }
-    },
-    {
-      "task_id": "pnn-studio-series-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[4/4] Dash patterns, radar legend, heading order and responsive grids landed; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793363181.5835645,
-      "timestamp_str": "2026-10-30 15:26:21",
-      "agent": "opencode:pnn-series"
-    },
-    {
-      "task_id": "pnn-studio-series-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-series-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793363181.8408225,
-      "timestamp_str": "2026-10-30 15:26:21",
-      "agent": "opencode:pnn-series"
-    },
-    {
-      "task_id": "pnn-studio-landmarks-v1",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Add a main landmark and a skip link to the dashboard",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793363317.9476976,
-      "timestamp_str": "2026-10-30 15:28:37",
-      "agent": "opencode:pnn-landmarks",
-      "impact_assessment": {
-        "why": "The dashboard has a header and footer but no main landmark, so assistive users cannot jump past the header; there is no skip link either.",
-        "benefits": "Screen readers get a main landmark and keyboard users can skip the banner.",
-        "risks": "contract: markup-only change; dependency: standard library only; concurrency: none; state: generated studio.html only.",
-        "mitigation": "Markup assertions, the full suite and the UI guard verify."
-      }
-    },
-    {
-      "task_id": "pnn-studio-landmarks-v1",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[3/3] Main landmark and skip link added; regression test added; UI evidence recorded; project gates 4/4 passed; checklists: passed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1793363404.544608,
-      "timestamp_str": "2026-10-30 15:30:04",
-      "agent": "opencode:pnn-landmarks"
-    },
-    {
-      "task_id": "pnn-studio-landmarks-v1",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'pnn-studio-landmarks-v1' completed successfully.",
-      "status": "completed",
-      "timestamp": 1793363404.859,
-      "timestamp_str": "2026-10-30 15:30:04",
-      "agent": "opencode:pnn-landmarks"
-    },
-    {
       "task_id": "pnn-audit-waves-0-30-v1",
       "phase": "phase 2",
       "phase_num": 2,
@@ -267,6 +39,222 @@
       "timestamp": 1793723171.5143402,
       "timestamp_str": "2026-11-03 19:26:11",
       "agent": "kilo:PNN-audit"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 127",
+      "phase_num": 3,
+      "description": "Reforge stage 127: stage 127 host review reviewed; run active; coverage 11/11",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043752.947027,
+      "timestamp_str": "2026-11-19 02:15:52",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 128",
+      "phase_num": 3,
+      "description": "Reforge stage 128: window 384, 3 commit(s), 7 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043793.4319031,
+      "timestamp_str": "2026-11-19 02:16:33",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 128",
+      "phase_num": 3,
+      "description": "Reforge stage 128: stage 128 host review reviewed; run active; coverage 10/10",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043811.4338121,
+      "timestamp_str": "2026-11-19 02:16:51",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 129",
+      "phase_num": 3,
+      "description": "Reforge stage 129: window 387, 3 commit(s), 13 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043856.2477083,
+      "timestamp_str": "2026-11-19 02:17:36",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 129",
+      "phase_num": 3,
+      "description": "Reforge stage 129: stage 129 host review partial; run active; coverage 44/54",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043895.1178045,
+      "timestamp_str": "2026-11-19 02:18:15",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 129",
+      "phase_num": 3,
+      "description": "Reforge stage 129: stage 129 host review reviewed; run active; coverage 54/54",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795043945.7165031,
+      "timestamp_str": "2026-11-19 02:19:05",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: window 390, 3 commit(s), 27 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044167.84745,
+      "timestamp_str": "2026-11-19 02:22:47",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: stage 130 host review partial; run active; coverage 89/166",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044443.610475,
+      "timestamp_str": "2026-11-19 02:27:23",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: stage 130 host review partial; run active; coverage 152/166",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044508.0986023,
+      "timestamp_str": "2026-11-19 02:28:28",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: stage 130 host review partial; run active; coverage 160/166",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044546.2214801,
+      "timestamp_str": "2026-11-19 02:29:06",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: stage 130 host review partial; run active; coverage 165/166",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044798.2951412,
+      "timestamp_str": "2026-11-19 02:33:18",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 130",
+      "phase_num": 3,
+      "description": "Reforge stage 130: stage 130 host review reviewed; run active; coverage 166/166",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044850.2823267,
+      "timestamp_str": "2026-11-19 02:34:10",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 131",
+      "phase_num": 3,
+      "description": "Reforge stage 131: window 393, 3 commit(s), 36 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795044948.5873575,
+      "timestamp_str": "2026-11-19 02:35:48",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 131",
+      "phase_num": 3,
+      "description": "Reforge stage 131: stage 131 host review reviewed; run active; coverage 81/81",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795045005.1852458,
+      "timestamp_str": "2026-11-19 02:36:45",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 132",
+      "phase_num": 3,
+      "description": "Reforge stage 132: window 396, 3 commit(s), 24 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795045048.162982,
+      "timestamp_str": "2026-11-19 02:37:28",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 132",
+      "phase_num": 3,
+      "description": "Reforge stage 132: stage 132 host review reviewed; run active; coverage 58/58",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795045071.6908946,
+      "timestamp_str": "2026-11-19 02:37:51",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 133",
+      "phase_num": 3,
+      "description": "Reforge stage 133: window 399, 3 commit(s), 28 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795045115.0094447,
+      "timestamp_str": "2026-11-19 02:38:35",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "reforge:run-3",
+      "phase": "reforge stage 133",
+      "phase_num": 3,
+      "description": "Reforge stage 133: stage 133 host review reviewed; run completed; coverage 35/35",
+      "files_affected": [],
+      "status": "completed",
+      "timestamp": 1795045142.7449708,
+      "timestamp_str": "2026-11-19 02:39:02",
+      "agent": "opencode",
+      "operator_task": "pnn-audit-waves-0-30-v1"
     }
   ]
 }
