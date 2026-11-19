@@ -6,9 +6,11 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from pnn.preclinical import PreclinicalCandidate
 from pnn.runner import (
     RunSummary,
     RunnerError,
+    _candidate_exposures,
     execute_turnkey_pipeline,
     is_daily_timepoint,
     main,
@@ -211,6 +213,38 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue(mock_open.called)
             call_arg = mock_open.call_args[0][0]
             self.assertIn("studio.html", call_arg)
+
+
+class CandidateExposureBridgeTest(unittest.TestCase):
+    def _candidate(self, cid: str, kp, f_pct) -> PreclinicalCandidate:
+        return PreclinicalCandidate(
+            compound_id=cid,
+            status="ADVANCED_LEAD",
+            oral_bioavailability_pct=f_pct,
+            brain_plasma_ratio=kp,
+            plasma_cmax_ng_ml=None,
+            plasma_auc_h_ng_ml=None,
+            brain_auc_h_ng_ml=None,
+            half_life_h=None,
+            wfa_pnn_reduction_pct=None,
+            itt_glucose_auc_reduction_pct=None,
+            findings="",
+        )
+
+    def test_unmeasured_exposures_are_not_bridged_as_zero(self) -> None:
+        # An unmeasured brain Kp (None) must stay absent so SAR reports it as
+        # UNMEASURED. `or 0.0` fabricated a measured "0.00 no brain uptake",
+        # violating G-001/ADR-010 (never invent evidence).
+        candidates = [self._candidate("CMP-X", None, None)]
+        self.assertEqual(_candidate_exposures(candidates), {})
+
+    def test_measured_zero_exposures_are_preserved(self) -> None:
+        # A measured zero is real evidence and must be kept, not dropped.
+        candidates = [self._candidate("CMP-Z", 0.0, 0.0)]
+        self.assertEqual(
+            _candidate_exposures(candidates),
+            {"CMP-Z": {"brain_kp": 0.0, "oral_f": 0.0}},
+        )
 
 
 if __name__ == "__main__":

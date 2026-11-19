@@ -8,7 +8,7 @@ import time
 import webbrowser
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, Sequence
+from typing import Dict, Optional, Sequence
 
 from .assay import (
     HIT_FIELDS,
@@ -37,6 +37,7 @@ from .pathway import (
 )
 from .preclinical import (
     PRECLINICAL_FIELDS,
+    PreclinicalCandidate,
     evaluate_candidates,
     load_pd_data,
     load_pk_data,
@@ -85,6 +86,24 @@ def is_daily_timepoint(time_h: float, period_h: float = 24.0, tolerance_h: float
     """Return True when a simulation time falls on a whole-day boundary."""
     remainder = time_h % period_h
     return min(remainder, period_h - remainder) <= tolerance_h
+
+
+def _candidate_exposures(candidates: Sequence[PreclinicalCandidate]) -> Dict[str, Dict[str, float]]:
+    """Bridge measured preclinical exposures to SAR without inventing absent values.
+
+    Unmeasured (None) values are omitted so SAR reports them as UNMEASURED;
+    a measured 0.0 is real evidence and is preserved (G-001 / ADR-010).
+    """
+    exposures: Dict[str, Dict[str, float]] = {}
+    for candidate in candidates:
+        entry: Dict[str, float] = {}
+        if candidate.brain_plasma_ratio is not None:
+            entry["brain_kp"] = candidate.brain_plasma_ratio
+        if candidate.oral_bioavailability_pct is not None:
+            entry["oral_f"] = candidate.oral_bioavailability_pct
+        if entry:
+            exposures[candidate.compound_id] = entry
+    return exposures
 
 
 @dataclass(frozen=True)
@@ -199,13 +218,7 @@ def execute_turnkey_pipeline(
     # violated by presenting a relative ranking score as a binding affinity.
     docking_map = {s.compound_id: s.vina_affinity for s in shortlist}
     assay_potencies = {h.compound_id: h.ec50_nm for h in qualified}
-    preclinical_exposures = {
-        c.compound_id: {
-            "brain_kp": c.brain_plasma_ratio or 0.0,
-            "oral_f": c.oral_bioavailability_pct or 0.0,
-        }
-        for c in candidates
-    }
+    preclinical_exposures = _candidate_exposures(candidates)
 
     compounds_sar, clusters = analyze_sar(
         compound_records=sar_records,

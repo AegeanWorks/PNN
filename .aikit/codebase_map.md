@@ -7,10 +7,10 @@
 
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `55`
-- **Total Classes**: `97`
-- **Total Top-Level Functions**: `225`
-- **Total Class Methods**: `304`
-- **Total Source Lines**: `14402`
+- **Total Classes**: `98`
+- **Total Top-Level Functions**: `226`
+- **Total Class Methods**: `307`
+- **Total Source Lines**: `14449`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -384,7 +384,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `560` lines
+**Size**: `573` lines
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -392,6 +392,7 @@
 
 **Functions:**
 - `def is_daily_timepoint(time_h, period_h, tolerance_h)` - *Return True when a simulation time falls on a whole-day boundary.*
+- `def _candidate_exposures(candidates)` - *Bridge measured preclinical exposures to SAR without inventing absent values.*
 - `def execute_turnkey_pipeline(vendor_csv, repurposing_csv, docking_csv, degradation_csv, permeability_csv, cytotoxicity_csv, pk_csv, pd_csv, out_dir, min_tier, emit_root, tox_csv, safety_pharm_csv)` - *Execute complete end-to-end PNN discovery workflow from libraries to interactive studio.*
 - `def print_run_banner(summary)` - *Print terminal summary banner for turnkey runner.*
 - `def build_parser()`
@@ -930,7 +931,7 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `217` lines
+**Size**: `251` lines
 
 **Classes:**
 - `class TestTurnkeyRunner`
@@ -942,6 +943,10 @@
   - Method `.test_banner_accounts_for_safety_caution_results()`
   - Method `.test_daily_timepoint_tolerance()`
   - Method `.test_runner_cli_execution_auto_opens_browser(mock_open)`
+- `class CandidateExposureBridgeTest`
+  - Method `._candidate(cid, kp, f_pct)`
+  - Method `.test_unmeasured_exposures_are_not_bridged_as_zero()`
+  - Method `.test_measured_zero_exposures_are_preserved()`
 
 ---
 
