@@ -67,5 +67,11 @@
     "aegean-science-license",
     "research",
     "commercial-license"
-  ]
+  ],
+  "archived": true,
+  "archived_at": "2026-11-19",
+  "archive_reason": "Retired/abandoned project: used as an AIKit testbed. It may contain bugs, incomplete or non-functional parts; kept only as historical test evidence.",
+  "archive_repo": "AegeanWorks/PNN",
+  "archive_description": "[ARCHIVED] Oral, blood-brain barrier-penetrant agents that soften hypothalamic perineuronal nets to restore insulin signaling in obesity.",
+  "archive_origin": "projects/PNN"
 }

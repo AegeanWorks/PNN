@@ -7,6 +7,8 @@
 
 Oral, blood-brain barrier-penetrant agents that soften hypothalamic perineuronal nets to restore insulin signaling in obesity.
 
+> **Archived**: Retired/abandoned project: used as an AIKit testbed. It may contain bugs, incomplete or non-functional parts; kept only as historical test evidence. (archived 2026-11-19). This project is read-only; its GitHub repository is archived.
+
 ## ⚡ 30-Second Cold-Start Quick Reference
 
 - **Runtime Prerequisites**: Python 3.10+ (standard library only, for the screening pipeline and AIKit verification) and git 2.30+ (for version control).
