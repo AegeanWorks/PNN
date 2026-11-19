@@ -5,7 +5,7 @@
   "gates": {},
   "ui_required": true,
   "created": "2026-10-22",
-  "has_ui": false,
+  "has_ui": true,
   "ui_kind": "cli",
   "ui_evidence": [
     "pnn/cli.py",
@@ -20,7 +20,7 @@
     "tools/update_readme_tree.py"
   ],
   "ui_checked_at": "2026-11-19",
-  "ui_source": "detected",
+  "ui_source": "manual",
   "topics": [
     "aikit",
     "aikit-integrated",
