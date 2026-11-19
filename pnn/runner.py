@@ -194,7 +194,10 @@ def execute_turnkey_pipeline(
     if repurposing_csv and repurposing_csv.is_file():
         sar_records.extend(load_sar_compounds(repurposing_csv))
 
-    docking_map = {s.compound_id: s.consensus for s in shortlist}
+    # SAR's vina field is a kcal/mol affinity (it keeps the most negative value).
+    # Pass the measured Vina column, not the 0..1 consensus rank, so G-002 is not
+    # violated by presenting a relative ranking score as a binding affinity.
+    docking_map = {s.compound_id: s.vina_affinity for s in shortlist}
     assay_potencies = {h.compound_id: h.ec50_nm for h in qualified}
     preclinical_exposures = {
         c.compound_id: {

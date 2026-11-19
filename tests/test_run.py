@@ -109,6 +109,36 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue((out_dir / "safety_assessments.csv").is_file())
             self.assertTrue((out_dir / "safety_package.md").is_file())
 
+    def test_sar_reports_vina_affinity_not_consensus_score(self) -> None:
+        # G-002: a relative 0..1 consensus score must not be reported as a
+        # Vina binding affinity (negative kcal/mol) in sar_clusters.csv.
+        if not Path("data/compounds/vendor_library.csv").is_file():
+            return
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            out_dir = Path(tmp_dir) / "output"
+            execute_turnkey_pipeline(
+                vendor_csv=Path("data/compounds/vendor_library.csv"),
+                repurposing_csv=Path("data/compounds/repurposing_library.csv"),
+                docking_csv=Path("data/docking/multi_target_scores.csv"),
+                degradation_csv=None,
+                permeability_csv=None,
+                cytotoxicity_csv=None,
+                pk_csv=None,
+                pd_csv=None,
+                out_dir=out_dir,
+            )
+            with (out_dir / "shortlist.csv").open("r", encoding="utf-8", newline="") as handle:
+                vina_values = [round(float(r["vina_affinity"]), 2) for r in csv.DictReader(handle)]
+            with (out_dir / "sar_clusters.csv").open("r", encoding="utf-8", newline="") as handle:
+                clusters = list(csv.DictReader(handle))
+            reported = [float(c["best_vina_docking"]) for c in clusters if c["best_vina_docking"]]
+            self.assertTrue(reported)
+            self.assertTrue(
+                all(v < 0.0 for v in reported),
+                f"SAR 'best_vina_docking' holds non-kcal/mol values: {reported}",
+            )
+            self.assertTrue(all(round(v, 2) in vina_values for v in reported))
+
     def test_turnkey_qualification_uses_reported_ec50_ceiling(self) -> None:
         # assay_report.md states EC50 <= 100 nM; classification must use that
         # same ceiling, not qualify_leads' permissive 10000 nM library default.

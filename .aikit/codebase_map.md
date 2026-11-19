@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `275`
-- **Total Source Lines**: `13843`
+- **Total Class Methods**: `276`
+- **Total Source Lines**: `13876`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -382,7 +382,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `557` lines
+**Size**: `560` lines
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -900,13 +900,14 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `187` lines
+**Size**: `217` lines
 
 **Classes:**
 - `class TestTurnkeyRunner`
   - Method `.test_missing_vendor_library_raises()`
   - Method `.test_execute_turnkey_pipeline_success()`
   - Method `.test_runner_cli_execution_no_browser()`
+  - Method `.test_sar_reports_vina_affinity_not_consensus_score()`
   - Method `.test_turnkey_qualification_uses_reported_ec50_ceiling()`
   - Method `.test_banner_accounts_for_safety_caution_results()`
   - Method `.test_daily_timepoint_tolerance()`
