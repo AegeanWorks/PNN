@@ -215,7 +215,7 @@ writes tabular datasets, a Markdown lead report, and a hashed manifest.
 
 ```bash
 python -m pnn.pipeline vendor_library.csv repurposing_library.csv \
-    --docking data/docking/scores_template.csv \
+    --docking data/docking/multi_target_scores.csv \
     --out-dir phase2_lead_run \
     --min-tier B --per-bin 25 --max-rmsd 2.0
 ```

@@ -27,18 +27,19 @@ class ProjectDocsTest(unittest.TestCase):
     def test_documented_cli_examples_use_populated_csvs(self) -> None:
         # A copy-paste README example must actually run. Header-only templates
         # document the column contract but make the command fail with
-        # "no compound rows found" — use shipped populated datasets instead.
+        # "no compound/docking rows found" — use shipped populated datasets.
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        inputs = re.findall(r"python -m pnn(?:\.rank)?\s+([\w./-]+\.csv)", readme)
-        self.assertTrue(inputs, "no documented pnn CLI examples found")
+        blocks = re.findall(r"```bash\n(.*?)```", readme, re.S)
+        self.assertTrue(blocks, "no documented bash examples found")
         empty = []
-        for rel in inputs:
-            path = ROOT / rel
-            if not path.is_file():
-                continue  # illustrative placeholder (e.g. compounds.csv)
-            lines = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
-            if len(lines) < 2:
-                empty.append(rel)
+        for block in blocks:
+            for rel in re.findall(r"[\w./-]+\.csv", block):
+                path = ROOT / rel
+                if not path.is_file():
+                    continue  # illustrative placeholder (e.g. compounds.csv)
+                lines = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+                if len(lines) < 2:
+                    empty.append(rel)
         self.assertEqual(empty, [], f"documented examples use header-only CSVs: {empty}")
 
     def test_python_version_requirement_is_consistent(self) -> None:

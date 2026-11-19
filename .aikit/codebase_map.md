@@ -10,7 +10,7 @@
 - **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
 - **Total Class Methods**: `315`
-- **Total Source Lines**: `14682`
+- **Total Source Lines**: `14683`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -719,7 +719,7 @@
 ### [`tests/test_docs.py`](tests/test_docs.py)
 > *Regression shield for the PNN research documents (PRINCIPLE-005, PRINCIPLE-014).*
 
-**Size**: `98` lines
+**Size**: `99` lines
 
 **Classes:**
 - `class ProjectDocsTest`
