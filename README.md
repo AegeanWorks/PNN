@@ -37,6 +37,7 @@ Oral, blood-brain barrier-penetrant agents that soften hypothalamic perineuronal
 PNN/
 ├── README.md                      <- This file - project overview
 ├── .gitignore                     <- AIKit transient-state baseline
+├── .gitattributes                 <- LF text and binary merge rules
 ├── ASSETS.md
 ├── LICENSE
 ├── LICENSES/
