@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `267`
-- **Total Source Lines**: `13637`
+- **Total Class Methods**: `268`
+- **Total Source Lines**: `13669`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -480,7 +480,7 @@
 ### [`pnn/selection.py`](pnn/selection.py)
 > *End-to-end Phase 2 lead selection for the PNN project.*
 
-**Size**: `336` lines
+**Size**: `337` lines
 
 **Classes:**
 - `class PipelineError` - *Raised when a Phase 2 run cannot produce a defensible lead set.*
@@ -805,7 +805,7 @@
 ### [`tests/test_pipeline.py`](tests/test_pipeline.py)
 > *Unit and CLI integration tests for the end-to-end Phase 2 lead selection pipeline.*
 
-**Size**: `206` lines
+**Size**: `237` lines
 
 **Classes:**
 - `class PipelineTest`
@@ -817,6 +817,7 @@
   - Method `.test_select_leads_raises_when_curation_empties_set()`
   - Method `.test_select_leads_raises_when_no_shortlist_survives()`
   - Method `.test_render_lead_report_guidelines_and_evidence()`
+  - Method `.test_render_lead_report_reports_real_coverage_and_filter_counts()`
   - Method `.test_run_pipeline_produces_all_artifacts_and_hashed_manifest()`
   - Method `.test_cli_execution_success()`
   - Method `.test_cli_execution_failure_triad()`

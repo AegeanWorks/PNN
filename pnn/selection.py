@@ -233,6 +233,8 @@ def render_lead_report(
         lines.append(f"- **Truncated by Global Cap**: True (capped at {selection.curation.get('max_compounds')})")
 
     by_tier = selection.screening.get("by_tier", {})
+    full_coverage = sum(1 for row in selection.shortlist if row.coverage >= 1.0)
+    partial_coverage = sum(1 for row in selection.shortlist if 0.0 < row.coverage < 1.0)
     lines.extend([
         "",
         "### 2. CNS/BBB Property Screening",
@@ -247,11 +249,10 @@ def render_lead_report(
         "",
         f"- **Docked Rows Ingested**: {selection.docking.get('rows', 0)}",
         f"- **Shortlist Compounds Emitted**: {len(selection.shortlist)}",
-        f"- **Full Engine Coverage (Vina + Glide + MM-GBSA)**: {selection.ranking.get('full_coverage', 0)}",
-        f"- **Partial Engine Coverage**: {selection.ranking.get('partial_coverage', 0)}",
+        f"- **Full Engine Coverage (Vina + Glide + MM-GBSA)**: {full_coverage}",
+        f"- **Partial Engine Coverage**: {partial_coverage}",
         f"- **Skipped by Tier Filter**: {selection.ranking.get('skipped_by_tier', 0)}",
-        f"- **Filtered by RMSD Threshold**: {selection.ranking.get('filtered_by_rmsd', 0)}",
-        f"- **Filtered by Minimum Vina Affinity**: {selection.ranking.get('filtered_by_vina', 0)}",
+        f"- **Skipped by Docking Filters (RMSD/Vina)**: {selection.ranking.get('skipped_by_filters', 0)}",
         "",
         f"## Top Shortlisted Leads (Top {min(len(selection.shortlist), top_n)})",
         "",

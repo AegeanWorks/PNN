@@ -135,6 +135,37 @@ class PipelineTest(unittest.TestCase):
         self.assertIn("SPR/ITC", report)
         self.assertIn("WFA-positive", report)
 
+    def test_render_lead_report_reports_real_coverage_and_filter_counts(self) -> None:
+        mixed_docking = self.root / "mixed_docking.csv"
+        mixed_docking.write_text(
+            DOCKING_HEADER
+            + "CMP-A,PTPsigma,-10.5,-8.2,-52.0,1.1\n"  # full engine coverage
+            + "CMP-B,PTPsigma,-8.8,,-32.0,1.0\n"       # partial engine coverage (no Glide)
+            + "CMP-C,PTPsigma,-6.0,-3.0,-12.0,5.0\n"  # dropped by the RMSD filter
+            ,
+            encoding="utf-8",
+        )
+        selection = select_leads(
+            inputs=[str(self.input1), str(self.input2)],
+            docking=str(mixed_docking),
+            min_tier="B",
+            max_rmsd=2.0,
+        )
+        options = {"min_tier": "B", "per_bin": 25}
+        report = render_lead_report(selection, options)
+
+        full = sum(1 for row in selection.shortlist if row.coverage >= 1.0)
+        partial = sum(1 for row in selection.shortlist if 0.0 < row.coverage < 1.0)
+        self.assertEqual(full, 1)
+        self.assertEqual(partial, 1)
+        self.assertEqual(selection.ranking["skipped_by_filters"], 1)
+
+        self.assertIn(
+            f"Full Engine Coverage (Vina + Glide + MM-GBSA)**: {full}", report
+        )
+        self.assertIn(f"Partial Engine Coverage**: {partial}", report)
+        self.assertIn("Skipped by Docking Filters (RMSD/Vina)**: 1", report)
+
     def test_run_pipeline_produces_all_artifacts_and_hashed_manifest(self) -> None:
         out_dir = self.root / "run_out"
         run = run_pipeline(
