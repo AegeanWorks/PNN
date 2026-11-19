@@ -752,6 +752,9 @@ def render_studio_html(
           <tbody>{"".join(pk_rows)}</tbody>
         </table>"""
 
+    # The PK SVG plots compounds[0]'s measured points; keep the heading tied to that compound.
+    pk_lead_label = html.escape(compounds[0].compound_id) if compounds else "no PK data"
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1034,7 +1037,7 @@ def render_studio_html(
     </div>
 
     <div class="panel" style="margin-bottom: 24px;">
-      <h2>In Vivo Pharmacokinetics (PK Profile: PNN-101) <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Blue solid: IV Plasma | Green dashed: PO Plasma | Amber dotted: PO Brain</span></h2>
+      <h2>In Vivo Pharmacokinetics (PK Profile: {pk_lead_label}) <span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">Blue solid: IV Plasma | Green dashed: PO Plasma | Amber dotted: PO Brain</span></h2>
       <div class="svg-wrapper">
         {pk_svg}
       </div>

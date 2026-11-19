@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `266`
-- **Total Source Lines**: `13609`
+- **Total Class Methods**: `267`
+- **Total Source Lines**: `13637`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -502,7 +502,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1322` lines
+**Size**: `1325` lines
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -1005,7 +1005,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `429` lines
+**Size**: `454` lines
 
 **Classes:**
 - `class TestStudioRendering`
@@ -1014,6 +1014,7 @@
   - Method `.test_generate_docking_heatmap_svg()`
   - Method `.test_generate_pk_curve_svg()`
   - Method `.test_render_studio_html()`
+  - Method `.test_pk_heading_names_the_compound_actually_plotted()`
   - Method `.test_generate_circuit_dynamics_svg()`
   - Method `.test_render_studio_html_with_translational_panels()`
 - `class TestStudioAccessibility` - *The dashboard is read by assistive technology, not only by eye.*

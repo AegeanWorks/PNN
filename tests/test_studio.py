@@ -69,6 +69,31 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("PNN-101", html_doc)
         self.assertIn("24.0 nM", html_doc)
 
+    def test_pk_heading_names_the_compound_actually_plotted(self) -> None:
+        other = StudioCompound(
+            compound_id="TEST-PK-9",
+            name="Alternative-Lead",
+            mw=320.0,
+            logp=2.4,
+            tpsa=55.0,
+            hbd=1,
+            hba=4,
+            rotb=4,
+            ec50_nm=30.0,
+            brain_kp=0.5,
+            oral_f_pct=35.0,
+            docking_scores={},
+            pk_points={"IV_plasma": [(0.0, 0.0), (1.0, 400.0)]},
+        )
+        html_doc = render_studio_html(
+            [other],
+            generate_radar_svg([other]),
+            generate_docking_heatmap_svg([other], targets=[]),
+            generate_pk_curve_svg([other]),
+        )
+        self.assertIn("PK Profile: TEST-PK-9", html_doc)
+        self.assertNotIn("PK Profile: PNN-101", html_doc)
+
     def test_generate_circuit_dynamics_svg(self) -> None:
         sim_points = [
             {"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0},
