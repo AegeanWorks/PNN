@@ -170,6 +170,41 @@ class TestTurnkeyRunner(unittest.TestCase):
             )
             self.assertNotIn("PNN-104", [r["compound_id"] for r in confirmed])
 
+    def test_confirmed_hits_count_excludes_qualified_leads(self) -> None:
+        # QUALIFIED_LEAD means "softening confirmed; pending measured
+        # permeability" — explicitly NOT confirmed. The banner label "Confirmed
+        # In Vitro Hits" must count only CONFIRMED_HIT, or it overclaims evidence.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            out_dir = Path(tmp_dir) / "output"
+            deg = Path(tmp_dir) / "deg.csv"
+            deg.write_text(
+                "compound_id,ec50_nm,max_degradation_pct\n"
+                "PNN-101,50.0,80.0\n"
+                "PNN-102,60.0,75.0\n",
+                encoding="utf-8",
+            )
+            summary = execute_turnkey_pipeline(
+                vendor_csv=Path("data/compounds/vendor_library.csv"),
+                repurposing_csv=None,
+                docking_csv=Path("data/docking/multi_target_scores.csv"),
+                degradation_csv=deg,
+                permeability_csv=None,  # no permeability -> QUALIFIED_LEAD
+                cytotoxicity_csv=None,
+                pk_csv=None,
+                pd_csv=None,
+                out_dir=out_dir,
+            )
+            with (out_dir / "qualified_hits.csv").open("r", encoding="utf-8", newline="") as handle:
+                rows = list(csv.DictReader(handle))
+            strict_confirmed = sum(1 for r in rows if r["status"] == "CONFIRMED_HIT")
+            qualified_leads = [r for r in rows if r["status"] == "QUALIFIED_LEAD"]
+            self.assertTrue(qualified_leads, "expected QUALIFIED_LEAD rows without permeability data")
+            self.assertEqual(
+                summary.qualified_hits_count,
+                strict_confirmed,
+                f"banner counted QUALIFIED_LEAD as confirmed: {summary.qualified_hits_count} vs {strict_confirmed}",
+            )
+
     def test_banner_accounts_for_safety_caution_results(self) -> None:
         # 5 assessed = 3 safe + 1 caution + 1 failed. The banner must not
         # silently drop the caution and leave 1 of 5 unaccounted for.

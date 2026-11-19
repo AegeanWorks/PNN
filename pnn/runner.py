@@ -419,7 +419,9 @@ def execute_turnkey_pipeline(
 
     elapsed = time.perf_counter() - start_time
     clinical_count = sum(1 for c in candidates if c.status == "CLINICAL_CANDIDATE")
-    confirmed_hit_count = sum(1 for h in qualified if h.status in ("CONFIRMED_HIT", "QUALIFIED_LEAD"))
+    # QUALIFIED_LEAD means "pending measured permeability/safety" — not a
+    # confirmed hit. Count only CONFIRMED_HIT or the banner overclaims evidence.
+    confirmed_hit_count = sum(1 for h in qualified if h.status == "CONFIRMED_HIT")
 
     return RunSummary(
         curated_count=len(curated),
