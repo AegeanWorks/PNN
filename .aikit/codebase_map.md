@@ -6,14 +6,14 @@
 ---
 
 ## 📊 Codebase Metrics
-- **Total Python Modules**: `53`
-- **Total Classes**: `93`
+- **Total Python Modules**: `54`
+- **Total Classes**: `94`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `281`
-- **Total Source Lines**: `13964`
+- **Total Class Methods**: `283`
+- **Total Source Lines**: `14011`
 
 ## 🧭 Map Coverage
-- **Indexed**: python (`53` module(s))
+- **Indexed**: python (`54` module(s))
 - **Not indexed by this map**: none (no non-Python source files were found)
 
 ---
@@ -343,7 +343,7 @@
 ### [`pnn/reports.py`](pnn/reports.py)
 > *Atomic CSV, JSON and text report writers shared by the PNN command line tools.*
 
-**Size**: `68` lines
+**Size**: `75` lines
 
 **Functions:**
 - `def _open_temp(path)`
@@ -876,6 +876,18 @@
 **Functions:**
 - `def screen_table()`
 - `def scores()`
+
+---
+
+### [`tests/test_reports.py`](tests/test_reports.py)
+> *Tests for the shared atomic CSV/JSON/text report writers.*
+
+**Size**: `40` lines
+
+**Classes:**
+- `class TestAtomicWriters`
+  - Method `.test_writers_create_parent_and_content()`
+  - Method `.test_fsync_failure_leaves_no_temp_or_partial_destination()`
 
 ---
 

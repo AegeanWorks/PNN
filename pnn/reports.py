@@ -19,13 +19,20 @@ def _open_temp(path: Path):
 
 
 def _finish(path: Path, handle) -> None:
-    handle.flush()
-    os.fsync(handle.fileno())
-    handle.close()
+    temp_path = Path(handle.name)
     try:
-        os.replace(handle.name, path)
-    except OSError:
-        Path(handle.name).unlink(missing_ok=True)
+        handle.flush()
+        os.fsync(handle.fileno())
+        handle.close()
+        os.replace(temp_path, path)
+    except BaseException:
+        # Clean up on any failure, including flush/fsync/close — not just a
+        # failed os.replace — so no temp file or open handle is leaked.
+        try:
+            handle.close()
+        except OSError:
+            pass
+        temp_path.unlink(missing_ok=True)
         raise
 
 
