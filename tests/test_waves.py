@@ -95,6 +95,17 @@ class TestWaveLedger(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].kills, 10)
 
+    def test_route_kills_expand(self) -> None:
+        proofs = self.waves_dir / "obtainability_proofs.csv"
+        proofs.write_text(
+            "compound_id,supplier,catalog_no,approval_ref,evidence,verified_date\n"
+            "W999-KILL-ROUTE,,,8-route-kills,Eight injectable-only kills,2026-11-06\n",
+            encoding="utf-8",
+        )
+        rows, _ = collect_wave_ledger(self.waves_dir, proofs)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].kills, 8)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `268`
-- **Total Source Lines**: `13669`
+- **Total Class Methods**: `269`
+- **Total Source Lines**: `13680`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -1069,7 +1069,7 @@
 ---
 
 ### [`tests/test_waves.py`](tests/test_waves.py)
-**Size**: `100` lines
+**Size**: `111` lines
 
 **Classes:**
 - `class TestWaveLedger`
@@ -1082,6 +1082,7 @@
   - Method `.test_unreadable_wave_file_raises_actionable_error()`
   - Method `.test_stray_byte_does_not_break_ledger()`
   - Method `.test_sched_and_box_pass_kill_counts_expand()`
+  - Method `.test_route_kills_expand()`
 
 ---
 
