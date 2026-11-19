@@ -30,6 +30,20 @@ class TargetProfileTest(unittest.TestCase):
             code = main(list(argv))
         return code, stdout.getvalue(), stderr.getvalue()
 
+    def test_config_save_write_failure_uses_error_triad(self) -> None:
+        # An unwritable --save destination must give What/Why/Fix (PRINCIPLE-011),
+        # not a raw OSError traceback escaping from main().
+        blocker = self.root / "not_a_dir"
+        blocker.write_text("occupied by a file", encoding="utf-8")
+        dest = blocker / "config.txt"
+        stderr = io.StringIO()
+        with contextlib.redirect_stderr(stderr):
+            code = main(["config", "PTPsigma", "--save", str(dest)])
+        self.assertEqual(code, 1)
+        self.assertIn("What:", stderr.getvalue())
+        self.assertIn("Why:", stderr.getvalue())
+        self.assertIn("Fix:", stderr.getvalue())
+
     def test_list_targets_contains_primary_receptors(self) -> None:
         targets = list_targets()
         self.assertGreaterEqual(len(targets), 5)

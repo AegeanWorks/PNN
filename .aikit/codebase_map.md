@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `280`
-- **Total Source Lines**: `13944`
+- **Total Class Methods**: `281`
+- **Total Source Lines**: `13964`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -543,7 +543,7 @@
 ### [`pnn/target.py`](pnn/target.py)
 > *Target receptor profiles, binding-pocket invariants and Vina grid generation for PNN.*
 
-**Size**: `313` lines
+**Size**: `319` lines
 
 **Classes:**
 - `class TargetProfile` - *Molecular target profile defining receptor invariants and docking grid coordinates.*
@@ -1058,12 +1058,13 @@
 ### [`tests/test_target.py`](tests/test_target.py)
 > *Unit and CLI tests for target receptor profiles and Vina grid generation.*
 
-**Size**: `129` lines
+**Size**: `143` lines
 
 **Classes:**
 - `class TargetProfileTest`
   - Method `.setUp()`
   - Method `.run_cli(*argv)`
+  - Method `.test_config_save_write_failure_uses_error_triad()`
   - Method `.test_list_targets_contains_primary_receptors()`
   - Method `.test_get_target_case_insensitive()`
   - Method `.test_get_target_unknown_raises_key_error()`

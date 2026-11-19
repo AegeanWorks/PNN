@@ -299,8 +299,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
         if args.save:
             dest = Path(args.save)
-            dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_text(config_text, encoding="utf-8")
+            try:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_text(config_text, encoding="utf-8")
+            except OSError as exc:
+                print(f"What: {exc}", file=sys.stderr)
+                print("Why: the Vina grid config could not be written to the requested path.", file=sys.stderr)
+                print("Fix: specify a writable --save destination and rerun.", file=sys.stderr)
+                return 1
             print(f"Saved Vina grid config for '{profile.target_id}' -> {dest}")
         else:
             print(config_text)
