@@ -387,6 +387,7 @@ def render_assay_report(hits: Sequence[QualifiedHit], criteria: Mapping[str, obj
     """Render a comprehensive Phase 3 in vitro qualification Markdown report."""
     confirmed = [h for h in hits if h.status == "CONFIRMED_HIT"]
     qualified = [h for h in hits if h.status == "QUALIFIED_LEAD"]
+    inconclusive = [h for h in hits if h.status == "INCONCLUSIVE"]
     toxic = [h for h in hits if h.status == "CYTOTOXIC"]
     inactive = [h for h in hits if h.status == "INACTIVE"]
 
@@ -405,6 +406,7 @@ def render_assay_report(hits: Sequence[QualifiedHit], criteria: Mapping[str, obj
         f"- **Total Compounds Evaluated**: {len(hits)}",
         f"- **Confirmed Hits (Active + Permeant + Non-toxic)**: {len(confirmed)}",
         f"- **Qualified Leads (Active, pending complete safety/permeability)**: {len(qualified)}",
+        f"- **Inconclusive / Sub-threshold**: {len(inconclusive)}",
         f"- **Cytotoxic / Counter-Screen Failures**: {len(toxic)}",
         f"- **Inactive / Sub-threshold**: {len(inactive)}",
         "",
@@ -429,6 +431,13 @@ def render_assay_report(hits: Sequence[QualifiedHit], criteria: Mapping[str, obj
             f"| `{h.compound_id}` | {h.ec50_nm:.1f} | {h.max_degradation_pct:.1f}% | "
             f"{pampa_str} | {mdck_str} | {cc50_str} | {si_str} | **{h.status}** | {h.findings} |"
         )
+
+    if inconclusive:
+        lines.extend(["", "## Inconclusive / Sub-threshold Compounds", ""])
+        for h in inconclusive:
+            lines.append(
+                f"- `{h.compound_id}` (EC50 {h.ec50_nm:.1f} nM, Max {h.max_degradation_pct:.1f}%): {h.findings}"
+            )
 
     lines.extend([
         "",

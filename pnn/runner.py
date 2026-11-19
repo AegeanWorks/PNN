@@ -153,10 +153,6 @@ def execute_turnkey_pipeline(
     perm_data = load_permeability_data(permeability_csv) if permeability_csv and permeability_csv.is_file() else {}
     cyto_data = load_cytotoxicity_data(cytotoxicity_csv) if cytotoxicity_csv and cytotoxicity_csv.is_file() else {}
 
-    qualified = qualify_leads(deg_data, perm_data, cyto_data)
-    qualified_csv = out_dir / "qualified_hits.csv"
-    write_csv(qualified_csv, HIT_FIELDS, [h.as_row() for h in qualified])
-
     assay_criteria = {
         "ec50_ceiling_nm": 100.0,
         "max_deg_floor_pct": 50.0,
@@ -164,6 +160,21 @@ def execute_turnkey_pipeline(
         "pampa_pe_floor": 3.0,
         "mdck_efflux_ceiling": 3.0,
     }
+    # Classify with the same criteria the report displays; qualify_leads' library
+    # defaults (EC50 10000 nM, 20% degradation, SI 50) are far more permissive.
+    qualified = qualify_leads(
+        deg_data,
+        perm_data,
+        cyto_data,
+        ec50_ceiling_nm=assay_criteria["ec50_ceiling_nm"],
+        max_deg_floor_pct=assay_criteria["max_deg_floor_pct"],
+        min_selectivity_index=assay_criteria["min_selectivity_index"],
+        pampa_pe_floor=assay_criteria["pampa_pe_floor"],
+        mdck_efflux_ceiling=assay_criteria["mdck_efflux_ceiling"],
+    )
+    qualified_csv = out_dir / "qualified_hits.csv"
+    write_csv(qualified_csv, HIT_FIELDS, [h.as_row() for h in qualified])
+
     assay_report = render_assay_report(qualified, assay_criteria)
     write_text(out_dir / "assay_report.md", assay_report)
 

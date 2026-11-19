@@ -109,6 +109,35 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue((out_dir / "safety_assessments.csv").is_file())
             self.assertTrue((out_dir / "safety_package.md").is_file())
 
+    def test_turnkey_qualification_uses_reported_ec50_ceiling(self) -> None:
+        # assay_report.md states EC50 <= 100 nM; classification must use that
+        # same ceiling, not qualify_leads' permissive 10000 nM library default.
+        degradation_csv = Path("data/assays/degradation_template.csv")
+        if not degradation_csv.is_file():
+            return
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            out_dir = Path(tmp_dir) / "output"
+            execute_turnkey_pipeline(
+                vendor_csv=Path("data/compounds/vendor_library.csv"),
+                repurposing_csv=Path("data/compounds/repurposing_library.csv"),
+                docking_csv=Path("data/docking/multi_target_scores.csv"),
+                degradation_csv=degradation_csv,
+                permeability_csv=Path("data/assays/permeability_template.csv"),
+                cytotoxicity_csv=Path("data/assays/cytotoxicity_template.csv"),
+                pk_csv=Path("data/preclinical/pk_timecourse_template.csv"),
+                pd_csv=Path("data/preclinical/pd_metabolic_template.csv"),
+                out_dir=out_dir,
+            )
+            with (out_dir / "qualified_hits.csv").open("r", encoding="utf-8", newline="") as handle:
+                rows = list(csv.DictReader(handle))
+            confirmed = [r for r in rows if r["status"] == "CONFIRMED_HIT"]
+            self.assertTrue(confirmed)
+            self.assertTrue(
+                all(float(r["ec50_nm"]) <= 100.0 for r in confirmed),
+                f"CONFIRMED_HIT with EC50 above reported 100 nM ceiling: {confirmed}",
+            )
+            self.assertNotIn("PNN-104", [r["compound_id"] for r in confirmed])
+
     def test_banner_accounts_for_safety_caution_results(self) -> None:
         # 5 assessed = 3 safe + 1 caution + 1 failed. The banner must not
         # silently drop the caution and leave 1 of 5 unaccounted for.

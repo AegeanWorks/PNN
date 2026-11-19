@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `273`
-- **Total Source Lines**: `13775`
+- **Total Class Methods**: `275`
+- **Total Source Lines**: `13843`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -41,7 +41,7 @@
 ### [`pnn/assay.py`](pnn/assay.py)
 > *Phase 3 in vitro assay ingestion, hit qualification, and reporting for PNN.*
 
-**Size**: `525` lines
+**Size**: `534` lines
 
 **Classes:**
 - `class AssayError` - *Raised when in vitro assay data is malformed or violates contract.*
@@ -382,7 +382,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `546` lines
+**Size**: `557` lines
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -594,7 +594,7 @@
 ### [`tests/test_assay.py`](tests/test_assay.py)
 > *Unit and CLI tests for Phase 3 in vitro assay ingestion and hit qualification.*
 
-**Size**: `185` lines
+**Size**: `204` lines
 
 **Classes:**
 - `class AssayTest`
@@ -606,6 +606,7 @@
   - Method `.test_qualify_leads_classifications()`
   - Method `.test_qualify_leads_untested_safety_yields_qualified_lead()`
   - Method `.test_render_assay_report_contains_guideline_and_tables()`
+  - Method `.test_report_counts_inconclusive_hits()`
   - Method `.test_cli_execution_success()`
   - Method `.test_cli_failure_triad_on_missing_file()`
 
@@ -899,13 +900,14 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `158` lines
+**Size**: `187` lines
 
 **Classes:**
 - `class TestTurnkeyRunner`
   - Method `.test_missing_vendor_library_raises()`
   - Method `.test_execute_turnkey_pipeline_success()`
   - Method `.test_runner_cli_execution_no_browser()`
+  - Method `.test_turnkey_qualification_uses_reported_ec50_ceiling()`
   - Method `.test_banner_accounts_for_safety_caution_results()`
   - Method `.test_daily_timepoint_tolerance()`
   - Method `.test_runner_cli_execution_auto_opens_browser(mock_open)`

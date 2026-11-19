@@ -15,6 +15,7 @@ from pnn.assay import (
     CytotoxicityResult,
     DegradationResult,
     PermeabilityResult,
+    QualifiedHit,
     load_cytotoxicity_data,
     load_degradation_data,
     load_permeability_data,
@@ -139,6 +140,24 @@ class AssayTest(unittest.TestCase):
         self.assertIn("CMP-1", report)
         self.assertIn("CONFIRMED_HIT", report)
         self.assertIn("Phase 4 In Vivo Proof-of-Concept", report)
+
+    def test_report_counts_inconclusive_hits(self) -> None:
+        def hit(cid: str, status: str, ec50: float, deg: float) -> QualifiedHit:
+            return QualifiedHit(
+                cid, status, ec50, deg, None, None, None, None,
+                "UNTESTED", "UNTESTED", "test note",
+            )
+
+        hits = [
+            hit("H1", "CONFIRMED_HIT", 50.0, 90.0),
+            hit("H2", "INCONCLUSIVE", 850.0, 38.0),
+            hit("H3", "CYTOTOXIC", 12000.0, 18.0),
+        ]
+        report = render_assay_report(hits, {"ec50_ceiling_nm": 100.0})
+        self.assertIn("Total Compounds Evaluated**: 3", report)
+        self.assertIn("H2", report)
+        # 1 confirmed + 0 qualified + 1 inconclusive + 1 toxic + 0 inactive = 3
+        self.assertIn("Inconclusive / Sub-threshold**: 1", report)
 
     def test_cli_execution_success(self) -> None:
         out_csv = self.root / "hits.csv"
