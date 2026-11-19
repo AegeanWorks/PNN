@@ -114,6 +114,18 @@ class CsvIngestionTest(unittest.TestCase):
         self.assertEqual(compound.brain_plasma_ratio, 0.5)
         self.assertIsNone(compound.logbb)
 
+    def test_bom_padded_headers_and_extra_columns_supported(self) -> None:
+        # Guards the padded-header class of bug fixed in dynamics.py: ingestion
+        # must normalize aliased headers and ignore stray extra columns/BOM.
+        path = self.write_csv(
+            "\ufeff Compound ID , MW , CLogP , TPSA , HBD , HBA , Rotors \n"
+            "CMP-B,350,2.5,55,2,5,4,EXTRA\n"
+        )
+        compound = load_compounds(path)[0]
+        self.assertEqual(compound.compound_id, "CMP-B")
+        self.assertEqual(compound.mw, 350.0)
+        self.assertEqual(compound.logp, 2.5)
+
     def test_duplicate_ids_are_refused(self) -> None:
         rows = [
             {"compound_id": "X", "mw": "350", "logp": "2", "tpsa": "50", "hbd": "2", "hba": "5", "rotatable_bonds": "4"},

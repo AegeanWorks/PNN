@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `95`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `286`
-- **Total Source Lines**: `14063`
+- **Total Class Methods**: `287`
+- **Total Source Lines**: `14075`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -992,7 +992,7 @@
 ### [`tests/test_screen.py`](tests/test_screen.py)
 > *Unit tests for tiering, ranking and CSV ingestion.*
 
-**Size**: `167` lines
+**Size**: `179` lines
 
 **Classes:**
 - `class TierTest`
@@ -1008,6 +1008,7 @@
   - Method `.setUp()`
   - Method `.write_csv(text)`
   - Method `.test_aliases_and_blank_optionals_are_supported()`
+  - Method `.test_bom_padded_headers_and_extra_columns_supported()`
   - Method `.test_duplicate_ids_are_refused()`
   - Method `.test_bad_number_names_the_row()`
   - Method `.test_missing_field_is_refused()`
