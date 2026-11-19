@@ -1,12 +1,16 @@
 """Unit tests for the IND-enabling safety pharmacology and toxicology package."""
 
+import contextlib
+import io
 import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from pnn.safety import (
     SAFETY_FIELDS,
+    SafetyAssessment,
     SafetyError,
     SafetyPharm,
     ToxStudy,
@@ -314,6 +318,27 @@ class TestSafetyCli(unittest.TestCase):
             summary = json.loads(out_json.read_text(encoding="utf-8"))
             self.assertEqual(summary["total_assessed"], 1)
             self.assertEqual(summary["by_status"]["SAFE_TO_PROGRESS"], 1)
+
+
+    def test_cli_banner_accounts_for_caution_results(self) -> None:
+        # 3 assessed = 1 safe + 1 caution + 1 failed. The CLI banner must not
+        # silently drop the caution and leave 1 of 3 unaccounted for.
+        assessments = [
+            SafetyAssessment("S", "SAFE_TO_PROGRESS", *([None] * 11)),
+            SafetyAssessment("C", "CAUTION", *([None] * 11)),
+            SafetyAssessment("F", "FAIL_SAFETY", *([None] * 11)),
+        ]
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            tox = Path(tmp_dir) / "tox.csv"
+            tox.write_text(TOX_HEADER + "S,rat,REPEAT_DOSE_28D,28,50.0,100.0,liver,\n", encoding="utf-8")
+            out = io.StringIO()
+            with patch("pnn.safety.assess_safety", return_value=assessments):
+                with contextlib.redirect_stdout(out):
+                    rc = main(["--tox", str(tox), "--out", str(Path(tmp_dir) / "s.csv")])
+            self.assertEqual(rc, 0)
+            banner = out.getvalue()
+            self.assertIn("1 caution", banner)
+            self.assertIn("3 compound(s) assessed", banner)
 
 
 if __name__ == "__main__":

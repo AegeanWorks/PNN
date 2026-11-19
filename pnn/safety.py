@@ -637,10 +637,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 1
 
     safe_count = sum(1 for a in assessments if a.status == "SAFE_TO_PROGRESS")
+    caution_count = sum(1 for a in assessments if a.status == "CAUTION")
     failed_count = sum(1 for a in assessments if a.status == "FAIL_SAFETY")
     print(
-        f"Safety assessment complete: {safe_count} safe to progress, {failed_count} failed, "
-        f"{len(assessments)} compound(s) assessed -> {args.out}"
+        f"Safety assessment complete: {safe_count} safe to progress, {caution_count} caution, "
+        f"{failed_count} failed, {len(assessments)} compound(s) assessed -> {args.out}"
     )
     return 0
 

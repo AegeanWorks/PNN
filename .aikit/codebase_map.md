@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `98`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `308`
-- **Total Source Lines**: `14469`
+- **Total Class Methods**: `309`
+- **Total Source Lines**: `14495`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -403,7 +403,7 @@
 ### [`pnn/safety.py`](pnn/safety.py)
 > *IND-enabling safety pharmacology and repeat-dose toxicology assessment for PNN.*
 
-**Size**: `649` lines
+**Size**: `650` lines
 
 **Classes:**
 - `class SafetyError` - *Raised when safety pharmacology or toxicology data is malformed or violates contract.*
@@ -953,7 +953,7 @@
 ### [`tests/test_safety.py`](tests/test_safety.py)
 > *Unit tests for the IND-enabling safety pharmacology and toxicology package.*
 
-**Size**: `320` lines
+**Size**: `345` lines
 
 **Classes:**
 - `class TestSafetyIngestion`
@@ -989,6 +989,7 @@
   - Method `.test_cli_requires_an_input()`
   - Method `.test_cli_missing_file_returns_error()`
   - Method `.test_cli_writes_csv_json_and_report()`
+  - Method `.test_cli_banner_accounts_for_caution_results()`
 
 ---
 
