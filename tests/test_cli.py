@@ -80,5 +80,21 @@ class CliTest(unittest.TestCase):
         self.assertEqual(flag_exit.exception.code, 2)
 
 
+class PackageExportContractTest(unittest.TestCase):
+    def test_every_lazy_export_resolves(self) -> None:
+        # __init__._EXPORTS maps 100+ names to modules by hand. A typo or a
+        # renamed symbol fails only when a caller imports that name at runtime.
+        import pnn
+
+        self.assertEqual(pnn.__all__, sorted(pnn._EXPORTS))
+        missing = []
+        for name in pnn.__all__:
+            try:
+                getattr(pnn, name)
+            except Exception as exc:
+                missing.append(f"{name} -> {pnn._EXPORTS[name]}: {type(exc).__name__}: {exc}")
+        self.assertEqual(missing, [], f"broken lazy exports: {missing}")
+
+
 if __name__ == "__main__":
     unittest.main()

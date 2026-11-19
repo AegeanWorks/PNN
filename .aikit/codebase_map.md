@@ -7,10 +7,10 @@
 
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `55`
-- **Total Classes**: `96`
+- **Total Classes**: `97`
 - **Total Top-Level Functions**: `225`
-- **Total Class Methods**: `301`
-- **Total Source Lines**: `14346`
+- **Total Class Methods**: `302`
+- **Total Source Lines**: `14362`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -642,7 +642,7 @@
 ### [`tests/test_cli.py`](tests/test_cli.py)
 > *Integration tests for the `python -m pnn` CLI contract.*
 
-**Size**: `84` lines
+**Size**: `100` lines
 
 **Classes:**
 - `class CliTest`
@@ -654,6 +654,8 @@
   - Method `.test_invalid_input_returns_one_with_a_remediation_triad()`
   - Method `.test_missing_input_returns_one()`
   - Method `.test_help_exits_zero_and_unknown_flag_exits_two()`
+- `class PackageExportContractTest`
+  - Method `.test_every_lazy_export_resolves()`
 
 ---
 
