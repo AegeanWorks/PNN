@@ -236,6 +236,10 @@ def render_wave_ledger_markdown(
         f"Waves recorded: {len(rows)} | Compounds screened: {total_compounds} | "
         f"Shortlist: {total_shortlist} | Parked: {total_parks} | Kills: {total_kills}",
         "",
+        "> Waves are listed only when a shortlist, park or kill outcome was classified. "
+        "Administrative proof rows (buy-lists, MPO triages, reagent/synonym confirmations) "
+        "carry no outcome, so their wave numbers are intentionally absent.",
+        "",
         "| Wave | Source File | Compounds | Shortlist | Parks | Kills |",
         "| --- | --- | --- | --- | --- | --- |",
     ]
@@ -266,6 +270,10 @@ def render_wave_section(
         f'<span style="font-size:0.8rem; font-weight:400; color:var(--text-muted);">'
         f"{len(rows)} waves | {total_compounds} compounds | "
         f"{total_shortlist} shortlist | {total_parks} parked | {total_kills} kills</span></h2>",
+        '<p style="font-size:0.75rem; color:var(--text-muted);">'
+        "Waves are listed only when a shortlist, park or kill outcome was classified. "
+        "Administrative proof rows (buy-lists, MPO triages, reagent/synonym confirmations) "
+        "carry no outcome, so their wave numbers are intentionally absent.</p>",
         '<div class="table-wrapper"><table class="data-table">',
         "<thead><tr><th>Wave</th><th>Source File</th><th>Compounds</th>"
         "<th>Shortlist</th><th>Parks</th><th>Kills</th></tr></thead><tbody>",

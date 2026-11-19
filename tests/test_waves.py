@@ -107,6 +107,17 @@ class TestWaveLedger(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].kills, 8)
 
+    def test_ledger_explains_administrative_only_waves(self) -> None:
+        # Proof rows such as buy-lists, MPO triages and reagent/synonym
+        # confirmations carry no shortlist/park/kill outcome, so their wave
+        # numbers are intentionally absent. Both reports must say so, or a
+        # reader comparing against W347 proof ids assumes data was lost.
+        rows, _ = collect_wave_ledger(self.waves_dir, self.proofs)
+        markdown = render_wave_ledger_markdown(rows, [])
+        html = render_wave_section([r.as_row() for r in rows], [])
+        self.assertIn("administrative", markdown.lower())
+        self.assertIn("administrative", html.lower())
+
     def test_kill_id_wins_over_status_words_in_note(self) -> None:
         # "parked" and "holds" appear in real kill-row evidence as prose / a
         # pipeline tally ("B=1(parked)", "wall holds"), not as classifications.
