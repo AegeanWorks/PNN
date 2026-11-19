@@ -1019,7 +1019,7 @@ def render_studio_html(
       </div>
       <div class="funnel-card">
         <div class="funnel-step">Stage 4</div>
-        <div class="funnel-title">Clinical Nominees</div>
+        <div class="funnel-title">Kp/F Exposure Qualified</div>
         <div class="funnel-num">{sum(1 for c in compounds if c.brain_kp and c.brain_kp >= 0.30 and c.oral_f_pct and c.oral_f_pct >= 20.0)}</div>
       </div>
     </div>

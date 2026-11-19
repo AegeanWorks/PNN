@@ -135,6 +135,19 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("PK Profile: TEST-PK-9", html_doc)
         self.assertNotIn("PK Profile: PNN-101", html_doc)
 
+    def test_funnel_does_not_mislabel_kp_f_filter_as_clinical_nominees(self) -> None:
+        # Stage 4 of the funnel is a Kp/F exposure filter only; it does not
+        # apply the PD (WFA/ITT) criteria of evaluate_candidates, so calling it
+        # "Clinical Nominees" overstates the real count (5 vs 1 on reference data).
+        html_doc = render_studio_html(
+            [self.compound],
+            generate_radar_svg([self.compound]),
+            generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            generate_pk_curve_svg([self.compound]),
+        )
+        self.assertNotIn("Clinical Nominees", html_doc)
+        self.assertIn("Kp/F", html_doc)
+
     def test_generate_circuit_dynamics_svg(self) -> None:
         sim_points = [
             {"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0},

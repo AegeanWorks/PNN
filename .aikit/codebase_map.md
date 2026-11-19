@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `315`
-- **Total Source Lines**: `14686`
+- **Total Class Methods**: `316`
+- **Total Source Lines**: `14699`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -1061,7 +1061,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `543` lines
+**Size**: `556` lines
 
 **Classes:**
 - `class TestStudioRendering`
@@ -1073,6 +1073,7 @@
   - Method `.test_pk_curve_keeps_long_trajectories_on_canvas()`
   - Method `.test_render_studio_html()`
   - Method `.test_pk_heading_names_the_compound_actually_plotted()`
+  - Method `.test_funnel_does_not_mislabel_kp_f_filter_as_clinical_nominees()`
   - Method `.test_generate_circuit_dynamics_svg()`
   - Method `.test_circuit_axis_uses_hours_when_ticks_are_not_day_aligned()`
   - Method `.test_circuit_axis_uses_days_when_ticks_are_day_aligned()`
