@@ -318,5 +318,36 @@
     "final_snapshot_entries": 0,
     "surface_digest": "07f5d22772ed918f4a3b47e4c88cc588d51fea469b44b37c6b47c6c48f9033d4",
     "baseline_digest": "07f5d22772ed918f4a3b47e4c88cc588d51fea469b44b37c6b47c6c48f9033d4"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/project.json"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "a2026e8091764c0568900a51f033550536618306",
+    "contract_hash": "2a11c74767f8f5b729a75fe083c476e6a17c3d323e27d5ba605ce354ac86146c",
+    "started_at": 1795097212.4122756,
+    "finished_at": 1795097229.8930385,
+    "strikes": 0,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "0837d030c244675a1da32ccf2092f1fd0422f8b3db163b2bcbf0a05344386164",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795097229.8930402
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "0837d030c244675a1da32ccf2092f1fd0422f8b3db163b2bcbf0a05344386164",
+    "baseline_digest": "0837d030c244675a1da32ccf2092f1fd0422f8b3db163b2bcbf0a05344386164"
   }
 ]
