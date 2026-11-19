@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `96`
 - **Total Top-Level Functions**: `225`
-- **Total Class Methods**: `300`
-- **Total Source Lines**: `14321`
+- **Total Class Methods**: `301`
+- **Total Source Lines**: `14346`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -1044,13 +1044,14 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `491` lines
+**Size**: `516` lines
 
 **Classes:**
 - `class TestStudioRendering`
   - Method `.setUp()`
   - Method `.test_generate_radar_svg()`
   - Method `.test_generate_docking_heatmap_svg()`
+  - Method `.test_heatmap_svg_escapes_user_names_and_stays_valid_xml()`
   - Method `.test_generate_pk_curve_svg()`
   - Method `.test_render_studio_html()`
   - Method `.test_pk_heading_names_the_compound_actually_plotted()`

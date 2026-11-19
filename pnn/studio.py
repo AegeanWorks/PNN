@@ -169,7 +169,7 @@ def generate_docking_heatmap_svg(
     for j, tgt in enumerate(targets):
         x = margin_left + j * cell_w + cell_w / 2.0
         svg_parts.append(
-            f'  <text x="{x:.1f}" y="{margin_top - 12}" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">{tgt}</text>'
+            f'  <text x="{x:.1f}" y="{margin_top - 12}" text-anchor="middle" font-size="11" font-weight="600" fill="#334155">{html.escape(str(tgt))}</text>'
         )
 
     # Heatmap rows
@@ -177,7 +177,7 @@ def generate_docking_heatmap_svg(
         y = margin_top + i * cell_h
         # Row label
         svg_parts.append(
-            f'  <text x="{margin_left - 12}" y="{y + cell_h/2.0 + 4}" text-anchor="end" font-size="11" font-weight="600" fill="#1e293b">{comp.compound_id}</text>'
+            f'  <text x="{margin_left - 12}" y="{y + cell_h/2.0 + 4}" text-anchor="end" font-size="11" font-weight="600" fill="#1e293b">{html.escape(str(comp.compound_id))}</text>'
         )
 
         for j, tgt in enumerate(targets):

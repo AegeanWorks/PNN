@@ -1,5 +1,6 @@
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from pnn.studio import (
@@ -51,6 +52,30 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("PTPsigma", svg)
         self.assertIn("-8.5", svg)
         self.assertIn("<rect", svg)
+
+    def test_heatmap_svg_escapes_user_names_and_stays_valid_xml(self) -> None:
+        # Compound IDs and target names come from user CSVs; SVG is XML, so
+        # raw '&'/'<' would produce malformed output. They must be escaped.
+        special = StudioCompound(
+            compound_id="A&B<C>",
+            name="x",
+            mw=300.0,
+            logp=2.5,
+            tpsa=50.0,
+            hbd=2,
+            hba=4,
+            rotb=3,
+            ec50_nm=10.0,
+            brain_kp=None,
+            oral_f_pct=None,
+            docking_scores={"T&X": -9.0},
+            pk_points={},
+        )
+        svg = generate_docking_heatmap_svg([special], targets=["T&X"])
+        # Well-formed XML is the real contract; raw '&' would raise ParseError.
+        ET.fromstring(svg)
+        self.assertIn("A&amp;B&lt;C&gt;", svg)
+        self.assertIn("T&amp;X", svg)
 
     def test_generate_pk_curve_svg(self) -> None:
         svg = generate_pk_curve_svg([self.compound])
