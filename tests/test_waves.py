@@ -4,6 +4,7 @@ from pathlib import Path
 
 from pnn.waves import (
     WaveLedgerError,
+    _classify_proof_row,
     _count_wave_compounds,
     collect_wave_ledger,
     render_wave_ledger_markdown,
@@ -105,6 +106,33 @@ class TestWaveLedger(unittest.TestCase):
         rows, _ = collect_wave_ledger(self.waves_dir, proofs)
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].kills, 8)
+
+    def test_kill_id_wins_over_status_words_in_note(self) -> None:
+        # "parked" and "holds" appear in real kill-row evidence as prose / a
+        # pipeline tally ("B=1(parked)", "wall holds"), not as classifications.
+        # The authoritative KILL id must win over those note words.
+        wave, kind, serial, kills = _classify_proof_row(
+            "W322-KILL-COU",
+            "3-kills-mapped,Acenocoumarol ... pipeline B=1(parked) C=2 Reject=1",
+        )
+        self.assertEqual((wave, kind, kills), ("322", "kill", 3))
+
+        wave, kind, serial, kills = _classify_proof_row(
+            "W216-KILL-GLYCO",
+            "7-kills-mapped,... glyco/lipopeptide wall holds; pipeline Reject 7/7",
+        )
+        self.assertEqual((wave, kind, kills), ("216", "kill", 7))
+
+        proofs = self.waves_dir / "obtainability_proofs.csv"
+        proofs.write_text(
+            "compound_id,supplier,catalog_no,approval_ref,evidence,verified_date\n"
+            "W322-KILL-COU,,,3-kills-mapped,... pipeline B=1(parked) C=2 Reject=1,2026-11-06\n"
+            "W216-KILL-GLYCO,,,7-kills-mapped,... wall holds; pipeline Reject 7/7,2026-11-06\n",
+            encoding="utf-8",
+        )
+        rows, _ = collect_wave_ledger(self.waves_dir, proofs)
+        self.assertEqual(sum(r.kills for r in rows), 10)
+        self.assertEqual(sum(r.parks for r in rows), 0)
 
 
 if __name__ == "__main__":

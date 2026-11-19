@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `271`
-- **Total Source Lines**: `13709`
+- **Total Class Methods**: `272`
+- **Total Source Lines**: `13740`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -560,7 +560,7 @@
 ### [`pnn/waves.py`](pnn/waves.py)
 > *Wave-ledger aggregation: search-wave CSVs plus obtainability proofs into report artifacts.*
 
-**Size**: `300` lines
+**Size**: `303` lines
 
 **Classes:**
 - `class WaveLedgerError` - *Raised when wave-ledger inputs cannot be read or parsed.*
@@ -1071,7 +1071,7 @@
 ---
 
 ### [`tests/test_waves.py`](tests/test_waves.py)
-**Size**: `111` lines
+**Size**: `139` lines
 
 **Classes:**
 - `class TestWaveLedger`
@@ -1085,6 +1085,7 @@
   - Method `.test_stray_byte_does_not_break_ledger()`
   - Method `.test_sched_and_box_pass_kill_counts_expand()`
   - Method `.test_route_kills_expand()`
+  - Method `.test_kill_id_wins_over_status_words_in_note()`
 
 ---
 

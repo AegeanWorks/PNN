@@ -113,6 +113,19 @@ def _classify_proof_row(entry_id: str, note: str) -> Tuple[Optional[str], str, s
     wave = tag_match.group(1)
     serial = entry_id.strip().split("-", 1)[1].upper() if "-" in entry_id else ""
     upper_note = note.upper()
+    if "KILL" in serial or "DEAD" in serial:
+        # The id tag is authoritative. Evidence notes routinely say "(parked)"
+        # as a pipeline tally or "holds" as prose; those must not turn a kill
+        # into a park and drop its mapped kill count.
+        mapped = KILLS_MAPPED_RE.search(note)
+        if mapped:
+            return wave, "kill", serial, int(mapped.group(1))
+        routed = ROUTE_KILLS_RE.search(note)
+        if routed:
+            return wave, "kill", serial, int(routed.group(1))
+        if "ROUTE-KILL" in upper_note or "ROUTE KILL" in upper_note:
+            return wave, "kill", serial, 1
+        return wave, "kill", serial, 1
     if re.match(r"^S\d+$", serial) or re.match(r"^SL-\d+$", serial):
         return wave, "shortlist", serial, 0
     if re.match(r"^P\d+$", serial):
@@ -123,16 +136,6 @@ def _classify_proof_row(entry_id: str, note: str) -> Tuple[Optional[str], str, s
         return wave, "shortlist", serial, 0
     if "PARKED" in upper_note:
         return wave, "park", serial, 0
-    if "KILL" in serial or "DEAD" in serial:
-        mapped = KILLS_MAPPED_RE.search(note)
-        if mapped:
-            return wave, "kill", serial, int(mapped.group(1))
-        routed = ROUTE_KILLS_RE.search(note)
-        if routed:
-            return wave, "kill", serial, int(routed.group(1))
-        if "ROUTE-KILL" in upper_note or "ROUTE KILL" in upper_note:
-            return wave, "kill", serial, 1
-        return wave, "kill", serial, 1
     return wave, "", "", 0
 
 
