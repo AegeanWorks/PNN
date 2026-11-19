@@ -156,6 +156,23 @@ class TestPreclinicalCandidateEvaluation(unittest.TestCase):
         self.assertAlmostEqual(c.oral_bioavailability_pct or 0.0, 50.0, places=1)
         self.assertAlmostEqual(c.brain_plasma_ratio or 0.0, 0.60, places=2)
 
+    def test_unmeasured_oral_f_never_yields_clinical_candidate(self) -> None:
+        # Reconciles reforge finding review-unmeasured-clinical-candidate:
+        # high Kp + potent PD with no IV plasma means oral F is unmeasurable,
+        # so G-001/ADR-010 forbid the CLINICAL_CANDIDATE label.
+        pk_map = {"PNN-101": {"PO_plasma": self.po_plasma, "PO_brain": self.po_brain}}
+        pd_map = {
+            "PNN-101": PdOutcome(
+                compound_id="PNN-101",
+                dose_mg_kg=10.0,
+                wfa_pnn_reduction_pct=40.0,
+                itt_glucose_auc_reduction_pct=35.0,
+            )
+        }
+        candidate = evaluate_candidates(pk_map, pd_map)[0]
+        self.assertEqual(candidate.status, "ADVANCED_LEAD")
+        self.assertIsNone(candidate.oral_bioavailability_pct)
+
     def test_evaluate_insufficient_brain_penetration(self) -> None:
         # Low brain AUC -> Kp = 100 / 2500 = 0.04 < 0.20
         po_brain_low = PkProfile(

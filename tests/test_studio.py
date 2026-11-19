@@ -132,6 +132,19 @@ class TestStudioRendering(unittest.TestCase):
         self.assertNotIn(">12h</text>", svg)
         self.assertIn("Simulation Duration (Days post-initiation)", svg)
 
+    def test_unknown_genotoxicity_is_not_a_failure_badge(self) -> None:
+        # Reconciles reforge finding review-unknown-genotoxicity-fail: an
+        # unmeasured genotoxicity result must be a caution, never a fail.
+        html_doc = render_studio_html(
+            [self.compound],
+            radar_svg=generate_radar_svg([self.compound]),
+            heatmap_svg=generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            pk_svg=generate_pk_curve_svg([self.compound]),
+            safety_data=[{"compound_id": "PNN-101", "status": "CAUTION", "genotoxicity": "UNKNOWN"}],
+        )
+        self.assertIn('<span class="badge-caution">UNKNOWN</span>', html_doc)
+        self.assertNotIn('<span class="badge-fail">UNKNOWN</span>', html_doc)
+
     def test_render_studio_html_with_translational_panels(self) -> None:
         r_svg = generate_radar_svg([self.compound])
         h_svg = generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"])

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `277`
-- **Total Source Lines**: `13895`
+- **Total Class Methods**: `279`
+- **Total Source Lines**: `13925`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -827,7 +827,7 @@
 ---
 
 ### [`tests/test_preclinical.py`](tests/test_preclinical.py)
-**Size**: `224` lines
+**Size**: `241` lines
 
 **Classes:**
 - `class TestPreclinicalNCA`
@@ -842,6 +842,7 @@
 - `class TestPreclinicalCandidateEvaluation`
   - Method `.setUp()`
   - Method `.test_evaluate_clinical_candidate()`
+  - Method `.test_unmeasured_oral_f_never_yields_clinical_candidate()`
   - Method `.test_evaluate_insufficient_brain_penetration()`
   - Method `.test_render_preclinical_report()`
 - `class TestPreclinicalCLI`
@@ -1010,7 +1011,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `478` lines
+**Size**: `491` lines
 
 **Classes:**
 - `class TestStudioRendering`
@@ -1023,6 +1024,7 @@
   - Method `.test_generate_circuit_dynamics_svg()`
   - Method `.test_circuit_axis_uses_hours_when_ticks_are_not_day_aligned()`
   - Method `.test_circuit_axis_uses_days_when_ticks_are_day_aligned()`
+  - Method `.test_unknown_genotoxicity_is_not_a_failure_badge()`
   - Method `.test_render_studio_html_with_translational_panels()`
 - `class TestStudioAccessibility` - *The dashboard is read by assistive technology, not only by eye.*
   - Method `.setUp()`
