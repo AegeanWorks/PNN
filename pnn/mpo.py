@@ -376,9 +376,13 @@ def run_mpo_analysis(
         hbd = int(hbd)
         pka = _parse_opt_float(row.get("pka"))
 
-        # In vitro & in vivo properties
-        ec50 = assay_data.get(cid, {}).get("ec50_nm") or _parse_opt_float(row.get("pnn_ec50_nm"))
-        brain_kp = cand_data.get(cid, {}).get("brain_kp") or _parse_opt_float(row.get("brain_plasma_ratio"))
+        # In vitro & in vivo properties. Use explicit None checks: a measured
+        # 0.0 (e.g. Kp = 0, no brain penetration) is real evidence and must not
+        # be replaced by a fallback via the falsy `or` operator (G-001/ADR-010).
+        measured_ec50 = assay_data.get(cid, {}).get("ec50_nm")
+        ec50 = measured_ec50 if measured_ec50 is not None else _parse_opt_float(row.get("pnn_ec50_nm"))
+        measured_kp = cand_data.get(cid, {}).get("brain_kp")
+        brain_kp = measured_kp if measured_kp is not None else _parse_opt_float(row.get("brain_plasma_ratio"))
         oral_f = cand_data.get(cid, {}).get("oral_f")
         if oral_f is None and "oral_bioavailability" in row:
             f_frac = _parse_opt_float(row.get("oral_bioavailability"))

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `97`
 - **Total Top-Level Functions**: `225`
-- **Total Class Methods**: `302`
-- **Total Source Lines**: `14362`
+- **Total Class Methods**: `303`
+- **Total Source Lines**: `14387`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -242,7 +242,7 @@
 ### [`pnn/mpo.py`](pnn/mpo.py)
 > *Phase 5 Multiparametric Optimization (MPO) and candidate profiling engine for PNN.*
 
-**Size**: `472` lines
+**Size**: `476` lines
 
 **Classes:**
 - `class MpoError` - *Raised when MPO input data is invalid or missing required metrics.*
@@ -781,7 +781,7 @@
 ---
 
 ### [`tests/test_mpo.py`](tests/test_mpo.py)
-**Size**: `132` lines
+**Size**: `153` lines
 
 **Classes:**
 - `class TestMpoCalculations`
@@ -792,6 +792,7 @@
 - `class TestMpoAnalysisAndCLI`
   - Method `.test_missing_compounds_raises()`
   - Method `.test_short_row_raises_mpo_error()` - *Short CSV rows raise MpoError, not AttributeError.*
+  - Method `.test_measured_zero_brain_kp_is_not_replaced_by_a_default()`
   - Method `.test_run_mpo_analysis_valid()`
   - Method `.test_render_mpo_report()`
   - Method `.test_cli_execution_success()`

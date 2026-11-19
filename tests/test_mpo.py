@@ -78,6 +78,27 @@ class TestMpoAnalysisAndCLI(unittest.TestCase):
             with self.assertRaises(MpoError):
                 run_mpo_analysis(compounds_path=comp_path)
 
+    def test_measured_zero_brain_kp_is_not_replaced_by_a_default(self) -> None:
+        # A measured brain Kp of 0.0 means NO brain penetration. The `or`
+        # fallback treated it as missing and fabricated 0.30, inflating the
+        # brain desirability score (G-001/ADR-010: never invent evidence).
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            comp = Path(tmp_dir) / "comp.csv"
+            comp.write_text(
+                "compound_id,name,mw,logp,tpsa,hbd\n"
+                "CMP-Z,ZeroKp,300.0,2.5,50.0,2\n",
+                encoding="utf-8",
+            )
+            cand = Path(tmp_dir) / "cand.csv"
+            cand.write_text(
+                "compound_id,brain_plasma_ratio,oral_bioavailability_pct\n"
+                "CMP-Z,0.0,0.0\n",
+                encoding="utf-8",
+            )
+            profile = run_mpo_analysis(compounds_path=comp, candidates_path=cand)[0]
+            self.assertEqual(profile.brain_kp, 0.0)
+            self.assertEqual(profile.brain_desirability, 0.0)
+
     def test_run_mpo_analysis_valid(self) -> None:
         comp_path = Path("data/compounds/vendor_library.csv")
         cand_path = Path("data/preclinical/pk_timecourse_template.csv")
