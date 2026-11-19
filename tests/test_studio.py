@@ -468,6 +468,9 @@ class TestStudioCLI(unittest.TestCase):
             content = out_html.read_text(encoding="utf-8")
             self.assertIn("<!DOCTYPE html>", content)
             self.assertIn("Receptor & Aggrecanase Target Invariants", content)
+            # The standalone CLI dashboard must include the same Wave Ledger
+            # panel as the turnkey dashboard; it was silently missing.
+            self.assertIn("Wave Ledger", content)
 
     def test_cli_execution_with_translational_flags(self) -> None:
         project_root = Path(__file__).resolve().parent.parent

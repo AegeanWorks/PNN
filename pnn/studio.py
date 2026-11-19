@@ -13,7 +13,9 @@ from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
 
 from .reports import write_text
 from .target import list_targets
-from .waves import render_wave_section
+from .waves import WaveLedgerError, collect_wave_ledger, render_wave_section
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
 def _get_val(obj: Any, key: str, default: Any = "-") -> Any:
@@ -1318,6 +1320,18 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             with open(saf_path, "r", encoding="utf-8") as handle:
                 safety_data = list(csv.DictReader(handle))
 
+        # The standalone CLI dashboard must carry the same Wave Ledger panel
+        # as the turnkey dashboard. Discover it from the project data directory
+        # (the runner does the same) so the two dashboards stay in parity.
+        waves_dir = PROJECT_ROOT / "data" / "compounds" / "waves"
+        proofs_path = waves_dir / "obtainability_proofs.csv"
+        try:
+            wave_rows, wave_highlights = collect_wave_ledger(waves_dir, proofs_path)
+        except WaveLedgerError:
+            wave_rows, wave_highlights = [], []
+        wave_ledger_rows = [row.as_row() for row in wave_rows]
+        wave_highlight_rows = [highlight.as_row() for highlight in wave_highlights]
+
         html_out = render_studio_html(
             compounds,
             radar_svg=radar_svg,
@@ -1327,6 +1341,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             dossier_data=dossier_data,
             safety_data=safety_data,
             targets_data=list_targets(),
+            wave_ledger=wave_ledger_rows,
+            wave_highlights=wave_highlight_rows,
         )
         out_path = Path(args.out)
         write_text(out_path, html_out)
