@@ -10,7 +10,7 @@ This document defines the reproducibility standards for the PNN project, ensurin
 ### 1.1 Code Standards
 | Requirement | Implementation |
 |-------------|----------------|
-| **Python version** | 3.9+ (specify in environment.yml) |
+| **Python version** | 3.10+ (specify in environment.yml) |
 | **Package versions** | Pinned in requirements.txt or environment.yml |
 | **Type hints** | All functions annotated |
 | **Docstrings** | NumPy docstring format for all functions |

@@ -52,11 +52,14 @@ class ProjectDocsTest(unittest.TestCase):
             if relative == "README.md":
                 continue
             text = (ROOT / relative).read_text(encoding="utf-8")
-            for other in re.findall(r"Python (3\.\d+)\+", text):
-                self.assertEqual(
-                    other, floor.group(1),
-                    f"{relative} states Python {other}+ but README says {floor.group(1)}+",
-                )
+            for line in text.splitlines():
+                if "python" not in line.lower():
+                    continue
+                for other in re.findall(r"\b(3\.\d+)\+", line):
+                    self.assertEqual(
+                        other, floor.group(1),
+                        f"{relative} states Python {other}+ but README says {floor.group(1)}+: {line.strip()}",
+                    )
 
     def test_readme_tree_lists_only_existing_paths(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
