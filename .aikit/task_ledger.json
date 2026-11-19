@@ -2,13 +2,25 @@
   "version": 1,
   "active_task": {
     "task_id": "pnn-audit-waves-0-30-v1",
-    "last_phase": "phase 3",
-    "active_phase": 3,
+    "last_phase": "phase 4",
+    "active_phase": 4,
     "status": "in_progress",
-    "updated_at": 1793723171.5143402,
-    "owner": "kilo:PNN-audit",
+    "updated_at": 1795067882.68544,
+    "owner": "opencode:ses_e0f708f9cffeE1ZRxe1oobOLnE",
     "started_by": "kilo:PNN-audit",
-    "continuations": []
+    "continuations": [
+      {
+        "agent": "opencode:ses_e0f708f9cffeE1ZRxe1oobOLnE",
+        "from": "kilo:PNN-audit",
+        "at": 1795067882.68544
+      }
+    ],
+    "workspaces": [
+      {
+        "name": "PNN",
+        "path": "projects/PNN"
+      }
+    ]
   },
   "checkpoints": [
     {
@@ -39,18 +51,6 @@
       "timestamp": 1793723171.5143402,
       "timestamp_str": "2026-11-03 19:26:11",
       "agent": "kilo:PNN-audit"
-    },
-    {
-      "task_id": "reforge:run-3",
-      "phase": "reforge stage 127",
-      "phase_num": 3,
-      "description": "Reforge stage 127: stage 127 host review reviewed; run active; coverage 11/11",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795043752.947027,
-      "timestamp_str": "2026-11-19 02:15:52",
-      "agent": "opencode",
-      "operator_task": "pnn-audit-waves-0-30-v1"
     },
     {
       "task_id": "reforge:run-3",
@@ -255,6 +255,25 @@
       "timestamp_str": "2026-11-19 02:39:02",
       "agent": "opencode",
       "operator_task": "pnn-audit-waves-0-30-v1"
+    },
+    {
+      "task_id": "pnn-audit-waves-0-30-v1",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "re-read every reforge run-3 hunk (stages 130-133) in full; found and fixed the render_lead_report ranking-key mismatch in pnn/selection.py with a failing-first test; 225 tests pass, strict gates 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795067882.68544,
+      "timestamp_str": "2026-11-19 08:58:02",
+      "agent": "opencode:ses_e0f708f9cffeE1ZRxe1oobOLnE",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "PNN",
+          "path": "projects/PNN"
+        }
+      ],
+      "continued_from": "kilo:PNN-audit"
     }
   ]
 }
