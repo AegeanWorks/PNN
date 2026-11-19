@@ -186,7 +186,10 @@ def load_trajectory_csv(path: Path) -> List[TrajectoryPoint]:
 
         contact_cols = [c for c in headers if c.startswith("contact_") or c.startswith("res_")]
 
-        for row_idx, row in enumerate(reader, start=2):
+        for row_idx, raw_row in enumerate(reader, start=2):
+            # DictReader keys are the raw (possibly padded) headers; header
+            # matching above strips them, so normalize row keys the same way.
+            row = {(k.strip() if k else k): v for k, v in raw_row.items()}
             t = _parse_optional_float(row[time_col], time_col, row_idx)
             if t is None:
                 raise DynamicsError(f"Error parsing trajectory row {row_idx}: {time_col} is required")

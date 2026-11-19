@@ -27,6 +27,22 @@ class TestDynamics(unittest.TestCase):
         self.assertEqual(points[0].time_ns, 0.0)
         self.assertGreater(points[-1].time_ns, 50.0)
 
+    def test_load_trajectory_tolerates_padded_headers(self) -> None:
+        # Hand-edited trajectory CSVs often have whitespace around headers.
+        # Header matching strips them, so row lookup must use the same keys or
+        # an unhandled KeyError escapes instead of parsing cleanly.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            path = Path(tmp_dir) / "traj.csv"
+            path.write_text(
+                " time_ns , ligand_rmsd_angstrom , protein_backbone_rmsd , key_contacts_count \n"
+                "0,1.2,1.1,4\n2,1.3,1.1,4\n",
+                encoding="utf-8",
+            )
+            points = load_trajectory_csv(path)
+            self.assertEqual(len(points), 2)
+            self.assertEqual(points[0].time_ns, 0.0)
+            self.assertEqual(points[0].contacts_count, 4)
+
     def test_load_trajectory_missing_raises(self) -> None:
         with self.assertRaises(DynamicsError):
             load_trajectory_csv(Path("non_existent_trajectory.csv"))

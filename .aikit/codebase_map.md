@@ -9,8 +9,8 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `279`
-- **Total Source Lines**: `13925`
+- **Total Class Methods**: `280`
+- **Total Source Lines**: `13944`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`53` module(s))
@@ -188,7 +188,7 @@
 ### [`pnn/dynamics.py`](pnn/dynamics.py)
 > *Molecular Dynamics (MD) trajectory and contact stability analyzer for PNN.*
 
-**Size**: `586` lines
+**Size**: `589` lines
 
 **Classes:**
 - `class DynamicsError` - *Raised when MD trajectory data or parameters are malformed.*
@@ -719,11 +719,12 @@
 ### [`tests/test_dynamics.py`](tests/test_dynamics.py)
 > *Unit tests for MD trajectory and contact stability analyzer.*
 
-**Size**: `145` lines
+**Size**: `161` lines
 
 **Classes:**
 - `class TestDynamics`
   - Method `.test_load_trajectory_csv()`
+  - Method `.test_load_trajectory_tolerates_padded_headers()`
   - Method `.test_load_trajectory_missing_raises()`
   - Method `.test_analyze_trajectory_stable()`
   - Method `.test_analyze_trajectory_unstable_drift()`
