@@ -1,0 +1,28 @@
+# Text is stored and checked out with LF on every platform (AIKit, ADR-436, ADR-454).
+* text=auto eol=lf
+# A project's ledger and its archive merge instead of conflicting (ledger LG-07): the archive
+# is append-only so a union is exact, and the live ledger keeps both sides' checkpoints.
+task_ledger_archive.jsonl merge=union
+task_ledger.json merge=aikit-ledger
+# cmd.exe needs CRLF in its own scripts.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+# Never converted, whatever their bytes look like.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.7z binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.mp4 binary

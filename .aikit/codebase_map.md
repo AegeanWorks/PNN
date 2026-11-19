@@ -1,7 +1,7 @@
 # Codebase Map & Symbol Catalog 🗺️
 
 > **AUTO-GENERATED & VERIFIED BY `scripts/update_knowledge_base.py`**
-> This document provides an automated, up-to-date registry of all modules, classes, and exported functions across this repository.
+> This document catalogues Python modules, classes, and exported functions. See Map Coverage for any stack it does not index.
 
 ---
 
@@ -9,8 +9,12 @@
 - **Total Python Modules**: `53`
 - **Total Classes**: `93`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `265`
-- **Total Source Lines**: `13595`
+- **Total Class Methods**: `266`
+- **Total Source Lines**: `13609`
+
+## 🧭 Map Coverage
+- **Indexed**: python (`53` module(s))
+- **Not indexed by this map**: none (no non-Python source files were found)
 
 ---
 
@@ -19,7 +23,7 @@
 ### [`pnn/__init__.py`](pnn/__init__.py)
 > *Phase 2-5 discovery, preclinical and translational pipeline for PNN.*
 
-**Size**: `130` lines (`4319` bytes)
+**Size**: `130` lines
 
 **Functions:**
 - `def __getattr__(name)`
@@ -30,14 +34,14 @@
 ### [`pnn/__main__.py`](pnn/__main__.py)
 > *Run the PNN screening pipeline as `python -m pnn`.*
 
-**Size**: `6` lines (`137` bytes)
+**Size**: `6` lines
 
 ---
 
 ### [`pnn/assay.py`](pnn/assay.py)
 > *Phase 3 in vitro assay ingestion, hit qualification, and reporting for PNN.*
 
-**Size**: `525` lines (`21705` bytes)
+**Size**: `525` lines
 
 **Classes:**
 - `class AssayError` - *Raised when in vitro assay data is malformed or violates contract.*
@@ -62,7 +66,7 @@
 ### [`pnn/bioisostere.py`](pnn/bioisostere.py)
 > *Bioisosteric replacement and metabolic soft-spot optimization engine for PNN.*
 
-**Size**: `542` lines (`20149` bytes)
+**Size**: `542` lines
 
 **Classes:**
 - `class BioisostereError` - *Raised when compound SMILES or bioisosteric transformation rules are invalid.*
@@ -90,7 +94,7 @@
 ### [`pnn/cli.py`](pnn/cli.py)
 > *Command-line entry point for the PNN Phase 2 screening pipeline.*
 
-**Size**: `91` lines (`3406` bytes)
+**Size**: `91` lines
 
 **Functions:**
 - `def build_parser()`
@@ -104,7 +108,7 @@
 ### [`pnn/compounds.py`](pnn/compounds.py)
 > *Compound records and CSV ingestion for the PNN screening pipeline.*
 
-**Size**: `234` lines (`8036` bytes)
+**Size**: `234` lines
 
 **Classes:**
 - `class CompoundError` - *Raised when input cannot be interpreted as a compound record.*
@@ -124,7 +128,7 @@
 ### [`pnn/curate.py`](pnn/curate.py)
 > *Command-line merge and diversity curation of PNN compound libraries.*
 
-**Size**: `114` lines (`4217` bytes)
+**Size**: `114` lines
 
 **Functions:**
 - `def _positive_int(text)`
@@ -138,7 +142,7 @@
 ### [`pnn/curation.py`](pnn/curation.py)
 > *Merge, deduplicate and diversify compound libraries for PNN Phase 2.*
 
-**Size**: `170` lines (`6038` bytes)
+**Size**: `170` lines
 
 **Classes:**
 - `class CurationError` - *Raised when libraries cannot be merged or curated safely.*
@@ -158,7 +162,7 @@
 ### [`pnn/docking.py`](pnn/docking.py)
 > *Docking-score ingestion and consensus ranking for PNN Phase 2.*
 
-**Size**: `273` lines (`10305` bytes)
+**Size**: `273` lines
 
 **Classes:**
 - `class DockingError` - *Raised when docking input cannot be interpreted.*
@@ -184,7 +188,7 @@
 ### [`pnn/dynamics.py`](pnn/dynamics.py)
 > *Molecular Dynamics (MD) trajectory and contact stability analyzer for PNN.*
 
-**Size**: `586` lines (`25668` bytes)
+**Size**: `586` lines
 
 **Classes:**
 - `class DynamicsError` - *Raised when MD trajectory data or parameters are malformed.*
@@ -211,7 +215,7 @@
 ### [`pnn/ind.py`](pnn/ind.py)
 > *Allometric human clinical dose projection and IND regulatory dossier compiler for PNN.*
 
-**Size**: `597` lines (`25577` bytes)
+**Size**: `597` lines
 
 **Classes:**
 - `class IndError` - *Raised when clinical projection inputs violate regulatory or pharmacological contracts.*
@@ -237,7 +241,7 @@
 ### [`pnn/mpo.py`](pnn/mpo.py)
 > *Phase 5 Multiparametric Optimization (MPO) and candidate profiling engine for PNN.*
 
-**Size**: `472` lines (`19413` bytes)
+**Size**: `472` lines
 
 **Classes:**
 - `class MpoError` - *Raised when MPO input data is invalid or missing required metrics.*
@@ -260,7 +264,7 @@
 ### [`pnn/pathway.py`](pnn/pathway.py)
 > *Hypothalamic circuit, perineuronal net turnover, and dosing dynamics simulator for PNN.*
 
-**Size**: `422` lines (`17610` bytes)
+**Size**: `422` lines
 
 **Classes:**
 - `class PathwayError` - *Raised when simulation parameters are physically invalid or malformed.*
@@ -281,7 +285,7 @@
 ### [`pnn/pipeline.py`](pnn/pipeline.py)
 > *Command-line end-to-end Phase 2 lead selection for the PNN project.*
 
-**Size**: `137` lines (`4489` bytes)
+**Size**: `137` lines
 
 **Functions:**
 - `def _positive_int(text)`
@@ -295,7 +299,7 @@
 ### [`pnn/preclinical.py`](pnn/preclinical.py)
 > *Phase 4 in vivo pharmacokinetics (PK), pharmacodynamics (PD), and preclinical candidate selection for PNN.*
 
-**Size**: `558` lines (`24181` bytes)
+**Size**: `558` lines
 
 **Classes:**
 - `class PreclinicalError` - *Raised when in vivo preclinical data is malformed or violates contract.*
@@ -320,7 +324,7 @@
 ### [`pnn/rank.py`](pnn/rank.py)
 > *Command-line consensus ranking of docking results for PNN Phase 2.*
 
-**Size**: `245` lines (`8401` bytes)
+**Size**: `245` lines
 
 **Classes:**
 - `class ShortlistRow` - *One ranked compound ready for CSV output.*
@@ -339,7 +343,7 @@
 ### [`pnn/reports.py`](pnn/reports.py)
 > *Atomic CSV, JSON and text report writers shared by the PNN command line tools.*
 
-**Size**: `68` lines (`2038` bytes)
+**Size**: `68` lines
 
 **Functions:**
 - `def _open_temp(path)`
@@ -353,7 +357,7 @@
 ### [`pnn/rules.py`](pnn/rules.py)
 > *Property rules that turn the PNN BBB/CNS design criteria into verdicts.*
 
-**Size**: `219` lines (`7784` bytes)
+**Size**: `219` lines
 
 **Classes:**
 - `class CriterionResult` - *One rule's verdict for one compound.*
@@ -378,7 +382,7 @@
 ### [`pnn/runner.py`](pnn/runner.py)
 > *One-click turnkey discovery pipeline runner for PNN.*
 
-**Size**: `540` lines (`21311` bytes)
+**Size**: `540` lines
 
 **Classes:**
 - `class RunnerError` - *Raised when one-click pipeline runner cannot execute or find input data.*
@@ -396,7 +400,7 @@
 ### [`pnn/safety.py`](pnn/safety.py)
 > *IND-enabling safety pharmacology and repeat-dose toxicology assessment for PNN.*
 
-**Size**: `644` lines (`26843` bytes)
+**Size**: `644` lines
 
 **Classes:**
 - `class SafetyError` - *Raised when safety pharmacology or toxicology data is malformed or violates contract.*
@@ -427,7 +431,7 @@
 ### [`pnn/sar.py`](pnn/sar.py)
 > *Structure-Activity Relationship (SAR) and Bemis-Murcko scaffold decomposition for PNN.*
 
-**Size**: `772` lines (`29999` bytes)
+**Size**: `772` lines
 
 **Classes:**
 - `class SarError` - *Raised when SAR data is malformed or violates scientific contract.*
@@ -457,7 +461,7 @@
 ### [`pnn/screen.py`](pnn/screen.py)
 > *Tiering and ranking for the PNN Phase 2 property screen.*
 
-**Size**: `79` lines (`3049` bytes)
+**Size**: `79` lines
 
 **Classes:**
 - `class ScreenResult` - *A compound, its verdicts, and the resulting triage tier.*
@@ -476,7 +480,7 @@
 ### [`pnn/selection.py`](pnn/selection.py)
 > *End-to-end Phase 2 lead selection for the PNN project.*
 
-**Size**: `336` lines (`12882` bytes)
+**Size**: `336` lines
 
 **Classes:**
 - `class PipelineError` - *Raised when a Phase 2 run cannot produce a defensible lead set.*
@@ -498,7 +502,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1322` lines (`53893` bytes)
+**Size**: `1322` lines
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -527,7 +531,7 @@
 ### [`pnn/tables.py`](pnn/tables.py)
 > *CSV row contracts shared by the PNN Phase 2 command line tools.*
 
-**Size**: `108` lines (`3053` bytes)
+**Size**: `108` lines
 
 **Functions:**
 - `def _optional(value)`
@@ -539,7 +543,7 @@
 ### [`pnn/target.py`](pnn/target.py)
 > *Target receptor profiles, binding-pocket invariants and Vina grid generation for PNN.*
 
-**Size**: `313` lines (`12212` bytes)
+**Size**: `313` lines
 
 **Classes:**
 - `class TargetProfile` - *Molecular target profile defining receptor invariants and docking grid coordinates.*
@@ -556,7 +560,7 @@
 ### [`pnn/waves.py`](pnn/waves.py)
 > *Wave-ledger aggregation: search-wave CSVs plus obtainability proofs into report artifacts.*
 
-**Size**: `298` lines (`11835` bytes)
+**Size**: `300` lines
 
 **Classes:**
 - `class WaveLedgerError` - *Raised when wave-ledger inputs cannot be read or parsed.*
@@ -578,19 +582,19 @@
 ### [`run.py`](run.py)
 > *Turnkey one-click entrypoint for the PNN perineuronal net drug discovery project.*
 
-**Size**: `19` lines (`476` bytes)
+**Size**: `19` lines
 
 ---
 
 ### [`tests/__init__.py`](tests/__init__.py)
-**Size**: `0` lines (`0` bytes)
+**Size**: `0` lines
 
 ---
 
 ### [`tests/test_assay.py`](tests/test_assay.py)
 > *Unit and CLI tests for Phase 3 in vitro assay ingestion and hit qualification.*
 
-**Size**: `185` lines (`6942` bytes)
+**Size**: `185` lines
 
 **Classes:**
 - `class AssayTest`
@@ -610,7 +614,7 @@
 ### [`tests/test_bioisostere.py`](tests/test_bioisostere.py)
 > *Unit tests for bioisosteric replacement and metabolic soft-spot optimizer.*
 
-**Size**: `164` lines (`6040` bytes)
+**Size**: `164` lines
 
 **Classes:**
 - `class TestBioisostere`
@@ -630,7 +634,7 @@
 ### [`tests/test_cli.py`](tests/test_cli.py)
 > *Integration tests for the `python -m pnn` CLI contract.*
 
-**Size**: `84` lines (`3719` bytes)
+**Size**: `84` lines
 
 **Classes:**
 - `class CliTest`
@@ -648,7 +652,7 @@
 ### [`tests/test_curation.py`](tests/test_curation.py)
 > *Unit and CLI tests for compound-library curation.*
 
-**Size**: `181` lines (`6910` bytes)
+**Size**: `181` lines
 
 **Classes:**
 - `class DeduplicationTest`
@@ -681,7 +685,7 @@
 ### [`tests/test_docking.py`](tests/test_docking.py)
 > *Unit tests for docking ingestion and consensus normalization.*
 
-**Size**: `113` lines (`4470` bytes)
+**Size**: `113` lines
 
 **Classes:**
 - `class DockingIngestionTest`
@@ -702,7 +706,7 @@
 ### [`tests/test_docs.py`](tests/test_docs.py)
 > *Regression shield for the PNN research documents (PRINCIPLE-005, PRINCIPLE-014).*
 
-**Size**: `50` lines (`1880` bytes)
+**Size**: `50` lines
 
 **Classes:**
 - `class ProjectDocsTest`
@@ -714,7 +718,7 @@
 ### [`tests/test_dynamics.py`](tests/test_dynamics.py)
 > *Unit tests for MD trajectory and contact stability analyzer.*
 
-**Size**: `145` lines (`6268` bytes)
+**Size**: `145` lines
 
 **Classes:**
 - `class TestDynamics`
@@ -733,7 +737,7 @@
 ### [`tests/test_golden.py`](tests/test_golden.py)
 > *Integration test for the PNN Phase 2 golden reference run.*
 
-**Size**: `30` lines (`1024` bytes)
+**Size**: `30` lines
 
 **Classes:**
 - `class GoldenRunTest`
@@ -744,7 +748,7 @@
 ### [`tests/test_ind.py`](tests/test_ind.py)
 > *Unit tests for human allometric dose projection and IND regulatory dossier generator.*
 
-**Size**: `216` lines (`8715` bytes)
+**Size**: `216` lines
 
 **Classes:**
 - `class TestIndProjection`
@@ -763,7 +767,7 @@
 ---
 
 ### [`tests/test_mpo.py`](tests/test_mpo.py)
-**Size**: `132` lines (`4787` bytes)
+**Size**: `132` lines
 
 **Classes:**
 - `class TestMpoCalculations`
@@ -783,7 +787,7 @@
 ### [`tests/test_pathway.py`](tests/test_pathway.py)
 > *Unit tests for hypothalamic circuit dynamics and dosing simulator.*
 
-**Size**: `141` lines (`5217` bytes)
+**Size**: `141` lines
 
 **Classes:**
 - `class TestPathwaySimulator`
@@ -801,7 +805,7 @@
 ### [`tests/test_pipeline.py`](tests/test_pipeline.py)
 > *Unit and CLI integration tests for the end-to-end Phase 2 lead selection pipeline.*
 
-**Size**: `206` lines (`8185` bytes)
+**Size**: `206` lines
 
 **Classes:**
 - `class PipelineTest`
@@ -821,7 +825,7 @@
 ---
 
 ### [`tests/test_preclinical.py`](tests/test_preclinical.py)
-**Size**: `224` lines (`8589` bytes)
+**Size**: `224` lines
 
 **Classes:**
 - `class TestPreclinicalNCA`
@@ -846,7 +850,7 @@
 ### [`tests/test_rank.py`](tests/test_rank.py)
 > *Unit and CLI tests for the docking consensus shortlist.*
 
-**Size**: `158` lines (`6522` bytes)
+**Size**: `158` lines
 
 **Classes:**
 - `class ShortlistTest`
@@ -874,7 +878,7 @@
 ### [`tests/test_rules.py`](tests/test_rules.py)
 > *Unit tests for the property rules (PRINCIPLE-014: failing-first boundaries).*
 
-**Size**: `89` lines (`3378` bytes)
+**Size**: `89` lines
 
 **Classes:**
 - `class PropertyRuleTest`
@@ -894,7 +898,7 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `129` lines (`6012` bytes)
+**Size**: `129` lines
 
 **Classes:**
 - `class TestTurnkeyRunner`
@@ -909,7 +913,7 @@
 ### [`tests/test_safety.py`](tests/test_safety.py)
 > *Unit tests for the IND-enabling safety pharmacology and toxicology package.*
 
-**Size**: `301` lines (`13158` bytes)
+**Size**: `301` lines
 
 **Classes:**
 - `class TestSafetyIngestion`
@@ -947,7 +951,7 @@
 ---
 
 ### [`tests/test_sar.py`](tests/test_sar.py)
-**Size**: `138` lines (`5460` bytes)
+**Size**: `138` lines
 
 **Classes:**
 - `class TestSarSmilesScaffolding`
@@ -968,7 +972,7 @@
 ### [`tests/test_screen.py`](tests/test_screen.py)
 > *Unit tests for tiering, ranking and CSV ingestion.*
 
-**Size**: `167` lines (`6535` bytes)
+**Size**: `167` lines
 
 **Classes:**
 - `class TierTest`
@@ -1001,7 +1005,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `429` lines (`18617` bytes)
+**Size**: `429` lines
 
 **Classes:**
 - `class TestStudioRendering`
@@ -1043,7 +1047,7 @@
 ### [`tests/test_target.py`](tests/test_target.py)
 > *Unit and CLI tests for target receptor profiles and Vina grid generation.*
 
-**Size**: `129` lines (`4857` bytes)
+**Size**: `129` lines
 
 **Classes:**
 - `class TargetProfileTest`
@@ -1063,7 +1067,7 @@
 ---
 
 ### [`tests/test_waves.py`](tests/test_waves.py)
-**Size**: `88` lines (`3340` bytes)
+**Size**: `100` lines
 
 **Classes:**
 - `class TestWaveLedger`
@@ -1075,13 +1079,14 @@
   - Method `.test_missing_inputs_yield_empty_ledger()`
   - Method `.test_unreadable_wave_file_raises_actionable_error()`
   - Method `.test_stray_byte_does_not_break_ledger()`
+  - Method `.test_sched_and_box_pass_kill_counts_expand()`
 
 ---
 
 ### [`tools/golden_run.py`](tools/golden_run.py)
 > *Execute the PNN Phase 2 golden reference run and verify artifact integrity.*
 
-**Size**: `131` lines (`5240` bytes)
+**Size**: `131` lines
 
 **Functions:**
 - `def _check_digest(path)`
@@ -1093,7 +1098,7 @@
 ### [`tools/update_readme_tree.py`](tools/update_readme_tree.py)
 > *Update README directory tree to match the current repository layout.*
 
-**Size**: `145` lines (`10173` bytes)
+**Size**: `145` lines
 
 **Functions:**
 - `def update_tree()`

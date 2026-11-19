@@ -21,7 +21,9 @@ from typing import Dict, List, Mapping, Optional, Sequence, Tuple
 
 WAVE_FILE_RE = re.compile(r"wave(\d+)_.*\.csv$", re.IGNORECASE)
 WAVE_TAG_RE = re.compile(r"^W(\d+)-")
-KILLS_MAPPED_RE = re.compile(r"(\d+)\s*-\s*kills-mapped", re.IGNORECASE)
+KILLS_MAPPED_RE = re.compile(
+    r"(\d+)\s*-\s*(?:kills-mapped|sched-kills|box-pass-kills)", re.IGNORECASE
+)
 ROUTE_KILLS_RE = re.compile(r"(\d+)\s*-\s*route-kills?", re.IGNORECASE)
 
 WAVE_LEDGER_FIELDS = (

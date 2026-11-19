@@ -83,6 +83,18 @@ class TestWaveLedger(unittest.TestCase):
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0].kills, 2)
 
+    def test_sched_and_box_pass_kill_counts_expand(self) -> None:
+        proofs = self.waves_dir / "obtainability_proofs.csv"
+        proofs.write_text(
+            "compound_id,supplier,catalog_no,approval_ref,evidence,verified_date\n"
+            "W999-KILL-SCHED,,,7-sched-kills,Seven scheduled kills,2026-11-06\n"
+            "W999-KILL-BOX,,,3-box-pass-kills,Three box-pass kills,2026-11-06\n",
+            encoding="utf-8",
+        )
+        rows, _ = collect_wave_ledger(self.waves_dir, proofs)
+        self.assertEqual(len(rows), 1)
+        self.assertEqual(rows[0].kills, 10)
+
 
 if __name__ == "__main__":
     unittest.main()

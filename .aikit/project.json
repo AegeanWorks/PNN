@@ -5,13 +5,21 @@
   "gates": {},
   "ui_required": true,
   "created": "2026-10-22",
-  "has_ui": true,
-  "ui_kind": "web",
+  "has_ui": false,
+  "ui_kind": "cli",
   "ui_evidence": [
-    "output/studio.html",
-    "studio.html"
+    "pnn/cli.py",
+    "pnn/curate.py",
+    "pnn/mpo.py",
+    "pnn/pathway.py",
+    "pnn/pipeline.py",
+    "pnn/rank.py",
+    "pnn/target.py",
+    "run.py",
+    "tools/golden_run.py",
+    "tools/update_readme_tree.py"
   ],
-  "ui_checked_at": "2026-11-06",
+  "ui_checked_at": "2026-11-19",
   "ui_source": "detected",
   "topics": [
     "aikit",

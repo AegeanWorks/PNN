@@ -406,9 +406,10 @@ AND ("chondroitinase" OR "MMP" OR "PTPσ" OR "LAR" OR "NgR" OR "small molecule")
 | Oral bioavailability | High | Critical | Prodrug strategies, formulation optimization |
 
 ## References Management
-References live in `data/literature/references.bib` (BibTeX), tagged `#PNN_structure`,
-`#hypothalamus_insulin`, `#BBB_penetration`, `#oral_CNS_drugs`, `#chondroitinase`,
-`#CSPG_receptors` and `#obesity_models`.
+The `data/literature/` directory is reserved for extracted literature data, including a future
+`references.bib` (BibTeX) tagged `#PNN_structure`, `#hypothalamus_insulin`, `#BBB_penetration`,
+`#oral_CNS_drugs`, `#chondroitinase`, `#CSPG_receptors` and `#obesity_models`. It is empty until
+that bibliography is curated.
 
 ---
 
