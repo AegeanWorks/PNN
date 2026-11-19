@@ -2,6 +2,7 @@
 
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from pnn.dynamics import (
@@ -82,6 +83,19 @@ class TestDynamics(unittest.TestCase):
         self.assertIn("<svg", svg)
         self.assertIn("Stability Gate (2.0", svg)
         self.assertIn("PTPsigma", svg)
+
+    def test_trajectory_svg_escapes_ids_and_stays_valid_xml(self) -> None:
+        # compound_id / target_id come from user data; SVG is XML, so raw
+        # '&'/'<' would produce malformed output.
+        points = [
+            TrajectoryPoint(time_ns=float(i), ligand_rmsd=1.3, contacts_count=3)
+            for i in range(10)
+        ]
+        analysis = analyze_trajectory(points, "C&A<C>", "T<X")
+        svg = generate_trajectory_svg(analysis, points)
+        ET.fromstring(svg)  # raises ParseError on unescaped special chars
+        self.assertIn("C&amp;A&lt;C&gt;", svg)
+        self.assertIn("T&lt;X", svg)
 
     def test_render_trajectory_report(self) -> None:
         points = [

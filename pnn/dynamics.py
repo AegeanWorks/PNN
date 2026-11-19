@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import html
 import math
 import sys
 from dataclasses import dataclass, field
@@ -411,7 +412,7 @@ def generate_trajectory_svg(
     svg_parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%" style="font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, sans-serif;">',
         f'<rect width="{width}" height="{height}" fill="#ffffff" rx="8" />',
-        f'<text x="{padding_left}" y="24" fill="#0f172a" font-size="14" font-weight="600">{analysis.compound_id} on {analysis.target_id} - MD RMSD Trajectory</text>',
+        f'<text x="{padding_left}" y="24" fill="#0f172a" font-size="14" font-weight="600">{html.escape(str(analysis.compound_id))} on {html.escape(str(analysis.target_id))} - MD RMSD Trajectory</text>',
         f'<rect x="{width - padding_right - 150}" y="10" width="150" height="22" rx="11" fill="{status_color}22" stroke="{status_color}" stroke-width="1" />',
         f'<text x="{width - padding_right - 75}" y="25" fill="{status_color}" font-size="11" font-weight="600" text-anchor="middle">{analysis.stability_class}</text>',
         f'<line x1="{padding_left}" y1="{padding_top}" x2="{padding_left}" y2="{height - padding_bottom}" stroke="#94a3b8" stroke-width="1.5" />',
