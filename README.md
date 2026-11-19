@@ -145,6 +145,7 @@ PNN/
     ├── test_preclinical.py        <- In vivo PK/PD NCA analysis and candidate selection tests
     ├── test_rank.py               <- Consensus shortlist and CLI contract
     ├── test_rules.py              <- Rule boundaries
+    ├── test_reports.py            <- Atomic report-writer and temp-cleanup tests
     ├── test_run.py                <- Turnkey runner and launcher tests
     ├── test_safety.py             <- IND-enabling toxicology and safety pharmacology tests
     ├── test_sar.py                <- Bemis-Murcko scaffold extraction and SAR tests

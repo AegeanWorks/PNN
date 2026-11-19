@@ -10,7 +10,7 @@
 - **Total Classes**: `94`
 - **Total Top-Level Functions**: `221`
 - **Total Class Methods**: `283`
-- **Total Source Lines**: `14011`
+- **Total Source Lines**: `14009`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`54` module(s))
@@ -343,7 +343,7 @@
 ### [`pnn/reports.py`](pnn/reports.py)
 > *Atomic CSV, JSON and text report writers shared by the PNN command line tools.*
 
-**Size**: `75` lines
+**Size**: `73` lines
 
 **Functions:**
 - `def _open_temp(path)`

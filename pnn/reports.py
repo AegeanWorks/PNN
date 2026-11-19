@@ -28,10 +28,8 @@ def _finish(path: Path, handle) -> None:
     except BaseException:
         # Clean up on any failure, including flush/fsync/close — not just a
         # failed os.replace — so no temp file or open handle is leaked.
-        try:
+        if not handle.closed:
             handle.close()
-        except OSError:
-            pass
         temp_path.unlink(missing_ok=True)
         raise
 
