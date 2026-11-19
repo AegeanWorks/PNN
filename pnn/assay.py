@@ -91,8 +91,13 @@ HIT_FIELDS = (
 )
 
 
-def _parse_float(val: str, field_name: str, row_id: str) -> Optional[float]:
-    clean = val.strip()
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None on short rows."""
+    return "" if value is None else str(value).strip()
+
+
+def _parse_float(val: Optional[str], field_name: str, row_id: str) -> Optional[float]:
+    clean = _safe_cell(val)
     if not clean or clean.upper() in ("NA", "NAN", "NULL", "NONE"):
         return None
     try:
@@ -122,31 +127,31 @@ def load_degradation_data(path: Path) -> Dict[str, DegradationResult]:
             raise AssayError(f"Degradation CSV missing required column(s): {', '.join(missing)}")
 
         for row in reader:
-            cid = row[normalized_cols["compound_id"]].strip()
+            cid = _safe_cell(row.get(normalized_cols["compound_id"]))
             if not cid:
                 continue
 
-            ec50 = _parse_float(row[normalized_cols["ec50_nm"]], "ec50_nm", cid)
+            ec50 = _parse_float(row.get(normalized_cols["ec50_nm"]), "ec50_nm", cid)
             if ec50 is None or ec50 <= 0:
                 raise AssayError(f"Row '{cid}': ec50_nm must be a positive number")
 
-            max_deg = _parse_float(row[normalized_cols["max_degradation_pct"]], "max_degradation_pct", cid)
+            max_deg = _parse_float(row.get(normalized_cols["max_degradation_pct"]), "max_degradation_pct", cid)
             if max_deg is None or max_deg < 0:
                 raise AssayError(f"Row '{cid}': max_degradation_pct must be >= 0")
 
             hill = None
             if "hill_slope" in normalized_cols:
-                hill = _parse_float(row[normalized_cols["hill_slope"]], "hill_slope", cid)
+                hill = _parse_float(row.get(normalized_cols["hill_slope"]), "hill_slope", cid)
 
             conc = 10.0
             if "test_concentration_um" in normalized_cols:
-                parsed_c = _parse_float(row[normalized_cols["test_concentration_um"]], "test_concentration_um", cid)
+                parsed_c = _parse_float(row.get(normalized_cols["test_concentration_um"]), "test_concentration_um", cid)
                 if parsed_c is not None and parsed_c > 0:
                     conc = parsed_c
 
             sub = "DQ-CS"
-            if "substrate" in normalized_cols and row[normalized_cols["substrate"]].strip():
-                sub = row[normalized_cols["substrate"]].strip()
+            if "substrate" in normalized_cols and _safe_cell(row.get(normalized_cols["substrate"])):
+                sub = _safe_cell(row.get(normalized_cols["substrate"]))
 
             item = DegradationResult(
                 compound_id=cid,
@@ -181,33 +186,33 @@ def load_permeability_data(path: Path) -> Dict[str, PermeabilityResult]:
             raise AssayError("Permeability CSV missing required 'compound_id' column")
 
         for row in reader:
-            cid = row[normalized_cols["compound_id"]].strip()
+            cid = _safe_cell(row.get(normalized_cols["compound_id"]))
             if not cid:
                 continue
 
             assay_type = "PAMPA"
-            if "assay_type" in normalized_cols and row[normalized_cols["assay_type"]].strip():
-                assay_type = row[normalized_cols["assay_type"]].strip().upper()
+            if "assay_type" in normalized_cols and _safe_cell(row.get(normalized_cols["assay_type"])):
+                assay_type = _safe_cell(row.get(normalized_cols["assay_type"])).upper()
 
             pe = None
             if "pe_1e6_cm_s" in normalized_cols:
-                pe = _parse_float(row[normalized_cols["pe_1e6_cm_s"]], "pe_1e6_cm_s", cid)
+                pe = _parse_float(row.get(normalized_cols["pe_1e6_cm_s"]), "pe_1e6_cm_s", cid)
 
             logbb = None
             if "logbb" in normalized_cols:
-                logbb = _parse_float(row[normalized_cols["logbb"]], "logbb", cid)
+                logbb = _parse_float(row.get(normalized_cols["logbb"]), "logbb", cid)
 
             papp = None
             if "papp_ab_1e6_cm_s" in normalized_cols:
-                papp = _parse_float(row[normalized_cols["papp_ab_1e6_cm_s"]], "papp_ab_1e6_cm_s", cid)
+                papp = _parse_float(row.get(normalized_cols["papp_ab_1e6_cm_s"]), "papp_ab_1e6_cm_s", cid)
 
             efflux = None
             if "efflux_ratio" in normalized_cols:
-                efflux = _parse_float(row[normalized_cols["efflux_ratio"]], "efflux_ratio", cid)
+                efflux = _parse_float(row.get(normalized_cols["efflux_ratio"]), "efflux_ratio", cid)
 
             pgp = None
             if "pgp_substrate" in normalized_cols:
-                raw_pgp = row[normalized_cols["pgp_substrate"]].strip().lower()
+                raw_pgp = _safe_cell(row.get(normalized_cols["pgp_substrate"])).lower()
                 if raw_pgp in ("true", "yes", "1"):
                     pgp = True
                 elif raw_pgp in ("false", "no", "0"):
@@ -241,21 +246,21 @@ def load_cytotoxicity_data(path: Path) -> Dict[str, CytotoxicityResult]:
             raise AssayError("Cytotoxicity CSV requires 'compound_id' and 'cc50_um' columns")
 
         for row in reader:
-            cid = row[normalized_cols["compound_id"]].strip()
+            cid = _safe_cell(row.get(normalized_cols["compound_id"]))
             if not cid:
                 continue
 
-            cc50 = _parse_float(row[normalized_cols["cc50_um"]], "cc50_um", cid)
+            cc50 = _parse_float(row.get(normalized_cols["cc50_um"]), "cc50_um", cid)
             if cc50 is None or cc50 <= 0:
                 raise AssayError(f"Row '{cid}': cc50_um must be a positive number")
 
             cell_line = "mHypoA-60/3"
-            if "cell_line" in normalized_cols and row[normalized_cols["cell_line"]].strip():
-                cell_line = row[normalized_cols["cell_line"]].strip()
+            if "cell_line" in normalized_cols and _safe_cell(row.get(normalized_cols["cell_line"])):
+                cell_line = _safe_cell(row.get(normalized_cols["cell_line"]))
 
             hours = 24
             if "exposure_hours" in normalized_cols:
-                parsed_h = _parse_float(row[normalized_cols["exposure_hours"]], "exposure_hours", cid)
+                parsed_h = _parse_float(row.get(normalized_cols["exposure_hours"]), "exposure_hours", cid)
                 if parsed_h is not None:
                     hours = int(parsed_h)
 

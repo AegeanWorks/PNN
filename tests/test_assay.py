@@ -91,6 +91,19 @@ class AssayTest(unittest.TestCase):
             load_degradation_data(broken_inf)
         self.assertIn("non-finite number", str(ctx.exception))
 
+    def test_short_rows_raise_domain_error_not_attribute_error(self) -> None:
+        # csv.DictReader yields None for missing cells on short rows. Ingestion
+        # must surface AssayError, never a raw AttributeError.
+        broken = self.root / "short_deg.csv"
+        broken.write_text(DEG_HEADER + "CMP-SHORT\n", encoding="utf-8")
+        with self.assertRaises(AssayError):
+            load_degradation_data(broken)
+
+        cyto = self.root / "short_cyto.csv"
+        cyto.write_text("compound_id,cc50_um,cell_line\nCMP-SHORT\n", encoding="utf-8")
+        with self.assertRaises(AssayError):
+            load_cytotoxicity_data(cyto)
+
     def test_load_permeability_and_cytotoxicity(self) -> None:
         perm = load_permeability_data(self.perm_file)
         self.assertEqual(len(perm), 4)

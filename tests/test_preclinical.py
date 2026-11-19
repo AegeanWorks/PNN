@@ -80,6 +80,26 @@ class TestPreclinicalDataIngestion(unittest.TestCase):
             with self.assertRaises(PreclinicalError):
                 load_pk_data(f)
 
+    def test_short_rows_raise_domain_error_not_attribute_error(self) -> None:
+        # csv.DictReader yields None for missing cells on short rows. Ingestion
+        # must surface PreclinicalError, never a raw AttributeError.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            pk = Path(tmp_dir) / "short_pk.csv"
+            pk.write_text(
+                "compound_id,route,tissue,dose_mg_kg,time_h,concentration_ng_ml\nPNN-101\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(PreclinicalError):
+                load_pk_data(pk)
+
+            pd = Path(tmp_dir) / "short_pd.csv"
+            pd.write_text(
+                "compound_id,wfa_pnn_reduction_pct,itt_glucose_auc_reduction_pct\nPNN-101\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(PreclinicalError):
+                load_pd_data(pd)
+
     def test_load_pd_data_valid(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             f = Path(tmp_dir) / "pd.csv"

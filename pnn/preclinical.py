@@ -94,8 +94,13 @@ PRECLINICAL_FIELDS = (
 )
 
 
-def _parse_num(val: str, field_name: str, row_id: str) -> Optional[float]:
-    clean = val.strip()
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None on short rows."""
+    return "" if value is None else str(value).strip()
+
+
+def _parse_num(val: Optional[str], field_name: str, row_id: str) -> Optional[float]:
+    clean = _safe_cell(val)
     if not clean or clean.upper() in ("NA", "NAN", "NULL", "NONE"):
         return None
     try:
@@ -206,21 +211,21 @@ def load_pk_data(path: Path) -> Dict[str, Dict[str, PkProfile]]:
             raise PreclinicalError(f"PK CSV missing required column(s): {', '.join(missing)}")
 
         for row in reader:
-            cid = row[norm["compound_id"]].strip()
-            route = row[norm["route"]].strip().upper()
-            tissue = row[norm["tissue"]].strip().lower()
+            cid = _safe_cell(row.get(norm["compound_id"]))
+            route = _safe_cell(row.get(norm["route"])).upper()
+            tissue = _safe_cell(row.get(norm["tissue"])).lower()
             if not cid or not route or not tissue:
                 continue
 
-            dose = _parse_num(row[norm["dose_mg_kg"]], "dose_mg_kg", cid)
+            dose = _parse_num(row.get(norm["dose_mg_kg"]), "dose_mg_kg", cid)
             if dose is None or dose <= 0:
                 raise PreclinicalError(f"Row '{cid}': dose_mg_kg must be > 0")
 
-            t = _parse_num(row[norm["time_h"]], "time_h", cid)
+            t = _parse_num(row.get(norm["time_h"]), "time_h", cid)
             if t is None or t < 0:
                 raise PreclinicalError(f"Row '{cid}': time_h must be >= 0")
 
-            conc = _parse_num(row[norm["concentration_ng_ml"]], "concentration_ng_ml", cid)
+            conc = _parse_num(row.get(norm["concentration_ng_ml"]), "concentration_ng_ml", cid)
             if conc is None or conc < 0:
                 raise PreclinicalError(f"Row '{cid}': concentration_ng_ml must be >= 0")
 
@@ -257,31 +262,31 @@ def load_pd_data(path: Path) -> Dict[str, PdOutcome]:
             raise PreclinicalError(f"PD CSV missing required column(s): {', '.join(missing)}")
 
         for row in reader:
-            cid = row[norm["compound_id"]].strip()
+            cid = _safe_cell(row.get(norm["compound_id"]))
             if not cid:
                 continue
 
             dose = 10.0
             if "dose_mg_kg" in norm:
-                d = _parse_num(row[norm["dose_mg_kg"]], "dose_mg_kg", cid)
+                d = _parse_num(row.get(norm["dose_mg_kg"]), "dose_mg_kg", cid)
                 if d is not None and d > 0:
                     dose = d
 
-            wfa = _parse_num(row[norm["wfa_pnn_reduction_pct"]], "wfa_pnn_reduction_pct", cid)
+            wfa = _parse_num(row.get(norm["wfa_pnn_reduction_pct"]), "wfa_pnn_reduction_pct", cid)
             if wfa is None or wfa < 0:
                 raise PreclinicalError(f"Row '{cid}': wfa_pnn_reduction_pct must be >= 0")
 
-            itt = _parse_num(row[norm["itt_glucose_auc_reduction_pct"]], "itt_glucose_auc_reduction_pct", cid)
+            itt = _parse_num(row.get(norm["itt_glucose_auc_reduction_pct"]), "itt_glucose_auc_reduction_pct", cid)
             if itt is None:
                 raise PreclinicalError(f"Row '{cid}': itt_glucose_auc_reduction_pct required")
 
             food = None
             if "food_intake_reduction_pct" in norm:
-                food = _parse_num(row[norm["food_intake_reduction_pct"]], "food_intake_reduction_pct", cid)
+                food = _parse_num(row.get(norm["food_intake_reduction_pct"]), "food_intake_reduction_pct", cid)
 
             wt = None
             if "body_weight_delta_pct" in norm:
-                wt = _parse_num(row[norm["body_weight_delta_pct"]], "body_weight_delta_pct", cid)
+                wt = _parse_num(row.get(norm["body_weight_delta_pct"]), "body_weight_delta_pct", cid)
 
             outcomes[cid] = PdOutcome(
                 compound_id=cid,

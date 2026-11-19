@@ -8,7 +8,10 @@ from pnn.sar import (
     ScaffoldCluster,
     analyze_sar,
     extract_scaffold,
+    load_assay_potencies,
     load_compounds,
+    load_docking_scores,
+    load_preclinical_exposures,
     main,
     parse_smiles_graph,
     render_sar_report,
@@ -111,6 +114,34 @@ class TestSarAnalysisAndClustering(unittest.TestCase):
         self.assertIn("G-002", report)
         self.assertIn("SCF-01", report)
         self.assertIn("PRIORITY_LEAD_SERIES", report)
+
+
+class TestSarLoadersShortRows(unittest.TestCase):
+    """csv.DictReader yields None for missing cells on short rows; loaders must tolerate them."""
+
+    def setUp(self) -> None:
+        self.directory = tempfile.TemporaryDirectory()
+        self.addCleanup(self.directory.cleanup)
+
+    def write(self, text: str) -> Path:
+        path = Path(self.directory.name) / "input.csv"
+        path.write_text(text, encoding="utf-8")
+        return path
+
+    def test_load_compounds_short_row_is_tolerated(self) -> None:
+        path = self.write("compound_id,smiles,mw\nC1,CCO\n")
+        records = load_compounds(path)
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0]["compound_id"], "C1")
+        self.assertEqual(records[0]["mw"], "")
+
+    def test_score_loaders_short_rows_are_tolerated(self) -> None:
+        dock = self.write("compound_id,consensus_score\nC1\n")
+        self.assertEqual(load_docking_scores(dock), {})
+        assay = self.write("compound_id,ec50_nm\nC1\n")
+        self.assertEqual(load_assay_potencies(assay), {})
+        exp = self.write("compound_id,brain_plasma_ratio\nC1\n")
+        self.assertEqual(load_preclinical_exposures(exp), {})
 
 
 class TestSarCLI(unittest.TestCase):

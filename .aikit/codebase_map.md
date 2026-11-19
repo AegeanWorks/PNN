@@ -7,10 +7,10 @@
 
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `55`
-- **Total Classes**: `95`
-- **Total Top-Level Functions**: `222`
-- **Total Class Methods**: `292`
-- **Total Source Lines**: `14200`
+- **Total Classes**: `96`
+- **Total Top-Level Functions**: `225`
+- **Total Class Methods**: `299`
+- **Total Source Lines**: `14295`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -41,7 +41,7 @@
 ### [`pnn/assay.py`](pnn/assay.py)
 > *Phase 3 in vitro assay ingestion, hit qualification, and reporting for PNN.*
 
-**Size**: `534` lines
+**Size**: `539` lines
 
 **Classes:**
 - `class AssayError` - *Raised when in vitro assay data is malformed or violates contract.*
@@ -52,6 +52,7 @@
   - Method `.as_row()`
 
 **Functions:**
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None on short rows.*
 - `def _parse_float(val, field_name, row_id)`
 - `def load_degradation_data(path)` - *Ingest PNN degradation assay CSV.*
 - `def load_permeability_data(path)` - *Ingest BBB permeability assay CSV (PAMPA / MDCK-MDR1).*
@@ -299,7 +300,7 @@
 ### [`pnn/preclinical.py`](pnn/preclinical.py)
 > *Phase 4 in vivo pharmacokinetics (PK), pharmacodynamics (PD), and preclinical candidate selection for PNN.*
 
-**Size**: `558` lines
+**Size**: `563` lines
 
 **Classes:**
 - `class PreclinicalError` - *Raised when in vivo preclinical data is malformed or violates contract.*
@@ -310,6 +311,7 @@
   - Method `.as_row()`
 
 **Functions:**
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None on short rows.*
 - `def _parse_num(val, field_name, row_id)`
 - `def calculate_nca(points, dose_mg_kg, compound_id, route, tissue)` - *Perform non-compartmental pharmacokinetic analysis (NCA) on concentration-time points.*
 - `def load_pk_data(path)` - *Ingest concentration-time series CSV and calculate NCA PK profiles.*
@@ -432,7 +434,7 @@
 ### [`pnn/sar.py`](pnn/sar.py)
 > *Structure-Activity Relationship (SAR) and Bemis-Murcko scaffold decomposition for PNN.*
 
-**Size**: `772` lines
+**Size**: `777` lines
 
 **Classes:**
 - `class SarError` - *Raised when SAR data is malformed or violates scientific contract.*
@@ -447,6 +449,7 @@
 - `def serialize_subgraph_smiles(atoms, adj, nodes)` - *Serialize an induced subgraph of atoms into a SMILES string.*
 - `def _identify_scaffold_name(atoms, cycle_blocks, linkers)` - *Identify recognizable chemotype descriptor for Bemis-Murcko framework.*
 - `def extract_scaffold(smiles)` - *Decompose a SMILES into Bemis-Murcko framework SMILES, chemotype name, and R-group substituents.*
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None on short rows.*
 - `def load_compounds(path)` - *Load compound property records from CSV.*
 - `def load_docking_scores(path)` - *Load multi-target or single-target docking scores (consensus or best affinity).*
 - `def load_assay_potencies(path)` - *Load in vitro assay EC50 potencies.*
@@ -595,7 +598,7 @@
 ### [`tests/test_assay.py`](tests/test_assay.py)
 > *Unit and CLI tests for Phase 3 in vitro assay ingestion and hit qualification.*
 
-**Size**: `204` lines
+**Size**: `217` lines
 
 **Classes:**
 - `class AssayTest`
@@ -603,6 +606,7 @@
   - Method `.run_cli(*argv)`
   - Method `.test_load_degradation_data()`
   - Method `.test_load_degradation_invalid_numeric_raises()`
+  - Method `.test_short_rows_raise_domain_error_not_attribute_error()`
   - Method `.test_load_permeability_and_cytotoxicity()`
   - Method `.test_qualify_leads_classifications()`
   - Method `.test_qualify_leads_untested_safety_yields_qualified_lead()`
@@ -755,7 +759,7 @@
 ### [`tests/test_ind.py`](tests/test_ind.py)
 > *Unit tests for human allometric dose projection and IND regulatory dossier generator.*
 
-**Size**: `216` lines
+**Size**: `232` lines
 
 **Classes:**
 - `class TestIndProjection`
@@ -766,6 +770,7 @@
   - Method `.test_lead_is_nominated_first()`
   - Method `.test_dossier_marks_unmeasured_and_omits_claims()`
   - Method `.test_load_candidate_records_ignores_pk_timecourse_without_measurements()`
+  - Method `.test_load_candidate_records_tolerates_short_rows()`
   - Method `.test_tox_path_supplies_most_sensitive_noael()`
   - Method `.test_compile_ind_dossier_uses_measured_candidates()`
 - `class TestIndCli`
@@ -833,7 +838,7 @@
 ---
 
 ### [`tests/test_preclinical.py`](tests/test_preclinical.py)
-**Size**: `241` lines
+**Size**: `261` lines
 
 **Classes:**
 - `class TestPreclinicalNCA`
@@ -844,6 +849,7 @@
   - Method `.test_load_pk_data_missing_file_raises()`
   - Method `.test_load_pk_data_missing_columns_raises()`
   - Method `.test_load_pk_data_invalid_numeric_raises()`
+  - Method `.test_short_rows_raise_domain_error_not_attribute_error()`
   - Method `.test_load_pd_data_valid()`
 - `class TestPreclinicalCandidateEvaluation`
   - Method `.setUp()`
@@ -977,7 +983,7 @@
 ---
 
 ### [`tests/test_sar.py`](tests/test_sar.py)
-**Size**: `138` lines
+**Size**: `169` lines
 
 **Classes:**
 - `class TestSarSmilesScaffolding`
@@ -990,6 +996,11 @@
   - Method `.test_load_compounds_missing_file_raises()`
   - Method `.test_analyze_sar_scaffold_clustering()`
   - Method `.test_render_sar_report()`
+- `class TestSarLoadersShortRows` - *csv.DictReader yields None for missing cells on short rows; loaders must tolerate them.*
+  - Method `.setUp()`
+  - Method `.write(text)`
+  - Method `.test_load_compounds_short_row_is_tolerated()`
+  - Method `.test_score_loaders_short_rows_are_tolerated()`
 - `class TestSarCLI`
   - Method `.test_cli_execution_success()`
 

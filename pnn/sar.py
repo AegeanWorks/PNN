@@ -379,6 +379,11 @@ def extract_scaffold(smiles: str) -> Tuple[str, str, str]:
     return core_smiles, scaffold_name, r_groups
 
 
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None on short rows."""
+    return "" if value is None else str(value).strip()
+
+
 def load_compounds(path: Path) -> List[Dict[str, str]]:
     """Load compound property records from CSV."""
     if not path.is_file():
@@ -393,11 +398,11 @@ def load_compounds(path: Path) -> List[Dict[str, str]]:
         if req - set(norm.keys()):
             raise SarError(f"Compound CSV missing compound_id or smiles: {path}")
         for row in reader:
-            cid = row[norm["compound_id"]].strip()
-            smi = row[norm["smiles"]].strip()
+            cid = _safe_cell(row.get(norm["compound_id"]))
+            smi = _safe_cell(row.get(norm["smiles"]))
             if not cid or not smi:
                 continue
-            records.append({k: row[v].strip() for k, v in norm.items()})
+            records.append({k: _safe_cell(row.get(v)) for k, v in norm.items()})
     return records
 
 
@@ -417,8 +422,8 @@ def load_docking_scores(path: Path) -> Dict[str, float]:
         if not cid_col or not score_col:
             return {}
         for row in reader:
-            cid = row[cid_col].strip()
-            val_str = row[score_col].strip()
+            cid = _safe_cell(row.get(cid_col))
+            val_str = _safe_cell(row.get(score_col))
             try:
                 scores[cid] = float(val_str)
             except ValueError:
@@ -441,8 +446,8 @@ def load_assay_potencies(path: Path) -> Dict[str, float]:
         if not cid_col or not ec_col:
             return {}
         for row in reader:
-            cid = row[cid_col].strip()
-            val_str = row[ec_col].strip()
+            cid = _safe_cell(row.get(cid_col))
+            val_str = _safe_cell(row.get(ec_col))
             try:
                 potencies[cid] = float(val_str)
             except ValueError:
@@ -478,14 +483,14 @@ def load_preclinical_exposures(path: Path) -> Dict[str, Dict[str, float]]:
         if not cid_col:
             return {}
         for row in reader:
-            cid = row[cid_col].strip()
+            cid = _safe_cell(row.get(cid_col))
             data: Dict[str, float] = {}
             if "brain_plasma_ratio" in norm:
-                kp = _parse_opt_float(row[norm["brain_plasma_ratio"]])
+                kp = _parse_opt_float(row.get(norm["brain_plasma_ratio"]))
                 if kp is not None:
                     data["brain_kp"] = kp
             if "oral_bioavailability_pct" in norm:
-                f_pct = _parse_opt_float(row[norm["oral_bioavailability_pct"]])
+                f_pct = _parse_opt_float(row.get(norm["oral_bioavailability_pct"]))
                 if f_pct is not None:
                     data["oral_f"] = f_pct
             if data:

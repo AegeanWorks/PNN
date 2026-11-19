@@ -149,6 +149,22 @@ class TestIndProjection(unittest.TestCase):
             self.assertNotIn("oral_f", pk_data.get(cid, {}))
             self.assertNotIn("cl_l_h_kg", pk_data.get(cid, {}))
 
+    def test_load_candidate_records_tolerates_short_rows(self) -> None:
+        # A row shorter than the header yields None for later columns (here
+        # compound_id sits after name); ingestion must skip it, not crash.
+        with tempfile.TemporaryDirectory() as tmp:
+            compounds = Path(tmp) / "compounds.csv"
+            compounds.write_text("name,compound_id\nX\nY,C2\n", encoding="utf-8")
+            records, _ = load_candidate_records(compounds)
+            self.assertEqual([r["compound_id"] for r in records], ["C2"])
+
+            candidates = Path(tmp) / "candidates.csv"
+            candidates.write_text("name,compound_id\nX\n", encoding="utf-8")
+            clean = Path(tmp) / "clean.csv"
+            clean.write_text("compound_id\nC1\n", encoding="utf-8")
+            _, pk_data = load_candidate_records(clean, candidates)
+            self.assertEqual(pk_data, {})
+
     def test_tox_path_supplies_most_sensitive_noael(self) -> None:
         vendor_csv = Path("data/compounds/vendor_library.csv")
         tox_csv = Path("data/toxicology/repeat_dose_tox_template.csv")

@@ -453,9 +453,9 @@ def load_candidate_records(
             if not cid_col:
                 raise IndError(f"Compounds CSV missing compound_id: {path}")
             for row in reader:
-                cid = row[cid_col].strip()
+                cid = (row.get(cid_col) or "").strip()
                 if cid:
-                    records.append({k: (row[v] or "").strip() for k, v in norm.items()})
+                    records.append({k: (row.get(v) or "").strip() for k, v in norm.items()})
 
     pk_data: Dict[str, Dict[str, float]] = {}
 
@@ -475,13 +475,13 @@ def load_candidate_records(
                 cid_col = norm.get("compound_id")
                 if cid_col:
                     for row in reader:
-                        cid = row[cid_col].strip()
+                        cid = (row.get(cid_col) or "").strip()
                         if not cid:
                             continue
                         c_dict: Dict[str, float] = {}
                         for column, key in candidate_fields.items():
                             if column in norm:
-                                val = _parse_opt_float(row[norm[column]])
+                                val = _parse_opt_float(row.get(norm[column]))
                                 if val is not None:
                                     c_dict[key] = val
                         if c_dict:
