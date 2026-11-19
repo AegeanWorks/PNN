@@ -6,14 +6,14 @@
 ---
 
 ## 📊 Codebase Metrics
-- **Total Python Modules**: `54`
-- **Total Classes**: `94`
+- **Total Python Modules**: `55`
+- **Total Classes**: `95`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `284`
-- **Total Source Lines**: `14028`
+- **Total Class Methods**: `286`
+- **Total Source Lines**: `14063`
 
 ## 🧭 Map Coverage
-- **Indexed**: python (`54` module(s))
+- **Indexed**: python (`55` module(s))
 - **Not indexed by this map**: none (no non-Python source files were found)
 
 ---
@@ -1065,6 +1065,18 @@
   - Method `.test_get_val_with_mapping()`
   - Method `.test_get_val_with_object()`
   - Method `.test_get_field_aliases()`
+
+---
+
+### [`tests/test_tables.py`](tests/test_tables.py)
+> *Tests for the shared CSV row contracts used by every report writer.*
+
+**Size**: `35` lines
+
+**Classes:**
+- `class TestTableContracts`
+  - Method `.test_row_keys_match_declared_field_tuples()`
+  - Method `.test_optional_maps_none_to_empty_string()`
 
 ---
 

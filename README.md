@@ -151,6 +151,7 @@ PNN/
     ├── test_sar.py                <- Bemis-Murcko scaffold extraction and SAR tests
     ├── test_screen.py             <- Tiering, ranking and CSV ingestion
     ├── test_studio.py             <- Interactive HTML/SVG studio tests
+    ├── test_tables.py             <- Shared CSV row-contract tests
     ├── test_target.py             <- Receptor profiles and Vina config generation
     └── test_waves.py              <- Wave-ledger aggregation tests
 ```
