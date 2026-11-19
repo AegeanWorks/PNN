@@ -475,7 +475,7 @@ def render_studio_html(
         kp_str = f"{c.brain_kp:.2f}" if c.brain_kp is not None else "N/A"
         f_str = f"{c.oral_f_pct:.1f}%" if c.oral_f_pct is not None else "N/A"
         badge_cls = "badge-candidate" if (c.brain_kp and c.brain_kp >= 0.30 and c.oral_f_pct and c.oral_f_pct >= 20) else "badge-lead"
-        badge_label = "Clinical Candidate" if badge_cls == "badge-candidate" else "Advanced Lead"
+        badge_label = "Exposure-Qualified Lead" if badge_cls == "badge-candidate" else "Screening Lead"
 
         cards_html.append(f"""
         <div class="lead-card" style="border-top: 4px solid {color};">

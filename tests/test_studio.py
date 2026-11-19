@@ -135,6 +135,19 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("PK Profile: TEST-PK-9", html_doc)
         self.assertNotIn("PK Profile: PNN-101", html_doc)
 
+    def test_lead_card_badge_does_not_claim_clinical_candidate(self) -> None:
+        # A Kp/F exposure filter alone does not establish CLINICAL_CANDIDATE
+        # status (which also needs WFA/ITT PD criteria in evaluate_candidates).
+        # The lead-card badge must not overclaim it.
+        html_doc = render_studio_html(
+            [self.compound],
+            generate_radar_svg([self.compound]),
+            generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"]),
+            generate_pk_curve_svg([self.compound]),
+        )
+        self.assertNotIn(">Clinical Candidate<", html_doc)
+        self.assertIn("Exposure-Qualified", html_doc)
+
     def test_funnel_does_not_mislabel_kp_f_filter_as_clinical_nominees(self) -> None:
         # Stage 4 of the funnel is a Kp/F exposure filter only; it does not
         # apply the PD (WFA/ITT) criteria of evaluate_candidates, so calling it
