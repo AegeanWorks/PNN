@@ -108,6 +108,30 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("pAKT", svg)
         self.assertIn("<polyline", svg)
 
+    def test_circuit_axis_uses_hours_when_ticks_are_not_day_aligned(self) -> None:
+        # Last point 84h -> ticks at 0, 12, 24, 36, 48, 60, 72, 84h.
+        # Rounding t/24 to whole days mislabels a 12h tick as "0d" and a 36h tick as "2d".
+        sim_points = [
+            {"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0},
+            {"time_h": 84.0, "pnn_density_pct": 60.0, "akt_signaling_pct": 85.0},
+        ]
+        svg = generate_circuit_dynamics_svg(sim_points)
+        self.assertIn(">12h</text>", svg)
+        self.assertIn(">36h</text>", svg)
+        self.assertNotIn(">1d</text>", svg)
+        self.assertIn("Simulation Duration (Hours post-initiation)", svg)
+
+    def test_circuit_axis_uses_days_when_ticks_are_day_aligned(self) -> None:
+        sim_points = [
+            {"time_h": 0.0, "pnn_density_pct": 100.0, "akt_signaling_pct": 45.0},
+            {"time_h": 168.0, "pnn_density_pct": 60.0, "akt_signaling_pct": 85.0},
+        ]
+        svg = generate_circuit_dynamics_svg(sim_points)
+        self.assertIn(">1d</text>", svg)
+        self.assertIn(">7d</text>", svg)
+        self.assertNotIn(">12h</text>", svg)
+        self.assertIn("Simulation Duration (Days post-initiation)", svg)
+
     def test_render_studio_html_with_translational_panels(self) -> None:
         r_svg = generate_radar_svg([self.compound])
         h_svg = generate_docking_heatmap_svg([self.compound], targets=["PTPsigma"])

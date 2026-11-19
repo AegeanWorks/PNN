@@ -387,13 +387,18 @@ def generate_circuit_dynamics_svg(
         )
 
     n_intervals = 7
-    for step in range(n_intervals + 1):
-        t_val = (max_t / n_intervals) * step
+    tick_values = [(max_t / n_intervals) * step for step in range(n_intervals + 1)]
+    # Label in whole days only when every tick lands on a 24-hour boundary.
+    # Rounding a non-aligned tick (e.g. 12h -> 0.5d) would duplicate or mislabel it.
+    label_in_days = max_t >= 48 and all(
+        abs((t / 24.0) - round(t / 24.0)) < 1e-6 for t in tick_values
+    )
+    for t_val in tick_values:
         x_pos = tx(t_val)
         svg_parts.append(
             f'  <line x1="{x_pos:.1f}" y1="{mt}" x2="{x_pos:.1f}" y2="{mt + ph}" stroke="#e2e8f0" stroke-width="1"/>'
         )
-        label = f"{t_val/24:.0f}d" if max_t >= 48 else f"{t_val:.0f}h"
+        label = f"{t_val/24:.0f}d" if label_in_days else f"{t_val:.0f}h"
         svg_parts.append(
             f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#475569">{label}</text>'
         )
@@ -412,7 +417,7 @@ def generate_circuit_dynamics_svg(
         f'  <text x="{ml - 14}" y="{mt - 10}" text-anchor="start" font-size="10" font-weight="600" fill="#475569">% of Physiological Baseline</text>'
     )
     svg_parts.append(
-        f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Simulation Duration (Days post-initiation)</text>'
+        f'  <text x="{ml + pw/2}" y="{height - 6}" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">Simulation Duration ({"Days" if label_in_days else "Hours"} post-initiation)</text>'
     )
 
     pnn_coords = [f"{tx(t):.1f},{ty(pnn):.1f}" for t, pnn, _ in parsed_pts]
