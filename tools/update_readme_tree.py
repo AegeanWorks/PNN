@@ -8,6 +8,7 @@ NEW_TREE = """```text
 PNN/
 ├── README.md                      <- This file - project overview
 ├── .gitignore                     <- AIKit transient-state baseline
+├── .gitattributes                 <- LF text and binary merge rules
 ├── ASSETS.md
 ├── LICENSE
 ├── LICENSES/
@@ -93,7 +94,8 @@ PNN/
 │   ├── selection.py               <- End-to-end pipeline execution and lead report
 │   ├── studio.py                  <- Standalone HTML/SVG interactive visualization studio
 │   ├── tables.py                  <- Shared tabular CSV row contracts
-│   └── target.py                  <- Receptor profiles and AutoDock Vina grid generation
+│   ├── target.py                  <- Receptor profiles and AutoDock Vina grid generation
+│   └── waves.py                   <- Wave-ledger aggregation for search-wave reporting
 ├── tools/                         <- Golden runs and automation tools
 │   ├── golden_run.py              <- Golden reference run and manifest verification
 │   └── update_readme_tree.py      <- Helper script to sync README directory tree
@@ -114,12 +116,15 @@ PNN/
     ├── test_preclinical.py        <- In vivo PK/PD NCA analysis and candidate selection tests
     ├── test_rank.py               <- Consensus shortlist and CLI contract
     ├── test_rules.py              <- Rule boundaries
+    ├── test_reports.py            <- Atomic report-writer and temp-cleanup tests
     ├── test_run.py                <- Turnkey runner and launcher tests
     ├── test_safety.py             <- IND-enabling toxicology and safety pharmacology tests
     ├── test_sar.py                <- Bemis-Murcko scaffold extraction and SAR tests
     ├── test_screen.py             <- Tiering, ranking and CSV ingestion
     ├── test_studio.py             <- Interactive HTML/SVG studio tests
-    └── test_target.py             <- Receptor profiles and Vina config generation
+    ├── test_tables.py             <- Shared CSV row-contract tests
+    ├── test_target.py             <- Receptor profiles and Vina config generation
+    └── test_waves.py              <- Wave-ledger aggregation tests
 ```"""
 
 

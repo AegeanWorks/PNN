@@ -45,6 +45,21 @@ class ProjectDocsTest(unittest.TestCase):
             checked += 1
         self.assertGreater(checked, 0, "README.md tree lists no paths")
 
+    def test_readme_tree_helper_matches_readme_tree(self) -> None:
+        # update_readme_tree.py overwrites the README tree from NEW_TREE. If the
+        # helper's template drifts, running it drops entries and breaks the docs
+        # gate. The template must stay byte-for-byte in sync with README.
+        from tools.update_readme_tree import NEW_TREE
+
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        heading = re.search(r"^#+ .*What's Inside", readme, re.M)
+        fence = readme.find("```text\n", heading.end())
+        start = fence + len("```text\n")
+        end = readme.find("```", start)
+        actual = [line.rstrip() for line in readme[start:end].splitlines() if line.strip()]
+        template = [line.rstrip() for line in NEW_TREE[len("```text\n") : NEW_TREE.rfind("```")].splitlines() if line.strip()]
+        self.assertEqual(template, actual, "NEW_TREE drifted from the README tree")
+
 
 if __name__ == "__main__":
     unittest.main()
