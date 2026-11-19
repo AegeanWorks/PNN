@@ -10,7 +10,7 @@
 - **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
 - **Total Class Methods**: `313`
-- **Total Source Lines**: `14606`
+- **Total Source Lines**: `14630`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -507,7 +507,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1334` lines
+**Size**: `1350` lines
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -1059,7 +1059,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `532` lines
+**Size**: `540` lines
 
 **Classes:**
 - `class TestStudioRendering`

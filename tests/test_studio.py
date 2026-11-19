@@ -441,6 +441,14 @@ class TestStudioDataLoader(unittest.TestCase):
         self.assertTrue(len(compounds) > 0)
         pnn101 = next((c for c in compounds if c.compound_id == "PNN-101"), None)
         self.assertIsNotNone(pnn101)
+        # The docking CSV uses the canonical 'vina_affinity' header; the studio
+        # loader must recognize it or the heatmap shows N/A for every compound.
+        if dock_path.is_file():
+            self.assertTrue(
+                any(c.docking_scores for c in compounds),
+                "studio loaded zero docking scores from the reference docking CSV",
+            )
+            self.assertTrue(pnn101.docking_scores)  # type: ignore[union-attr]
 
 
 class TestStudioCLI(unittest.TestCase):

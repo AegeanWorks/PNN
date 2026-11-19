@@ -1123,7 +1123,23 @@ def load_studio_data(
                 norm = {c.strip().lower(): c for c in reader.fieldnames}
                 cid_col = norm.get("compound_id")
                 tgt_col = norm.get("target") or norm.get("target_id")
-                score_col = norm.get("vina_affinity_kcal_mol") or norm.get("score")
+                # Accept the canonical 'vina_affinity' header used by the
+                # reference docking CSV, not just the kcal/mol-suffixed variant.
+                score_col = next(
+                    (
+                        norm[key]
+                        for key in (
+                            "vina_affinity",
+                            "vina_affinity_kcal_mol",
+                            "vinaaffinity",
+                            "vina",
+                            "affinity",
+                            "score",
+                        )
+                        if key in norm
+                    ),
+                    None,
+                )
                 if cid_col and tgt_col and score_col:
                     for row in reader:
                         cid = _safe_cell(row.get(cid_col))
