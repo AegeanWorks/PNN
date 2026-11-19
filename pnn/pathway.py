@@ -136,7 +136,8 @@ def simulate_circuit_dynamics(
     mw: float = 349.46,
 ) -> Tuple[List[SimulationPoint], RegimenSummary]:
     """
-    Run an explicit forward-Euler integration of hypothalamic circuit dynamics.
+    Integrate hypothalamic circuit dynamics: the linear PK compartment is solved
+    exactly (step-independent) and the slow PD states use forward Euler.
     Models drug absorption/elimination, PNN turnover, insulin receptor accessibility,
     downstream AKT phosphorylation, and body weight progression.
     """
@@ -195,11 +196,16 @@ def simulate_circuit_dynamics(
             if abs(t - dt_time) < (dt_h / 2.0):
                 c_depot += dose_mg_kg * cmax_per_dose * 1.5
 
-        # Pharmacokinetics ODEs:
-        # d(depot)/dt = -ka * depot
-        # d(brain)/dt = ka * depot - ke * brain
-        d_depot = -ka * c_depot
-        d_brain = ka * c_depot - ke * c_brain
+        # Pharmacokinetics: integrate the linear depot -> brain system exactly.
+        # Explicit Euler is unstable at the allowed dt_h values (ka*dt_h can
+        # exceed 1), which made the peak brain concentration -- and even the
+        # regimen verdict -- depend on the chosen integration step.
+        decay_depot = math.exp(-ka * dt_h)
+        decay_brain = math.exp(-ke * dt_h)
+        if abs(ke - ka) < 1e-12:
+            absorbed = ka * c_depot * dt_h * decay_depot
+        else:
+            absorbed = ka * c_depot * (decay_depot - decay_brain) / (ke - ka)
 
         # Pharmacodynamics ODEs:
         # PNN net reduction:
@@ -213,9 +219,9 @@ def simulate_circuit_dynamics(
         # AKT activation is driven by the gain in receptor accessibility over the DIO baseline.
         d_akt = (k_akt * (ir_access - ir_baseline)) - (k_akt_decay * (akt - akt_baseline))
 
-        # Integration step (Euler-Heun predictor)
-        c_depot = max(0.0, c_depot + d_depot * dt_h)
-        c_brain = max(0.0, c_brain + d_brain * dt_h)
+        # Integration step (exact PK; explicit Euler for the slow PD states)
+        c_depot = max(0.0, c_depot * decay_depot)
+        c_brain = max(0.0, c_brain * decay_brain + absorbed)
         pnn = max(0.05, min(1.0, pnn + d_pnn * dt_h))
         akt = max(0.1, min(1.0, akt + d_akt * dt_h))
 

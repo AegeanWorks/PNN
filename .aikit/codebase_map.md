@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `96`
 - **Total Top-Level Functions**: `225`
-- **Total Class Methods**: `299`
-- **Total Source Lines**: `14295`
+- **Total Class Methods**: `300`
+- **Total Source Lines**: `14321`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -265,7 +265,7 @@
 ### [`pnn/pathway.py`](pnn/pathway.py)
 > *Hypothalamic circuit, perineuronal net turnover, and dosing dynamics simulator for PNN.*
 
-**Size**: `422` lines
+**Size**: `428` lines
 
 **Classes:**
 - `class PathwayError` - *Raised when simulation parameters are physically invalid or malformed.*
@@ -276,7 +276,7 @@
 
 **Functions:**
 - `def _get_dosing_times(regimen, duration_h)` - *Return schedule of dose administration times in hours.*
-- `def simulate_circuit_dynamics(compound_id, dose_mg_kg, regimen, duration_days, dt_h, half_life_h, cmax_per_dose, ec50_nm, mw)` - *Run an explicit forward-Euler integration of hypothalamic circuit dynamics.*
+- `def simulate_circuit_dynamics(compound_id, dose_mg_kg, regimen, duration_days, dt_h, half_life_h, cmax_per_dose, ec50_nm, mw)` - *Integrate hypothalamic circuit dynamics: the linear PK compartment is solved*
 - `def render_pathway_report(summary, sample_points)` - *Render comprehensive markdown simulation report for dosing regimen.*
 - `def build_parser()`
 - `def main(argv)`
@@ -799,13 +799,14 @@
 ### [`tests/test_pathway.py`](tests/test_pathway.py)
 > *Unit tests for hypothalamic circuit dynamics and dosing simulator.*
 
-**Size**: `141` lines
+**Size**: `161` lines
 
 **Classes:**
 - `class TestPathwaySimulator`
   - Method `.test_simulate_circuit_dynamics_pulsatile()`
   - Method `.test_simulate_circuit_dynamics_continuous()`
   - Method `.test_regimen_variations()`
+  - Method `.test_peak_concentration_and_verdict_are_step_independent()`
   - Method `.test_invalid_parameters_raise()`
   - Method `.test_untreated_baseline_has_no_restoration_or_weight_loss()`
   - Method `.test_continuous_regimen_is_flagged_for_plasticity_risk()`

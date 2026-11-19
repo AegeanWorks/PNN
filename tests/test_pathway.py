@@ -58,6 +58,26 @@ class TestPathwaySimulator(unittest.TestCase):
             self.assertGreater(len(pts), 0)
             self.assertEqual(sm.regimen_name, reg)
 
+    def test_peak_concentration_and_verdict_are_step_independent(self) -> None:
+        # dt_h is an integration-resolution knob, not a model parameter. Peak
+        # brain concentration and the regimen verdict must not depend on it.
+        # Explicit Euler was unstable at the allowed dt_h=2.0 (ka*dt > 1),
+        # inflating the peak ~3.5x and flipping RECOMMENDED to CAUTION.
+        fine_pts, fine = simulate_circuit_dynamics(duration_days=14, dt_h=0.25)
+        coarse_pts, coarse = simulate_circuit_dynamics(duration_days=14, dt_h=2.0)
+        fine_peak = max(p.brain_conc_ng_ml for p in fine_pts)
+        coarse_peak = max(p.brain_conc_ng_ml for p in coarse_pts)
+        self.assertLess(
+            abs(coarse_peak - fine_peak) / fine_peak,
+            0.20,
+            f"peak brain conc depends on dt_h: {fine_peak:.1f} vs {coarse_peak:.1f}",
+        )
+        self.assertEqual(
+            fine.recommendation.split(":")[0],
+            coarse.recommendation.split(":")[0],
+            "regimen verdict must not depend on integration step",
+        )
+
     def test_invalid_parameters_raise(self) -> None:
         with self.assertRaises(PathwayError):
             simulate_circuit_dynamics(dose_mg_kg=-5.0)
