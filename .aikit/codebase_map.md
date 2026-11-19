@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `95`
 - **Total Top-Level Functions**: `222`
-- **Total Class Methods**: `290`
-- **Total Source Lines**: `14119`
+- **Total Class Methods**: `292`
+- **Total Source Lines**: `14200`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -66,7 +66,7 @@
 ### [`pnn/bioisostere.py`](pnn/bioisostere.py)
 > *Bioisosteric replacement and metabolic soft-spot optimization engine for PNN.*
 
-**Size**: `542` lines
+**Size**: `579` lines
 
 **Classes:**
 - `class BioisostereError` - *Raised when compound SMILES or bioisosteric transformation rules are invalid.*
@@ -616,10 +616,12 @@
 ### [`tests/test_bioisostere.py`](tests/test_bioisostere.py)
 > *Unit tests for bioisosteric replacement and metabolic soft-spot optimizer.*
 
-**Size**: `164` lines
+**Size**: `208` lines
 
 **Classes:**
 - `class TestBioisostere`
+  - Method `.test_replacement_token_keeps_distinct_ring_labels_distinct()`
+  - Method `.test_replacement_token_preserves_isotope_digits_in_brackets()`
   - Method `.test_generate_bioisosteres()`
   - Method `.test_ring_label_parser_ignores_isotope_brackets()`
   - Method `.test_replacement_does_not_split_ring_context()`

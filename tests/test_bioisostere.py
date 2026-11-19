@@ -7,6 +7,8 @@ from pathlib import Path
 from pnn.bioisostere import (
     BIOISOSTERE_RULES,
     BioisostereError,
+    BioisostereRule,
+    _replacement_token,
     _ring_label_occurrences,
     _ring_labels_balanced,
     generate_bioisosteres,
@@ -17,6 +19,48 @@ from pnn.bioisostere import (
 
 
 class TestBioisostere(unittest.TestCase):
+    def test_replacement_token_keeps_distinct_ring_labels_distinct(self) -> None:
+        # A fused bicyclic motif has two DIFFERENT ring labels; renumbering must
+        # map each to its own free parent label, never collapse them together.
+        rule = BioisostereRule(
+            rule_id="R-TEST",
+            name="test",
+            target_motif="CCO",
+            replacement_motif="C1CC2CCC1C2",
+            delta_mw=0.0,
+            delta_logp=0.0,
+            delta_tpsa=0.0,
+            delta_hbd=0,
+            delta_hba=0,
+            delta_rotb=0,
+            rationale="test",
+        )
+        token = _replacement_token("c1ccccc1", rule)  # parent uses label 1
+        labels = set(_ring_label_occurrences(token))
+        self.assertEqual(len(labels), 2, f"two distinct ring labels expected, got {token}")
+        self.assertNotIn("1", labels, "replacement must not reuse the parent's ring label")
+        self.assertTrue(_ring_labels_balanced(token))
+
+    def test_replacement_token_preserves_isotope_digits_in_brackets(self) -> None:
+        # Renumbering ring labels must not touch digits inside bracket atoms
+        # (e.g. the '1' in [13C]), or the isotope label is silently corrupted.
+        rule = BioisostereRule(
+            rule_id="R-ISO",
+            name="test",
+            target_motif="CCO",
+            replacement_motif="[13C]1CCCCC1",
+            delta_mw=0.0,
+            delta_logp=0.0,
+            delta_tpsa=0.0,
+            delta_hbd=0,
+            delta_hba=0,
+            delta_rotb=0,
+            rationale="test",
+        )
+        token = _replacement_token("c1ccccc1", rule)  # parent uses label 1
+        self.assertIn("[13C]", token, "bracket isotope digits must be preserved")
+        self.assertEqual(set(_ring_label_occurrences(token)), {"2"})
+
     def test_generate_bioisosteres(self) -> None:
         smiles = "c1ccccc1C(=O)NC1CCOCC1"
         analogs = generate_bioisosteres(

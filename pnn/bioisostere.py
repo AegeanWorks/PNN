@@ -212,13 +212,50 @@ def _free_ring_label(parent_smiles: str) -> str:
 
 def _replacement_token(parent_smiles: str, rule: BioisostereRule) -> str:
     """Return the replacement, renumbering its ring labels away from the parent's labels."""
-    if not any(char.isdigit() or char == "%" for char in rule.replacement_motif):
-        return rule.replacement_motif
-    token = rule.replacement_motif
-    used = sorted(set(_ring_label_occurrences(rule.replacement_motif)))
+    motif = rule.replacement_motif
+    used = sorted(set(_ring_label_occurrences(motif)))
+    if not used:
+        return motif
+    parent_labels = set(_ring_label_occurrences(parent_smiles))
+    # Each distinct motif label needs its own free label. Reusing one collapses
+    # two independent ring closures into a single corrupted ring. Two-digit
+    # (%nn) labels are remapped to two-digit labels to stay valid SMILES.
+    mapping: Dict[str, str] = {}
     for label in used:
-        token = token.replace(label, _free_ring_label(parent_smiles))
-    return token
+        candidates = [c for c in "1234567890"] if len(label) == 1 else [str(n) for n in range(10, 100)]
+        free = next(
+            (c for c in candidates if c not in parent_labels and c not in mapping.values()), None
+        )
+        if free is None:
+            raise BioisostereError("No free ring label remains in the parent SMILES")
+        mapping[label] = free
+
+    # Rebuild the motif, replacing only ring-label tokens. Bracket contents
+    # (isotopes such as [2H]) and the '%' prefix of two-digit labels are kept.
+    out: List[str] = []
+    i = 0
+    while i < len(motif):
+        char = motif[i]
+        if char == "[":
+            close = motif.find("]", i)
+            if close == -1:
+                out.append(motif[i:])
+                break
+            out.append(motif[i : close + 1])
+            i = close + 1
+            continue
+        if char == "%" and motif[i + 1 : i + 3].isdigit():
+            label = motif[i + 1 : i + 3]
+            out.append("%" + mapping.get(label, label))
+            i += 3
+            continue
+        if char.isdigit():
+            out.append(mapping.get(char, char))
+            i += 1
+            continue
+        out.append(char)
+        i += 1
+    return "".join(out)
 
 
 def _target_variants(motif: str) -> List[str]:
