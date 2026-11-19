@@ -1,10 +1,13 @@
+import contextlib
 import csv
+import io
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
 from pnn.runner import (
+    RunSummary,
     RunnerError,
     execute_turnkey_pipeline,
     is_daily_timepoint,
@@ -105,6 +108,32 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue((out_dir / "studio.html").is_file())
             self.assertTrue((out_dir / "safety_assessments.csv").is_file())
             self.assertTrue((out_dir / "safety_package.md").is_file())
+
+    def test_banner_accounts_for_safety_caution_results(self) -> None:
+        # 5 assessed = 3 safe + 1 caution + 1 failed. The banner must not
+        # silently drop the caution and leave 1 of 5 unaccounted for.
+        summary = RunSummary(
+            curated_count=11,
+            screened_count=11,
+            shortlisted_count=11,
+            qualified_hits_count=5,
+            preclinical_candidates_count=1,
+            scaffolds_count=14,
+            elapsed_seconds=0.2,
+            output_dir=Path("output"),
+            studio_html_path=Path("output/studio.html"),
+            safety_assessed_count=5,
+            safety_safe_count=3,
+            safety_caution_count=1,
+            safety_failed_count=1,
+        )
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            print_run_banner(summary)
+        banner = out.getvalue()
+        self.assertIn("3/5", banner)
+        self.assertIn("1 failed", banner)
+        self.assertIn("1 caution", banner)
 
     def test_daily_timepoint_tolerance(self) -> None:
         self.assertTrue(is_daily_timepoint(0.0))

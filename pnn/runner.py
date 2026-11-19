@@ -101,6 +101,7 @@ class RunSummary:
     analogs_count: int = 0
     safety_assessed_count: int = 0
     safety_safe_count: int = 0
+    safety_caution_count: int = 0
     safety_failed_count: int = 0
 
 
@@ -283,6 +284,7 @@ def execute_turnkey_pipeline(
     # 6. IND-Enabling Safety Pharmacology and Repeat-Dose Toxicology Package
     safety_assessed_count = 0
     safety_safe_count = 0
+    safety_caution_count = 0
     safety_failed_count = 0
     assessments: list = []
     try:
@@ -301,10 +303,12 @@ def execute_turnkey_pipeline(
             )
             safety_assessed_count = len(assessments)
             safety_safe_count = sum(1 for a in assessments if a.status == "SAFE_TO_PROGRESS")
+            safety_caution_count = sum(1 for a in assessments if a.status == "CAUTION")
             safety_failed_count = sum(1 for a in assessments if a.status == "FAIL_SAFETY")
     except (ValueError, KeyError, OSError):  # hygiene: allow non-critical translational step exception
         safety_assessed_count = 0
         safety_safe_count = 0
+        safety_caution_count = 0
         safety_failed_count = 0
 
     # 6b. Wave Ledger: search-wave findings auto-update the report + studio UI.
@@ -403,6 +407,7 @@ def execute_turnkey_pipeline(
         analogs_count=analogs_count,
         safety_assessed_count=safety_assessed_count,
         safety_safe_count=safety_safe_count,
+        safety_caution_count=safety_caution_count,
         safety_failed_count=safety_failed_count,
     )
 
@@ -421,9 +426,10 @@ def print_run_banner(summary: RunSummary) -> None:
     if summary.analogs_count > 0:
         print(f"  * Bioisosteric Analogs:      {summary.analogs_count}")
     if summary.safety_assessed_count > 0:
+        safety_detail = f"{summary.safety_caution_count} caution, {summary.safety_failed_count} failed"
         print(
             f"  * IND Safety Cleared:        {summary.safety_safe_count}/{summary.safety_assessed_count} "
-            f"({summary.safety_failed_count} failed)"
+            f"({safety_detail})"
         )
     print(f"  * Execution Time:            {summary.elapsed_seconds:.2f} seconds")
     print(f"  * Output Directory:          {summary.output_dir}")
