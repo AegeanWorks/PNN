@@ -223,7 +223,9 @@ def generate_pk_curve_svg(
         for pts in c.pk_points.values():
             all_pts.extend(pts)
 
-    max_t = 24.0
+    # Expand the time axis to fit the data; a fixed 24h axis drew later PK
+    # samples off-canvas. Keep 24h as the minimum so short profiles still read.
+    max_t = max([t for t, _ in all_pts] + [24.0])
     max_c = max([p[1] for p in all_pts], default=1000.0)
     max_c = max(max_c, 500.0)
 
@@ -250,10 +252,12 @@ def generate_pk_curve_svg(
         svg_parts.append(f'  <line x1="{ml}" y1="{y_pos:.1f}" x2="{ml + pw}" y2="{y_pos:.1f}" stroke="#e2e8f0" stroke-width="1"/>')
         svg_parts.append(f'  <text x="{ml - 8}" y="{y_pos + 4:.1f}" text-anchor="end" font-size="10" fill="#475569">{val:.0f}</text>')
 
-    for t_step in (0, 4, 8, 12, 16, 20, 24):
-        x_pos = tx(float(t_step))
+    n_ticks = 6
+    for i in range(n_ticks + 1):
+        t_step = (max_t / n_ticks) * i
+        x_pos = tx(t_step)
         svg_parts.append(f'  <line x1="{x_pos:.1f}" y1="{mt}" x2="{x_pos:.1f}" y2="{mt + ph}" stroke="#e2e8f0" stroke-width="1"/>')
-        svg_parts.append(f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#475569">{t_step}h</text>')
+        svg_parts.append(f'  <text x="{x_pos:.1f}" y="{mt + ph + 18}" text-anchor="middle" font-size="10" fill="#475569">{t_step:.0f}h</text>')
 
     # Axes
     svg_parts.append(f'  <line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt + ph}" stroke="#94a3b8" stroke-width="1.5"/>')

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `98`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `307`
-- **Total Source Lines**: `14449`
+- **Total Class Methods**: `308`
+- **Total Source Lines**: `14469`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -507,7 +507,7 @@
 ### [`pnn/studio.py`](pnn/studio.py)
 > *Interactive Lead & Assay Visualization Studio and Standalone HTML Dashboard for PNN.*
 
-**Size**: `1330` lines
+**Size**: `1334` lines
 
 **Classes:**
 - `class StudioError` - *Raised when studio inputs are malformed or missing required data.*
@@ -1053,7 +1053,7 @@
 ---
 
 ### [`tests/test_studio.py`](tests/test_studio.py)
-**Size**: `516` lines
+**Size**: `532` lines
 
 **Classes:**
 - `class TestStudioRendering`
@@ -1062,6 +1062,7 @@
   - Method `.test_generate_docking_heatmap_svg()`
   - Method `.test_heatmap_svg_escapes_user_names_and_stays_valid_xml()`
   - Method `.test_generate_pk_curve_svg()`
+  - Method `.test_pk_curve_keeps_long_trajectories_on_canvas()`
   - Method `.test_render_studio_html()`
   - Method `.test_pk_heading_names_the_compound_actually_plotted()`
   - Method `.test_generate_circuit_dynamics_svg()`

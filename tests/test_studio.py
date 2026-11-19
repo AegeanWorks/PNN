@@ -1,3 +1,4 @@
+import re
 import tempfile
 import unittest
 import xml.etree.ElementTree as ET
@@ -83,6 +84,21 @@ class TestStudioRendering(unittest.TestCase):
         self.assertIn("<polyline", svg)
         self.assertIn("Conc (ng/mL)", svg)
         self.assertIn("Time post-dose", svg)
+
+    def test_pk_curve_keeps_long_trajectories_on_canvas(self) -> None:
+        # A hardcoded 24h time axis drew PK samples beyond 24h off-canvas,
+        # where they are invisible. The axis must expand to fit the data.
+        pts = {
+            "IV_plasma": [
+                (0.0, 500.0), (12.0, 200.0), (24.0, 80.0), (36.0, 30.0), (48.0, 10.0)
+            ]
+        }
+        c = StudioCompound("C", "n", 300, 2.5, 50, 2, 4, 3, 10.0, None, None, {}, pts)
+        svg = generate_pk_curve_svg([c])
+        polys = re.findall(r'<polyline[^>]*points="([^"]+)"', svg)
+        xs = [float(pt.split(",")[0]) for p in polys for pt in p.split() if "," in pt]
+        self.assertTrue(xs)
+        self.assertLessEqual(max(xs), 540 - 30 + 0.5)  # width - padding_right
 
     def test_render_studio_html(self) -> None:
         r_svg = generate_radar_svg([self.compound])
