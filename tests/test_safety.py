@@ -38,6 +38,15 @@ class TestSafetyIngestion(unittest.TestCase):
             with self.assertRaises(SafetyError):
                 load_tox_studies(path)
 
+    def test_short_tox_row_raises_safety_error(self) -> None:
+        # csv.DictReader yields None for missing cells on short rows; ingestion
+        # must convert that to SafetyError, not leak an AttributeError.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            path = Path(tmp_dir) / "tox.csv"
+            path.write_text("compound_id,species,noael_mg_kg\nC1,rat\n", encoding="utf-8")
+            with self.assertRaises(SafetyError):
+                load_tox_studies(path)
+
     def test_unknown_species_raises(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:
             path = Path(tmp_dir) / "tox.csv"
@@ -79,6 +88,16 @@ class TestSafetyIngestion(unittest.TestCase):
             self.assertEqual(len(studies), 2)
             self.assertEqual(studies[0].species, "rat")
             self.assertEqual(studies[0].noael_mg_kg, 50.0)
+
+    def test_short_pharm_row_is_tolerated(self) -> None:
+        # A short safety-pharmacology row has None optional cells; those stay
+        # unmeasured rather than raising an AttributeError.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            path = Path(tmp_dir) / "pharm.csv"
+            path.write_text("compound_id,herg_ic50_um,free_cmax_um\nC1,30\n", encoding="utf-8")
+            records = load_safety_pharmacology(path)
+            self.assertIn("C1", records)
+            self.assertIsNone(records["C1"].ames_positive)
 
     def test_pharm_duplicate_compound_raises(self) -> None:
         with tempfile.TemporaryDirectory() as tmp_dir:

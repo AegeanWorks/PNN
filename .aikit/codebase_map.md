@@ -8,9 +8,9 @@
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `55`
 - **Total Classes**: `95`
-- **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `288`
-- **Total Source Lines**: `14095`
+- **Total Top-Level Functions**: `222`
+- **Total Class Methods**: `290`
+- **Total Source Lines**: `14119`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -400,7 +400,7 @@
 ### [`pnn/safety.py`](pnn/safety.py)
 > *IND-enabling safety pharmacology and repeat-dose toxicology assessment for PNN.*
 
-**Size**: `644` lines
+**Size**: `649` lines
 
 **Classes:**
 - `class SafetyError` - *Raised when safety pharmacology or toxicology data is malformed or violates contract.*
@@ -412,6 +412,7 @@
 **Functions:**
 - `def _normalize(name)`
 - `def _species_key(species)`
+- `def _safe_cell(value)` - *Return a stripped string for a CSV cell that may be None on short rows.*
 - `def _parse_required_float(value, field_name, row_id)`
 - `def _parse_optional_float(value, field_name, row_id)`
 - `def _parse_optional_bool(value, field_name, row_id)`
@@ -934,17 +935,19 @@
 ### [`tests/test_safety.py`](tests/test_safety.py)
 > *Unit tests for the IND-enabling safety pharmacology and toxicology package.*
 
-**Size**: `301` lines
+**Size**: `320` lines
 
 **Classes:**
 - `class TestSafetyIngestion`
   - Method `.test_missing_tox_file_raises()`
   - Method `.test_missing_tox_columns_raises()`
+  - Method `.test_short_tox_row_raises_safety_error()`
   - Method `.test_unknown_species_raises()`
   - Method `.test_non_positive_noael_raises()`
   - Method `.test_loael_below_noael_raises()`
   - Method `.test_invalid_duration_raises()`
   - Method `.test_load_valid_tox_rows()`
+  - Method `.test_short_pharm_row_is_tolerated()`
   - Method `.test_pharm_duplicate_compound_raises()`
   - Method `.test_pharm_invalid_boolean_raises()`
   - Method `.test_pharm_percent_out_of_range_raises()`

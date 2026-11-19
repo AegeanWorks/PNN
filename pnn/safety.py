@@ -114,8 +114,13 @@ def _species_key(species: str) -> str:
     return " ".join(species.strip().lower().replace("_", " ").split())
 
 
-def _parse_required_float(value: str, field_name: str, row_id: str) -> float:
-    clean = value.strip()
+def _safe_cell(value: object) -> str:
+    """Return a stripped string for a CSV cell that may be None on short rows."""
+    return "" if value is None else str(value).strip()
+
+
+def _parse_required_float(value: Optional[str], field_name: str, row_id: str) -> float:
+    clean = _safe_cell(value)
     if not clean or clean.upper() in ("NA", "NAN", "NULL", "NONE", "-"):
         raise SafetyError(f"Row '{row_id}': {field_name} is required")
     try:
@@ -179,13 +184,13 @@ def load_tox_studies(path: Path) -> List[ToxStudy]:
             raise SafetyError(f"Toxicology CSV missing required column(s): {', '.join(sorted(missing))}")
 
         for row in reader:
-            cid = row[columns["compound_id"]].strip()
+            cid = _safe_cell(row.get(columns["compound_id"]))
             if not cid:
                 continue
-            species = _species_key(row[columns["species"]])
+            species = _species_key(_safe_cell(row.get(columns["species"])))
             if species not in KM_BY_SPECIES:
                 raise SafetyError(
-                    f"Row '{cid}': unsupported species '{row[columns['species']].strip()}'; "
+                    f"Row '{cid}': unsupported species '{_safe_cell(row.get(columns['species']))}'; "
                     f"supported: {', '.join(sorted(KM_BY_SPECIES))}"
                 )
 
@@ -195,29 +200,29 @@ def load_tox_studies(path: Path) -> List[ToxStudy]:
 
             loael = None
             if "loael_mg_kg" in columns:
-                loael = _parse_optional_float(row[columns["loael_mg_kg"]], "loael_mg_kg", cid)
+                loael = _parse_optional_float(row.get(columns["loael_mg_kg"]), "loael_mg_kg", cid)
                 if loael is not None and loael < noael:
                     raise SafetyError(f"Row '{cid}': loael_mg_kg must be >= noael_mg_kg")
 
             duration = 28
             if "duration_days" in columns:
-                raw_duration = _parse_optional_float(row[columns["duration_days"]], "duration_days", cid)
+                raw_duration = _parse_optional_float(row.get(columns["duration_days"]), "duration_days", cid)
                 if raw_duration is not None:
                     if raw_duration <= 0.0 or raw_duration != int(raw_duration):
                         raise SafetyError(f"Row '{cid}': duration_days must be a positive integer")
                     duration = int(raw_duration)
 
             study_type = "REPEAT_DOSE"
-            if "study_type" in columns and row[columns["study_type"]].strip():
-                study_type = row[columns["study_type"]].strip()
+            if "study_type" in columns and _safe_cell(row.get(columns["study_type"])):
+                study_type = _safe_cell(row.get(columns["study_type"]))
 
             target_organ = ""
             if "target_organ" in columns:
-                target_organ = row[columns["target_organ"]].strip()
+                target_organ = _safe_cell(row.get(columns["target_organ"]))
 
             findings = ""
             if "findings" in columns:
-                findings = row[columns["findings"]].strip()
+                findings = _safe_cell(row.get(columns["findings"]))
 
             studies.append(
                 ToxStudy(
@@ -252,14 +257,14 @@ def load_safety_pharmacology(path: Path) -> Dict[str, SafetyPharm]:
             raise SafetyError("Safety pharmacology CSV missing required column: compound_id")
 
         for row in reader:
-            cid = row[columns["compound_id"]].strip()
+            cid = _safe_cell(row.get(columns["compound_id"]))
             if not cid:
                 continue
             if cid in records:
                 raise SafetyError(f"Duplicate safety pharmacology row for compound '{cid}'")
 
             def optional(field: str) -> Optional[str]:
-                return row[columns[field]] if field in columns else None
+                return row.get(columns[field]) if field in columns else None
 
             herg = _parse_optional_float(optional("herg_ic50_um"), "herg_ic50_um", cid)
             if herg is not None and herg <= 0.0:
