@@ -7,10 +7,10 @@
 
 ## 📊 Codebase Metrics
 - **Total Python Modules**: `55`
-- **Total Classes**: `98`
+- **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `310`
-- **Total Source Lines**: `14532`
+- **Total Class Methods**: `311`
+- **Total Source Lines**: `14565`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -931,7 +931,7 @@
 ---
 
 ### [`tests/test_run.py`](tests/test_run.py)
-**Size**: `286` lines
+**Size**: `319` lines
 
 **Classes:**
 - `class TestTurnkeyRunner`
@@ -944,6 +944,8 @@
   - Method `.test_banner_accounts_for_safety_caution_results()`
   - Method `.test_daily_timepoint_tolerance()`
   - Method `.test_runner_cli_execution_auto_opens_browser(mock_open)`
+- `class TurnkeyDeterminismTest`
+  - Method `.test_identical_inputs_produce_identical_artifacts()`
 - `class CandidateExposureBridgeTest`
   - Method `._candidate(cid, kp, f_pct)`
   - Method `.test_unmeasured_exposures_are_not_bridged_as_zero()`

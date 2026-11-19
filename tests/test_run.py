@@ -1,5 +1,6 @@
 import contextlib
 import csv
+import hashlib
 import io
 import tempfile
 import unittest
@@ -248,6 +249,38 @@ class TestTurnkeyRunner(unittest.TestCase):
             self.assertTrue(mock_open.called)
             call_arg = mock_open.call_args[0][0]
             self.assertIn("studio.html", call_arg)
+
+
+class TurnkeyDeterminismTest(unittest.TestCase):
+    def test_identical_inputs_produce_identical_artifacts(self) -> None:
+        # Repeated turnkey runs with the same inputs must be byte-identical;
+        # hidden mutable state or unordered iteration would silently make
+        # reports, rankings, or the generated dashboard drift between runs.
+        with tempfile.TemporaryDirectory() as tmp:
+            def run_once(out_dir: Path) -> dict:
+                execute_turnkey_pipeline(
+                    vendor_csv=Path("data/compounds/vendor_library.csv"),
+                    repurposing_csv=Path("data/compounds/repurposing_library.csv"),
+                    docking_csv=Path("data/docking/multi_target_scores.csv"),
+                    degradation_csv=Path("data/assays/degradation_template.csv"),
+                    permeability_csv=Path("data/assays/permeability_template.csv"),
+                    cytotoxicity_csv=Path("data/assays/cytotoxicity_template.csv"),
+                    pk_csv=Path("data/preclinical/pk_timecourse_template.csv"),
+                    pd_csv=Path("data/preclinical/pd_metabolic_template.csv"),
+                    out_dir=out_dir,
+                )
+                # manifest.json embeds the output path, which differs between dirs.
+                return {
+                    p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                    for p in out_dir.iterdir()
+                    if p.is_file() and p.name != "manifest.json"
+                }
+
+            first = run_once(Path(tmp) / "run_a")
+            second = run_once(Path(tmp) / "run_b")
+            self.assertEqual(set(first), set(second))
+            differing = [name for name in first if first[name] != second[name]]
+            self.assertEqual(differing, [], f"non-deterministic artifacts: {differing}")
 
 
 class CandidateExposureBridgeTest(unittest.TestCase):
