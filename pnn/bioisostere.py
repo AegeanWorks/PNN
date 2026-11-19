@@ -373,7 +373,7 @@ def render_bioisostere_report(analogs: Sequence[GeneratedAnalog], parent_id: str
         "",
         f"- **Parent Lead Compound**: `{parent_id}`",
         f"- **Generated Virtual Analogs**: {len(analogs)}",
-        f"- **Favorable Optimization Candidates (CNS MPO >= 5.0)**: {len(favorable)}",
+        f"- **Favorable Optimization Candidates (CNS MPO >= 5.0 and delta MPO >= 0)**: {len(favorable)}",
         "",
         "## Method Limits",
         "",

@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `312`
-- **Total Source Lines**: `14585`
+- **Total Class Methods**: `313`
+- **Total Source Lines**: `14606`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -621,7 +621,7 @@
 ### [`tests/test_bioisostere.py`](tests/test_bioisostere.py)
 > *Unit tests for bioisosteric replacement and metabolic soft-spot optimizer.*
 
-**Size**: `208` lines
+**Size**: `229` lines
 
 **Classes:**
 - `class TestBioisostere`
@@ -636,6 +636,7 @@
   - Method `.test_run_bioisostere_pipeline_vendor_lib()`
   - Method `.test_short_trailing_row_is_skipped()` - *Short CSV rows without SMILES are skipped, not crashed on.*
   - Method `.test_render_bioisostere_report()`
+  - Method `.test_favorable_label_states_both_requirements()`
   - Method `.test_bioisostere_cli()`
 
 ---

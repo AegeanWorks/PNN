@@ -181,6 +181,27 @@ class TestBioisostere(unittest.TestCase):
         self.assertIn("Method Limits", report)
         self.assertIn("Synthetic Priority Recommendations", report)
 
+    def test_favorable_label_states_both_requirements(self) -> None:
+        # A FAVORABLE verdict requires BOTH CNS MPO >= 5.0 AND delta MPO >= 0.
+        # The summary label must say so, or a high-MPO analog whose score fell
+        # relative to the parent looks like it should have been counted.
+        analogs = generate_bioisosteres(
+            parent_id="X",
+            smiles="c1ccccc1C(=O)NC1CCOCC1",
+            mw=250.0,
+            logp=2.1,
+            tpsa=45.0,
+            hbd=1,
+            hba=3,
+            rotb=3,
+        )
+        high_mpo = next((a for a in analogs if a.cns_mpo_score >= 5.0), None)
+        self.assertIsNotNone(high_mpo, "fixture should yield a high-MPO analog")
+        report = render_bioisostere_report(analogs, "X")
+        favorable_line = next(l for l in report.splitlines() if "Favorable Optimization" in l)
+        self.assertIn("5.0", favorable_line)
+        self.assertIn("delta", favorable_line.lower())
+
     def test_bioisostere_cli(self) -> None:
         vendor_csv = Path("data/compounds/vendor_library.csv")
         if not vendor_csv.is_file():
