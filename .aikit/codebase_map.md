@@ -9,8 +9,8 @@
 - **Total Python Modules**: `54`
 - **Total Classes**: `94`
 - **Total Top-Level Functions**: `221`
-- **Total Class Methods**: `283`
-- **Total Source Lines**: `14009`
+- **Total Class Methods**: `284`
+- **Total Source Lines**: `14028`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`54` module(s))
@@ -686,10 +686,11 @@
 ### [`tests/test_docking.py`](tests/test_docking.py)
 > *Unit tests for docking ingestion and consensus normalization.*
 
-**Size**: `113` lines
+**Size**: `132` lines
 
 **Classes:**
 - `class DockingIngestionTest`
+  - Method `.test_padded_csv_headers_are_normalized()`
   - Method `.test_aliases_units_and_optional_columns()`
   - Method `.test_row_needs_a_score()`
   - Method `.test_row_needs_target()`

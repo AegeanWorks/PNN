@@ -1,18 +1,37 @@
 """Unit tests for docking ingestion and consensus normalization."""
 
+import tempfile
 import unittest
+from pathlib import Path
 
 from pnn.docking import (
     DockingError,
     DockingScore,
     aggregate_best,
     filter_scores,
+    load_docking_scores,
     normalize_scores,
     parse_docking_scores,
 )
 
 
 class DockingIngestionTest(unittest.TestCase):
+    def test_padded_csv_headers_are_normalized(self) -> None:
+        # Guards the same class of bug fixed in dynamics.py: padded headers
+        # must not break column lookup when loading a docking CSV from disk.
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            path = Path(tmp_dir) / "docking.csv"
+            path.write_text(
+                " compound id , Target , Vina affinity (kcal/mol) , RMSD (A) \n"
+                " CMP-1 , PTPsigma , -9.2 , 1.1 \n",
+                encoding="utf-8",
+            )
+            scores = load_docking_scores(path)
+            self.assertEqual(len(scores), 1)
+            self.assertEqual(scores[0].compound_id, "CMP-1")
+            self.assertEqual(scores[0].vina_affinity, -9.2)
+            self.assertEqual(scores[0].rmsd, 1.1)
+
     def test_aliases_units_and_optional_columns(self) -> None:
         scores = parse_docking_scores(
             [
