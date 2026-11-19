@@ -24,6 +24,22 @@ class ProjectDocsTest(unittest.TestCase):
         for relative in REQUIRED_DOCUMENTS:
             self.assertTrue((ROOT / relative).is_file(), relative)
 
+    def test_python_version_requirement_is_consistent(self) -> None:
+        # README is the gating onboarding doc; every other doc that states a
+        # Python floor must agree with it or agents cold-start on the wrong version.
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        floor = re.search(r"Python (3\.\d+)\+", readme)
+        self.assertIsNotNone(floor, "README.md has no 'Python 3.x+' prerequisite")
+        for relative in REQUIRED_DOCUMENTS:
+            if relative == "README.md":
+                continue
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            for other in re.findall(r"Python (3\.\d+)\+", text):
+                self.assertEqual(
+                    other, floor.group(1),
+                    f"{relative} states Python {other}+ but README says {floor.group(1)}+",
+                )
+
     def test_readme_tree_lists_only_existing_paths(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         heading = re.search(r"^#+ .*What's Inside", readme, re.M)

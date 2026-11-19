@@ -542,7 +542,7 @@ Step 6: Select 20-50 for synthesis
 
 ### 6.1 When Starting a New Session
 1. **Load computational scripts** from `/computational/`
-2. **Set up environment**: Python 3.9+, RDKit, OpenMM, AutoDock Vina
+2. **Set up environment**: Python 3.10+, RDKit, OpenMM, AutoDock Vina
 3. **Download target structures** (PDB IDs listed in Section 1)
 4. **Initialize compound library** from `/data/compounds/`
 

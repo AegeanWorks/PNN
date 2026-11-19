@@ -197,7 +197,7 @@ All results saved as Markdown with tables:
 | Literature extractions | Excel / BibTeX | data/literature/ |
 
 ### 5.3 Code Standards
-- Python 3.9+, type hints, docstrings
+- Python 3.10+, type hints, docstrings
 - Functions for repeated analyses
 - Version control for analysis scripts
 - Jupyter notebooks for exploration only (export to .py for production)
