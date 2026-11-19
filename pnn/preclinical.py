@@ -442,7 +442,8 @@ def render_preclinical_report(candidates: Sequence[PreclinicalCandidate], criter
         "## Candidate Advancement Summary",
         "",
         f"- **Evaluated Candidates**: {len(candidates)}",
-        f"- **Clinical Candidates (Kp >= {criteria.get('min_kp_brain', 0.30)}, F >= {criteria.get('min_oral_f_pct', 20.0)}%, WFA >= {criteria.get('min_wfa_reduction_pct', 15.0)}%)**: {len(clinical)}",
+        f"- **Clinical Candidates (Kp >= {criteria.get('min_kp_brain', 0.30)}, F >= {criteria.get('min_oral_f_pct', 20.0)}%, "
+        f"WFA >= {criteria.get('min_wfa_reduction_pct', 15.0)}%, ITT >= {criteria.get('min_itt_improvement_pct', 20.0)}%)**: {len(clinical)}",
         f"- **Advanced Leads (Sub-optimal exposure or pending complete PD)**: {len(advanced)}",
         f"- **Failed Preclinical Thresholds (Low Kp / Poor F / Inactive)**: {len(failed)}",
         "",

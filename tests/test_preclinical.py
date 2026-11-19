@@ -233,6 +233,25 @@ class TestPreclinicalCandidateEvaluation(unittest.TestCase):
         self.assertIn("CLINICAL_CANDIDATE", report)
         self.assertIn("PNN-101", report)
 
+    def test_clinical_candidate_summary_lists_all_four_criteria(self) -> None:
+        # evaluate_candidates requires Kp, F, WFA AND ITT for CLINICAL_CANDIDATE.
+        # The summary that labels the count must list all four, or a reader
+        # could think three suffice and misread why a compound was downgraded.
+        report = render_preclinical_report(
+            [],
+            {
+                "min_kp_brain": 0.30,
+                "min_oral_f_pct": 20.0,
+                "min_wfa_reduction_pct": 15.0,
+                "min_itt_improvement_pct": 20.0,
+            },
+        )
+        clinical_line = next(l for l in report.splitlines() if "Clinical Candidates (" in l)
+        self.assertIn("Kp", clinical_line)
+        self.assertIn("F", clinical_line)
+        self.assertIn("WFA", clinical_line)
+        self.assertIn("ITT", clinical_line)
+
 
 class TestPreclinicalCLI(unittest.TestCase):
     def test_cli_execution_success(self) -> None:

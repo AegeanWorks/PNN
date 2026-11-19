@@ -9,8 +9,8 @@
 - **Total Python Modules**: `55`
 - **Total Classes**: `99`
 - **Total Top-Level Functions**: `226`
-- **Total Class Methods**: `311`
-- **Total Source Lines**: `14565`
+- **Total Class Methods**: `312`
+- **Total Source Lines**: `14585`
 
 ## 🧭 Map Coverage
 - **Indexed**: python (`55` module(s))
@@ -300,7 +300,7 @@
 ### [`pnn/preclinical.py`](pnn/preclinical.py)
 > *Phase 4 in vivo pharmacokinetics (PK), pharmacodynamics (PD), and preclinical candidate selection for PNN.*
 
-**Size**: `563` lines
+**Size**: `564` lines
 
 **Classes:**
 - `class PreclinicalError` - *Raised when in vivo preclinical data is malformed or violates contract.*
@@ -844,7 +844,7 @@
 ---
 
 ### [`tests/test_preclinical.py`](tests/test_preclinical.py)
-**Size**: `261` lines
+**Size**: `280` lines
 
 **Classes:**
 - `class TestPreclinicalNCA`
@@ -863,6 +863,7 @@
   - Method `.test_unmeasured_oral_f_never_yields_clinical_candidate()`
   - Method `.test_evaluate_insufficient_brain_penetration()`
   - Method `.test_render_preclinical_report()`
+  - Method `.test_clinical_candidate_summary_lists_all_four_criteria()`
 - `class TestPreclinicalCLI`
   - Method `.test_cli_execution_success()`
 
