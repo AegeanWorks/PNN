@@ -24,6 +24,23 @@ class ProjectDocsTest(unittest.TestCase):
         for relative in REQUIRED_DOCUMENTS:
             self.assertTrue((ROOT / relative).is_file(), relative)
 
+    def test_documented_cli_examples_use_populated_csvs(self) -> None:
+        # A copy-paste README example must actually run. Header-only templates
+        # document the column contract but make the command fail with
+        # "no compound rows found" — use shipped populated datasets instead.
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        inputs = re.findall(r"python -m pnn(?:\.rank)?\s+([\w./-]+\.csv)", readme)
+        self.assertTrue(inputs, "no documented pnn CLI examples found")
+        empty = []
+        for rel in inputs:
+            path = ROOT / rel
+            if not path.is_file():
+                continue  # illustrative placeholder (e.g. compounds.csv)
+            lines = [ln for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
+            if len(lines) < 2:
+                empty.append(rel)
+        self.assertEqual(empty, [], f"documented examples use header-only CSVs: {empty}")
+
     def test_python_version_requirement_is_consistent(self) -> None:
         # README is the gating onboarding doc; every other doc that states a
         # Python floor must agree with it or agents cold-start on the wrong version.

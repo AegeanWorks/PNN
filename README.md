@@ -164,7 +164,7 @@ permeability or efficacy model: tier labels decide which compounds reach docking
 and assays, never whether a compound is claimed to be BBB-penetrant.
 
 ```bash
-python -m pnn data/compounds/screening_template.csv --out ranked_compounds.csv
+python -m pnn data/compounds/vendor_library.csv --out ranked_compounds.csv
 python -m pnn compounds.csv --out ranked.csv --json summary.json --min-tier B
 ```
 
@@ -181,7 +181,7 @@ within the run and renormalized for missing methods; only rows with a Vina score
 enter the shortlist.
 
 ```bash
-python -m pnn.rank data/docking/scores_template.csv \
+python -m pnn.rank data/docking/multi_target_scores.csv \
     --screen ranked_compounds.csv \
     --out shortlist.csv --json shortlist_summary.json --max-rmsd 2.0
 ```
